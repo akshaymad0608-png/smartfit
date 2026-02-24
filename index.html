@@ -11,56 +11,6 @@
     <!-- Primary Meta Tags -->
     <meta name="theme-color" content="#0D9488">
     
-    <!-- Tailwind CSS (CDN for demo purposes - In production, use build step) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                green: '#0D9488', // Teal 600
-                darkGreen: '#0F172A', // Slate 900
-                cream: '#F8FAFC', // Slate 50
-                accent: '#F97316', // Orange 500
-                surface: '#FFFFFF',
-                gray: '#64748B', // Slate 500
-              }
-            },
-            fontFamily: {
-              sans: ['Plus Jakarta Sans', 'sans-serif'],
-              heading: ['Outfit', 'sans-serif'],
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'float': 'float 6s ease-in-out infinite',
-              'scale-in': 'scaleIn 0.3s ease-out forwards',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(30px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              scaleIn: {
-                '0%': { opacity: '0', transform: 'scale(0.95)' },
-                '100%': { opacity: '1', transform: 'scale(1)' },
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              }
-            },
-            boxShadow: {
-              'soft': '0 20px 40px -15px rgba(15, 23, 42, 0.08)',
-              'card': '0 10px 30px -5px rgba(15, 23, 42, 0.04)',
-              'glow': '0 0 20px rgba(13, 148, 136, 0.3)'
-            }
-          }
-        }
-      }
-    </script>
-
     <!-- Google Analytics (Placeholder) -->
     <!-- 
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -77,25 +27,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     
-    <style>
-      body { 
-        font-family: 'Plus Jakarta Sans', sans-serif; 
-        scroll-behavior: smooth; 
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: #F8FAFC;
-        color: #0F172A;
-      }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Outfit', sans-serif;
-      }
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #F8FAFC; }
-      ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
-      .btn-primary { background-color: #0D9488; color: white; transition: all 0.3s ease; }
-      .btn-primary:hover { background-color: #0F172A; transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4); }
-    </style>
   <script type="importmap">
 {
   "imports": {
