@@ -143,12 +143,32 @@ const Exercise: React.FC = () => {
     return workouts.filter(w => w.tags.includes(activeCategory));
   }, [activeCategory, workouts]);
 
+  // Structured Data for Workouts
+  const workoutSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": workouts.map((workout, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "ExercisePlan",
+        "name": workout.title,
+        "description": workout.description,
+        "activityDuration": `PT${workout.duration.replace(' min', 'M')}`,
+        "intensity": workout.level,
+        "image": workout.image,
+        "workload": workout.calories
+      }
+    }))
+  };
+
   return (
     <div className="animate-fade-in pb-20 bg-brand-surface">
       <SEO 
         title="Home Workouts - Best Weight Loss Plan Exercises" 
         description="Free daily home workout routines for weight loss. Cardio, HIIT, Strength, and Yoga exercises requiring no equipment." 
         keywords="home workout, cardio exercises, no equipment workout, yoga for weight loss, weight loss plan"
+        schema={workoutSchema}
       />
 
       {/* Hero Section */}

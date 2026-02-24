@@ -5,12 +5,28 @@ import SEO from '../components/SEO';
 const About: React.FC = () => {
   const [isStoryOpen, setIsStoryOpen] = useState(false);
 
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "SmartFit",
+      "founder": {
+        "@type": "Person",
+        "name": "Akshay Mahajan"
+      },
+      "foundingDate": "2018",
+      "description": "SmartFit is dedicated to making weight loss simple, accessible, and sustainable for everyone."
+    }
+  };
+
   return (
     <div className="animate-fade-in pb-20 bg-brand-surface">
       <SEO 
         title="About Us - SmartFit Weight Loss Plan" 
         description="Learn about our mission to simplify weight loss and meet Akshay Mahajan, the creator behind SmartFit." 
         keywords="about us, fitness creator, weight loss philosophy, weight loss plan"
+        schema={aboutSchema}
       />
 
       <div className="bg-white pt-24 pb-20 border-b border-slate-100">

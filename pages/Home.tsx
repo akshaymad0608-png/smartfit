@@ -9,6 +9,34 @@ const Home: React.FC = () => {
   const [isBMIModalOpen, setIsBMIModalOpen] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
 
+  // Structured Data for the Organization/WebSite
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "SmartFit Weight Loss",
+        "url": "https://smartweightlossblueprint.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://smartweightlossblueprint.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "SmartFit",
+        "url": "https://smartweightlossblueprint.com",
+        "logo": "https://smartweightlossblueprint.com/logo.png",
+        "sameAs": [
+          "https://facebook.com/smartfit",
+          "https://twitter.com/smartfit",
+          "https://instagram.com/smartfit"
+        ]
+      }
+    ]
+  };
+
   const handleDownloadEbook = async () => {
     setIsGenerating(true);
     // Simulate processing time for better UX
@@ -215,6 +243,7 @@ const Home: React.FC = () => {
         title="SmartFit - Holistic Weight Loss & Wellness" 
         description="A natural, sustainable approach to weight loss with free daily exercises, simple diet plans, and mindfulness." 
         keywords="holistic weight loss, wellness plan, home workout, diet plan"
+        schema={websiteSchema}
       />
 
       {/* BMI Modal */}
@@ -300,6 +329,8 @@ const Home: React.FC = () => {
                    <img 
                      src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop" 
                      alt="Wellness Woman" 
+                     width="448"
+                     height="600"
                      className="w-full h-full object-cover shadow-2xl rounded-[3rem] bg-slate-200 relative z-20"
                    />
                 </div>
@@ -342,7 +373,7 @@ const Home: React.FC = () => {
                {/* Card 1 */}
                <div className="bg-brand-cream rounded-t-[100px] rounded-b-[20px] p-8 text-center hover:shadow-soft transition-all duration-300 group">
                   <div className="w-full aspect-square rounded-full overflow-hidden mb-8 border-4 border-white shadow-sm group-hover:scale-105 transition-transform duration-500">
-                     <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop" className="w-full h-full object-cover" alt="Nutrition" />
+                     <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop" width="400" height="400" className="w-full h-full object-cover" alt="Nutrition" />
                   </div>
                   <h3 className="text-2xl font-heading text-brand-darkGreen mb-3">Mindful Nutrition</h3>
                   <p className="text-brand-darkGreen/60 text-sm mb-6 leading-relaxed">Wholesome meal plans that nourish without deprivation. Vegetarian, Vegan & Balanced options.</p>
@@ -354,7 +385,7 @@ const Home: React.FC = () => {
                {/* Card 2 */}
                <div className="bg-brand-cream rounded-t-[100px] rounded-b-[20px] p-8 text-center hover:shadow-soft transition-all duration-300 group mt-0 md:-mt-12">
                   <div className="w-full aspect-square rounded-full overflow-hidden mb-8 border-4 border-white shadow-sm group-hover:scale-105 transition-transform duration-500">
-                     <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop" className="w-full h-full object-cover" alt="Movement" />
+                     <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop" width="400" height="400" className="w-full h-full object-cover" alt="Movement" />
                   </div>
                   <h3 className="text-2xl font-heading text-brand-darkGreen mb-3">Joyful Movement</h3>
                   <p className="text-brand-darkGreen/60 text-sm mb-6 leading-relaxed">Effective home workouts designed for every body type. No equipment needed.</p>
@@ -366,7 +397,7 @@ const Home: React.FC = () => {
                {/* Card 3 */}
                <div className="bg-brand-cream rounded-t-[100px] rounded-b-[20px] p-8 text-center hover:shadow-soft transition-all duration-300 group">
                   <div className="w-full aspect-square rounded-full overflow-hidden mb-8 border-4 border-white shadow-sm group-hover:scale-105 transition-transform duration-500">
-                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" className="w-full h-full object-cover" alt="Structure" />
+                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" width="400" height="400" className="w-full h-full object-cover" alt="Structure" />
                   </div>
                   <h3 className="text-2xl font-heading text-brand-darkGreen mb-3">Guided Structure</h3>
                   <p className="text-brand-darkGreen/60 text-sm mb-6 leading-relaxed">A 30-day blueprint to build sustainable habits that last a lifetime.</p>

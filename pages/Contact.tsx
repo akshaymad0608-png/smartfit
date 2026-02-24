@@ -3,12 +3,27 @@ import { Mail, MapPin, Send } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "SmartFit",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@smartfit.com",
+        "contactType": "customer support"
+      }
+    }
+  };
+
   return (
     <div className="animate-fade-in pb-20 bg-brand-surface">
       <SEO 
         title="Contact Us - SmartFit Support" 
         description="Get in touch with the SmartFit team." 
         keywords="contact us, support, weight loss plan help"
+        schema={contactSchema}
       />
 
       <div className="max-w-5xl mx-auto px-4 py-24">

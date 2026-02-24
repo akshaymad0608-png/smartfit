@@ -84,6 +84,12 @@ const Blog: React.FC = () => {
         title="Weight Loss Blog - Tips for Your Weight Loss Plan" 
         description="Read our latest articles on workouts, healthy recipes, motivation, and lifestyle tips for weight loss." 
         keywords="weight loss blog, fitness tips, healthy living articles, weight loss plan"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "SmartFit Blog",
+          "description": "Expert advice on weight loss and healthy living."
+        }}
       />
 
       <div className="bg-white py-24 text-center border-b border-slate-100">
@@ -104,6 +110,8 @@ const Blog: React.FC = () => {
                 <img 
                   src={post.image} 
                   alt={post.title} 
+                  width="800"
+                  height="450"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -145,6 +153,24 @@ const Blog: React.FC = () => {
       {activePost && (
          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-slate-900/50 backdrop-blur-sm animate-fade-in-up">
            <div className="bg-white h-[90vh] sm:h-auto sm:max-h-[90vh] w-full max-w-3xl sm:rounded-[2rem] rounded-t-[2rem] shadow-2xl overflow-y-auto relative animate-scale-in">
+              <SEO 
+                title={activePost.title} 
+                description={activePost.excerpt}
+                image={activePost.image}
+                type="article"
+                schema={{
+                  "@context": "https://schema.org",
+                  "@type": "Article",
+                  "headline": activePost.title,
+                  "image": [activePost.image],
+                  "author": {
+                    "@type": "Person",
+                    "name": "Akshay Mahajan"
+                  },
+                  "datePublished": "2023-10-12" // Ideally dynamic
+                }}
+              />
+              
               {/* Header Image */}
               <div className="relative h-64 sm:h-80 w-full shrink-0">
                  <img src={activePost.image} className="w-full h-full object-cover" alt="Article Cover" />

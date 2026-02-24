@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartFit | Holistic Weight Loss & Wellness</title>
-    <meta name="description" content="SmartFit - Daily Exercises, Simple Diet Plans & Monthly Fat-Loss Routine for Beginners." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="theme-color" content="#0D9488">
+    
+    <!-- Tailwind CSS (CDN for demo purposes - In production, use build step) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -12,11 +19,11 @@
           extend: {
             colors: {
               brand: {
-                green: '#0D9488', // Teal 600 - Modern, Professional, Fresh
-                darkGreen: '#0F172A', // Slate 900 - Sharp, High Contrast Dark
-                cream: '#F8FAFC', // Slate 50 - Clean, Cool White Background
-                accent: '#F97316', // Orange 500 - Energetic Accent
-                surface: '#FFFFFF', // Pure White
+                green: '#0D9488', // Teal 600
+                darkGreen: '#0F172A', // Slate 900
+                cream: '#F8FAFC', // Slate 50
+                accent: '#F97316', // Orange 500
+                surface: '#FFFFFF',
                 gray: '#64748B', // Slate 500
               }
             },
@@ -48,17 +55,28 @@
               'soft': '0 20px 40px -15px rgba(15, 23, 42, 0.08)',
               'card': '0 10px 30px -5px rgba(15, 23, 42, 0.04)',
               'glow': '0 0 20px rgba(13, 148, 136, 0.3)'
-            },
-            backgroundImage: {
-              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
             }
           }
         }
       }
     </script>
+
+    <!-- Google Analytics (Placeholder) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script> 
+    -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
     <style>
       body { 
         font-family: 'Plus Jakarta Sans', sans-serif; 
@@ -68,36 +86,15 @@
         background-color: #F8FAFC;
         color: #0F172A;
       }
-      
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Outfit', sans-serif;
       }
-      
-      /* Custom Premium Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #F8FAFC;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #CBD5E1;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #0D9488;
-      }
-
-      .btn-primary {
-        background-color: #0D9488;
-        color: white;
-        transition: all 0.3s ease;
-      }
-      .btn-primary:hover {
-        background-color: #0F172A;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4);
-      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #F8FAFC; }
+      ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
+      .btn-primary { background-color: #0D9488; color: white; transition: all 0.3s ease; }
+      .btn-primary:hover { background-color: #0F172A; transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.4); }
     </style>
   <script type="importmap">
 {
@@ -111,8 +108,10 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-brand-cream text-brand-darkGreen antialiased selection:bg-brand-green selection:text-white">
     <div id="root"></div>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>

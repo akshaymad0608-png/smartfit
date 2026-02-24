@@ -143,12 +143,43 @@ const Plan30Day: React.FC = () => {
     window.print();
   };
 
+  const planSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "30-Day Weight Loss Challenge",
+    "description": "A structured 30-day weight loss plan combining daily workouts and diet goals.",
+    "totalTime": "P30D",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Week 1: The Kickstart",
+        "text": "Establish the routine. Focus on form."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Week 2: Momentum",
+        "text": "Increase intensity. Minimize rest."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Week 3: Discipline",
+        "text": "Strict Diet. No cheat meals."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Week 4: Intensity",
+        "text": "Max effort. Empty the tank."
+      }
+    ]
+  };
+
   return (
     <div className="animate-fade-in pb-20 bg-brand-surface min-h-screen">
       <SEO 
         title="30-Day Weight Loss Challenge - Monthly Weight Loss Plan" 
         description="A structured 30-day weight loss plan combining daily workouts and diet goals to help you lose fat and build habits." 
         keywords="30 day weight loss challenge, monthly workout plan, fat loss schedule, weight loss plan"
+        schema={planSchema}
       />
 
       {/* Hero Header */}

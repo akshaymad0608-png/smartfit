@@ -3,12 +3,32 @@ import { Flame, AlertTriangle, Info, Brain, Activity, Clock } from 'lucide-react
 import SEO from '../components/SEO';
 
 const Guide: React.FC = () => {
+  const guideSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Weight Loss 101: The Science Behind Weight Loss",
+    "description": "Understand the science of weight loss: calories, metabolism, myths, and common mistakes.",
+    "author": {
+      "@type": "Organization",
+      "name": "SmartFit"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SmartFit",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://smartweightlossblueprint.com/logo.png"
+      }
+    }
+  };
+
   return (
     <div className="animate-fade-in pb-20 bg-brand-surface">
       <SEO 
         title="Weight Loss Guide - The Science Behind Weight Loss Plans" 
         description="Understand the science of weight loss: calories, metabolism, myths, and common mistakes." 
         keywords="calories, metabolism, weight loss myths, beginner guide, weight loss plan"
+        schema={guideSchema}
       />
 
       <div className="bg-brand-green/5 pt-32 pb-32 text-center text-brand-darkGreen relative overflow-hidden">

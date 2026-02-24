@@ -42,12 +42,47 @@ const Diet: React.FC = () => {
 
   const currentPlan = plans[activeTab];
 
+  // Structured Data for Diet Plans
+  const dietSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Weight Loss Diet Plans",
+    "description": "Healthy diet plans for weight loss including Indian Vegetarian, Non-Vegetarian, and Global options.",
+    "itemListElement": Object.values(plans).map((plan, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Menu",
+        "name": plan.name,
+        "description": plan.description,
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Breakfast",
+            "hasMenuItem": plan.meals.breakfast.map(item => ({ "@type": "MenuItem", "name": item }))
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Lunch",
+            "hasMenuItem": plan.meals.lunch.map(item => ({ "@type": "MenuItem", "name": item }))
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Dinner",
+            "hasMenuItem": plan.meals.dinner.map(item => ({ "@type": "MenuItem", "name": item }))
+          }
+        ]
+      }
+    }))
+  };
+
   return (
     <div className="animate-fade-in pb-20 bg-brand-surface">
       <SEO 
         title="Diet Plans - Healthy Weight Loss Plan Recipes" 
         description="Free weight loss diet plans. Indian Vegetarian, Non-Vegetarian, and Global options with breakfast, lunch, and dinner ideas." 
         keywords="diet plan, indian weight loss diet, vegetarian diet plan, healthy meal ideas, weight loss plan"
+        schema={dietSchema}
       />
 
       {/* Hero Section */}
