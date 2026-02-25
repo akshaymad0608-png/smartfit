@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dumbbell, Clock, Flame, Play, X } from 'lucide-react';
+import { Clock, Flame, Play, X } from 'lucide-react';
 import SEO from '../components/SEO';
 
 interface Workout {

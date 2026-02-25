@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle, Circle, Lock, Star, Calendar } from 'lucide-react';
+import { CheckCircle, Lock, Star } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Plan30Day: React.FC = () => {

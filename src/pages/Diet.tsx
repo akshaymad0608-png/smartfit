@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Utensils, Clock, Flame, Check } from 'lucide-react';
+import { Utensils, Flame, Check } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Diet: React.FC = () => {

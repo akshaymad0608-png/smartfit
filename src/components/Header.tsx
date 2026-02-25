@@ -16,10 +16,6 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
-
-  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {

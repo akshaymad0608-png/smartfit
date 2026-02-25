@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Mail, Dumbbell } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Dumbbell } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="bg-brand-card/5 border border-brand-card/10 rounded-lg px-4 py-3 text-white placeholder-brand-gray focus:outline-none focus:border-brand-green transition-colors"
+                className="bg-brand-card border border-brand-gray/10 rounded-lg px-4 py-3 text-white placeholder-brand-gray focus:outline-none focus:border-brand-green transition-colors"
               />
               <button type="submit" className="bg-brand-green text-white font-bold py-3 rounded-lg hover:bg-brand-blue transition-colors shadow-lg shadow-brand-green/20">
                 Subscribe
