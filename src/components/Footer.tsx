@@ -1,30 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Mail } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Mail, Dumbbell } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-darkGreen text-white pt-20 pb-10">
+    <footer className="bg-brand-surface text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-brand-green text-white rounded-xl flex items-center justify-center shadow-lg shadow-brand-green/20">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-                </svg>
+                <Dumbbell size={24} />
               </div>
               <span className="text-2xl font-heading font-bold tracking-tight">SmartFit</span>
             </Link>
@@ -32,13 +19,13 @@ const Footer: React.FC = () => {
               Empowering you to achieve your fitness goals with science-backed plans and sustainable habits.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-green transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-brand-card/10 flex items-center justify-center hover:bg-brand-green transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-green transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-brand-card/10 flex items-center justify-center hover:bg-brand-green transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-green transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-brand-card/10 flex items-center justify-center hover:bg-brand-green transition-colors">
                 <Twitter size={20} />
               </a>
             </div>
@@ -64,7 +51,7 @@ const Footer: React.FC = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-brand-gray focus:outline-none focus:border-brand-green transition-colors"
+                className="bg-brand-card/5 border border-brand-card/10 rounded-lg px-4 py-3 text-white placeholder-brand-gray focus:outline-none focus:border-brand-green transition-colors"
               />
               <button type="submit" className="bg-brand-green text-white font-bold py-3 rounded-lg hover:bg-brand-blue transition-colors shadow-lg shadow-brand-green/20">
                 Subscribe
@@ -73,7 +60,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-brand-gray">
+        <div className="border-t border-brand-card/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-brand-gray">
           <p>&copy; {new Date().getFullYear()} SmartFit. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

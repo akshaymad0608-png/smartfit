@@ -46,7 +46,7 @@ const Exercise: React.FC = () => {
       duration: '30 min',
       calories: '120 kcal',
       level: 'All Levels',
-      image: 'https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800',
       videoUrl: 'https://www.youtube.com/embed/sTANio_2E0Q',
       description: 'Start your day with energy and focus with this gentle yoga flow.'
     },
@@ -66,7 +66,7 @@ const Exercise: React.FC = () => {
       duration: '30 min',
       calories: '250 kcal',
       level: 'Intermediate',
-      image: 'https://images.unsplash.com/photo-1434608519344-49d77a699ded?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&q=80&w=800',
       videoUrl: 'https://www.youtube.com/embed/UItWltVZZmE',
       description: 'Tone your legs and glutes with this targeted lower body routine.'
     },
@@ -77,8 +77,18 @@ const Exercise: React.FC = () => {
       calories: '400 kcal',
       level: 'Advanced',
       image: 'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=80&w=800',
-      videoUrl: 'https://www.youtube.com/embed/lK3R3Qj1f8M',
+      videoUrl: 'https://www.youtube.com/embed/j64BBgBGNIU',
       description: 'Punch and kick your way to fitness with this high-energy cardio workout.'
+    },
+    {
+      id: 7,
+      title: 'Total Body Strength',
+      duration: '35 min',
+      calories: '320 kcal',
+      level: 'Intermediate',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800',
+      videoUrl: 'https://www.youtube.com/embed/UBMk30rjy0o',
+      description: 'Build muscle and burn fat with this comprehensive full-body dumbbell strength workout.'
     }
   ];
 
@@ -95,7 +105,7 @@ const Exercise: React.FC = () => {
       />
 
       {/* Hero */}
-      <div className="bg-brand-darkGreen pt-32 pb-20 text-center text-white relative overflow-hidden">
+      <div className="bg-brand-surface pt-32 pb-20 text-center text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green/20 rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-accent/20 rounded-full blur-[120px] transform -translate-x-1/2 translate-y-1/2"></div>
         
@@ -117,7 +127,7 @@ const Exercise: React.FC = () => {
               className={`px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 shadow-sm ${
                 selectedCategory === cat 
                   ? 'bg-brand-green text-white shadow-brand-green/30 shadow-lg transform -translate-y-1' 
-                  : 'bg-white text-brand-gray hover:bg-brand-surface hover:text-brand-darkGreen'
+                  : 'bg-brand-card text-brand-gray hover:bg-brand-surface hover:text-brand-darkGreen'
               }`}
             >
               {cat}
@@ -130,7 +140,7 @@ const Exercise: React.FC = () => {
           {filteredWorkouts.map((workout) => (
             <div 
               key={workout.id} 
-              className="group bg-white rounded-[2rem] overflow-hidden shadow-card border border-brand-gray/5 hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="group bg-brand-card rounded-[2rem] overflow-hidden shadow-card border border-brand-gray/5 hover:shadow-xl transition-all duration-300 cursor-pointer"
               onClick={() => setSelectedWorkout(workout)}
             >
               <div className="relative h-64 overflow-hidden">
@@ -140,11 +150,11 @@ const Exercise: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
+                  <div className="w-16 h-16 bg-brand-card/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30">
                     <Play size={32} fill="currentColor" />
                   </div>
                 </div>
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-darkGreen uppercase tracking-wide">
+                <div className="absolute top-4 right-4 bg-brand-card/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-darkGreen uppercase tracking-wide">
                   {workout.level}
                 </div>
               </div>
@@ -171,15 +181,15 @@ const Exercise: React.FC = () => {
       {/* Workout Modal */}
       {selectedWorkout && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-[2.5rem] w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl animate-fade-in-up">
+          <div className="bg-brand-card rounded-[2.5rem] w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl animate-fade-in-up">
             <button 
               onClick={() => setSelectedWorkout(null)}
-              className="absolute top-6 right-6 z-10 p-2 bg-white/50 backdrop-blur-md rounded-full text-brand-darkGreen hover:bg-white transition-colors"
+              className="absolute top-6 right-6 z-10 p-2 bg-brand-card/50 backdrop-blur-md rounded-full text-brand-darkGreen hover:bg-brand-card transition-colors"
             >
               <X size={24} />
             </button>
             
-            <div className="aspect-video w-full bg-black">
+            <div className="aspect-video w-full bg-black relative">
               <iframe 
                 width="100%" 
                 height="100%" 
@@ -189,6 +199,16 @@ const Exercise: React.FC = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
               ></iframe>
+              {selectedWorkout.videoUrl && (
+                <a 
+                  href={selectedWorkout.videoUrl.replace('embed/', 'watch?v=')} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold opacity-80 hover:opacity-100 transition-opacity shadow-lg flex items-center gap-2 z-20"
+                >
+                  Watch on YouTube
+                </a>
+              )}
             </div>
             
             <div className="p-10">

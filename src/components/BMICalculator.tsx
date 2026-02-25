@@ -25,7 +25,7 @@ const BMICalculator: React.FC = () => {
   return (
     <div className="bg-brand-surface py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-[2.5rem] shadow-card border border-brand-gray/5 p-8 md:p-12 relative overflow-hidden">
+        <div className="bg-brand-card rounded-[2.5rem] shadow-card border border-brand-gray/5 p-8 md:p-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
           
           <div className="relative z-10 text-center mb-10">
@@ -41,7 +41,7 @@ const BMICalculator: React.FC = () => {
                   type="number" 
                   value={weight} 
                   onChange={(e) => setWeight(e.target.value)} 
-                  className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen text-center text-xl" 
+                  className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-brand-card focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen text-center text-xl" 
                   placeholder="0" 
                   required 
                 />
@@ -52,7 +52,7 @@ const BMICalculator: React.FC = () => {
                   type="number" 
                   value={height} 
                   onChange={(e) => setHeight(e.target.value)} 
-                  className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen text-center text-xl" 
+                  className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-brand-card focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen text-center text-xl" 
                   placeholder="0" 
                   required 
                 />
@@ -69,9 +69,9 @@ const BMICalculator: React.FC = () => {
               <p className="text-brand-gray font-medium mb-2 uppercase tracking-wide text-sm">Your BMI is</p>
               <div className="text-5xl font-bold text-brand-darkGreen mb-4 font-heading">{bmi.toFixed(1)}</div>
               <div className={`inline-block px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide ${
-                category === 'Normal weight' ? 'bg-green-100 text-green-700' : 
-                category === 'Underweight' ? 'bg-blue-100 text-blue-700' : 
-                'bg-orange-100 text-orange-700'
+                category === 'Normal weight' ? 'bg-green-900/20 text-green-300' : 
+                category === 'Underweight' ? 'bg-blue-900/20 text-blue-300' : 
+                'bg-orange-900/20 text-orange-300'
               }`}>
                 {category}
               </div>

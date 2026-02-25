@@ -110,7 +110,7 @@ const Blog: React.FC = () => {
       />
 
       {/* Hero */}
-      <div className="bg-brand-darkGreen pt-32 pb-20 text-center text-white relative overflow-hidden">
+      <div className="bg-brand-surface pt-32 pb-20 text-center text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green/20 rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-accent/20 rounded-full blur-[120px] transform -translate-x-1/2 translate-y-1/2"></div>
         
@@ -128,7 +128,7 @@ const Blog: React.FC = () => {
           {blogPosts.map((post) => (
             <div 
               key={post.id} 
-              className="group bg-white rounded-[2rem] overflow-hidden shadow-card border border-brand-gray/5 hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full"
+              className="group bg-brand-card rounded-[2rem] overflow-hidden shadow-card border border-brand-gray/5 hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full"
               onClick={() => setSelectedPost(post)}
             >
               <div className="relative h-64 overflow-hidden">
@@ -137,7 +137,7 @@ const Blog: React.FC = () => {
                   alt={post.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-darkGreen uppercase tracking-wide flex items-center gap-1">
+                <div className="absolute top-4 left-4 bg-brand-card/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-darkGreen uppercase tracking-wide flex items-center gap-1">
                   <Tag size={12} className="text-brand-green" /> {post.category}
                 </div>
               </div>
@@ -176,10 +176,10 @@ const Blog: React.FC = () => {
       {/* Blog Post Modal */}
       {selectedPost && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-[2.5rem] w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl animate-fade-in-up">
+          <div className="bg-brand-card rounded-[2.5rem] w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl animate-fade-in-up">
             <button 
               onClick={() => setSelectedPost(null)}
-              className="absolute top-6 right-6 z-10 p-2 bg-white/50 backdrop-blur-md rounded-full text-brand-darkGreen hover:bg-white transition-colors"
+              className="absolute top-6 right-6 z-10 p-2 bg-brand-card/50 backdrop-blur-md rounded-full text-brand-darkGreen hover:bg-brand-card transition-colors"
             >
               <X size={24} />
             </button>

@@ -52,7 +52,7 @@ const Diet: React.FC = () => {
       />
 
       {/* Hero */}
-      <div className="bg-brand-darkGreen pt-32 pb-20 text-center text-white relative overflow-hidden">
+      <div className="bg-brand-surface pt-32 pb-20 text-center text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green/20 rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-accent/20 rounded-full blur-[120px] transform -translate-x-1/2 translate-y-1/2"></div>
         
@@ -74,7 +74,7 @@ const Diet: React.FC = () => {
               className={`px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-sm ${
                 selectedPlan === plan.name 
                   ? 'bg-brand-green text-white shadow-brand-green/30 shadow-lg transform -translate-y-1' 
-                  : 'bg-white text-brand-gray hover:bg-brand-surface hover:text-brand-darkGreen'
+                  : 'bg-brand-card text-brand-gray hover:bg-brand-surface hover:text-brand-darkGreen'
               }`}
             >
               {plan.name}
@@ -86,7 +86,7 @@ const Diet: React.FC = () => {
         {currentPlan && (
           <div className="grid md:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             {/* Overview Card */}
-            <div className="md:col-span-1 bg-white rounded-[2.5rem] p-8 shadow-card border border-brand-gray/5 h-full flex flex-col justify-between">
+            <div className="md:col-span-1 bg-brand-card rounded-[2.5rem] p-8 shadow-card border border-brand-gray/5 h-full flex flex-col justify-between">
               <div>
                 <h2 className="text-3xl font-bold text-brand-darkGreen mb-4 font-heading">{currentPlan.name} Plan</h2>
                 <p className="text-brand-gray text-lg mb-8 leading-relaxed">{currentPlan.description}</p>
@@ -110,7 +110,7 @@ const Diet: React.FC = () => {
             {/* Meals Grid */}
             <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
               {currentPlan.meals.map((meal, idx) => (
-                <div key={idx} className="bg-white rounded-[2rem] p-8 shadow-sm border border-brand-gray/5 hover:shadow-card transition-all duration-300">
+                <div key={idx} className="bg-brand-card rounded-[2rem] p-8 shadow-sm border border-brand-gray/5 hover:shadow-card transition-all duration-300">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 bg-brand-surface rounded-xl flex items-center justify-center text-brand-green">
                       <Utensils size={20} />

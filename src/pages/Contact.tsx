@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="md:col-span-1 space-y-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-white p-8 rounded-[2rem] shadow-card border border-brand-gray/5 hover:shadow-xl transition-shadow">
+            <div className="bg-brand-card p-8 rounded-[2rem] shadow-card border border-brand-gray/5 hover:shadow-xl transition-shadow">
               <div className="w-14 h-14 bg-brand-surface text-brand-green rounded-2xl flex items-center justify-center mb-6">
                 <Mail size={28} />
               </div>
@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
               <a href="mailto:hello@smartfit.com" className="text-brand-green font-bold hover:underline break-words text-sm">hello@smartfit.com</a>
             </div>
             
-            <div className="bg-white p-8 rounded-[2rem] shadow-card border border-brand-gray/5 hover:shadow-xl transition-shadow">
+            <div className="bg-brand-card p-8 rounded-[2rem] shadow-card border border-brand-gray/5 hover:shadow-xl transition-shadow">
               <div className="w-14 h-14 bg-brand-surface text-brand-green rounded-2xl flex items-center justify-center mb-6">
                 <MapPin size={28} />
               </div>
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Form */}
-          <div className="md:col-span-2 bg-white rounded-[2.5rem] shadow-card border border-brand-gray/5 p-8 md:p-12 relative overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="md:col-span-2 bg-brand-card rounded-[2.5rem] shadow-card border border-brand-gray/5 p-8 md:p-12 relative overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
              {/* Decorative blob */}
              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-surface rounded-bl-full -mr-10 -mt-10 z-0"></div>
              
@@ -66,17 +66,17 @@ const Contact: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-brand-darkGreen uppercase tracking-wide">Name</label>
-                  <input type="text" className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen" placeholder="Your Name" required />
+                  <input type="text" className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-brand-card focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen" placeholder="Your Name" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-brand-darkGreen uppercase tracking-wide">Email</label>
-                  <input type="email" className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen" placeholder="your@email.com" required />
+                  <input type="email" className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-brand-card focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen" placeholder="your@email.com" required />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-bold text-brand-darkGreen uppercase tracking-wide">Subject</label>
-                 <select className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-gray">
+                 <select className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-brand-card focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-gray">
                     <option>General Inquiry</option>
                     <option>Feedback on Plan</option>
                     <option>Technical Issue</option>
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
 
               <div className="space-y-2">
                 <label className="text-sm font-bold text-brand-darkGreen uppercase tracking-wide">Message</label>
-                <textarea rows={5} className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-white focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen" placeholder="How can we help you?" required></textarea>
+                <textarea rows={5} className="w-full px-5 py-4 rounded-2xl border border-brand-gray/10 bg-brand-surface focus:bg-brand-card focus:ring-2 focus:ring-brand-green focus:border-transparent outline-none transition font-medium text-brand-darkGreen" placeholder="How can we help you?" required></textarea>
               </div>
 
               <button type="submit" className="w-full bg-brand-darkGreen text-white font-bold py-5 rounded-2xl hover:bg-brand-green transition-all shadow-lg flex items-center justify-center transform active:scale-95 duration-200 hover:shadow-brand-green/20">

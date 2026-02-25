@@ -8,7 +8,7 @@ const NotFound: React.FC = () => {
       <SEO title="Page Not Found - SmartFit" description="The page you are looking for does not exist." />
       <h1 className="text-6xl font-bold text-brand-darkGreen mb-4">404</h1>
       <p className="text-xl text-brand-gray mb-8">Oops! The page you're looking for doesn't exist.</p>
-      <Link to="/" className="bg-brand-green text-white px-6 py-3 rounded-full font-bold hover:bg-brand-darkGreen transition-colors">
+      <Link to="/" className="bg-brand-green text-white px-6 py-3 rounded-full font-bold hover:bg-brand-blue transition-colors">
         Go Home
       </Link>
     </div>

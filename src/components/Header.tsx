@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Menu, X, ChevronRight, Facebook, Instagram, Twitter, Dumbbell } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
           scrolled 
-            ? 'bg-white/80 backdrop-blur-lg border-b border-brand-gray/10 py-3 shadow-soft' 
+            ? 'bg-brand-card/80 backdrop-blur-lg border-b border-brand-gray/10 py-3 shadow-soft' 
             : 'bg-transparent py-6'
         }`}
       >
@@ -61,20 +61,7 @@ const Header: React.FC = () => {
               onClick={() => setIsOpen(false)}
             >
               <div className="w-10 h-10 bg-brand-green text-white rounded-xl flex items-center justify-center shadow-lg shadow-brand-green/20 transform group-hover:rotate-6 transition-all duration-300">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-                </svg>
+                <Dumbbell size={24} />
               </div>
               <span className={`text-2xl font-heading font-bold tracking-tight text-brand-darkGreen`}>
                 SmartFit
@@ -83,14 +70,14 @@ const Header: React.FC = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <nav className="flex items-center gap-1 bg-white/50 backdrop-blur-sm px-2 py-1.5 rounded-full border border-brand-gray/10 shadow-sm">
+              <nav className="flex items-center gap-1 bg-brand-card/50 backdrop-blur-sm px-2 py-1.5 rounded-full border border-brand-gray/10 shadow-sm">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     to={link.path}
                     className={`text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full ${
                       isActive(link.path)
-                        ? 'bg-brand-darkGreen text-white shadow-md'
+                        ? 'bg-brand-green text-white shadow-md'
                         : 'text-brand-gray hover:text-brand-darkGreen hover:bg-brand-gray/5'
                     }`}
                   >
@@ -124,7 +111,7 @@ const Header: React.FC = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden relative z-50 p-2 text-brand-darkGreen focus:outline-none bg-white/50 backdrop-blur-sm rounded-lg border border-brand-gray/10"
+              className="lg:hidden relative z-50 p-2 text-brand-darkGreen focus:outline-none bg-brand-card/50 backdrop-blur-sm rounded-lg border border-brand-gray/10"
               aria-label="Toggle menu"
             >
               <div className={`transition-transform duration-300 ${isOpen ? 'rotate-90' : 'rotate-0'}`}>
@@ -137,7 +124,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-xl lg:hidden transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${
+        className={`fixed inset-0 z-40 bg-brand-card/95 backdrop-blur-xl lg:hidden transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${
           isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-full'
         }`}
       >
