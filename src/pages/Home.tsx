@@ -1,109 +1,360 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  Activity,
+  ArrowRight,
+  Brain,
+  HeartPulse,
+  Leaf,
+  Salad,
+  ShieldCheck,
+  Sparkles,
+  Timer,
+  TrendingUp,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Activity, Flame, Clock } from 'lucide-react';
-import SEO from '../components/SEO';
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
+import { Container } from '@/components/ui/Container';
+import { Counter } from '@/components/ui/Counter';
+import { Section, SectionHeader } from '@/components/ui/Section';
+import { Accordion } from '@/components/ui/Accordion';
+import { WorkoutCard } from '@/components/cards/WorkoutCard';
+import { ProgramCard } from '@/components/cards/ProgramCard';
+import { BlogCard } from '@/components/cards/BlogCard';
+import { TestimonialCard } from '@/components/cards/TestimonialCard';
+import { Reveal, staggerContainer, staggerItem } from '@/components/motion/Reveal';
+import { PageTransition } from '@/components/motion/PageTransition';
+import { Hero } from '@/features/home/Hero';
+import { NewsletterForm } from '@/features/home/NewsletterForm';
+import { Seo } from '@/seo/Seo';
+import { faqSchema, organizationSchema, websiteSchema } from '@/seo/schema';
+import { workoutCategories, workouts } from '@/data/workouts';
+import { blogPosts, faqs, programs, stats, testimonials } from '@/data/content';
 
-const Home: React.FC = () => {
+const benefits = [
+  { icon: Timer, title: 'Time-efficient', text: 'Effective sessions from 15 minutes — built for real schedules.' },
+  { icon: Brain, title: 'AI-personalised', text: 'Plans that adapt to your goals, level and available equipment.' },
+  { icon: ShieldCheck, title: 'Evidence-based', text: 'Every routine and calculator is grounded in exercise science.' },
+  { icon: HeartPulse, title: 'Whole-health', text: 'Training, nutrition, recovery and mindset in one place.' },
+];
+
+const dietHighlights = [
+  { icon: Salad, title: 'Balanced meal plans', text: 'Goal-based plans for weight loss, muscle gain and maintenance.' },
+  { icon: Leaf, title: 'Veg, vegan & Indian', text: 'Flexible options built around foods you actually enjoy.' },
+  { icon: Activity, title: 'Macro-aware', text: 'Protein, carbs and fats dialled in to your calorie target.' },
+];
+
+export default function Home() {
+  const featuredWorkouts = workouts.slice(0, 3);
+  const featuredPrograms = programs.filter((p) => p.featured);
+
   return (
-    <div className="animate-fade-in pb-20 bg-brand-surface">
-      <SEO 
-        title="SmartFit - Your Personal Weight Loss Blueprint" 
-        description="Achieve your weight loss goals with our scientifically backed 30-day plan." 
-        keywords="weight loss, diet plan, workout routine, healthy lifestyle"
+    <PageTransition>
+      <Seo
+        path="/"
+        schema={[organizationSchema(), websiteSchema(), faqSchema(faqs)]}
       />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green/10 rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2 mix-blend-multiply"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-accent/10 rounded-full blur-[120px] transform -translate-x-1/2 translate-y-1/2 mix-blend-multiply"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block px-4 py-1.5 rounded-full border border-brand-green/20 bg-brand-card text-sm font-bold mb-6 text-brand-green shadow-sm animate-fade-in-up">
-              New: 30-Day Transformation Challenge
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight font-heading text-brand-darkGreen animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              Your Blueprint for <span className="text-gradient">Sustainable</span> Weight Loss
-            </h1>
-            <p className="text-xl md:text-2xl text-brand-gray font-medium max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              No crash diets. No impossible workouts. Just science-backed plans designed for real life.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <Link to="/plan" className="btn-primary w-full sm:w-auto">
-                Start Your Journey <ArrowRight size={20} />
-              </Link>
-              <Link to="/guide" className="btn-secondary w-full sm:w-auto">
-                Read the Guide
-              </Link>
-            </div>
-          </div>
+      {/* 1. Hero */}
+      <Hero />
+
+      {/* 2. Statistics */}
+      <Section spacing="sm" className="border-y border-line bg-surface-muted">
+        <dl className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          {stats.map((s) => (
+            <Reveal key={s.label} className="text-center">
+              <dd className="text-hero font-extrabold text-gradient">
+                <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
+              </dd>
+              <dt className="mt-1 text-sm font-medium text-muted">{s.label}</dt>
+            </Reveal>
+          ))}
+        </dl>
+      </Section>
+
+      {/* 3. Featured Programs */}
+      <Section>
+        <SectionHeader
+          eyebrow="Programs"
+          title="Guided plans for every goal"
+          subtitle="Follow a structured, progressive program and let SmartFit handle the what, when and how much."
+        />
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {featuredPrograms.map((p) => (
+            <Reveal key={p.id}>
+              <ProgramCard program={p} />
+            </Reveal>
+          ))}
         </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="py-20 bg-brand-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-darkGreen mb-4 font-heading">Our Philosophy</h2>
-            <p className="text-xl text-brand-gray max-w-2xl mx-auto">We believe in long-term results over short-term fixes.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-[2rem] bg-brand-card border border-brand-gray/10 hover:shadow-card transition-all duration-300">
-              <div className="w-14 h-14 bg-brand-surface rounded-2xl flex items-center justify-center mb-6 shadow-sm text-brand-green">
-                <Activity size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-brand-darkGreen mb-3">Science-Based</h3>
-              <p className="text-brand-gray">Every recommendation is backed by peer-reviewed research, not trends.</p>
-            </div>
-            <div className="p-8 rounded-[2rem] bg-brand-card border border-brand-gray/10 hover:shadow-card transition-all duration-300">
-              <div className="w-14 h-14 bg-brand-surface rounded-2xl flex items-center justify-center mb-6 shadow-sm text-brand-accent">
-                <Flame size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-brand-darkGreen mb-3">Sustainable</h3>
-              <p className="text-brand-gray">Plans designed to fit into your lifestyle, making consistency effortless.</p>
-            </div>
-            <div className="p-8 rounded-[2rem] bg-brand-card border border-brand-gray/10 hover:shadow-card transition-all duration-300">
-              <div className="w-14 h-14 bg-brand-surface rounded-2xl flex items-center justify-center mb-6 shadow-sm text-brand-blue">
-                <Clock size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-brand-darkGreen mb-3">Efficient</h3>
-              <p className="text-brand-gray">Maximize results with optimized workouts and nutrition strategies.</p>
-            </div>
-          </div>
+        <div className="mt-10 text-center">
+          <Button as="link" to="/programs" variant="outline" rightIcon={<ArrowRight size={16} />}>
+            Browse all programs
+          </Button>
         </div>
-      </section>
+      </Section>
 
-      {/* Daily Goal Section with Fixed JSX */}
-      <section className="py-20 bg-brand-surface overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-[3rem] bg-brand-card p-10 md:p-20 text-white overflow-hidden">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green/20 rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
-            
-            <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+      {/* 4. Workout Categories */}
+      <Section muted>
+        <SectionHeader
+          eyebrow="Workouts"
+          title="Train the way you want"
+          subtitle="From no-equipment home circuits to heavy gym sessions — find a category that fits your goal."
+        />
+        <motion.ul
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-60px' }}
+          className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3"
+        >
+          {workoutCategories.map((cat) => (
+            <motion.li key={cat.key} variants={staggerItem}>
+              <Link
+                to={`/workouts?cat=${cat.key}`}
+                className="group flex items-center justify-between gap-3 rounded-2xl border border-line bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-card"
+              >
+                <div>
+                  <p className="font-bold text-heading">{cat.label}</p>
+                  <p className="text-sm text-muted">{cat.description}</p>
+                </div>
+                <ArrowRight
+                  size={18}
+                  className="shrink-0 text-muted transition-transform group-hover:translate-x-1 group-hover:text-primary"
+                />
+              </Link>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </Section>
+
+      {/* 5. Featured workouts */}
+      <Section>
+        <SectionHeader eyebrow="Popular right now" title="Workouts our members love" />
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {featuredWorkouts.map((w) => (
+            <Reveal key={w.id}>
+              <WorkoutCard workout={w} />
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* 6. BMI Calculator teaser + 7. AI Coach */}
+      <Section muted>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Reveal>
+            <Card className="flex h-full flex-col justify-between gap-6 p-8">
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading text-brand-darkGreen">Consistency &gt; Intensity</h2>
-                <p className="text-xl text-brand-gray mb-8">
-                  It's not about being perfect every day. It's about showing up. Our 30-day plan helps you build habits that last a lifetime.
+                <Badge tone="primary" className="mb-4">
+                  <Activity size={13} /> Free tools
+                </Badge>
+                <h3 className="text-section font-extrabold text-heading">
+                  Know your numbers
+                </h3>
+                <p className="mt-3 text-body">
+                  Calculate your BMI, BMR, TDEE, body-fat, ideal weight and macros in seconds — then
+                  download a clean PDF report to keep.
                 </p>
-                <Link to="/plan" className="inline-flex items-center gap-2 bg-brand-green text-white px-8 py-4 rounded-full font-bold hover:bg-brand-blue transition-all duration-300 shadow-lg">
-                  Start the Challenge <ArrowRight size={20} />
-                </Link>
               </div>
-              <div className="relative">
-                 <div className="aspect-square rounded-[2rem] bg-brand-surface/50 backdrop-blur-md border border-brand-gray/10 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                       <div className="text-6xl font-bold mb-2 text-brand-darkGreen">30</div>
-                       <div className="text-xl font-medium text-brand-gray">Days to a New You</div>
-                    </div>
-                 </div>
+              <div>
+                <Button as="link" to="/calculators" rightIcon={<ArrowRight size={16} />}>
+                  Open calculators
+                </Button>
+              </div>
+            </Card>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Card className="flex h-full flex-col justify-between gap-6 bg-gradient-to-br from-primary to-secondary p-8 text-white">
+              <div>
+                <Badge className="mb-4 bg-white/20 text-white">
+                  <Sparkles size={13} /> AI Coach
+                </Badge>
+                <h3 className="text-section font-extrabold text-white">
+                  Your personal AI coach
+                </h3>
+                <p className="mt-3 text-white/90">
+                  Generate a workout, plan your meals or get daily motivation tailored to your goals.
+                  Built to grow smarter over time.
+                </p>
+              </div>
+              <div>
+                <Button as="link" to="/ai-coach" variant="outline" className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-primary" rightIcon={<ArrowRight size={16} />}>
+                  Meet your coach
+                </Button>
+              </div>
+            </Card>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* 8. Healthy Diet */}
+      <Section>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <Reveal>
+            <Badge tone="secondary" className="mb-4">
+              <Leaf size={13} /> Nutrition
+            </Badge>
+            <h2 className="text-section font-extrabold text-heading">
+              Eat well without the guesswork
+            </h2>
+            <p className="mt-4 text-body-lg text-body">
+              Nutrition is half the battle. SmartFit gives you balanced, goal-based meal plans and a
+              food database so you always know what to eat next.
+            </p>
+            <div className="mt-8 space-y-4">
+              {dietHighlights.map((d) => (
+                <div key={d.title} className="flex gap-4">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-secondary/10 text-secondary">
+                    <d.icon size={20} />
+                  </span>
+                  <div>
+                    <p className="font-bold text-heading">{d.title}</p>
+                    <p className="text-sm text-muted">{d.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Button as="link" to="/nutrition" className="mt-8" rightIcon={<ArrowRight size={16} />}>
+              Explore nutrition
+            </Button>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="grid grid-cols-2 gap-4">
+              {['Protein bowl', 'Overnight oats', 'Grilled salmon', 'Veg thali'].map((meal, i) => (
+                <div
+                  key={meal}
+                  className="rounded-3xl border border-line p-5"
+                  style={{
+                    background:
+                      i % 2 === 0
+                        ? 'linear-gradient(135deg, rgba(59,130,246,.12), rgba(16,185,129,.12))'
+                        : 'linear-gradient(135deg, rgba(245,158,11,.12), rgba(59,130,246,.12))',
+                  }}
+                >
+                  <Salad className="text-secondary" size={28} />
+                  <p className="mt-8 font-bold text-heading">{meal}</p>
+                  <p className="text-sm text-muted">Balanced · High protein</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* 9. Benefits */}
+      <Section muted>
+        <SectionHeader eyebrow="Why SmartFit" title="Everything you need, nothing you don’t" />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {benefits.map((b) => (
+            <Reveal key={b.title}>
+              <Card className="h-full p-6">
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+                  <b.icon size={22} />
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-heading">{b.title}</h3>
+                <p className="mt-2 text-sm text-muted">{b.text}</p>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* 10. Testimonials */}
+      <Section>
+        <SectionHeader eyebrow="Results" title="Loved by members worldwide" />
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {testimonials.map((t) => (
+            <Reveal key={t.id}>
+              <TestimonialCard testimonial={t} />
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* 11. Transformation / Before-After */}
+      <Section muted>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <Reveal>
+            <Badge tone="accent" className="mb-4">
+              <TrendingUp size={13} /> Real progress
+            </Badge>
+            <h2 className="text-section font-extrabold text-heading">
+              Small habits, remarkable change
+            </h2>
+            <p className="mt-4 text-body-lg text-body">
+              Members who train just three times a week and track their nutrition see meaningful
+              change within the first eight weeks. Consistency compounds.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="grid grid-cols-2 gap-4">
+              <Card className="p-6 text-center">
+                <p className="text-sm font-semibold text-muted">Week 1</p>
+                <p className="mt-3 text-hero font-extrabold text-muted/70">82kg</p>
+                <p className="mt-1 text-sm text-muted">24% body fat</p>
+              </Card>
+              <Card className="border-secondary/30 bg-secondary/5 p-6 text-center">
+                <p className="text-sm font-semibold text-secondary">Week 12</p>
+                <p className="mt-3 text-hero font-extrabold text-gradient">74kg</p>
+                <p className="mt-1 text-sm text-muted">17% body fat</p>
+              </Card>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* 12. Latest Blogs */}
+      <Section>
+        <SectionHeader eyebrow="Blog" title="Learn from the SmartFit team" />
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {blogPosts.slice(0, 3).map((p) => (
+            <Reveal key={p.id}>
+              <BlogCard post={p} />
+            </Reveal>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Button as="link" to="/blog" variant="outline" rightIcon={<ArrowRight size={16} />}>
+            Read the blog
+          </Button>
+        </div>
+      </Section>
+
+      {/* 13. FAQs */}
+      <Section muted>
+        <SectionHeader eyebrow="FAQ" title="Questions, answered" />
+        <div className="mx-auto mt-12 max-w-3xl">
+          <Reveal>
+            <Accordion items={faqs} />
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* 14. Newsletter + CTA */}
+      <Section>
+        <Container>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-secondary p-10 text-center md:p-16">
+            <div className="bg-grid absolute inset-0 opacity-20" />
+            <div className="relative mx-auto max-w-2xl">
+              <h2 className="text-section font-extrabold text-white">
+                Start training smarter today
+              </h2>
+              <p className="mt-4 text-white/90">
+                Join 250,000+ people getting fitter with SmartFit. Free to start, no equipment needed.
+              </p>
+              <div className="mx-auto mt-8 max-w-md">
+                <NewsletterForm />
+              </div>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                <Button as="link" to="/programs" variant="outline" className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-primary">
+                  Explore programs
+                </Button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </Container>
+      </Section>
+    </PageTransition>
   );
-};
-
-export default Home;
+}

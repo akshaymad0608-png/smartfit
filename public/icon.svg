@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SmartFit app icon">
+  <defs>
+    <linearGradient id="sf-app" x1="64" y1="64" x2="448" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <!-- Full-bleed background so the icon renders cleanly when masked -->
+  <rect width="512" height="512" fill="url(#sf-app)"/>
+  <path d="M120 272 H184 L216 192 L264 352 L312 240 L336 272 H392"
+        fill="none" stroke="#FFFFFF" stroke-width="34"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
