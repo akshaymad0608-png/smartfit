@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
 import { Reveal } from '@/components/motion/Reveal';
@@ -7,7 +8,7 @@ import { breadcrumbSchema } from '@/seo/schema';
 
 export interface ContentSection {
   heading: string;
-  body: string[];
+  body: (string | ReactNode)[];
 }
 
 interface ContentPageProps {
@@ -52,9 +53,15 @@ export function ContentPage({
                 <h2 className="text-card-title font-bold text-heading">{s.heading}</h2>
                 <div className="mt-3 space-y-3">
                   {s.body.map((p, i) => (
-                    <p key={i} className="text-body">
-                      {p}
-                    </p>
+                    typeof p === 'string' ? (
+                      <p key={i} className="text-body">
+                        {p}
+                      </p>
+                    ) : (
+                      <div key={i} className="text-body">
+                        {p}
+                      </div>
+                    )
                   ))}
                 </div>
               </Reveal>
