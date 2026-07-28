@@ -7,7 +7,7 @@ async function startServer() {
 
   // Google OAuth callback
   app.get(["/auth/callback", "/auth/callback/"], async (req, res) => {
-    const { code, state, error } = req.query;
+    const { code, error } = req.query;
 
     if (error) {
       res.send(`
@@ -70,17 +70,18 @@ async function startServer() {
           </body>
         </html>
       `);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : String(err);
       res.send(`
         <html>
           <body>
             <script>
               if (window.opener) {
-                window.opener.postMessage({ type: 'OAUTH_AUTH_ERROR', error: '${err.message}' }, '*');
+                window.opener.postMessage({ type: 'OAUTH_AUTH_ERROR', error: '${errorMessage}' }, '*');
                 window.close();
               }
             </script>
-            <p>Authentication failed: ${err.message}. You can close this window.</p>
+            <p>Authentication failed: ${errorMessage}. You can close this window.</p>
           </body>
         </html>
       `);

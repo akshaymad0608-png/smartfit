@@ -1,79 +1,106 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import type { GoogleCredentialResponse } from './gsi';
 
+// A Google OAuth Client ID is public (safe in frontend code); the env var only
+// overrides the built-in default so different environments can point elsewhere.
 const CLIENT_ID =
   (import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined) ||
   '9198804182-08bsp6pcdtkpohjda8l74kvm1t08uj7p.apps.googleusercontent.com';
+const GSI_SRC = 'https://accounts.google.com/gsi/client';
 
-export function GoogleSignInButton({ onSuccess }: { onSuccess?: () => void }) {
-  const { signInWithGoogle, signInDemo } = useAuth();
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      // Validate origin is from AI Studio preview or localhost
-      const origin = event.origin;
-      if (!origin.endsWith('.run.app') && !origin.includes('localhost')) {
-        return;
-      }
-      
-      if (event.data?.type === 'OAUTH_AUTH_SUCCESS') {
-        setLoading(false);
-        signInWithGoogle(event.data.id_token);
-        onSuccess?.();
-      } else if (event.data?.type === 'OAUTH_AUTH_ERROR') {
-        setLoading(false);
-        console.error('OAuth error:', event.data.error);
-        alert('Authentication failed: ' + event.data.error);
-      }
-    };
-    
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, [signInWithGoogle, onSuccess]);
-
-  const handleConnect = async () => {
-    if (!CLIENT_ID) {
-      demo();
+let gsiPromise: Promise<void> | null = null;
+function loadGsi(): Promise<void> {
+  if (window.google?.accounts?.id) return Promise.resolve();
+  if (gsiPromise) return gsiPromise;
+  gsiPromise = new Promise((resolve, reject) => {
+    const existing = document.querySelector<HTMLScriptElement>(`script[src="${GSI_SRC}"]`);
+    if (existing) {
+      existing.addEventListener('load', () => resolve());
+      existing.addEventListener('error', () => reject(new Error('gsi failed')));
       return;
     }
-    
-    setLoading(true);
-    try {
-      const redirectUri = `${window.location.origin}/auth/callback`;
-      const params = new URLSearchParams({
-        client_id: CLIENT_ID,
-        redirect_uri: redirectUri,
-        response_type: 'code',
-        scope: 'email profile openid',
-        prompt: 'select_account',
-      });
-      
-      const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?${params}`;
-      const authWindow = window.open(authUrl, 'oauth_popup', 'width=500,height=600');
-      
-      if (!authWindow) {
-        setLoading(false);
-        alert('Please allow popups for this site to sign in with Google.');
-      }
-    } catch (error) {
-      setLoading(false);
-      console.error('OAuth initiation error:', error);
-    }
-  };
+    const s = document.createElement('script');
+    s.src = GSI_SRC;
+    s.async = true;
+    s.defer = true;
+    s.onload = () => resolve();
+    s.onerror = () => reject(new Error('gsi failed'));
+    document.head.appendChild(s);
+  });
+  return gsiPromise;
+}
+
+/**
+ * Renders the official "Sign in with Google" button when VITE_GOOGLE_CLIENT_ID
+ * is set. Falls back to a working demo button otherwise, so the auth flow is
+ * usable immediately and becomes real Google sign-in once the ID is configured.
+ */
+export function GoogleSignInButton({ onSuccess }: { onSuccess?: () => void }) {
+  const { signInWithGoogle, signInDemo } = useAuth();
+  const ref = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  // Keep latest callbacks in refs so the GSI button initializes only once.
+  const signInRef = useRef(signInWithGoogle);
+  signInRef.current = signInWithGoogle;
+  const onSuccessRef = useRef(onSuccess);
+  onSuccessRef.current = onSuccess;
+
+  useEffect(() => {
+    if (!CLIENT_ID) return;
+    let cancelled = false;
+    loadGsi()
+      .then(() => {
+        if (cancelled || !ref.current || !window.google) return;
+        window.google.accounts.id.initialize({
+          client_id: CLIENT_ID,
+          callback: (res: GoogleCredentialResponse) => {
+            signInRef.current(res.credential);
+            onSuccessRef.current?.();
+          },
+          cancel_on_tap_outside: true,
+        });
+        window.google.accounts.id.renderButton(ref.current, {
+          type: 'standard',
+          theme: 'outline',
+          size: 'large',
+          text: 'continue_with',
+          shape: 'pill',
+          logo_alignment: 'left',
+          width: 320,
+        });
+        setReady(true);
+      })
+      .catch(() => setFailed(true));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const demo = () => {
     signInDemo();
     onSuccess?.();
   };
 
+  // Real Google button (configured + loaded)
+  if (CLIENT_ID && !failed) {
+    return (
+      <div className="flex flex-col items-center gap-2">
+        <div ref={ref} className="min-h-[44px]" />
+        {!ready && <p className="text-xs text-muted">Loading Google Sign-In…</p>}
+      </div>
+    );
+  }
+
+  // Fallback: demo button (no client id configured, or GSI blocked)
   return (
     <button
-      onClick={handleConnect}
-      disabled={loading}
-      className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-line bg-card px-6 py-3 font-semibold text-heading shadow-soft transition-colors hover:bg-surface-muted disabled:opacity-70 disabled:cursor-not-allowed"
+      onClick={demo}
+      className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-line bg-card px-6 py-3 font-semibold text-heading shadow-soft transition-colors hover:bg-surface-muted"
     >
-      <GoogleIcon /> {loading ? 'Signing in...' : 'Continue with Google'}
+      <GoogleIcon /> Continue with Google
     </button>
   );
 }
