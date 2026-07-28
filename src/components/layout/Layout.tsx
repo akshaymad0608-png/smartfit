@@ -7,6 +7,8 @@ import { ScrollProgress } from './ScrollProgress';
 import { BackToTop } from './BackToTop';
 import { ScrollToTop } from './ScrollToTop';
 import { PageLoader } from './PageLoader';
+import { ErrorBoundary } from './ErrorBoundary';
+import { CookieConsent } from './CookieConsent';
 
 export function Layout() {
   const location = useLocation();
@@ -16,16 +18,19 @@ export function Layout() {
       <ScrollToTop />
       <Header />
       <main id="main" className="flex-1 pt-16 lg:pt-18">
-        <Suspense fallback={<PageLoader />}>
-          <AnimatePresence mode="wait">
-            <div key={location.pathname}>
-              <Outlet />
-            </div>
-          </AnimatePresence>
-        </Suspense>
+        <ErrorBoundary key={location.pathname}>
+          <Suspense fallback={<PageLoader />}>
+            <AnimatePresence mode="wait">
+              <div key={location.pathname}>
+                <Outlet />
+              </div>
+            </AnimatePresence>
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
       <BackToTop />
+      <CookieConsent />
     </div>
   );
 }

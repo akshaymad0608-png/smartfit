@@ -177,16 +177,25 @@ export default function AICoach() {
 
               {!result && !loading && (
                 <Reveal>
-                  <div className="grid place-items-center rounded-3xl border border-dashed border-line py-16 text-center">
-                    <span className="grid h-14 w-14 place-items-center rounded-full bg-primary/10 text-primary">
-                      <Sparkles size={24} />
-                    </span>
-                    <p className="mt-4 font-semibold text-heading">
-                      Pick a mode and describe your goal
-                    </p>
-                    <p className="mt-1 max-w-sm text-sm text-muted">
-                      Your personalised plan will appear here in seconds.
-                    </p>
+                  <div className="relative overflow-hidden rounded-3xl border border-line">
+                    <img
+                      src="/images/ai-coach.jpg"
+                      alt="A coach guiding a training session"
+                      loading="lazy"
+                      className="h-72 w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-8 text-center">
+                      <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-white/15 text-white backdrop-blur">
+                        <Sparkles size={24} />
+                      </span>
+                      <p className="mt-4 text-lg font-bold text-white">
+                        Pick a mode and describe your goal
+                      </p>
+                      <p className="mx-auto mt-1 max-w-sm text-sm text-white/80">
+                        Your personalised plan will appear here in seconds.
+                      </p>
+                    </div>
                   </div>
                 </Reveal>
               )}

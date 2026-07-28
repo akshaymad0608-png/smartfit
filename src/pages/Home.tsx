@@ -23,7 +23,8 @@ import { WorkoutCard } from '@/components/cards/WorkoutCard';
 import { ProgramCard } from '@/components/cards/ProgramCard';
 import { BlogCard } from '@/components/cards/BlogCard';
 import { TestimonialCard } from '@/components/cards/TestimonialCard';
-import { Reveal, staggerContainer, staggerItem } from '@/components/motion/Reveal';
+import { Reveal } from '@/components/motion/Reveal';
+import { staggerContainer, staggerItem } from '@/components/motion/variants';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { Hero } from '@/features/home/Hero';
 import { NewsletterForm } from '@/features/home/NewsletterForm';
@@ -221,20 +222,27 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="grid grid-cols-2 gap-4">
-              {['Protein bowl', 'Overnight oats', 'Grilled salmon', 'Veg thali'].map((meal, i) => (
+              {[
+                { name: 'Protein bowl', img: '/images/meals/protein-bowl.jpg' },
+                { name: 'Overnight oats', img: '/images/meals/overnight-oats.jpg' },
+                { name: 'Grilled salmon', img: '/images/meals/grilled-salmon.jpg' },
+                { name: 'Veg thali', img: '/images/meals/veg-thali.jpg' },
+              ].map((meal) => (
                 <div
-                  key={meal}
-                  className="rounded-3xl border border-line p-5"
-                  style={{
-                    background:
-                      i % 2 === 0
-                        ? 'linear-gradient(135deg, rgba(59,130,246,.12), rgba(16,185,129,.12))'
-                        : 'linear-gradient(135deg, rgba(245,158,11,.12), rgba(59,130,246,.12))',
-                  }}
+                  key={meal.name}
+                  className="group relative aspect-square overflow-hidden rounded-3xl border border-line"
                 >
-                  <Salad className="text-secondary" size={28} />
-                  <p className="mt-8 font-bold text-heading">{meal}</p>
-                  <p className="text-sm text-muted">Balanced · High protein</p>
+                  <img
+                    src={meal.img}
+                    alt={meal.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-4">
+                    <p className="font-bold text-white">{meal.name}</p>
+                    <p className="text-xs text-white/80">Balanced · High protein</p>
+                  </div>
                 </div>
               ))}
             </div>

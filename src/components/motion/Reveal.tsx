@@ -1,4 +1,4 @@
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none';
@@ -40,14 +40,3 @@ export function Reveal({
     </MotionTag>
   );
 }
-
-/** Staggered container + item variants for lists/grids. */
-export const staggerContainer: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
-
-export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-};

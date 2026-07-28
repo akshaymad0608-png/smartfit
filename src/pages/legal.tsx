@@ -1,5 +1,4 @@
 import { ContentPage } from './ContentPage';
-import { Link } from 'react-router-dom';
 
 const UPDATED = 'July 1, 2026';
 
@@ -38,7 +37,7 @@ export function Privacy() {
         },
         {
           heading: 'Contact',
-          body: ['Questions about privacy? Email hello@smartfit.app and we will respond promptly.'],
+          body: ['Questions about privacy? Email hello@fitsmart.space and we will respond promptly.'],
         },
       ]}
     />
@@ -152,7 +151,7 @@ export function Accessibility() {
         {
           heading: 'Ongoing work',
           body: [
-            'Accessibility is never finished. We continuously test and improve. If you encounter a barrier, please email hello@smartfit.app so we can fix it.',
+            'Accessibility is never finished. We continuously test and improve. If you encounter a barrier, please email hello@fitsmart.space so we can fix it.',
           ],
         },
       ]}
@@ -180,7 +179,7 @@ export function Help() {
         },
         {
           heading: 'Still stuck?',
-          body: ['Reach us any time at hello@smartfit.app — we usually reply within one business day.'],
+          body: ['Reach us any time at hello@fitsmart.space — we usually reply within one business day.'],
         },
       ]}
     />
@@ -204,7 +203,7 @@ export function Careers() {
         {
           heading: 'Open roles',
           body: [
-            'We are always keen to meet talented engineers, designers, coaches and dietitians. Send your story and portfolio to careers@smartfit.app.',
+            'We are always keen to meet talented engineers, designers, coaches and dietitians. Send your story and portfolio to careers@fitsmart.space.',
           ],
         },
       ]}
@@ -226,7 +225,7 @@ export function Press() {
         },
         {
           heading: 'Media enquiries',
-          body: ['For interviews, assets or partnership enquiries, contact press@smartfit.app.'],
+          body: ['For interviews, assets or partnership enquiries, contact press@fitsmart.space.'],
         },
       ]}
     />
@@ -234,7 +233,6 @@ export function Press() {
 }
 
 export function Sitemap() {
-  const linkClass = "text-primary hover:underline hover:text-primary/80 transition-colors mr-3";
   return (
     <ContentPage
       eyebrow="Navigation"
@@ -242,57 +240,10 @@ export function Sitemap() {
       subtitle="Every corner of SmartFit, in one place."
       path="/sitemap"
       sections={[
-        {
-          heading: 'Main',
-          body: [
-            <div className="flex flex-wrap gap-2">
-              <Link to="/" className={linkClass}>Home</Link>
-              <Link to="/workouts" className={linkClass}>Workouts</Link>
-              <Link to="/nutrition" className={linkClass}>Nutrition</Link>
-              <Link to="/calculators" className={linkClass}>Calculators</Link>
-              <Link to="/programs" className={linkClass}>Programs</Link>
-              <Link to="/ai-coach" className={linkClass}>AI Coach</Link>
-              <Link to="/blog" className={linkClass}>Blog</Link>
-              <Link to="/about" className={linkClass}>About</Link>
-              <Link to="/contact" className={linkClass}>Contact</Link>
-            </div>
-          ]
-        },
-        {
-          heading: 'Account',
-          body: [
-            <div className="flex flex-wrap gap-2">
-              <Link to="/dashboard" className={linkClass}>Dashboard</Link>
-              {/* Other paths are not yet implemented as routes, but keeping them as text or placeholder links */}
-              <span className="text-muted mr-3">Profile (Coming Soon)</span>
-              <span className="text-muted mr-3">Settings (Coming Soon)</span>
-              <span className="text-muted mr-3">Progress (Coming Soon)</span>
-              <span className="text-muted mr-3">Achievements (Coming Soon)</span>
-            </div>
-          ]
-        },
-        {
-          heading: 'Legal',
-          body: [
-            <div className="flex flex-wrap gap-2">
-              <Link to="/privacy" className={linkClass}>Privacy Policy</Link>
-              <Link to="/terms" className={linkClass}>Terms & Conditions</Link>
-              <Link to="/cookies" className={linkClass}>Cookie Policy</Link>
-              <Link to="/disclaimer" className={linkClass}>Disclaimer</Link>
-              <Link to="/accessibility" className={linkClass}>Accessibility</Link>
-            </div>
-          ]
-        },
-        {
-          heading: 'Company',
-          body: [
-            <div className="flex flex-wrap gap-2">
-              <Link to="/careers" className={linkClass}>Careers</Link>
-              <Link to="/press" className={linkClass}>Press</Link>
-              <Link to="/help" className={linkClass}>Help Center</Link>
-            </div>
-          ]
-        },
+        { heading: 'Main', body: ['Home, Workouts, Nutrition, Calculators, Programs, AI Coach, Blog, About, Contact.'] },
+        { heading: 'Account', body: ['Dashboard, Profile, Settings, Progress, Achievements.'] },
+        { heading: 'Legal', body: ['Privacy Policy, Terms & Conditions, Cookie Policy, Disclaimer, Accessibility.'] },
+        { heading: 'Company', body: ['Careers, Press, Help Center.'] },
       ]}
     />
   );

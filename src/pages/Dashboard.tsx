@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { Activity, Award, Droplets, Flame, Moon, TrendingDown, Target } from 'lucide-react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
+import { useAuth } from '@/contexts/AuthContext';
 import { Seo } from '@/seo/Seo';
 
 const weightSeries = [82, 81.2, 80.5, 80.1, 79.3, 78.6, 78, 77.4, 76.8, 76.1, 75.5, 74.9];
@@ -118,12 +121,22 @@ const goals = [
 const achievements = ['7-day streak', 'First 5k run', '10 workouts', 'Hydration hero'];
 
 export default function Dashboard() {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) navigate('/login', { replace: true, state: { from: '/dashboard' } });
+  }, [user, navigate]);
+
+  if (!user) return null;
+  const firstName = user.name.split(' ')[0];
+
   return (
     <PageTransition>
       <Seo title="Dashboard" description="Track your weight, calories, workout streak, hydration and goals." path="/dashboard" noindex />
       <PageHero
         eyebrow="Dashboard"
-        title="Welcome back 👋"
+        title={`Welcome back, ${firstName}`}
         subtitle="Here's your progress at a glance. Keep the streak alive — consistency is everything."
         crumbs={[{ label: 'Dashboard' }]}
       />
@@ -217,7 +230,7 @@ export default function Dashboard() {
                   key={a}
                   className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-muted px-4 py-2 text-sm font-semibold text-body"
                 >
-                  🏅 {a}
+                  <Award size={15} className="text-accent" /> {a}
                 </span>
               ))}
             </div>

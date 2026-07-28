@@ -5,10 +5,9 @@ import {
   useTransform,
   type MotionValue,
 } from 'framer-motion';
-import { ArrowRight, Play, Flame, HeartPulse, Trophy, Dumbbell, Apple } from 'lucide-react';
+import { ArrowRight, Play, Flame, HeartPulse, Trophy, Dumbbell, Apple, Star } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 import { Container } from '@/components/ui/Container';
 
 const spring = { stiffness: 120, damping: 18, mass: 0.6 };
@@ -82,6 +81,15 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden" onMouseMove={handleMove} onMouseLeave={reset}>
+      {/* Subtle background photo — very low opacity, faded into the surface for readability */}
+      <div className="absolute inset-0 -z-10" aria-hidden>
+        <img
+          src="/images/hero-bg.jpg"
+          alt=""
+          className="h-full w-full object-cover opacity-[0.05] dark:opacity-[0.12]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-surface/70 to-surface" />
+      </div>
       <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
       <motion.div
         style={{ x: blobX, y: blobY }}
@@ -99,10 +107,27 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="mb-6 flex items-center gap-3"
             >
-              <Badge tone="secondary" className="mb-5">
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" /> Trusted by 250,000+ people
-              </Badge>
+              <div className="flex -space-x-2.5">
+                {['priya', 'marcus', 'amelia', 'david'].map((p) => (
+                  <img
+                    key={p}
+                    src={`/images/people/${p}.jpg`}
+                    alt=""
+                    className="h-9 w-9 rounded-full border-2 border-surface object-cover"
+                    loading="eager"
+                  />
+                ))}
+              </div>
+              <div>
+                <div className="flex items-center gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={13} className="fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-xs text-muted">Loved by 250,000+ members</p>
+              </div>
             </motion.div>
 
             <motion.h1
@@ -150,7 +175,34 @@ export function Hero() {
             </motion.p>
           </div>
 
-          {/* Athlete photo + cursor-parallax stat chips */}
+          {/* Mobile / tablet hero visual (simple photo, no parallax) */}
+          <div className="lg:hidden">
+            <div className="relative mx-auto max-w-sm overflow-hidden rounded-3xl border border-line shadow-card">
+              {imgOk ? (
+                <img
+                  src={HERO_IMAGE}
+                  alt="A SmartFit member training with focus"
+                  className="h-72 w-full object-cover sm:h-80"
+                  onError={() => setImgOk(false)}
+                />
+              ) : (
+                <div className="grid h-72 w-full place-items-center bg-gradient-to-br from-primary/20 to-secondary/20 sm:h-80">
+                  <Dumbbell size={40} className="text-primary" />
+                </div>
+              )}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/70 to-transparent" />
+              <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-card/90 px-3 py-1.5 text-xs font-bold text-heading backdrop-blur">
+                  <Dumbbell size={13} className="text-primary" /> Strength +12%
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-card/90 px-3 py-1.5 text-xs font-bold text-heading backdrop-blur">
+                  <Apple size={13} className="text-secondary" /> Protein 148g
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Athlete photo + cursor-parallax stat chips (desktop) */}
           <div
             className="relative mx-auto hidden h-[32rem] w-full max-w-md lg:block"
             style={{ transformStyle: 'preserve-3d' }}
@@ -191,7 +243,7 @@ export function Hero() {
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/70 to-transparent" />
               <div className="absolute bottom-5 left-5">
                 <p className="text-xs font-medium text-white/80">Today’s focus</p>
-                <p className="text-lg font-bold text-white">Build &amp; Fuel 💪</p>
+                <p className="text-lg font-bold text-white">Build &amp; Fuel</p>
               </div>
             </motion.div>
 
@@ -254,7 +306,7 @@ export function Hero() {
                 </span>
                 <div>
                   <p className="text-xs text-muted">Streak</p>
-                  <p className="font-bold text-heading">14 days 🔥</p>
+                  <p className="font-bold text-heading">14 days</p>
                 </div>
               </div>
             </ParallaxCard>

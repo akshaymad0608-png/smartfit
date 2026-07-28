@@ -3,7 +3,7 @@ import type { BlogPost, Faq, Program, Stat, Testimonial } from '@/types';
 export const stats: Stat[] = [
   { label: 'Active members', value: 250000, suffix: '+' },
   { label: 'Guided workouts', value: 1200, suffix: '+' },
-  { label: 'Avg. rating', value: 49, prefix: '', suffix: '/50' },
+  { label: 'Member satisfaction', value: 96, suffix: '%' },
   { label: 'Countries reached', value: 90, suffix: '+' },
 ];
 
@@ -12,6 +12,7 @@ export const programs: Program[] = [
     id: 'p1',
     title: '30-Day Kickstart Challenge',
     slug: '30-day-kickstart',
+    image: '/images/programs/30-day-kickstart.jpg',
     goal: 'Build the habit',
     level: 'Beginner',
     weeks: 4,
@@ -25,6 +26,7 @@ export const programs: Program[] = [
     id: 'p2',
     title: 'Lean & Strong',
     slug: 'lean-and-strong',
+    image: '/images/programs/lean-and-strong.jpg',
     goal: 'Fat loss + muscle',
     level: 'Intermediate',
     weeks: 8,
@@ -38,6 +40,7 @@ export const programs: Program[] = [
     id: 'p3',
     title: 'Hypertrophy Builder',
     slug: 'hypertrophy-builder',
+    image: '/images/programs/hypertrophy-builder.jpg',
     goal: 'Muscle gain',
     level: 'Advanced',
     weeks: 12,
@@ -51,6 +54,7 @@ export const programs: Program[] = [
     id: 'p4',
     title: 'Home Shred',
     slug: 'home-shred',
+    image: '/images/programs/home-shred.jpg',
     goal: 'Fat loss',
     level: 'Beginner',
     weeks: 6,
@@ -67,6 +71,7 @@ export const testimonials: Testimonial[] = [
     name: 'Priya Sharma',
     role: 'Lost 12 kg in 5 months',
     initials: 'PS',
+    photo: '/images/people/priya.jpg',
     rating: 5,
     quote:
       'SmartFit made fitness finally click for me. The plans are realistic and the calculators took the guesswork out of my nutrition.',
@@ -76,6 +81,7 @@ export const testimonials: Testimonial[] = [
     name: 'Marcus Lee',
     role: 'Gained 6 kg lean muscle',
     initials: 'ML',
+    photo: '/images/people/marcus.jpg',
     rating: 5,
     quote:
       'The Hypertrophy Builder program is world-class. I finally understand progressive overload and my lifts have never been higher.',
@@ -85,6 +91,7 @@ export const testimonials: Testimonial[] = [
     name: 'Amelia Rossi',
     role: 'Marathon finisher',
     initials: 'AR',
+    photo: '/images/people/amelia.jpg',
     rating: 5,
     quote:
       'I love how clean and fast the app feels. The AI coach kept me accountable through my entire marathon build.',
@@ -94,6 +101,7 @@ export const testimonials: Testimonial[] = [
     name: 'David Okafor',
     role: 'Busy dad of three',
     initials: 'DO',
+    photo: '/images/people/david.jpg',
     rating: 5,
     quote:
       'The 20-minute home workouts fit my schedule perfectly. Down two belt sizes and full of energy again.',
@@ -145,7 +153,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Coach Ava',
     category: 'Training',
     tags: ['strength', 'muscle gain', 'beginner'],
-    cover: 'linear-gradient(135deg,#3B82F6,#10B981)',
+    image: '/images/blog/progressive-overload.jpg',
   },
   {
     id: 'b2',
@@ -158,7 +166,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Dr. Neha Rao',
     category: 'Nutrition',
     tags: ['nutrition', 'weight loss', 'calories'],
-    cover: 'linear-gradient(135deg,#10B981,#F59E0B)',
+    image: '/images/blog/calories-you-need.jpg',
   },
   {
     id: 'b3',
@@ -171,7 +179,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Coach Ravi',
     category: 'Nutrition',
     tags: ['Indian diet', 'muscle gain', 'protein'],
-    cover: 'linear-gradient(135deg,#F59E0B,#3B82F6)',
+    image: '/images/blog/indian-diet-muscle-gain.jpg',
   },
   {
     id: 'b4',
@@ -184,7 +192,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Coach Ava',
     category: 'Mobility',
     tags: ['mobility', 'recovery', 'posture'],
-    cover: 'linear-gradient(135deg,#60A5FA,#10B981)',
+    image: '/images/blog/mobility-desk-posture.jpg',
   },
   {
     id: 'b5',
@@ -197,7 +205,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Dr. Neha Rao',
     category: 'Cardio',
     tags: ['cardio', 'hiit', 'fat loss'],
-    cover: 'linear-gradient(135deg,#3B82F6,#60A5FA)',
+    image: '/images/blog/hiit-vs-steady-state.jpg',
   },
   {
     id: 'b6',
@@ -210,6 +218,6 @@ export const blogPosts: BlogPost[] = [
     author: 'Coach Ravi',
     category: 'Recovery',
     tags: ['recovery', 'sleep', 'health'],
-    cover: 'linear-gradient(135deg,#10B981,#3B82F6)',
+    image: '/images/blog/sleep-fitness-tool.jpg',
   },
 ];

@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Logo } from '@/components/brand/Logo';
 import { Button } from '@/components/ui/Button';
+import { Avatar } from '@/components/ui/Avatar';
+import { useAuth } from '@/contexts/AuthContext';
 import { primaryNav } from '@/config/site';
 import { cn } from '@/lib/cn';
 
@@ -13,6 +15,8 @@ interface MobileDrawerProps {
 }
 
 export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
+  const { user, signOut } = useAuth();
+
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -88,12 +92,37 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
             </nav>
 
             <div className="space-y-2 border-t border-line p-4">
-              <Button as="link" to="/dashboard" variant="outline" className="w-full">
-                Sign in
-              </Button>
-              <Button as="link" to="/programs" className="w-full">
-                Get Started
-              </Button>
+              {user ? (
+                <>
+                  <div className="flex items-center gap-3 px-1 pb-1">
+                    <Avatar
+                      initials={user.name.slice(0, 2).toUpperCase()}
+                      src={user.picture}
+                      name={user.name}
+                      className="h-9 w-9"
+                    />
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-heading">{user.name}</p>
+                      <p className="truncate text-xs text-muted">{user.email}</p>
+                    </div>
+                  </div>
+                  <Button as="link" to="/dashboard" variant="outline" className="w-full">
+                    Dashboard
+                  </Button>
+                  <Button onClick={signOut} variant="ghost" className="w-full">
+                    Sign out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button as="link" to="/login" variant="outline" className="w-full">
+                    Sign in
+                  </Button>
+                  <Button as="link" to="/programs" className="w-full">
+                    Get Started
+                  </Button>
+                </>
+              )}
             </div>
           </motion.aside>
         </div>

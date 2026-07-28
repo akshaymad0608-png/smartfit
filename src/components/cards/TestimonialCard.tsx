@@ -17,7 +17,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       </div>
       <blockquote className="mt-4 flex-1 text-body">“{testimonial.quote}”</blockquote>
       <div className="mt-6 flex items-center gap-3">
-        <Avatar initials={testimonial.initials} />
+        <Avatar initials={testimonial.initials} src={testimonial.photo} name={testimonial.name} />
         <div>
           <p className="font-semibold text-heading">{testimonial.name}</p>
           <p className="text-sm text-muted">{testimonial.role}</p>

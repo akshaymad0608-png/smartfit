@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Dumbbell, Sparkles, Target } from 'lucide-react';
+import { Play, Sparkles, Target } from 'lucide-react';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/Badge';
 import { WorkoutCard } from '@/components/cards/WorkoutCard';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
+import { VideoModal } from '@/components/ui/VideoModal';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { workoutCategories, workouts } from '@/data/workouts';
@@ -16,10 +17,19 @@ import { cn } from '@/lib/cn';
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'] as const;
 
+/** Map a workout category to its demo clip (falls back to the general workout). */
+const categoryVideo: Record<string, string> = {
+  yoga: '/videos/yoga.mp4',
+  stretching: '/videos/yoga.mp4',
+  cardio: '/videos/cardio.mp4',
+};
+const videoFor = (category: string) => categoryVideo[category] ?? '/videos/workout.mp4';
+
 export default function Workouts() {
   const [params, setParams] = useSearchParams();
   const activeCat = params.get('cat') ?? 'all';
   const [difficulty, setDifficulty] = useState<(typeof difficulties)[number]>('All');
+  const [videoOpen, setVideoOpen] = useState(false);
 
   const setCat = (key: string) => {
     const next = new URLSearchParams(params);
@@ -123,12 +133,25 @@ export default function Workouts() {
               </div>
 
               <div className="space-y-6">
-                <div className="grid aspect-video place-items-center rounded-2xl bg-gradient-to-br from-primary/15 to-secondary/15">
-                  <span className="grid h-16 w-16 place-items-center rounded-full bg-card text-primary shadow-soft">
-                    <Dumbbell size={26} />
+                <button
+                  onClick={() => setVideoOpen(true)}
+                  aria-label={`Play ${spotlight.name} demo video`}
+                  className="group/vid relative block aspect-video w-full overflow-hidden rounded-2xl bg-surface-muted"
+                >
+                  <img
+                    src={spotlight.image}
+                    alt={`${spotlight.name} workout`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover/vid:scale-105"
+                  />
+                  <div className="absolute inset-0 grid place-items-center bg-slate-950/25 transition-colors group-hover/vid:bg-slate-950/35">
+                    <span className="grid h-16 w-16 place-items-center rounded-full bg-card/90 text-primary shadow-soft backdrop-blur transition-transform group-hover/vid:scale-110">
+                      <Play size={24} className="ml-1" />
+                    </span>
+                  </div>
+                  <span className="absolute bottom-3 left-3 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                    Watch demo
                   </span>
-                  <span className="sr-only">Video placeholder for {spotlight.name}</span>
-                </div>
+                </button>
                 <div>
                   <h3 className="font-bold text-heading">How to do it</h3>
                   <ol className="mt-3 space-y-2">
@@ -164,6 +187,14 @@ export default function Workouts() {
           </div>
         )}
       </Section>
+
+      <VideoModal
+        open={videoOpen}
+        onClose={() => setVideoOpen(false)}
+        src={videoFor(spotlight.category)}
+        poster={spotlight.image}
+        title={`${spotlight.name} demo`}
+      />
     </PageTransition>
   );
 }

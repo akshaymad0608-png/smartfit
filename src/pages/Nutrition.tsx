@@ -10,17 +10,17 @@ import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 
 const plans = [
-  { name: 'Weight Loss', kcal: '1,600–1,900', desc: 'A gentle deficit with high protein to preserve muscle.', tone: 'primary' as const },
-  { name: 'Muscle Gain', kcal: '2,600–3,000', desc: 'A controlled surplus to fuel lean growth.', tone: 'secondary' as const },
-  { name: 'Indian Balanced', kcal: '2,000–2,300', desc: 'Dal, roti, sabzi and curd — balanced the desi way.', tone: 'accent' as const },
-  { name: 'High Protein', kcal: '2,100–2,400', desc: '2g/kg protein for recovery and satiety.', tone: 'primary' as const },
+  { name: 'Weight Loss', kcal: '1,600–1,900', desc: 'A gentle deficit with high protein to preserve muscle.', tone: 'primary' as const, image: '/images/nutrition/weight-loss.jpg' },
+  { name: 'Muscle Gain', kcal: '2,600–3,000', desc: 'A controlled surplus to fuel lean growth.', tone: 'secondary' as const, image: '/images/nutrition/muscle-gain.jpg' },
+  { name: 'Indian Balanced', kcal: '2,000–2,300', desc: 'Dal, roti, sabzi and curd — balanced the desi way.', tone: 'accent' as const, image: '/images/nutrition/indian-balanced.jpg' },
+  { name: 'High Protein', kcal: '2,100–2,400', desc: '2g/kg protein for recovery and satiety.', tone: 'primary' as const, image: '/images/nutrition/high-protein.jpg' },
 ];
 
 const foodGroups = [
-  { icon: Beef, title: 'Protein', items: ['Chicken, fish, eggs', 'Paneer, tofu, tempeh', 'Lentils, Greek yogurt'] },
-  { icon: Wheat, title: 'Smart carbs', items: ['Oats, brown rice, quinoa', 'Sweet potato, whole wheat', 'Fruit & legumes'] },
-  { icon: Leaf, title: 'Healthy fats', items: ['Nuts & seeds', 'Olive oil, avocado', 'Fatty fish'] },
-  { icon: Salad, title: 'Vegetables', items: ['Leafy greens', 'Cruciferous veg', 'Colourful peppers'] },
+  { icon: Beef, title: 'Protein', image: '/images/food/protein.jpg', items: ['Chicken, fish, eggs', 'Paneer, tofu, tempeh', 'Lentils, Greek yogurt'] },
+  { icon: Wheat, title: 'Smart carbs', image: '/images/food/smart-carbs.jpg', items: ['Oats, brown rice, quinoa', 'Sweet potato, whole wheat', 'Fruit & legumes'] },
+  { icon: Leaf, title: 'Healthy fats', image: '/images/food/healthy-fats.jpg', items: ['Nuts & seeds', 'Olive oil, avocado', 'Fatty fish'] },
+  { icon: Salad, title: 'Vegetables', image: '/images/food/vegetables.jpg', items: ['Leafy greens', 'Cruciferous veg', 'Colourful peppers'] },
 ];
 
 const sampleDay = {
@@ -54,10 +54,22 @@ export default function Nutrition() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((p) => (
             <Reveal key={p.name}>
-              <Card interactive className="h-full p-6">
-                <Badge tone={p.tone}>{p.kcal} kcal</Badge>
-                <h3 className="mt-4 text-lg font-bold text-heading">{p.name}</h3>
-                <p className="mt-2 text-sm text-muted">{p.desc}</p>
+              <Card interactive className="flex h-full flex-col overflow-hidden p-0">
+                <div className="relative h-36 overflow-hidden bg-surface-muted">
+                  <img
+                    src={p.image}
+                    alt={`${p.name} meal plan`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <Badge tone={p.tone} className="absolute left-3 top-3">
+                    {p.kcal} kcal
+                  </Badge>
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="text-lg font-bold text-heading">{p.name}</h3>
+                  <p className="mt-2 text-sm text-muted">{p.desc}</p>
+                </div>
               </Card>
             </Reveal>
           ))}
@@ -69,12 +81,19 @@ export default function Nutrition() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {foodGroups.map((g) => (
             <Reveal key={g.title}>
-              <Card className="h-full p-6">
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-secondary/10 text-secondary">
-                  <g.icon size={20} />
-                </span>
-                <h3 className="mt-4 font-bold text-heading">{g.title}</h3>
-                <ul className="mt-3 space-y-1.5">
+              <Card className="flex h-full flex-col overflow-hidden p-0">
+                <div className="relative h-32 overflow-hidden bg-surface-muted">
+                  <img
+                    src={g.image}
+                    alt={g.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <span className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-card/90 px-3 py-1.5 text-sm font-bold text-heading backdrop-blur">
+                    <g.icon size={16} className="text-secondary" /> {g.title}
+                  </span>
+                </div>
+                <ul className="flex-1 space-y-1.5 p-5">
                   {g.items.map((it) => (
                     <li key={it} className="text-sm text-muted">
                       • {it}

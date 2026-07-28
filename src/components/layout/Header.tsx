@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, Menu, Search, User } from 'lucide-react';
+import { ChevronDown, Menu, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Logo } from '@/components/brand/Logo';
@@ -9,6 +9,7 @@ import { cn } from '@/lib/cn';
 import { MobileDrawer } from './MobileDrawer';
 import { SearchModal } from './SearchModal';
 import { ThemeToggle } from './ThemeToggle';
+import { UserMenu } from './UserMenu';
 
 function MegaMenu({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
@@ -148,13 +149,9 @@ export function Header() {
               <Search size={18} />
             </button>
             <ThemeToggle />
-            <Link
-              to="/dashboard"
-              aria-label="Your profile"
-              className="hidden h-10 w-10 place-items-center rounded-full border border-line bg-card text-body transition-colors hover:text-primary sm:grid"
-            >
-              <User size={18} />
-            </Link>
+            <div className="hidden sm:block">
+              <UserMenu />
+            </div>
             <Button as="link" to="/programs" size="sm" className="hidden sm:inline-flex">
               Get Started
             </Button>

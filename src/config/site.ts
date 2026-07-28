@@ -7,7 +7,7 @@ export const site = {
   tagline: 'Smarter Fitness. Better Health.',
   description:
     'SmartFit is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience.',
-  url: 'https://smartfit.app',
+  url: 'https://fitsmart.space',
   locale: 'en_US',
   twitter: '@smartfit',
   themeColor: '#3B82F6',
@@ -42,7 +42,7 @@ export const site = {
     'workout planner',
   ],
   contact: {
-    email: 'hello@smartfit.app',
+    email: 'hello@fitsmart.space',
     phone: '+1 (555) 013-0420',
     address: '500 Wellness Ave, Suite 200, Austin, TX 78701',
     hours: 'Mon–Fri, 8:00 AM – 6:00 PM CT',

@@ -12,6 +12,7 @@ export interface Workout {
   muscles: string[];
   focus: string;
   summary: string;
+  image: string;
   benefits: string[];
   instructions: string[];
   tips: string[];
@@ -33,6 +34,7 @@ export interface Program {
   weeks: number;
   daysPerWeek: number;
   summary: string;
+  image: string;
   highlights: string[];
   featured?: boolean;
 }
@@ -47,7 +49,7 @@ export interface BlogPost {
   author: string;
   category: string;
   tags: string[];
-  cover: string;
+  image: string;
 }
 
 export interface Testimonial {
@@ -57,6 +59,7 @@ export interface Testimonial {
   quote: string;
   rating: number;
   initials: string;
+  photo: string;
 }
 
 export interface Faq {

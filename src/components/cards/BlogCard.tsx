@@ -13,7 +13,14 @@ export function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Card interactive className="flex flex-col p-0">
       <Link to={`/blog#${post.slug}`} className="flex flex-1 flex-col">
-        <div className="h-40 rounded-t-3xl" style={{ background: post.cover }} aria-hidden />
+        <div className="h-44 overflow-hidden rounded-t-3xl bg-surface-muted">
+          <img
+            src={post.image}
+            alt={post.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
         <div className="flex flex-1 flex-col p-5">
           <div className="flex items-center gap-3">
             <Badge tone="primary">{post.category}</Badge>

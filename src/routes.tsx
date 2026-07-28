@@ -24,6 +24,7 @@ const Blog = lazy(() => import('@/pages/Blog'));
 const About = lazy(() => import('@/pages/About'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
+const Login = lazy(() => import('@/pages/Login'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 export function AppRoutes() {
@@ -40,6 +41,7 @@ export function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
 
         {/* Legal & info */}
         <Route path="/privacy" element={<Privacy />} />

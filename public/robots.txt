@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smartfit.app/sitemap.xml
+Sitemap: https://fitsmart.space/sitemap.xml
