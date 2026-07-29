@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { sendWelcomeEmail } from '@/features/auth/welcomeEmail';
 
 export interface AuthUser {
   name: string;
@@ -58,12 +59,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signInWithGoogle = useCallback((credential: string) => {
     const claims = decodeJwt(credential);
     if (!claims) return;
+    const email = (claims.email as string) ?? '';
+    const name = (claims.name as string) ?? email ?? 'Member';
     setUser({
-      name: (claims.name as string) ?? (claims.email as string) ?? 'Member',
-      email: (claims.email as string) ?? '',
+      name,
+      email,
       picture: claims.picture as string | undefined,
       provider: 'google',
     });
+    // Send the thank-you email to the real signed-in user.
+    if (email) sendWelcomeEmail(email, name);
   }, []);
 
   const signInDemo = useCallback(() => {
