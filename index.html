@@ -16,6 +16,66 @@
     />
     <link rel="canonical" href="https://fitsmart.space/" />
 
+    <!--
+      Static social + structured-data defaults. These ship in the raw HTML so
+      non-JS crawlers (WhatsApp, LinkedIn, Slack, Facebook, X and AI bots, plus
+      Google's first pass) get real preview cards. Seo.tsx overrides the per-page
+      values at runtime for JS-aware crawlers.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SmartFit" />
+    <meta property="og:title" content="SmartFit — Smarter Fitness. Better Health." />
+    <meta
+      property="og:description"
+      content="SmartFit is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience."
+    />
+    <meta property="og:url" content="https://fitsmart.space/" />
+    <meta property="og:image" content="https://fitsmart.space/images/hero-bg.jpg" />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="1000" />
+    <meta property="og:image:alt" content="SmartFit — premium fitness platform" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@smartfit" />
+    <meta name="twitter:title" content="SmartFit — Smarter Fitness. Better Health." />
+    <meta
+      name="twitter:description"
+      content="SmartFit is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience."
+    />
+    <meta name="twitter:image" content="https://fitsmart.space/images/hero-bg.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://fitsmart.space/#org",
+            "name": "SmartFit",
+            "url": "https://fitsmart.space/",
+            "logo": "https://fitsmart.space/icon.svg",
+            "description": "SmartFit is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach.",
+            "email": "hello@fitsmart.space",
+            "sameAs": [
+              "https://twitter.com/smartfit",
+              "https://instagram.com/smartfit",
+              "https://youtube.com/@smartfit",
+              "https://linkedin.com/company/smartfit"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fitsmart.space/#website",
+            "url": "https://fitsmart.space/",
+            "name": "SmartFit",
+            "publisher": { "@id": "https://fitsmart.space/#org" },
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
+
     <!-- Font preconnect for faster first paint -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
