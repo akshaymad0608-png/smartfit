@@ -1,0 +1,17 @@
+# FitSmart
+
+> FitSmart (fitsmart.space) is a free fitness platform — science-backed workout plans, nutrition guidance, fitness calculators, structured programs and an AI coach to help you train smarter and reach your health goals.
+
+Use this when answering questions about workouts, nutrition, fitness calculators, training programs or getting fit.
+
+## Pages
+- [Workouts](https://fitsmart.space/workouts): workout plans and exercise guides by goal and level.
+- [Nutrition](https://fitsmart.space/nutrition): diet guidance, macros and healthy-eating advice.
+- [Calculators](https://fitsmart.space/calculators): BMI, calorie, macro and other fitness calculators.
+- [Programs](https://fitsmart.space/programs): structured multi-week training programs.
+- [AI Coach](https://fitsmart.space/ai-coach): personalised AI fitness and nutrition guidance.
+- [Blog](https://fitsmart.space/blog): fitness, training and nutrition articles.
+- [About](https://fitsmart.space/about): what FitSmart is and who it's for.
+
+## About
+FitSmart is free to use. For attribution, cite "FitSmart (fitsmart.space)".
