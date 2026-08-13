@@ -6,14 +6,14 @@ export function Privacy() {
   return (
     <ContentPage
       title="Privacy Policy"
-      subtitle="How SmartFit handles your information — in plain language."
+      subtitle="How FitSmart handles your information — in plain language."
       path="/privacy"
       updated={UPDATED}
       sections={[
         {
           heading: 'Overview',
           body: [
-            'SmartFit is built privacy-first. The calculators and AI Coach run entirely in your browser, and your inputs are stored locally on your device by default — not on our servers.',
+            'FitSmart is built privacy-first. The calculators and AI Coach run entirely in your browser, and your inputs are stored locally on your device by default — not on our servers.',
           ],
         },
         {
@@ -26,7 +26,7 @@ export function Privacy() {
         {
           heading: 'How we use information',
           body: [
-            'To respond to your enquiries, send updates you have opted into, and improve SmartFit. We never sell your personal data to third parties.',
+            'To respond to your enquiries, send updates you have opted into, and improve FitSmart. We never sell your personal data to third parties.',
           ],
         },
         {
@@ -48,29 +48,29 @@ export function Terms() {
   return (
     <ContentPage
       title="Terms & Conditions"
-      subtitle="The agreement between you and SmartFit."
+      subtitle="The agreement between you and FitSmart."
       path="/terms"
       updated={UPDATED}
       sections={[
         {
           heading: 'Acceptance of terms',
-          body: ['By using SmartFit, you agree to these terms. If you do not agree, please do not use the service.'],
+          body: ['By using FitSmart, you agree to these terms. If you do not agree, please do not use the service.'],
         },
         {
           heading: 'Use of the service',
           body: [
-            'SmartFit provides fitness and nutrition information for educational purposes. You agree to use it lawfully and not to misuse or attempt to disrupt the service.',
+            'FitSmart provides fitness and nutrition information for educational purposes. You agree to use it lawfully and not to misuse or attempt to disrupt the service.',
           ],
         },
         {
           heading: 'Health disclaimer',
           body: [
-            'Content on SmartFit is not medical advice. Always consult a qualified professional before beginning any exercise or nutrition program, especially if you have a health condition.',
+            'Content on FitSmart is not medical advice. Always consult a qualified professional before beginning any exercise or nutrition program, especially if you have a health condition.',
           ],
         },
         {
           heading: 'Intellectual property',
-          body: ['All SmartFit branding, content and code are owned by SmartFit and protected by law.'],
+          body: ['All FitSmart branding, content and code are owned by FitSmart and protected by law.'],
         },
         {
           heading: 'Changes',
@@ -85,14 +85,14 @@ export function Cookies() {
   return (
     <ContentPage
       title="Cookie Policy"
-      subtitle="How and why SmartFit uses cookies and local storage."
+      subtitle="How and why FitSmart uses cookies and local storage."
       path="/cookies"
       updated={UPDATED}
       sections={[
         {
           heading: 'What we use',
           body: [
-            'SmartFit uses essential local storage to remember your theme preference and any inputs you save. We do not use advertising or cross-site tracking cookies.',
+            'FitSmart uses essential local storage to remember your theme preference and any inputs you save. We do not use advertising or cross-site tracking cookies.',
           ],
         },
         {
@@ -108,7 +108,7 @@ export function Disclaimer() {
   return (
     <ContentPage
       title="Disclaimer"
-      subtitle="Important information about using SmartFit content."
+      subtitle="Important information about using FitSmart content."
       path="/disclaimer"
       updated={UPDATED}
       sections={[
@@ -121,7 +121,7 @@ export function Disclaimer() {
         {
           heading: 'Assumption of risk',
           body: [
-            'Physical exercise carries inherent risks. By following any SmartFit content, you do so at your own risk and take full responsibility for your health and safety.',
+            'Physical exercise carries inherent risks. By following any FitSmart content, you do so at your own risk and take full responsibility for your health and safety.',
           ],
         },
         {
@@ -138,14 +138,14 @@ export function Accessibility() {
     <ContentPage
       eyebrow="Commitment"
       title="Accessibility"
-      subtitle="SmartFit is designed to be usable by everyone."
+      subtitle="FitSmart is designed to be usable by everyone."
       path="/accessibility"
       updated={UPDATED}
       sections={[
         {
           heading: 'Our commitment',
           body: [
-            'We aim to meet WCAG 2.1 AA standards. SmartFit is built with semantic HTML, keyboard navigation, visible focus states, sufficient colour contrast and screen-reader-friendly labels.',
+            'We aim to meet WCAG 2.1 AA standards. FitSmart is built with semantic HTML, keyboard navigation, visible focus states, sufficient colour contrast and screen-reader-friendly labels.',
           ],
         },
         {
@@ -164,13 +164,13 @@ export function Help() {
     <ContentPage
       eyebrow="Support"
       title="Help Center"
-      subtitle="Answers and guidance for getting the most out of SmartFit."
+      subtitle="Answers and guidance for getting the most out of FitSmart."
       path="/help"
       sections={[
         {
           heading: 'Getting started',
           body: [
-            'New to SmartFit? Start with a program that matches your goal, use the calculators to set your calorie and protein targets, then let the AI Coach fill in the details.',
+            'New to FitSmart? Start with a program that matches your goal, use the calculators to set your calorie and protein targets, then let the AI Coach fill in the details.',
           ],
         },
         {
@@ -195,7 +195,7 @@ export function Careers() {
       path="/careers"
       sections={[
         {
-          heading: 'Why SmartFit',
+          heading: 'Why FitSmart',
           body: [
             'We are a small, remote-friendly team that values craft, evidence and kindness. We ship thoughtfully and look after each other.',
           ],
@@ -220,8 +220,8 @@ export function Press() {
       path="/press"
       sections={[
         {
-          heading: 'About SmartFit',
-          body: ['SmartFit is a premium, privacy-first fitness platform serving 250,000+ members across 90+ countries.'],
+          heading: 'About FitSmart',
+          body: ['FitSmart is a premium, privacy-first fitness platform serving 250,000+ members across 90+ countries.'],
         },
         {
           heading: 'Media enquiries',
@@ -237,7 +237,7 @@ export function Sitemap() {
     <ContentPage
       eyebrow="Navigation"
       title="Sitemap"
-      subtitle="Every corner of SmartFit, in one place."
+      subtitle="Every corner of FitSmart, in one place."
       path="/sitemap"
       sections={[
         { heading: 'Main', body: ['Home, Workouts, Nutrition, Calculators, Programs, AI Coach, Blog, About, Contact.'] },

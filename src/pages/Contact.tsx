@@ -49,7 +49,7 @@ export default function Contact() {
     <PageTransition>
       <Seo
         title="Contact"
-        description="Get in touch with the SmartFit team — questions, feedback, partnerships and support."
+        description="Get in touch with the FitSmart team — questions, feedback, partnerships and support."
         path="/contact"
         schema={breadcrumbSchema([
           { name: 'Home', path: '/' },

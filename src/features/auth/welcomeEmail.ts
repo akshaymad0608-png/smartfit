@@ -27,7 +27,7 @@ export function sendWelcomeEmail(email: string, name?: string): void {
           to_name: displayName,
           email,
           name: displayName,
-          subject: 'Welcome to SmartFit — thanks for joining!',
+          subject: 'Welcome to FitSmart — thanks for joining!',
         },
         { publicKey: PUBLIC_KEY },
       )

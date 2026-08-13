@@ -1,4 +1,4 @@
-/** Minimal Google Identity Services (GIS) type surface used by SmartFit. */
+/** Minimal Google Identity Services (GIS) type surface used by FitSmart. */
 export interface GoogleCredentialResponse {
   credential: string;
   select_by?: string;

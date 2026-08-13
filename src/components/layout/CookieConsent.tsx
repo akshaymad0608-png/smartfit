@@ -3,10 +3,10 @@ import { Cookie } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-const KEY = 'smartfit-cookie-consent';
+const KEY = 'fitsmart-cookie-consent';
 
 /**
- * Minimal, privacy-first cookie notice. SmartFit only uses essential local
+ * Minimal, privacy-first cookie notice. FitSmart only uses essential local
  * storage, so this is informational with a single acknowledge action.
  */
 export function CookieConsent() {

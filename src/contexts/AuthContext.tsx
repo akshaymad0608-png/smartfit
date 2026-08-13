@@ -18,7 +18,7 @@ interface AuthContextValue {
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
-const STORAGE_KEY = 'smartfit-user';
+const STORAGE_KEY = 'fitsmart-user';
 
 /** Decode a JWT payload safely (unicode-aware, no verification — client display only). */
 function decodeJwt(token: string): Record<string, unknown> | null {

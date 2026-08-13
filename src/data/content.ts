@@ -74,7 +74,7 @@ export const testimonials: Testimonial[] = [
     photo: '/images/people/priya.jpg',
     rating: 5,
     quote:
-      'SmartFit made fitness finally click for me. The plans are realistic and the calculators took the guesswork out of my nutrition.',
+      'FitSmart made fitness finally click for me. The plans are realistic and the calculators took the guesswork out of my nutrition.',
   },
   {
     id: 't2',
@@ -110,7 +110,7 @@ export const testimonials: Testimonial[] = [
 
 export const faqs: Faq[] = [
   {
-    question: 'Is SmartFit free to use?',
+    question: 'Is FitSmart free to use?',
     answer:
       'Yes. All workouts, nutrition guides and calculators are free to explore. Premium coaching and programs are available for members who want structured plans and progress tracking.',
   },
@@ -125,7 +125,7 @@ export const faqs: Faq[] = [
       'Our calculators use well-established formulas — Mifflin-St Jeor for BMR, activity multipliers for TDEE and validated methods for body fat. They are excellent estimates, though not a substitute for medical testing.',
   },
   {
-    question: 'Can SmartFit help me lose weight and build muscle?',
+    question: 'Can FitSmart help me lose weight and build muscle?',
     answer:
       'Absolutely. Choose a goal-based program, follow the paired nutrition guidance and track progress in your dashboard. Consistency plus the right calorie and protein targets drives results.',
   },

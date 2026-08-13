@@ -1,9 +1,9 @@
 {
-  "name": "smartfit",
+  "name": "fitsmart",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "SmartFit — Smarter Fitness. Better Health. A premium fitness platform.",
+  "description": "FitSmart — Smarter Fitness. Better Health. A premium fitness platform.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b --noEmit && vite build && node prerender.mjs",

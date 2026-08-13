@@ -81,7 +81,7 @@ export default function Home() {
         <SectionHeader
           eyebrow="Programs"
           title="Guided plans for every goal"
-          subtitle="Follow a structured, progressive program and let SmartFit handle the what, when and how much."
+          subtitle="Follow a structured, progressive program and let FitSmart handle the what, when and how much."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {featuredPrograms.map((p) => (
@@ -202,7 +202,7 @@ export default function Home() {
               Eat well without the guesswork
             </h2>
             <p className="mt-4 text-body-lg text-body">
-              Nutrition is half the battle. SmartFit gives you balanced, goal-based meal plans and a
+              Nutrition is half the battle. FitSmart gives you balanced, goal-based meal plans and a
               food database so you always know what to eat next.
             </p>
             <div className="mt-8 space-y-4">
@@ -254,7 +254,7 @@ export default function Home() {
 
       {/* 9. Benefits */}
       <Section muted>
-        <SectionHeader eyebrow="Why SmartFit" title="Everything you need, nothing you don’t" />
+        <SectionHeader eyebrow="Why FitSmart" title="Everything you need, nothing you don’t" />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((b) => (
             <Reveal key={b.title}>
@@ -316,7 +316,7 @@ export default function Home() {
 
       {/* 12. Latest Blogs */}
       <Section>
-        <SectionHeader eyebrow="Blog" title="Learn from the SmartFit team" />
+        <SectionHeader eyebrow="Blog" title="Learn from the FitSmart team" />
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {blogPosts.slice(0, 3).map((p) => (
             <Reveal key={p.id}>
@@ -351,7 +351,7 @@ export default function Home() {
                 Start training smarter today
               </h2>
               <p className="mt-4 text-white/90">
-                Join 250,000+ people getting fitter with SmartFit. Free to start, no equipment needed.
+                Join 250,000+ people getting fitter with FitSmart. Free to start, no equipment needed.
               </p>
               <div className="mx-auto mt-8 max-w-md">
                 <NewsletterForm />

@@ -26,16 +26,16 @@ const SITE = 'https://fitsmart.space';
 const ROUTES = [
   {
     path: '/',
-    title: 'Free Fitness Calculators, Workouts & Nutrition — SmartFit',
+    title: 'Free Fitness Calculators, Workouts & Nutrition — FitSmart',
     description:
       'Free health calculators (BMI, BMR, TDEE, macros), structured workout plans and evidence-based nutrition guides — no sign-up, works on any device.',
     h1: 'Free Fitness Calculators, Workout Plans & Nutrition Guides',
     intro:
-      'SmartFit brings together the tools people actually need to train well: precise health calculators for BMI, BMR, TDEE and macros, structured workout plans for every level, evidence-based nutrition guidance, and an AI coach that ties it together. Everything is free and runs in your browser.',
+      'FitSmart brings together the tools people actually need to train well: precise health calculators for BMI, BMR, TDEE and macros, structured workout plans for every level, evidence-based nutrition guidance, and an AI coach that ties it together. Everything is free and runs in your browser.',
   },
   {
     path: '/calculators',
-    title: 'BMI, BMR, TDEE & Macro Calculators — SmartFit',
+    title: 'BMI, BMR, TDEE & Macro Calculators — FitSmart',
     description:
       'Calculate your BMI, BMR, TDEE, daily calories and macro split for cutting, maintenance or bulking. Free, accurate and instant — no sign-up needed.',
     h1: 'Free Health & Fitness Calculators',
@@ -44,7 +44,7 @@ const ROUTES = [
   },
   {
     path: '/workouts',
-    title: 'Free Workout Plans & Exercise Guides — SmartFit',
+    title: 'Free Workout Plans & Exercise Guides — FitSmart',
     description:
       'Structured workout plans for strength, fat loss and general fitness, with proper form guidance for every exercise. Free, no-equipment options included.',
     h1: 'Free Workout Plans & Exercise Guides',
@@ -53,7 +53,7 @@ const ROUTES = [
   },
   {
     path: '/nutrition',
-    title: 'Nutrition Guides, Macros & Meal Plans — SmartFit',
+    title: 'Nutrition Guides, Macros & Meal Plans — FitSmart',
     description:
       'Evidence-based nutrition guides: how to set macros, plan meals, hit a calorie deficit for fat loss, and eat enough protein — without fad diets.',
     h1: 'Evidence-Based Nutrition Guides',
@@ -62,7 +62,7 @@ const ROUTES = [
   },
   {
     path: '/programs',
-    title: 'Training Programs for Strength & Fat Loss — SmartFit',
+    title: 'Training Programs for Strength & Fat Loss — FitSmart',
     description:
       'Complete multi-week training programs for beginners, fat loss and strength. Follow a plan with clear progression instead of guessing each session.',
     h1: 'Structured Training Programs',
@@ -71,7 +71,7 @@ const ROUTES = [
   },
   {
     path: '/ai-coach',
-    title: 'AI Fitness Coach for Personalised Training — SmartFit',
+    title: 'AI Fitness Coach for Personalised Training — FitSmart',
     description:
       'Ask an AI fitness coach about training, form, macros and recovery, and get personalised, evidence-based answers built around your goals — free.',
     h1: 'AI Fitness Coach',
@@ -80,7 +80,7 @@ const ROUTES = [
   },
   {
     path: '/blog',
-    title: 'Fitness & Nutrition Articles — SmartFit',
+    title: 'Fitness & Nutrition Articles — FitSmart',
     description:
       'Practical articles on training, nutrition and health science — including HIIT versus steady-state cardio, protein intake and recovery.',
     h1: 'Fitness & Nutrition Articles',
@@ -89,38 +89,38 @@ const ROUTES = [
   },
   {
     path: '/about',
-    title: 'About — SmartFit',
+    title: 'About — FitSmart',
     description:
-      'SmartFit builds free, evidence-based fitness calculators, workout plans and nutrition guides. Learn what we build and the principles behind it.',
-    h1: 'About SmartFit',
+      'FitSmart builds free, evidence-based fitness calculators, workout plans and nutrition guides. Learn what we build and the principles behind it.',
+    h1: 'About FitSmart',
     intro:
-      'SmartFit builds free fitness tools grounded in evidence rather than trends: calculators that show their working, training plans with real progression, and nutrition guidance that does not depend on buying anything.',
+      'FitSmart builds free fitness tools grounded in evidence rather than trends: calculators that show their working, training plans with real progression, and nutrition guidance that does not depend on buying anything.',
   },
   {
     path: '/contact',
-    title: 'Contact — SmartFit',
-    description: 'Get in touch with the SmartFit team with a question, a correction or a partnership enquiry.',
-    h1: 'Contact SmartFit',
+    title: 'Contact — FitSmart',
+    description: 'Get in touch with the FitSmart team with a question, a correction or a partnership enquiry.',
+    h1: 'Contact FitSmart',
     intro: 'Questions, corrections or partnership enquiries are all welcome — send a message and we will get back to you.',
   },
   {
     path: '/help',
-    title: 'Help Center — SmartFit',
-    description: 'Answers to common questions about SmartFit calculators, workout plans, accounts and the AI coach.',
+    title: 'Help Center — FitSmart',
+    description: 'Answers to common questions about FitSmart calculators, workout plans, accounts and the AI coach.',
     h1: 'Help & Frequently Asked Questions',
     intro: 'Common questions about the calculators, the training plans, accounts and the AI coach, answered in one place.',
   },
   // Legal and utility routes. These need unique titles mainly so they stop
   // competing with the homepage in search — /disclaimer and /contact were
   // outranking it purely because every route shipped identical HTML.
-  { path: '/privacy', title: 'Privacy Policy — SmartFit', description: 'How SmartFit collects, uses and protects your data.', h1: 'Privacy Policy', intro: 'How SmartFit collects, uses and protects your personal data.' },
-  { path: '/terms', title: 'Terms & Conditions — SmartFit', description: 'The terms that apply when you use SmartFit.', h1: 'Terms of Service', intro: 'The terms that apply when you use the SmartFit website and tools.' },
-  { path: '/cookies', title: 'Cookie Policy — SmartFit', description: 'Which cookies SmartFit uses and how to control them.', h1: 'Cookie Policy', intro: 'Which cookies SmartFit uses, what they do, and how you can control them.' },
-  { path: '/disclaimer', title: 'Disclaimer — SmartFit', description: 'SmartFit provides general fitness information, not medical advice.', h1: 'Medical Disclaimer', intro: 'SmartFit provides general fitness and nutrition information. It is not medical advice — speak to a qualified professional before changing your training or diet.' },
-  { path: '/accessibility', title: 'Accessibility — SmartFit', description: 'How SmartFit works towards an accessible experience for everyone.', h1: 'Accessibility Statement', intro: 'How SmartFit works towards an accessible experience, and how to report a barrier you hit.' },
-  { path: '/careers', title: 'Careers — SmartFit', description: 'Open roles and how to get in touch about working with SmartFit.', h1: 'Careers at SmartFit', intro: 'Open roles and how to get in touch about working with us.' },
-  { path: '/press', title: 'Press & Media — SmartFit', description: 'Brand assets and press enquiries for SmartFit.', h1: 'Press & Media', intro: 'Brand assets, background and press enquiries.' },
-  { path: '/sitemap', title: 'Sitemap — SmartFit', description: 'Every page on SmartFit in one list.', h1: 'Sitemap', intro: 'Every page on SmartFit, in one list.' },
+  { path: '/privacy', title: 'Privacy Policy — FitSmart', description: 'How FitSmart collects, uses and protects your data.', h1: 'Privacy Policy', intro: 'How FitSmart collects, uses and protects your personal data.' },
+  { path: '/terms', title: 'Terms & Conditions — FitSmart', description: 'The terms that apply when you use FitSmart.', h1: 'Terms of Service', intro: 'The terms that apply when you use the FitSmart website and tools.' },
+  { path: '/cookies', title: 'Cookie Policy — FitSmart', description: 'Which cookies FitSmart uses and how to control them.', h1: 'Cookie Policy', intro: 'Which cookies FitSmart uses, what they do, and how you can control them.' },
+  { path: '/disclaimer', title: 'Disclaimer — FitSmart', description: 'FitSmart provides general fitness information, not medical advice.', h1: 'Medical Disclaimer', intro: 'FitSmart provides general fitness and nutrition information. It is not medical advice — speak to a qualified professional before changing your training or diet.' },
+  { path: '/accessibility', title: 'Accessibility — FitSmart', description: 'How FitSmart works towards an accessible experience for everyone.', h1: 'Accessibility Statement', intro: 'How FitSmart works towards an accessible experience, and how to report a barrier you hit.' },
+  { path: '/careers', title: 'Careers — FitSmart', description: 'Open roles and how to get in touch about working with FitSmart.', h1: 'Careers at FitSmart', intro: 'Open roles and how to get in touch about working with us.' },
+  { path: '/press', title: 'Press & Media — FitSmart', description: 'Brand assets and press enquiries for FitSmart.', h1: 'Press & Media', intro: 'Brand assets, background and press enquiries.' },
+  { path: '/sitemap', title: 'Sitemap — FitSmart', description: 'Every page on FitSmart in one list.', h1: 'Sitemap', intro: 'Every page on FitSmart, in one list.' },
 ];
 
 const NAV =

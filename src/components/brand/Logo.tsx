@@ -2,14 +2,14 @@ import { cn } from '@/lib/cn';
 
 interface LogoProps {
   className?: string;
-  /** Show the "SmartFit" wordmark alongside the mark. */
+  /** Show the "FitSmart" wordmark alongside the mark. */
   showWordmark?: boolean;
   /** Pixel size of the square mark. */
   size?: number;
 }
 
 /**
- * SmartFit logo — a rounded gradient badge holding a heartbeat pulse that reads
+ * FitSmart logo — a rounded gradient badge holding a heartbeat pulse that reads
  * as an implied "S". Blue → green, matching the brand palette.
  */
 export function Logo({ className, showWordmark = true, size = 36 }: LogoProps) {
@@ -23,7 +23,7 @@ export function Logo({ className, showWordmark = true, size = 36 }: LogoProps) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
-        aria-label="SmartFit"
+        aria-label="FitSmart"
       >
         <defs>
           <linearGradient id={gid} x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
@@ -43,7 +43,7 @@ export function Logo({ className, showWordmark = true, size = 36 }: LogoProps) {
       </svg>
       {showWordmark && (
         <span className="text-lg font-extrabold tracking-tight text-heading">
-          Smart<span className="text-gradient">Fit</span>
+          Fit<span className="text-gradient">Smart</span>
         </span>
       )}
     </span>

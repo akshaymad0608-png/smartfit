@@ -1,9 +1,9 @@
 # Architecture & Folder Structure
 
-SmartFit follows a feature-oriented, scalable structure. Shared primitives live under `components/`, domain logic under `features/`, and cross-cutting concerns (SEO, contexts, hooks, config) each get a dedicated folder.
+FitSmart follows a feature-oriented, scalable structure. Shared primitives live under `components/`, domain logic under `features/`, and cross-cutting concerns (SEO, contexts, hooks, config) each get a dedicated folder.
 
 ```
-smartfit/
+fitsmart/
 ├── public/
 │   ├── favicon.svg            # Brand mark (heartbeat "S")
 │   ├── icon.svg               # Maskable PWA/app icon

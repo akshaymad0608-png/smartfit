@@ -3,13 +3,13 @@
  * defaults and navigation. Referenced by the SEO layer, header and footer.
  */
 export const site = {
-  name: 'SmartFit',
+  name: 'FitSmart',
   tagline: 'Smarter Fitness. Better Health.',
   description:
-    'SmartFit is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience.',
+    'FitSmart is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience.',
   url: 'https://fitsmart.space',
   locale: 'en_US',
-  twitter: '@smartfit',
+  twitter: '@fitsmart',
   themeColor: '#3B82F6',
   keywords: [
     'fitness',
@@ -48,11 +48,11 @@ export const site = {
     hours: 'Mon–Fri, 8:00 AM – 6:00 PM CT',
   },
   social: {
-    twitter: 'https://twitter.com/smartfit',
-    instagram: 'https://instagram.com/smartfit',
-    youtube: 'https://youtube.com/@smartfit',
-    linkedin: 'https://linkedin.com/company/smartfit',
-    github: 'https://github.com/smartfit',
+    twitter: 'https://twitter.com/fitsmart',
+    instagram: 'https://instagram.com/fitsmart',
+    youtube: 'https://youtube.com/@fitsmart',
+    linkedin: 'https://linkedin.com/company/fitsmart',
+    github: 'https://github.com/fitsmart',
   },
 } as const;
 

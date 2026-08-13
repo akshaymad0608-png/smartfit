@@ -21,7 +21,7 @@ const timeline = [
   { year: '2023', title: 'The idea', text: 'Frustrated by cluttered fitness apps, we sketched a calmer alternative.' },
   { year: '2024', title: 'First 10k members', text: 'The calculators and home workouts found their audience.' },
   { year: '2025', title: 'AI Coach beta', text: 'We launched personalised plan generation for members.' },
-  { year: '2026', title: '250k strong', text: 'SmartFit now supports members across 90+ countries.' },
+  { year: '2026', title: '250k strong', text: 'FitSmart now supports members across 90+ countries.' },
 ];
 
 const team = [
@@ -36,7 +36,7 @@ export default function About() {
     <PageTransition>
       <Seo
         title="About"
-        description="SmartFit's mission is to make smarter fitness accessible to everyone — through clean design, evidence-based coaching and thoughtful technology."
+        description="FitSmart's mission is to make smarter fitness accessible to everyone — through clean design, evidence-based coaching and thoughtful technology."
         path="/about"
         schema={breadcrumbSchema([
           { name: 'Home', path: '/' },

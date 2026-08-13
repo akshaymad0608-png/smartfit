@@ -1,5 +1,5 @@
 /**
- * SmartFit AI Coach — local generation engine.
+ * FitSmart AI Coach — local generation engine.
  *
  * This produces useful, structured plans entirely on-device from rule-based
  * templates so the feature works with zero configuration. It is intentionally

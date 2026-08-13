@@ -181,7 +181,7 @@ export function Hero() {
               {imgOk ? (
                 <img
                   src={HERO_IMAGE}
-                  alt="A SmartFit member training with focus"
+                  alt="A FitSmart member training with focus"
                   className="h-72 w-full object-cover sm:h-80"
                   onError={() => setImgOk(false)}
                 />
@@ -218,7 +218,7 @@ export function Hero() {
               {imgOk ? (
                 <img
                   src={HERO_IMAGE}
-                  alt="A SmartFit member training with focus"
+                  alt="A FitSmart member training with focus"
                   className="h-full w-full object-cover"
                   loading="eager"
                   onError={() => setImgOk(false)}

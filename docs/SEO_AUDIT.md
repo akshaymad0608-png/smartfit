@@ -1,6 +1,6 @@
 # SEO Audit Report
 
-_SmartFit — rebuilt SEO foundation. Audited 2026-07-28._
+_FitSmart — rebuilt SEO foundation. Audited 2026-07-28._
 
 ## Summary
 
@@ -25,7 +25,7 @@ _SmartFit — rebuilt SEO foundation. Audited 2026-07-28._
 
 Each page renders `<Seo title path description keywords schema />`, producing:
 
-- `<title>` — `"{Page} — SmartFit"` (or brand + tagline on home)
+- `<title>` — `"{Page} — FitSmart"` (or brand + tagline on home)
 - `<meta name="description">`, `<meta name="keywords">`
 - `<link rel="canonical">`, `<meta name="robots">`
 - Full Open Graph + Twitter card tags

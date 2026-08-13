@@ -9,7 +9,7 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
-const STORAGE_KEY = 'smartfit-theme';
+const STORAGE_KEY = 'fitsmart-theme';
 
 function getInitialTheme(): Theme {
   if (typeof window === 'undefined') return 'light';

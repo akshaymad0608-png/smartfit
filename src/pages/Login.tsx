@@ -28,7 +28,7 @@ export default function Login() {
     <PageTransition>
       <Seo
         title="Sign in"
-        description="Sign in to SmartFit to track your progress, save plans and sync your dashboard."
+        description="Sign in to FitSmart to track your progress, save plans and sync your dashboard."
         path="/login"
         noindex
       />

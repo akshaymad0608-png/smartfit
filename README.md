@@ -1,4 +1,4 @@
-# SmartFit — Smarter Fitness. Better Health.
+# FitSmart — Smarter Fitness. Better Health.
 
 A premium, production-ready fitness platform built with React, TypeScript, Vite and Tailwind CSS v4. Guided workouts, science-backed nutrition, precise health calculators and an AI coach — in one clean, fast, accessible experience.
 
@@ -49,4 +49,4 @@ React 18 · TypeScript 5.7 · Vite 6 · Tailwind CSS v4 · React Router 7 · Fra
 
 ## 📄 License
 
-© 2026 SmartFit. All rights reserved.
+© 2026 FitSmart. All rights reserved.

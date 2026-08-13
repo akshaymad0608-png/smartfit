@@ -21,7 +21,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo) {
     // Hook a real monitoring service (e.g. Sentry) in here later.
-    console.error('SmartFit render error:', error, info.componentStack);
+    console.error('FitSmart render error:', error, info.componentStack);
   }
 
   render() {

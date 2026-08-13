@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to SmartFit are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/).
+All notable changes to FitSmart are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [2.0.0] — 2026-07-28 — Complete redesign & rebuild
 

@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
- * SmartFit Design System
+ * FitSmart Design System
  * ----------------------
  * Semantic tokens map to concrete colors per theme. Components reference the
  * semantic Tailwind utilities (bg-surface, text-heading, border-line …) so a

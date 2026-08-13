@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icon.svg', 'robots.txt'],
       manifest: {
-        name: 'SmartFit — Smarter Fitness. Better Health.',
-        short_name: 'SmartFit',
+        name: 'FitSmart — Smarter Fitness. Better Health.',
+        short_name: 'FitSmart',
         description:
           'Premium fitness platform with workouts, nutrition, calculators and an AI coach.',
         theme_color: '#3B82F6',

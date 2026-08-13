@@ -103,7 +103,7 @@ export function Header() {
         )}
       >
         <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-18">
-          <Link to="/" aria-label="SmartFit home">
+          <Link to="/" aria-label="FitSmart home">
             <Logo />
           </Link>
 

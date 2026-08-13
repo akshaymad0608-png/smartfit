@@ -109,7 +109,7 @@ export function Footer() {
 
         <div className="mt-14 grid gap-6 rounded-3xl border border-line bg-card p-8 md:grid-cols-2 md:items-center">
           <div>
-            <h3 className="text-card-title font-bold text-heading">Join the SmartFit newsletter</h3>
+            <h3 className="text-card-title font-bold text-heading">Join the FitSmart newsletter</h3>
             <p className="mt-1.5 text-sm text-muted">
               Weekly workouts, nutrition tips and product updates. No spam, unsubscribe anytime.
             </p>

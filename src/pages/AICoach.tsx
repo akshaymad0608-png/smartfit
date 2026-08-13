@@ -61,7 +61,7 @@ export default function AICoach() {
       <PageHero
         eyebrow="AI Coach"
         title="Your personal AI coach"
-        subtitle="Describe your goal and let SmartFit generate a workout, meal plan, weekly schedule or goal roadmap in seconds."
+        subtitle="Describe your goal and let FitSmart generate a workout, meal plan, weekly schedule or goal roadmap in seconds."
         crumbs={[{ label: 'AI Coach' }]}
       >
         <Badge tone="secondary">
@@ -205,7 +205,7 @@ export default function AICoach() {
 
         <p className="mt-10 rounded-2xl border border-line bg-surface-muted p-5 text-sm text-muted">
           <strong className="text-body">How this works:</strong> plans are generated on your device
-          from SmartFit's coaching logic — no account or API key needed. The interface is built to
+          from FitSmart's coaching logic — no account or API key needed. The interface is built to
           connect to a large language model (such as the Claude API) so recommendations get even
           smarter in a future release.
         </p>

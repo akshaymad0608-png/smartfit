@@ -1,6 +1,6 @@
 # Deployment Guide
 
-SmartFit is a static SPA — it builds to `dist/` and deploys anywhere that serves static files. Vercel is the recommended target and works with zero extra config.
+FitSmart is a static SPA — it builds to `dist/` and deploys anywhere that serves static files. Vercel is the recommended target and works with zero extra config.
 
 ## Prerequisites
 
@@ -62,4 +62,4 @@ None required today — the app runs fully client-side. When the backend/AI API 
 
 ## PWA
 
-The service worker (`vite-plugin-pwa`, `registerType: autoUpdate`) is generated at build and auto-registers. Users can install SmartFit from the browser; updates roll out automatically on next load.
+The service worker (`vite-plugin-pwa`, `registerType: autoUpdate`) is generated at build and auto-registers. Users can install FitSmart from the browser; updates roll out automatically on next load.

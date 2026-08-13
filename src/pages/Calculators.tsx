@@ -76,7 +76,7 @@ export default function Calculators() {
         <div className="mt-10 flex items-start gap-3 rounded-2xl border border-line bg-surface-muted p-5">
           <Calculator size={18} className="mt-0.5 shrink-0 text-muted" />
           <p className="text-sm text-muted">
-            SmartFit calculators use established formulas (Mifflin-St Jeor, U.S. Navy body-fat,
+            FitSmart calculators use established formulas (Mifflin-St Jeor, U.S. Navy body-fat,
             Devine ideal weight). They provide reliable estimates but are not a substitute for
             professional medical assessment.
           </p>

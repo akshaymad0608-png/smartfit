@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "smartfit",
+      "name": "fitsmart",
       "dependencies": {
         "@hookform/resolvers": "^3.9.1",
         "@tanstack/react-query": "^5.62.0",

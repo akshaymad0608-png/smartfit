@@ -17,7 +17,7 @@ async function startServer() {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const from = process.env.WELCOME_FROM_EMAIL || "SmartFit <onboarding@resend.dev>";
+    const from = process.env.WELCOME_FROM_EMAIL || "FitSmart <onboarding@resend.dev>";
 
     // Not configured yet — don't fail sign-in, just report skipped.
     if (!apiKey) {
@@ -35,7 +35,7 @@ async function startServer() {
         body: JSON.stringify({
           from,
           to: [email],
-          subject: "Welcome to SmartFit — thanks for joining! 🎉",
+          subject: "Welcome to FitSmart — thanks for joining! 🎉",
           html: buildHtml(name || "there"),
         }),
       });
@@ -165,10 +165,10 @@ function buildHtml(name: string): string {
       <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;">
         <div style="height:6px;background:linear-gradient(90deg,#3B82F6,#10B981);"></div>
         <div style="padding:32px;">
-          <div style="font-size:22px;font-weight:800;color:#111827;">Smart<span style="color:#10B981;">Fit</span></div>
+          <div style="font-size:22px;font-weight:800;color:#111827;">Fit<span style="color:#10B981;">Smart</span></div>
           <h1 style="font-size:24px;color:#111827;margin:20px 0 8px;">Thanks for joining, ${escapeHtml(name)}! 🎉</h1>
           <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">
-            Welcome to <strong>SmartFit</strong> — smarter fitness, better health. Your account is ready,
+            Welcome to <strong>FitSmart</strong> — smarter fitness, better health. Your account is ready,
             and everything you need to train smarter is one click away.
           </p>
           <p style="font-size:16px;line-height:1.7;margin:0 0 24px;">Here's a great place to start:</p>
@@ -182,12 +182,12 @@ function buildHtml(name: string): string {
             Go to your dashboard
           </a>
           <p style="font-size:13px;color:#6b7280;margin:28px 0 0;">
-            You're receiving this because you signed in to SmartFit. Stay strong 💪
+            You're receiving this because you signed in to FitSmart. Stay strong 💪
           </p>
         </div>
       </div>
       <p style="text-align:center;font-size:12px;color:#9ca3af;margin:16px 0 0;">
-        © ${new Date().getFullYear()} SmartFit · Smarter Fitness. Better Health.
+        © ${new Date().getFullYear()} FitSmart · Smarter Fitness. Better Health.
       </p>
     </div>
   </body>

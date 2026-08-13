@@ -35,7 +35,7 @@ export function ContentPage({
     <PageTransition>
       <Seo
         title={title}
-        description={subtitle ?? `${title} — SmartFit`}
+        description={subtitle ?? `${title} — FitSmart`}
         path={path}
         schema={breadcrumbSchema([
           { name: 'Home', path: '/' },

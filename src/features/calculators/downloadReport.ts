@@ -15,7 +15,7 @@ export async function downloadReport(rows: { label: string; value: string }[]) {
   doc.setTextColor(17, 24, 39);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(22);
-  doc.text('SmartFit — Health Report', left, y);
+  doc.text('FitSmart — Health Report', left, y);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(11);
@@ -45,5 +45,5 @@ export async function downloadReport(rows: { label: string; value: string }[]) {
     800,
   );
 
-  doc.save('smartfit-health-report.pdf');
+  doc.save('fitsmart-health-report.pdf');
 }

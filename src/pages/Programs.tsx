@@ -30,7 +30,7 @@ export default function Programs() {
       <PageHero
         eyebrow="Programs"
         title="Follow a proven plan"
-        subtitle="Pick a goal-based program and let SmartFit guide every session, week by week, with progressive structure built in."
+        subtitle="Pick a goal-based program and let FitSmart guide every session, week by week, with progressive structure built in."
         crumbs={[{ label: 'Programs' }]}
       />
 
