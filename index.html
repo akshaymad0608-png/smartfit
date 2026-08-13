@@ -102,7 +102,13 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!--
+      #prerender-seo is a crawlable fallback: a real <h1> and intro so non-JS
+      crawlers see content instead of an empty shell. prerender.mjs rewrites
+      this block per route at build time, and React replaces it on mount, so
+      real users never see it.
+    -->
+    <div id="root"><div id="prerender-seo" style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif"><h1 style="font-size:30px;line-height:1.2;margin:0 0 14px">Free Fitness Calculators, Workout Plans &amp; Nutrition Guides</h1><p style="font-size:17px;line-height:1.6;color:#444">SmartFit brings together precise health calculators for BMI, BMR, TDEE and macros, structured workout plans for every level, evidence-based nutrition guidance, and an AI coach that ties it together. Everything is free and runs in your browser.</p><nav aria-label="Sections"><a href="/calculators">Health calculators</a> · <a href="/workouts">Workout plans</a> · <a href="/programs">Training programs</a> · <a href="/nutrition">Nutrition guides</a> · <a href="/ai-coach">AI coach</a> · <a href="/blog">Articles</a></nav></div></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
