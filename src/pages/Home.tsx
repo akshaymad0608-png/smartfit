@@ -53,6 +53,8 @@ export default function Home() {
   return (
     <PageTransition>
       <Seo
+        title="Free Fitness Calculators, Workouts & Nutrition"
+        description="Free health calculators (BMI, BMR, TDEE, macros), structured workout plans and evidence-based nutrition guides — no sign-up, works on any device."
         path="/"
         schema={[organizationSchema(), websiteSchema(), faqSchema(faqs)]}
       />

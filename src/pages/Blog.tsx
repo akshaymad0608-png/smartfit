@@ -35,8 +35,8 @@ export default function Blog() {
   return (
     <PageTransition>
       <Seo
-        title="Fitness Blog"
-        description="Evidence-based fitness, nutrition and recovery articles from the SmartFit coaching team — training guides, meal plans and healthy-lifestyle tips."
+        title="Fitness & Nutrition Articles"
+        description="Practical articles on training, nutrition and health science — including HIIT versus steady-state cardio, protein intake and recovery."
         path="/blog"
         keywords={['fitness blog', 'workout planner', 'nutrition guide', 'healthy lifestyle']}
         schema={breadcrumbSchema([

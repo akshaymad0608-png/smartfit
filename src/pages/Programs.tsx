@@ -18,8 +18,8 @@ export default function Programs() {
   return (
     <PageTransition>
       <Seo
-        title="Fitness Programs"
-        description="Structured, progressive fitness programs: 30-day challenges, fat loss, muscle gain and home workout plans for every level."
+        title="Training Programs for Strength & Fat Loss"
+        description="Complete multi-week training programs for beginners, fat loss and strength. Follow a plan with clear progression instead of guessing each session."
         path="/programs"
         keywords={['fitness challenge', '30 day fitness plan', 'weight loss', 'muscle gain', 'workout planner']}
         schema={breadcrumbSchema([

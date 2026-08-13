@@ -53,8 +53,8 @@ export default function Workouts() {
   return (
     <PageTransition>
       <Seo
-        title="Workouts"
-        description="Browse hundreds of guided workouts by goal, difficulty and equipment — home, gym, HIIT, strength, cardio, yoga and more."
+        title="Free Workout Plans & Exercise Guides"
+        description="Structured workout plans for strength, fat loss and general fitness, with proper form guidance for every exercise. Free, no-equipment options included."
         path="/workouts"
         keywords={['home workout', 'gym workout', 'HIIT', 'strength', 'cardio', 'exercise guide']}
         schema={breadcrumbSchema([

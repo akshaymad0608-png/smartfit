@@ -18,8 +18,8 @@ export default function Calculators() {
   return (
     <PageTransition>
       <Seo
-        title="Health Calculators"
-        description="Free, accurate health calculators: BMI, BMR, TDEE, body fat, ideal weight, lean body mass, macros, protein and water intake — with a downloadable PDF report."
+        title="BMI, BMR, TDEE & Macro Calculators"
+        description="Calculate your BMI, BMR, TDEE, daily calories and macro split for cutting, maintenance or bulking. Free, accurate and instant — no sign-up needed."
         path="/calculators"
         keywords={[
           'BMI calculator',

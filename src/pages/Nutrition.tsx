@@ -33,8 +33,8 @@ export default function Nutrition() {
   return (
     <PageTransition>
       <Seo
-        title="Nutrition & Meal Plans"
-        description="Science-backed nutrition: meal plans for weight loss and muscle gain, Indian, vegetarian and vegan options, a food database, macros and hydration guidance."
+        title="Nutrition Guides, Macros & Meal Plans"
+        description="Evidence-based nutrition guides: how to set macros, plan meals, hit a calorie deficit for fat loss and eat enough protein — without fad diets."
         path="/nutrition"
         keywords={['healthy diet', 'nutrition guide', 'Indian diet plan', 'meal plans', 'protein foods']}
         schema={breadcrumbSchema([

@@ -49,8 +49,8 @@ export default function AICoach() {
   return (
     <PageTransition>
       <Seo
-        title="AI Fitness Coach"
-        description="Generate personalised workouts, meal plans and weekly schedules with the SmartFit AI Coach. Free, private and built to get smarter over time."
+        title="AI Fitness Coach for Personalised Training"
+        description="Ask an AI fitness coach about training, form, macros and recovery and get personalised, evidence-based answers built around your goals — free."
         path="/ai-coach"
         keywords={['AI fitness coach', 'AI workout planner', 'AI meal planner', 'workout generator']}
         schema={breadcrumbSchema([
