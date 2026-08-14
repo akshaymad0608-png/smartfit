@@ -32,6 +32,20 @@ const ROUTES = [
     h1: 'Free Fitness Calculators, Workout Plans & Nutrition Guides',
     intro:
       'FitSmart brings together the tools people actually need to train well: precise health calculators for BMI, BMR, TDEE and macros, structured workout plans for every level, evidence-based nutrition guidance, and an AI coach that ties it together. Everything is free and runs in your browser.',
+    sections: [
+      { h2: 'Health calculators', points: [
+        'BMI — body mass index against standard weight ranges',
+        'BMR — resting calorie burn, the baseline before activity',
+        'TDEE — total daily calories burned including activity level',
+        'Macro calculator — protein, carbs and fat targets for your goal',
+      ] },
+      { h2: 'Training & nutrition', points: [
+        'Structured workout plans for beginner through advanced',
+        'Training programs built around strength or fat-loss goals',
+        'Evidence-based nutrition guides, not fad-diet advice',
+        'An AI coach that adapts plans to your numbers',
+      ] },
+    ],
   },
   {
     path: '/calculators',
@@ -154,11 +168,17 @@ for (const route of ROUTES) {
 
   // Crawlable body per route. React replaces #root's children on mount, so this
   // is only ever seen by non-JS crawlers and the first Google pass.
+  const sectionsHtml = (route.sections || [])
+    .map((s) =>
+      `<h2 style="font-size:20px;margin:28px 0 10px">${esc(s.h2)}</h2>` +
+      `<ul style="font-size:15px;line-height:1.6;color:#444;padding-left:20px">${s.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`,
+    )
+    .join('');
   const seoBlock =
     `<div id="prerender-seo" style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">` +
     `<h1 style="font-size:30px;line-height:1.2;margin:0 0 14px">${esc(route.h1)}</h1>` +
     `<p style="font-size:17px;line-height:1.6;color:#444">${esc(route.intro)}</p>` +
-    `${NAV}</div>`;
+    `${sectionsHtml}${NAV}</div>`;
   html = html.replace(/<div id="prerender-seo"[\s\S]*?<\/nav><\/div>/, seoBlock);
 
   const outPath = route.path === '/' ? join(DIST, 'index.html') : join(DIST, route.path.slice(1), 'index.html');
