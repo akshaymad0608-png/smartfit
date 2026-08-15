@@ -65,6 +65,60 @@ const ROUTES = [
       'Work out the numbers your training depends on: BMI, basal metabolic rate, total daily energy expenditure, your calorie target for cutting or bulking, and the macro split to hit it. Each calculator explains what the result means and what to do next, so the number is actually useful.',
   },
   {
+    path: '/calculators/bmi',
+    title: 'BMI Calculator — Body Mass Index for Men & Women — FitSmart',
+    description:
+      'Free BMI calculator. Enter height and weight to get your body mass index, the category it falls in, and what the number does and does not tell you.',
+    h1: 'BMI Calculator',
+    intro:
+      'Body mass index compares your weight to your height. It is a screening number, not a diagnosis — useful for spotting a trend across a population, blunt for any single person.',
+  },
+  {
+    path: '/calculators/bmr',
+    title: 'BMR Calculator — Basal Metabolic Rate in Calories — FitSmart',
+    description:
+      'Free BMR calculator using the Mifflin-St Jeor equation. Find the calories your body burns at complete rest, before any activity is added.',
+    h1: 'BMR Calculator',
+    intro:
+      'Basal metabolic rate is what you burn doing nothing at all — breathing, circulation, keeping warm. It is the floor under every calorie target, and eating below it for long is how people stall.',
+  },
+  {
+    path: '/calculators/tdee',
+    title: 'TDEE Calculator — Daily Calories You Actually Burn — FitSmart',
+    description:
+      'Free TDEE calculator. Combine your BMR with your activity level to find total daily energy expenditure, then set a calorie target for cutting, maintaining or bulking.',
+    h1: 'TDEE Calculator',
+    intro:
+      'Total daily energy expenditure is everything you burn in a day — resting metabolism plus training, walking, fidgeting and digesting. It is the number every calorie target should be built from.',
+  },
+  {
+    path: '/calculators/body-fat',
+    title: 'Body Fat Percentage Calculator — Estimate Without Callipers — FitSmart',
+    description:
+      'Free body fat calculator. Estimate your body fat percentage and lean mass from height, weight, age and sex — no callipers or scan needed.',
+    h1: 'Body Fat Calculator',
+    intro:
+      'Body fat percentage answers what BMI cannot: how much of your weight is fat and how much is everything else. Two people at the same BMI can sit ten points apart here.',
+  },
+  {
+    path: '/calculators/ideal-weight',
+    title: 'Ideal Weight Calculator — Healthy Weight for Your Height — FitSmart',
+    description:
+      'Free ideal weight calculator. Find a healthy weight range for your height and frame, and see why it is a range rather than a single number.',
+    h1: 'Ideal Weight Calculator',
+    intro:
+      'Ideal weight is a range, not a target you must hit. It is a reference point for a healthy weight at your height — where you sit inside it depends on how much muscle you carry.',
+  },
+  {
+    path: '/calculators/macros',
+    title: 'Macro Calculator — Protein, Carbs & Fat Targets — FitSmart',
+    description:
+      'Free macro calculator. Get daily protein, carbohydrate and fat targets for fat loss, maintenance or muscle gain, based on your calories and goal.',
+    h1: 'Macro Calculator',
+    intro:
+      'Calories decide whether weight moves; macros decide what that weight is. Enough protein in a deficit is the difference between losing fat and losing muscle along with it.',
+  },
+  {
     path: '/workouts',
     title: 'Free Workout Plans & Exercise Guides — FitSmart',
     description:
@@ -203,3 +257,40 @@ for (const route of ROUTES) {
 }
 
 console.log(`\nPrerender complete: ${count} routes`);
+
+/* ---------------------------------------------------------------- sitemap -- */
+
+/**
+ * Built from the same route list, not maintained by hand.
+ *
+ * public/sitemap.xml had drifted to nine URLs while this file was prerendering
+ * far more — every route added since was live, crawlable and absent from the
+ * one file whose job is to announce it. Generating it here means the two can
+ * no longer disagree.
+ */
+const priorityFor = (path) => {
+  if (path === '/') return '1.0';
+  if (/^\/(workouts|nutrition|calculators|programs)$/.test(path)) return '0.9';
+  if (path.startsWith('/calculators/')) return '0.8';
+  if (/^\/(ai-coach|blog|about)$/.test(path)) return '0.7';
+  if (/^\/(privacy|terms|cookies|disclaimer|accessibility|careers|press|sitemap)$/.test(path)) return '0.3';
+  return '0.5';
+};
+const changefreqFor = (path) =>
+  path === '/blog' ? 'daily' : /^\/(privacy|terms|cookies|disclaimer|accessibility)$/.test(path) ? 'yearly' : 'monthly';
+
+const today = new Date().toISOString().slice(0, 10);
+const sitemap =
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  ROUTES
+    .map(
+      (r) =>
+        `  <url><loc>${SITE}${r.path === '/' ? '/' : r.path}</loc><lastmod>${today}</lastmod>` +
+        `<changefreq>${changefreqFor(r.path)}</changefreq><priority>${priorityFor(r.path)}</priority></url>`,
+    )
+    .join('\n') +
+  `\n</urlset>\n`;
+
+writeFileSync(join(DIST, 'sitemap.xml'), sitemap);
+writeFileSync(join('public', 'sitemap.xml'), sitemap);
+console.log(`sitemap.xml: ${ROUTES.length} urls`);

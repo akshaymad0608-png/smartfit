@@ -1,10 +1,12 @@
-import { Calculator, FileText, ShieldCheck, Zap } from 'lucide-react';
+import { Calculator, FileText, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { CalculatorSuite } from '@/features/calculators/CalculatorSuite';
+import { CALCULATOR_PAGES } from '@/features/calculators/pages';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 
@@ -55,6 +57,23 @@ export default function Calculators() {
       </PageHero>
 
       <Section id="bmi" spacing="md">
+        {/* Links out to the per-calculator pages. Without these the new URLs are
+            orphans — in the sitemap but reachable from nowhere, which is how
+            pages end up indexed and ranking for nothing. */}
+        <Reveal>
+          <nav aria-label="Calculators" className="mb-10 flex flex-wrap gap-3">
+            {CALCULATOR_PAGES.map((c) => (
+              <Link
+                key={c.slug}
+                to={`/calculators/${c.slug}`}
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-4 py-2 text-sm font-medium text-body transition-colors hover:border-primary hover:text-primary"
+              >
+                {c.name} calculator <ArrowRight size={14} />
+              </Link>
+            ))}
+          </nav>
+        </Reveal>
+
         <Reveal>
           <CalculatorSuite />
         </Reveal>

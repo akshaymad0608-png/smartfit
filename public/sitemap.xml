@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://fitsmart.space/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://fitsmart.space/workouts</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://fitsmart.space/nutrition</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://fitsmart.space/calculators</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://fitsmart.space/programs</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://fitsmart.space/ai-coach</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://fitsmart.space/blog</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-  <url><loc>https://fitsmart.space/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://fitsmart.space/contact</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://fitsmart.space/</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://fitsmart.space/calculators</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fitsmart.space/calculators/bmi</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fitsmart.space/calculators/bmr</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fitsmart.space/calculators/tdee</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fitsmart.space/calculators/body-fat</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fitsmart.space/calculators/ideal-weight</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fitsmart.space/calculators/macros</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fitsmart.space/workouts</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fitsmart.space/nutrition</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fitsmart.space/programs</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://fitsmart.space/ai-coach</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fitsmart.space/blog</loc><lastmod>2026-08-15</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fitsmart.space/about</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fitsmart.space/contact</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://fitsmart.space/help</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://fitsmart.space/privacy</loc><lastmod>2026-08-15</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fitsmart.space/terms</loc><lastmod>2026-08-15</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fitsmart.space/cookies</loc><lastmod>2026-08-15</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fitsmart.space/disclaimer</loc><lastmod>2026-08-15</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fitsmart.space/accessibility</loc><lastmod>2026-08-15</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fitsmart.space/careers</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fitsmart.space/press</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fitsmart.space/sitemap</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
 </urlset>
