@@ -123,7 +123,13 @@ const ROUTES = [
     title: 'Contact — FitSmart',
     description: 'Get in touch with the FitSmart team with a question, a correction or a partnership enquiry.',
     h1: 'Contact FitSmart',
-    intro: 'Questions, corrections or partnership enquiries are all welcome — send a message and we will get back to you.',
+    // The name, address and phone are spelled out here, not just rendered by
+    // React, so the crawlers that read this file without running JavaScript can
+    // match them against the same details published anywhere else.
+    intro:
+      'Questions, corrections or partnership enquiries are all welcome — send a message and we will get back to you. ' +
+      'FitSmart is run by Akshay Mahajan from Surat, Gujarat, India. ' +
+      'Email akshaymad0608@gmail.com or call +91 76008 85080, Monday to Saturday, 10:00 AM to 8:00 PM IST.',
   },
   {
     path: '/help',
