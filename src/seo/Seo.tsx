@@ -75,7 +75,9 @@ export function Seo({
 
     // Twitter
     upsertMeta('name', 'twitter:card', 'summary_large_image');
-    upsertMeta('name', 'twitter:site', site.twitter);
+    // twitter:site is only set when there is a handle to claim — pointing it at
+    // an account we don't own would credit somebody else on every share.
+    if (site.twitter) upsertMeta('name', 'twitter:site', site.twitter);
     upsertMeta('name', 'twitter:title', fullTitle);
     upsertMeta('name', 'twitter:description', description);
     upsertMeta('name', 'twitter:image', image);

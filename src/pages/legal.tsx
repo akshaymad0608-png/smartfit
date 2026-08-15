@@ -37,7 +37,7 @@ export function Privacy() {
         },
         {
           heading: 'Contact',
-          body: ['Questions about privacy? Email hello@fitsmart.space and we will respond promptly.'],
+          body: ['Questions about privacy? Email akshaymad0608@gmail.com and we will respond promptly.'],
         },
       ]}
     />
@@ -151,7 +151,7 @@ export function Accessibility() {
         {
           heading: 'Ongoing work',
           body: [
-            'Accessibility is never finished. We continuously test and improve. If you encounter a barrier, please email hello@fitsmart.space so we can fix it.',
+            'Accessibility is never finished. We continuously test and improve. If you encounter a barrier, please email akshaymad0608@gmail.com so we can fix it.',
           ],
         },
       ]}
@@ -179,7 +179,7 @@ export function Help() {
         },
         {
           heading: 'Still stuck?',
-          body: ['Reach us any time at hello@fitsmart.space — we usually reply within one business day.'],
+          body: ['Reach us any time at akshaymad0608@gmail.com — we usually reply within one business day.'],
         },
       ]}
     />

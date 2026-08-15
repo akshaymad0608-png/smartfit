@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Github, Instagram, Linkedin, Twitter, Youtube, ArrowUp } from 'lucide-react';
+import { Github, Instagram, Linkedin, ArrowUp } from 'lucide-react';
 import { Logo } from '@/components/brand/Logo';
 import { Container } from '@/components/ui/Container';
 import { NewsletterForm } from '@/features/home/NewsletterForm';
@@ -49,9 +49,7 @@ const columns = [
 ];
 
 const socials = [
-  { icon: Twitter, href: site.social.twitter, label: 'Twitter' },
   { icon: Instagram, href: site.social.instagram, label: 'Instagram' },
-  { icon: Youtube, href: site.social.youtube, label: 'YouTube' },
   { icon: Linkedin, href: site.social.linkedin, label: 'LinkedIn' },
   { icon: Github, href: site.social.github, label: 'GitHub' },
 ];

@@ -8,8 +8,10 @@ export const site = {
   description:
     'FitSmart is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience.',
   url: 'https://fitsmart.space',
-  locale: 'en_US',
-  twitter: '@fitsmart',
+  // The audience is largely Indian, and the nutrition guides are built around
+  // Indian foods, so the locale should say so rather than default to en_US.
+  locale: 'en_IN',
+  twitter: '',
   themeColor: '#3B82F6',
   keywords: [
     'fitness',
@@ -42,17 +44,20 @@ export const site = {
     'workout planner',
   ],
   contact: {
-    email: 'hello@fitsmart.space',
-    phone: '+1 (555) 013-0420',
-    address: '500 Wellness Ave, Suite 200, Austin, TX 78701',
-    hours: 'Mon–Fri, 8:00 AM – 6:00 PM CT',
+    email: 'akshaymad0608@gmail.com',
+    phone: '+91 76008 85080',
+    address: 'Surat, Gujarat, India',
+    hours: 'Mon–Sat, 10:00 AM – 8:00 PM IST',
   },
+  // Only profiles that actually belong here. The handles this used to carry —
+  // twitter/instagram/youtube/linkedin/github "fitsmart" — are other people's
+  // accounts; @fitsmart on YouTube is a channel belonging to someone else
+  // entirely. Listing them in sameAs told search engines this site and those
+  // strangers were the same entity.
   social: {
-    twitter: 'https://twitter.com/fitsmart',
-    instagram: 'https://instagram.com/fitsmart',
-    youtube: 'https://youtube.com/@fitsmart',
-    linkedin: 'https://linkedin.com/company/fitsmart',
-    github: 'https://github.com/fitsmart',
+    instagram: 'https://instagram.com/akshay.website',
+    linkedin: 'https://linkedin.com/in/akshay-mahajan-95bb86187',
+    github: 'https://github.com/akshaymad0608-png',
   },
 } as const;
 
