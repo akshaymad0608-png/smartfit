@@ -57,7 +57,7 @@ const ROUTES = [
   },
   {
     path: '/calculators',
-    title: 'BMI, BMR, TDEE & Macro Calculators — FitSmart',
+    title: 'BMI, BMR, TDEE and Macro Calculators — Free | FitSmart',
     description:
       'Calculate your BMI, BMR, TDEE, daily calories and macro split for cutting, maintenance or bulking. Free, accurate and instant — no sign-up needed.',
     h1: 'Free Health & Fitness Calculators',
@@ -84,16 +84,16 @@ const ROUTES = [
   },
   {
     path: '/calculators/tdee',
-    title: 'TDEE Calculator — Daily Calories You Actually Burn — FitSmart',
+    title: 'TDEE Calculator — Daily Calories You Actually Burn',
     description:
-      'Free TDEE calculator. Combine your BMR with your activity level to find total daily energy expenditure, then set a calorie target for cutting, maintaining or bulking.',
+      'Free TDEE calculator. Combine your BMR with your activity level to find total daily energy expenditure, then set a target for cutting or bulking.',
     h1: 'TDEE Calculator',
     intro:
       'Total daily energy expenditure is everything you burn in a day — resting metabolism plus training, walking, fidgeting and digesting. It is the number every calorie target should be built from.',
   },
   {
     path: '/calculators/body-fat',
-    title: 'Body Fat Percentage Calculator — Estimate Without Callipers — FitSmart',
+    title: 'Body Fat Percentage Calculator — No Callipers Needed',
     description:
       'Free body fat calculator. Estimate your body fat percentage and lean mass from height, weight, age and sex — no callipers or scan needed.',
     h1: 'Body Fat Calculator',
@@ -102,7 +102,7 @@ const ROUTES = [
   },
   {
     path: '/calculators/ideal-weight',
-    title: 'Ideal Weight Calculator — Healthy Weight for Your Height — FitSmart',
+    title: 'Ideal Weight Calculator — Healthy Range for Your Height',
     description:
       'Free ideal weight calculator. Find a healthy weight range for your height and frame, and see why it is a range rather than a single number.',
     h1: 'Ideal Weight Calculator',
@@ -120,7 +120,7 @@ const ROUTES = [
   },
   {
     path: '/workouts',
-    title: 'Free Workout Plans & Exercise Guides — FitSmart',
+    title: 'Free Workout Plans and Exercise Guides for Every Level',
     description:
       'Structured workout plans for strength, fat loss and general fitness, with proper form guidance for every exercise. Free, no-equipment options included.',
     h1: 'Free Workout Plans & Exercise Guides',
@@ -129,7 +129,7 @@ const ROUTES = [
   },
   {
     path: '/nutrition',
-    title: 'Nutrition Guides, Macros & Meal Plans — FitSmart',
+    title: 'Nutrition Guides, Macros and Meal Plans | FitSmart',
     description:
       'Evidence-based nutrition guides: how to set macros, plan meals, hit a calorie deficit for fat loss, and eat enough protein — without fad diets.',
     h1: 'Evidence-Based Nutrition Guides',
@@ -156,7 +156,7 @@ const ROUTES = [
   },
   {
     path: '/blog',
-    title: 'Fitness & Nutrition Articles — FitSmart',
+    title: 'Fitness and Nutrition Articles, Written Plainly | FitSmart',
     description:
       'Practical articles on training, nutrition and health science — including HIIT versus steady-state cardio, protein intake and recovery.',
     h1: 'Fitness & Nutrition Articles',
@@ -165,7 +165,7 @@ const ROUTES = [
   },
   {
     path: '/about',
-    title: 'About — FitSmart',
+    title: 'About FitSmart — Who Builds These Calculators and Why',
     description:
       'FitSmart builds free, evidence-based fitness calculators, workout plans and nutrition guides. Learn what we build and the principles behind it.',
     h1: 'About FitSmart',
@@ -174,8 +174,8 @@ const ROUTES = [
   },
   {
     path: '/contact',
-    title: 'Contact — FitSmart',
-    description: 'Get in touch with the FitSmart team with a question, a correction or a partnership enquiry.',
+    title: 'Contact FitSmart — Questions, Corrections and Feedback',
+    description: 'Get in touch with FitSmart about a question, a correction to a calculator or a guide, or a partnership enquiry. We read and reply to everything.',
     h1: 'Contact FitSmart',
     // The name, address and phone are spelled out here, not just rendered by
     // React, so the crawlers that read this file without running JavaScript can
@@ -187,22 +187,22 @@ const ROUTES = [
   },
   {
     path: '/help',
-    title: 'Help Center — FitSmart',
-    description: 'Answers to common questions about FitSmart calculators, workout plans, accounts and the AI coach.',
+    title: 'Help Centre — Using the FitSmart Calculators and Plans',
+    description: 'Answers to common questions about the FitSmart calculators, workout plans, accounts and the AI coach — how each works and how to use it.',
     h1: 'Help & Frequently Asked Questions',
     intro: 'Common questions about the calculators, the training plans, accounts and the AI coach, answered in one place.',
   },
   // Legal and utility routes. These need unique titles mainly so they stop
   // competing with the homepage in search — /disclaimer and /contact were
   // outranking it purely because every route shipped identical HTML.
-  { path: '/privacy', title: 'Privacy Policy — FitSmart', description: 'How FitSmart collects, uses and protects your data.', h1: 'Privacy Policy', intro: 'How FitSmart collects, uses and protects your personal data.' },
-  { path: '/terms', title: 'Terms & Conditions — FitSmart', description: 'The terms that apply when you use FitSmart.', h1: 'Terms of Service', intro: 'The terms that apply when you use the FitSmart website and tools.' },
-  { path: '/cookies', title: 'Cookie Policy — FitSmart', description: 'Which cookies FitSmart uses and how to control them.', h1: 'Cookie Policy', intro: 'Which cookies FitSmart uses, what they do, and how you can control them.' },
-  { path: '/disclaimer', title: 'Disclaimer — FitSmart', description: 'FitSmart provides general fitness information, not medical advice.', h1: 'Medical Disclaimer', intro: 'FitSmart provides general fitness and nutrition information. It is not medical advice — speak to a qualified professional before changing your training or diet.' },
-  { path: '/accessibility', title: 'Accessibility — FitSmart', description: 'How FitSmart works towards an accessible experience for everyone.', h1: 'Accessibility Statement', intro: 'How FitSmart works towards an accessible experience, and how to report a barrier you hit.' },
-  { path: '/careers', title: 'Careers — FitSmart', description: 'Open roles and how to get in touch about working with FitSmart.', h1: 'Careers at FitSmart', intro: 'Open roles and how to get in touch about working with us.' },
-  { path: '/press', title: 'Press & Media — FitSmart', description: 'Brand assets and press enquiries for FitSmart.', h1: 'Press & Media', intro: 'Brand assets, background and press enquiries.' },
-  { path: '/sitemap', title: 'Sitemap — FitSmart', description: 'Every page on FitSmart in one list.', h1: 'Sitemap', intro: 'Every page on FitSmart, in one list.' },
+  { path: '/privacy', title: 'Privacy Policy — What FitSmart Collects and Never Stores', description: 'How FitSmart collects, uses and protects your data, what stays in your browser, what we never store, and the choices you have over any of it.', h1: 'Privacy Policy', intro: 'How FitSmart collects, uses and protects your personal data.' },
+  { path: '/terms', title: 'Terms and Conditions for Using FitSmart | FitSmart', description: 'The terms that apply when you use FitSmart — what the calculators and plans are, what they are not, and the limits of what we can promise.', h1: 'Terms of Service', intro: 'The terms that apply when you use the FitSmart website and tools.' },
+  { path: '/cookies', title: 'Cookie Policy — Which Cookies FitSmart Uses and Why', description: 'Which cookies FitSmart uses, what each one is for, how long they last, and how to control or clear them from your browser at any time.', h1: 'Cookie Policy', intro: 'Which cookies FitSmart uses, what they do, and how you can control them.' },
+  { path: '/disclaimer', title: 'Disclaimer — FitSmart Is Not Medical Advice, Read This', description: 'FitSmart provides general fitness and nutrition information, not medical advice. What that means for you, and when to speak to a doctor first.', h1: 'Medical Disclaimer', intro: 'FitSmart provides general fitness and nutrition information. It is not medical advice — speak to a qualified professional before changing your training or diet.' },
+  { path: '/accessibility', title: 'Accessibility at FitSmart — What We Do and What Is Next', description: 'How FitSmart works towards an accessible experience for everyone — keyboard navigation, contrast, screen readers, and what we are still fixing.', h1: 'Accessibility Statement', intro: 'How FitSmart works towards an accessible experience, and how to report a barrier you hit.' },
+  { path: '/careers', title: 'Careers at FitSmart — Open Roles and How to Reach Us', description: 'Open roles at FitSmart and how to get in touch about working on the calculators, the training plans or the nutrition guides behind them.', h1: 'Careers at FitSmart', intro: 'Open roles and how to get in touch about working with us.' },
+  { path: '/press', title: 'Press and Media — FitSmart Brand Assets and Enquiries', description: 'Brand assets, logos and press enquiries for FitSmart — what you may use, how to credit it, and who to contact about a story or interview.', h1: 'Press & Media', intro: 'Brand assets, background and press enquiries.' },
+  { path: '/sitemap', title: 'Sitemap — Every Page on FitSmart in One Plain List', description: 'Every page on FitSmart in one plain list — calculators, workout plans, nutrition guides, articles and the policy pages, all in one place.', h1: 'Sitemap', intro: 'Every page on FitSmart, in one list.' },
 ];
 
 const NAV =
