@@ -110,7 +110,7 @@ export default function ProgramDetail() {
               <Link
                 key={p.slug}
                 to={`/programs/${p.slug}`}
-                className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-4 py-2 text-sm font-medium text-body transition-colors hover:border-primary hover:text-primary"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-card px-4 text-sm font-medium text-body transition-colors hover:border-primary hover:text-primary"
               >
                 {p.title} <ArrowRight size={14} />
               </Link>

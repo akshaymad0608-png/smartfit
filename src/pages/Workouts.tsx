@@ -132,7 +132,7 @@ export default function Workouts() {
               key={d}
               onClick={() => setDifficulty(d)}
               className={cn(
-                'rounded-full px-3 py-1 text-sm font-medium transition-colors',
+                'flex min-h-11 items-center rounded-full px-3.5 text-sm font-medium transition-colors',
                 difficulty === d
                   ? 'bg-primary text-white'
                   : 'text-body hover:bg-surface-muted',
@@ -290,7 +290,7 @@ function FilterChip({
     <button
       onClick={onClick}
       className={cn(
-        'rounded-full border px-4 py-2 text-sm font-semibold transition-colors',
+        'flex min-h-11 items-center rounded-full border px-4 text-sm font-semibold transition-colors',
         active
           ? 'border-primary bg-primary text-white'
           : 'border-line bg-card text-body hover:border-primary/40',

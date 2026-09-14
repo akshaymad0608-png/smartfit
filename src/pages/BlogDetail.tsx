@@ -122,7 +122,7 @@ export default function BlogDetail() {
               <Link
                 key={p.slug}
                 to={`/blog/${p.slug}`}
-                className="inline-flex items-center gap-2 rounded-2xl border border-line bg-card px-4 py-3 text-sm font-medium text-body transition-colors hover:border-primary hover:text-primary"
+                className="inline-flex min-h-11 items-center gap-2 rounded-2xl border border-line bg-card px-4 py-3 text-sm font-medium text-body transition-colors hover:border-primary hover:text-primary"
               >
                 {p.title} <ArrowRight size={14} className="shrink-0" />
               </Link>

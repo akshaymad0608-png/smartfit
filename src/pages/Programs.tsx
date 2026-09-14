@@ -41,7 +41,7 @@ export default function Programs() {
               key={l}
               onClick={() => setLevel(l)}
               className={cn(
-                'rounded-full border px-4 py-2 text-sm font-semibold transition-colors',
+                'flex min-h-11 items-center rounded-full border px-4 text-sm font-semibold transition-colors',
                 level === l
                   ? 'border-primary bg-primary text-white'
                   : 'border-line bg-card text-body hover:border-primary/40',

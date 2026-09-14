@@ -9,6 +9,7 @@ import { ScrollToTop } from './ScrollToTop';
 import { PageLoader } from './PageLoader';
 import { ErrorBoundary } from './ErrorBoundary';
 import { CookieConsent } from './CookieConsent';
+import { InstallPrompt } from './InstallPrompt';
 
 export function Layout() {
   const location = useLocation();
@@ -31,6 +32,7 @@ export function Layout() {
       <Footer />
       <BackToTop />
       <CookieConsent />
+      <InstallPrompt />
     </div>
   );
 }

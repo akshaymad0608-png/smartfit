@@ -134,7 +134,7 @@ export function CalculatorSuite() {
           <h3 className="text-card-title font-bold text-heading">Your details</h3>
           <button
             onClick={() => setBio(defaults)}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted hover:text-primary"
+            className="-m-2 inline-flex min-h-11 items-center gap-1.5 p-2 text-xs font-semibold text-muted hover:text-primary"
           >
             <RotateCcw size={13} /> Reset
           </button>
@@ -148,7 +148,7 @@ export function CalculatorSuite() {
                 <button
                   key={s}
                   onClick={() => set('sex', s)}
-                  className={`rounded-2xl border px-4 py-2.5 text-sm font-semibold capitalize transition-colors ${
+                  className={`flex min-h-11 items-center justify-center rounded-2xl border px-4 text-sm font-semibold capitalize transition-colors ${
                     bio.sex === s
                       ? 'border-primary bg-primary-50 text-primary dark:bg-primary/15'
                       : 'border-line text-body hover:border-primary/40'
@@ -217,7 +217,7 @@ export function CalculatorSuite() {
                 <button
                   key={g}
                   onClick={() => set('goal', g)}
-                  className={`rounded-2xl border px-2 py-2.5 text-xs font-semibold transition-colors ${
+                  className={`flex min-h-11 items-center justify-center rounded-2xl border px-2 text-center text-xs font-semibold transition-colors ${
                     bio.goal === g
                       ? 'border-primary bg-primary-50 text-primary dark:bg-primary/15'
                       : 'border-line text-body hover:border-primary/40'

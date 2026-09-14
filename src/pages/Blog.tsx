@@ -69,7 +69,7 @@ export default function Blog() {
                 key={c}
                 onClick={() => setCategory(c)}
                 className={cn(
-                  'rounded-full border px-3.5 py-1.5 text-sm font-semibold transition-colors',
+                  'flex min-h-11 items-center rounded-full border px-3.5 text-sm font-semibold transition-colors',
                   category === c
                     ? 'border-primary bg-primary text-white'
                     : 'border-line bg-card text-body hover:border-primary/40',

@@ -30,7 +30,7 @@ export function Tabs({ items, className }: { items: TabItem[]; className?: strin
               aria-controls={`${groupId}-${tab.id}-panel`}
               onClick={() => setActive(tab.id)}
               className={cn(
-                'relative rounded-full px-4 py-2 text-sm font-semibold transition-colors',
+                'relative flex min-h-11 items-center rounded-full px-4 text-sm font-semibold transition-colors',
                 selected ? 'text-white' : 'text-body hover:text-heading',
               )}
             >
