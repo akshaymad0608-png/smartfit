@@ -243,7 +243,9 @@ const NAV =
   '<a href="/terms">Terms</a> · ' +
   '<a href="/cookies">Cookies</a> · ' +
   '<a href="/disclaimer">Disclaimer</a> · ' +
-  '<a href="/accessibility">Accessibility</a>' +
+  '<a href="/accessibility">Accessibility</a> · ' +
+  '<a href="/bmi-calculator-for-indians">BMI for Indians</a> · ' +
+  '<a href="/fitness-guidelines-reference">Guidelines Reference</a>' +
   '</nav>';
 
 const esc = (s) =>
@@ -309,12 +311,23 @@ console.log(`\nPrerender complete: ${count} routes`);
  * one file whose job is to announce it. Generating it here means the two can
  * no longer disagree.
  */
+
+/**
+ * Standalone static HTML pages living directly in public/ — not React
+ * routes, so ROUTES/prerender never touches them, but they still need a
+ * sitemap entry or they repeat the exact "exists, but nowhere else knows
+ * it" problem this file was written to stop. Same reasoning as NAV below:
+ * add each one here so it isn't silently orphaned again.
+ */
+const EXTRA_STATIC_PAGES = ['/bmi-calculator-for-indians', '/fitness-guidelines-reference'];
+
 const priorityFor = (path) => {
   if (path === '/') return '1.0';
   if (/^\/(workouts|nutrition|calculators|programs)$/.test(path)) return '0.9';
   if (path.startsWith('/calculators/')) return '0.8';
   if (/^\/(ai-coach|blog|about)$/.test(path)) return '0.7';
   if (/^\/(privacy|terms|cookies|disclaimer|accessibility|careers|press|sitemap)$/.test(path)) return '0.3';
+  if (EXTRA_STATIC_PAGES.includes(path)) return '0.7';
   return '0.5';
 };
 const changefreqFor = (path) =>
@@ -323,15 +336,15 @@ const changefreqFor = (path) =>
 const today = new Date().toISOString().slice(0, 10);
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  ROUTES
+  [...ROUTES.map((r) => r.path), ...EXTRA_STATIC_PAGES]
     .map(
-      (r) =>
-        `  <url><loc>${SITE}${r.path === '/' ? '/' : r.path}</loc><lastmod>${today}</lastmod>` +
-        `<changefreq>${changefreqFor(r.path)}</changefreq><priority>${priorityFor(r.path)}</priority></url>`,
+      (path) =>
+        `  <url><loc>${SITE}${path === '/' ? '/' : path}</loc><lastmod>${today}</lastmod>` +
+        `<changefreq>${changefreqFor(path)}</changefreq><priority>${priorityFor(path)}</priority></url>`,
     )
     .join('\n') +
   `\n</urlset>\n`;
 
 writeFileSync(join(DIST, 'sitemap.xml'), sitemap);
 writeFileSync(join('public', 'sitemap.xml'), sitemap);
-console.log(`sitemap.xml: ${ROUTES.length} urls`);
+console.log(`sitemap.xml: ${ROUTES.length + EXTRA_STATIC_PAGES.length} urls`);
