@@ -63,6 +63,14 @@ const ROUTES = [
     h1: 'Free Health & Fitness Calculators',
     intro:
       'Work out the numbers your training depends on: BMI, basal metabolic rate, total daily energy expenditure, your calorie target for cutting or bulking, and the macro split to hit it. Each calculator explains what the result means and what to do next, so the number is actually useful.',
+    links: [
+      { href: '/calculators/bmi', label: 'BMI Calculator' },
+      { href: '/calculators/bmr', label: 'BMR Calculator' },
+      { href: '/calculators/tdee', label: 'TDEE Calculator' },
+      { href: '/calculators/body-fat', label: 'Body Fat % Calculator' },
+      { href: '/calculators/ideal-weight', label: 'Ideal Weight Calculator' },
+      { href: '/calculators/macros', label: 'Macro Calculator' },
+    ],
   },
   {
     path: '/calculators/bmi',
@@ -205,14 +213,37 @@ const ROUTES = [
   { path: '/sitemap', title: 'Sitemap — Every Page on FitSmart in One Plain List', description: 'Every page on FitSmart in one plain list — calculators, workout plans, nutrition guides, articles and the policy pages, all in one place.', h1: 'Sitemap', intro: 'Every page on FitSmart, in one list.' },
 ];
 
+// Only these 6 links ever shipped in NAV — every route carried it, but the 6
+// calculator sub-pages and 11 legal/utility routes below had nothing
+// crawlable pointing at them, on any page. They existed only via
+// sitemap.xml. Same fix already applied on aimastertools, QUICK-RESUME- and
+// akshay.website this week: add every route here so a non-JS crawler has a
+// path to all of them, not just the top six.
 const NAV =
   '<nav aria-label="Sections">' +
   '<a href="/calculators">Health calculators</a> · ' +
+  '<a href="/calculators/bmi">BMI</a> · ' +
+  '<a href="/calculators/bmr">BMR</a> · ' +
+  '<a href="/calculators/tdee">TDEE</a> · ' +
+  '<a href="/calculators/body-fat">Body fat %</a> · ' +
+  '<a href="/calculators/ideal-weight">Ideal weight</a> · ' +
+  '<a href="/calculators/macros">Macros</a> · ' +
   '<a href="/workouts">Workout plans</a> · ' +
   '<a href="/programs">Training programs</a> · ' +
   '<a href="/nutrition">Nutrition guides</a> · ' +
   '<a href="/ai-coach">AI coach</a> · ' +
-  '<a href="/blog">Articles</a>' +
+  '<a href="/blog">Articles</a> · ' +
+  '<a href="/about">About</a> · ' +
+  '<a href="/contact">Contact</a> · ' +
+  '<a href="/help">Help</a> · ' +
+  '<a href="/careers">Careers</a> · ' +
+  '<a href="/press">Press</a> · ' +
+  '<a href="/sitemap">Sitemap</a> · ' +
+  '<a href="/privacy">Privacy</a> · ' +
+  '<a href="/terms">Terms</a> · ' +
+  '<a href="/cookies">Cookies</a> · ' +
+  '<a href="/disclaimer">Disclaimer</a> · ' +
+  '<a href="/accessibility">Accessibility</a>' +
   '</nav>';
 
 const esc = (s) =>
@@ -242,11 +273,21 @@ for (const route of ROUTES) {
       `<ul style="font-size:15px;line-height:1.6;color:#444;padding-left:20px">${s.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`,
     )
     .join('');
+  // Plain-text points can't link anywhere. /calculators listed its six
+  // sub-calculators nowhere crawlable — this renders route.links as real
+  // <a> tags instead, same mechanism added to the portfolio site's
+  // prerender.mjs for the same reason.
+  const linksHtml = route.links?.length
+    ? `<h2 style="font-size:20px;margin:28px 0 10px">${esc(route.linksHeading || 'On this page')}</h2>` +
+      `<ul style="font-size:15px;line-height:1.6;color:#444;padding-left:20px">${route.links
+        .map((l) => `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`)
+        .join('')}</ul>`
+    : '';
   const seoBlock =
     `<div id="prerender-seo" style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">` +
     `<h1 style="font-size:30px;line-height:1.2;margin:0 0 14px">${esc(route.h1)}</h1>` +
     `<p style="font-size:17px;line-height:1.6;color:#444">${esc(route.intro)}</p>` +
-    `${sectionsHtml}${NAV}</div>`;
+    `${linksHtml}${sectionsHtml}${NAV}</div>`;
   html = html.replace(/<div id="prerender-seo"[\s\S]*?<\/nav><\/div>/, seoBlock);
 
   const outPath = route.path === '/' ? join(DIST, 'index.html') : join(DIST, route.path.slice(1), 'index.html');
