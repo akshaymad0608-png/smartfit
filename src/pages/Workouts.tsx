@@ -31,13 +31,21 @@ const videoFor = (category: string) => categoryVideo[category] ?? '/videos/worko
  * this gives a quick per-muscle form-check clip independent of which single
  * workout is in the spotlight. Free stock footage (Mixkit Stock Video Free
  * License — free for commercial use, no attribution required).
+ *
+ * Triceps and Calves are deliberately left out — no free clip could be found
+ * that actually showed the right exercise (search results for those terms
+ * returned unrelated footage), and a mislabelled "demo" is worse than no
+ * demo on a site that positions itself as evidence-based.
  */
 const muscleVideos: Record<string, { label: string; src: string }> = {
   chest: { label: 'Chest', src: '/videos/muscles/chest.mp4' },
   back: { label: 'Back', src: '/videos/muscles/back.mp4' },
   shoulders: { label: 'Shoulders', src: '/videos/muscles/shoulders.mp4' },
-  arms: { label: 'Arms', src: '/videos/muscles/arms.mp4' },
-  legs: { label: 'Legs', src: '/videos/muscles/legs.mp4' },
+  biceps: { label: 'Biceps', src: '/videos/muscles/biceps.mp4' },
+  abs: { label: 'Abs', src: '/videos/muscles/abs.mp4' },
+  quads: { label: 'Quads', src: '/videos/muscles/quads.mp4' },
+  hamstrings: { label: 'Hamstrings', src: '/videos/muscles/hamstrings.mp4' },
+  glutes: { label: 'Glutes', src: '/videos/muscles/glutes.mp4' },
 };
 
 export default function Workouts() {
