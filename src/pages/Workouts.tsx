@@ -25,11 +25,27 @@ const categoryVideo: Record<string, string> = {
 };
 const videoFor = (category: string) => categoryVideo[category] ?? '/videos/workout.mp4';
 
+/**
+ * Muscle-group demo clips for the Gym Workout filter. The gym category only
+ * has one workout (Push-Pull Power) covering four muscle groups at once, so
+ * this gives a quick per-muscle form-check clip independent of which single
+ * workout is in the spotlight. Free stock footage (Mixkit Stock Video Free
+ * License — free for commercial use, no attribution required).
+ */
+const muscleVideos: Record<string, { label: string; src: string }> = {
+  chest: { label: 'Chest', src: '/videos/muscles/chest.mp4' },
+  back: { label: 'Back', src: '/videos/muscles/back.mp4' },
+  shoulders: { label: 'Shoulders', src: '/videos/muscles/shoulders.mp4' },
+  arms: { label: 'Arms', src: '/videos/muscles/arms.mp4' },
+  legs: { label: 'Legs', src: '/videos/muscles/legs.mp4' },
+};
+
 export default function Workouts() {
   const [params, setParams] = useSearchParams();
   const activeCat = params.get('cat') ?? 'all';
   const [difficulty, setDifficulty] = useState<(typeof difficulties)[number]>('All');
   const [videoOpen, setVideoOpen] = useState(false);
+  const [activeMuscle, setActiveMuscle] = useState<string | null>(null);
 
   const setCat = (key: string) => {
     const next = new URLSearchParams(params);
@@ -115,6 +131,35 @@ export default function Workouts() {
             </button>
           ))}
         </div>
+
+        {/* Gym: per-muscle demo clips — the gym category has only one
+            workout covering four muscle groups at once, so this gives a
+            quick form-check clip for each muscle independent of the
+            single workout in the spotlight below. */}
+        {activeCat === 'gym' && (
+          <Reveal className="mt-8">
+            <Card className="p-6">
+              <h2 className="font-bold text-heading">Watch exercises by muscle group</h2>
+              <p className="mt-1 text-sm text-muted">
+                Quick form-check clips for the muscles a gym session trains.
+              </p>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+                {Object.entries(muscleVideos).map(([key, m]) => (
+                  <button
+                    key={key}
+                    onClick={() => setActiveMuscle(key)}
+                    className="group flex flex-col items-center gap-2 rounded-2xl border border-line bg-surface-muted p-4 text-center transition-colors hover:border-primary/40"
+                  >
+                    <span className="grid h-11 w-11 place-items-center rounded-full bg-card text-primary shadow-soft transition-transform group-hover:scale-110">
+                      <Play size={18} className="ml-0.5" />
+                    </span>
+                    <span className="text-sm font-semibold text-heading">{m.label}</span>
+                  </button>
+                ))}
+              </div>
+            </Card>
+          </Reveal>
+        )}
 
         {/* Spotlight detail */}
         {spotlight && (
@@ -210,6 +255,12 @@ export default function Workouts() {
         src={videoFor(spotlight.category)}
         poster={spotlight.image}
         title={`${spotlight.name} demo`}
+      />
+      <VideoModal
+        open={activeMuscle !== null}
+        onClose={() => setActiveMuscle(null)}
+        src={activeMuscle ? muscleVideos[activeMuscle].src : ''}
+        title={activeMuscle ? `${muscleVideos[activeMuscle].label} exercise demo` : undefined}
       />
     </PageTransition>
   );
