@@ -245,6 +245,28 @@ const ROUTES = [
     description: 'Answers to common questions about the FitSmart calculators, workout plans, accounts and the AI coach — how each works and how to use it.',
     h1: 'Help & Frequently Asked Questions',
     intro: 'Common questions about the calculators, the training plans, accounts and the AI coach, answered in one place.',
+    // Mirrors helpFaqs in src/pages/legal.tsx. Kept in sync by hand — React's
+    // Seo.tsx already injects the same FAQPage schema client-side, but that
+    // useEffect never runs for non-JS AI crawlers (GPTBot, ClaudeBot,
+    // PerplexityBot — all explicitly welcomed in robots.txt), so it needs to
+    // ship in the static HTML too or those crawlers see zero structured data
+    // on the one page whose whole job is answering questions.
+    faq: [
+      {
+        question: 'How do I get started with FitSmart?',
+        answer:
+          'Start with a program that matches your goal, use the calculators to set your calorie and protein targets, then let the AI Coach fill in the details.',
+      },
+      {
+        question: 'How do the calculators work?',
+        answer:
+          'Enter your details once on the Calculators page to see every metric — BMI, BMR, TDEE, body fat, ideal weight and macros — and download a PDF report to keep.',
+      },
+      {
+        question: 'What if I need more help?',
+        answer: 'Email akshaymad0608@gmail.com any time — we usually reply within one business day.',
+      },
+    ],
   },
   // Legal and utility routes. These need unique titles mainly so they stop
   // competing with the homepage in search — /disclaimer and /contact were
@@ -299,6 +321,46 @@ const esc = (s) =>
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8');
 
+// path -> h1, so a nested route (e.g. /programs/:slug) can name its parent
+// in the breadcrumb without repeating the title text by hand.
+const h1ByPath = Object.fromEntries(ROUTES.map((r) => [r.path, r.h1]));
+
+/**
+ * Breadcrumb + (optional) FAQPage JSON-LD, baked directly into the static
+ * HTML. Seo.tsx already injects the same breadcrumb/FAQ schema client-side
+ * via a useEffect, but that never runs for AI crawlers that don't execute
+ * JS (GPTBot, ClaudeBot, PerplexityBot — all explicitly welcomed in
+ * robots.txt for GEO/AEO). Organization + WebSite schema already ship
+ * statically in index.html's template and so reach every route already;
+ * this closes the gap for the per-page schema that template can't cover.
+ */
+function pageSchema(route) {
+  const graph = [];
+  if (route.path !== '/') {
+    const segments = route.path.split('/').filter(Boolean);
+    const crumbs = [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }];
+    let acc = '';
+    segments.forEach((seg, i) => {
+      acc += '/' + seg;
+      const name = i === segments.length - 1 ? route.h1 : h1ByPath[acc] || seg;
+      crumbs.push({ '@type': 'ListItem', position: i + 2, name, item: SITE + acc });
+    });
+    graph.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs });
+  }
+  if (route.faq?.length) {
+    graph.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: route.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    });
+  }
+  return graph;
+}
+
 let count = 0;
 for (const route of ROUTES) {
   const url = `${SITE}${route.path}`;
@@ -312,6 +374,14 @@ for (const route of ROUTES) {
   html = html.replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${url}" />`);
   html = html.replace(/<meta name="twitter:title"[\s\S]*?>/, `<meta name="twitter:title" content="${esc(route.title)}" />`);
   html = html.replace(/<meta\s+name="twitter:description"[\s\S]*?>/, `<meta name="twitter:description" content="${esc(route.description)}" />`);
+
+  const schemaGraph = pageSchema(route);
+  if (schemaGraph.length) {
+    const schemaTag = schemaGraph
+      .map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
+      .join('');
+    html = html.replace('</head>', `${schemaTag}</head>`);
+  }
 
   // Crawlable body per route. React replaces #root's children on mount, so this
   // is only ever seen by non-JS crawlers and the first Google pass.
