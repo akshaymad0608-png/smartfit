@@ -39,6 +39,11 @@ export interface Program {
   featured?: boolean;
 }
 
+export interface BlogSection {
+  heading: string;
+  paragraphs: string[];
+}
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -50,6 +55,8 @@ export interface BlogPost {
   category: string;
   tags: string[];
   image: string;
+  /** Full article body, section by section. Optional so nothing breaks if a post ever ships without one. */
+  body?: BlogSection[];
 }
 
 export interface Testimonial {

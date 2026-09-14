@@ -15,14 +15,9 @@ import { blogPosts } from '@/data/content';
  *
  * BlogCard's link pointed every card at /blog#<slug> — a hash Blog.tsx never
  * read, so clicking any article just reloaded the same listing. Same shaped
- * bug as ProgramCard and WorkoutCard before it.
- *
- * data/content.ts's BlogPost type has no body/content field, only an
- * excerpt — there's no full article text to render here. This page fixes
- * the broken link and presents the real fields properly (title, author,
- * date, read time, category, tags, excerpt), but it is not a substitute
- * for actually writing the six articles; that's a content task, not a
- * routing fix.
+ * bug as ProgramCard and WorkoutCard before it. Each post's `body` (section
+ * heading + paragraphs) is the actual article; `excerpt` remains what feeds
+ * the card preview, meta description and OG tags.
  */
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -92,7 +87,24 @@ export default function BlogDetail() {
 
               <p className="mt-6 text-lg leading-relaxed text-body">{post.excerpt}</p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              {post.body && (
+                <div className="mt-8 space-y-7">
+                  {post.body.map((s) => (
+                    <div key={s.heading}>
+                      <h2 className="font-bold text-heading">{s.heading}</h2>
+                      <div className="mt-2.5 space-y-3">
+                        {s.paragraphs.map((p, i) => (
+                          <p key={i} className="text-body">
+                            {p}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-8 flex flex-wrap gap-2">
                 {post.tags.map((t) => (
                   <Badge key={t} tone="neutral">
                     {t}
