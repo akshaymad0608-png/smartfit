@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Play, Sparkles, Target } from 'lucide-react';
@@ -48,7 +48,21 @@ export default function Workouts() {
     [activeCat, difficulty],
   );
 
-  const spotlight = filtered[0] ?? workouts[0];
+  // WorkoutCard links to /workouts?w=<slug> — every card used to link to
+  // /workouts#<slug>, which nothing here ever read, so clicking any card
+  // just reloaded the listing showing whichever workout happened to be
+  // first. This reads the param so the clicked workout is the one that
+  // actually opens in the spotlight.
+  const requestedSlug = params.get('w');
+  const spotlight =
+    (requestedSlug && workouts.find((w) => w.slug === requestedSlug)) || filtered[0] || workouts[0];
+  const spotlightRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (requestedSlug) spotlightRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Only run when navigating to a specific workout, not on every filter change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [requestedSlug]);
 
   return (
     <PageTransition>
@@ -104,6 +118,7 @@ export default function Workouts() {
 
         {/* Spotlight detail */}
         {spotlight && (
+          <div ref={spotlightRef}>
           <Reveal className="mt-10">
             <Card className="grid gap-8 p-8 lg:grid-cols-2">
               <div>
@@ -172,6 +187,7 @@ export default function Workouts() {
               </div>
             </Card>
           </Reveal>
+          </div>
         )}
 
         {/* Grid */}

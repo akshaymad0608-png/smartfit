@@ -13,7 +13,7 @@ const diffTone = {
 export function WorkoutCard({ workout }: { workout: Workout }) {
   return (
     <Card interactive className="group flex flex-col p-0">
-      <Link to={`/workouts#${workout.slug}`} className="flex flex-1 flex-col">
+      <Link to={`/workouts?w=${workout.slug}`} className="flex flex-1 flex-col">
         <div className="relative h-44 overflow-hidden rounded-t-3xl bg-surface-muted">
           <img
             src={workout.image}
