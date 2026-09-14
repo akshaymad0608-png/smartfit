@@ -51,7 +51,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="rounded-full p-2 text-muted hover:bg-surface-muted hover:text-heading"
+                className="grid h-11 w-11 place-items-center rounded-full text-muted hover:bg-surface-muted hover:text-heading"
               >
                 <X size={20} />
               </button>
@@ -80,7 +80,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         <Link
                           key={c.href}
                           to={c.href}
-                          className="block rounded-lg px-3 py-2 text-sm text-body hover:text-primary"
+                          className="flex min-h-11 items-center rounded-lg px-3 text-sm text-body hover:text-primary"
                         >
                           {c.label}
                         </Link>

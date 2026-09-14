@@ -62,6 +62,13 @@ export function GoogleSignInButton({ onSuccess }: { onSuccess?: () => void }) {
           },
           cancel_on_tap_outside: true,
         });
+        // Google's renderButton takes a fixed pixel width, not a percentage —
+        // hardcoding 320 overflowed the page horizontally on any phone
+        // narrower than ~384px (320 + the card's own 64px of padding), since
+        // Google's widget never shrinks itself to fit. Measure the actual
+        // available width (the parent block fills the card's content box)
+        // and cap at 320 rather than assume every viewport is wide enough.
+        const available = ref.current.parentElement?.clientWidth || 320;
         window.google.accounts.id.renderButton(ref.current, {
           type: 'standard',
           theme: 'outline',
@@ -69,7 +76,7 @@ export function GoogleSignInButton({ onSuccess }: { onSuccess?: () => void }) {
           text: 'continue_with',
           shape: 'pill',
           logo_alignment: 'left',
-          width: 320,
+          width: Math.min(320, Math.max(220, available)),
         });
         setReady(true);
       })

@@ -76,7 +76,10 @@ export default function Contact() {
                     {d.label}
                   </p>
                   {d.href ? (
-                    <a href={d.href} className="mt-0.5 block font-medium text-heading hover:text-primary">
+                    <a
+                      href={d.href}
+                      className="-mx-1 mt-0.5 block px-1 py-2 font-medium text-heading hover:text-primary"
+                    >
                       {d.value}
                     </a>
                   ) : (
