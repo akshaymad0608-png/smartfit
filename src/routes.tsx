@@ -23,6 +23,7 @@ const Programs = lazy(() => import('@/pages/Programs'));
 const ProgramDetail = lazy(() => import('@/pages/ProgramDetail'));
 const AICoach = lazy(() => import('@/pages/AICoach'));
 const Blog = lazy(() => import('@/pages/Blog'));
+const BlogDetail = lazy(() => import('@/pages/BlogDetail'));
 const About = lazy(() => import('@/pages/About'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
@@ -42,6 +43,7 @@ export function AppRoutes() {
         <Route path="/programs/:slug" element={<ProgramDetail />} />
         <Route path="/ai-coach" element={<AICoach />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/dashboard" element={<Dashboard />} />

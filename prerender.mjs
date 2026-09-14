@@ -216,6 +216,68 @@ const ROUTES = [
     h1: 'Fitness & Nutrition Articles',
     intro:
       'Practical, research-backed articles on the questions people actually ask: HIIT versus steady-state cardio for fat loss, how much protein you really need, how long recovery should take, and which training variables matter most.',
+    // Every BlogCard's link pointed at /blog#<slug>, which nothing read —
+    // same orphan-page bug already fixed on /programs and /calculators.
+    // These six titles/descriptions are pulled straight from
+    // data/content.ts's blogPosts array, not invented.
+    links: [
+      { href: '/blog/progressive-overload-guide', label: "The Beginner's Guide to Progressive Overload" },
+      { href: '/blog/calories-you-need', label: 'How Many Calories Do You Actually Need?' },
+      { href: '/blog/indian-diet-muscle-gain', label: 'A Balanced Indian Diet Plan for Muscle Gain' },
+      { href: '/blog/mobility-desk-posture', label: '5 Mobility Drills to Fix Desk Posture' },
+      { href: '/blog/hiit-vs-steady-state', label: 'HIIT vs Steady-State Cardio: Which Burns More Fat?' },
+      { href: '/blog/sleep-fitness-tool', label: 'Sleep: The Most Underrated Fitness Tool' },
+    ],
+  },
+  {
+    path: '/blog/progressive-overload-guide',
+    title: "The Beginner's Guide to Progressive Overload — FitSmart",
+    description:
+      'The single most important principle for building strength and muscle — explained simply, with a practical 4-week plan.',
+    h1: "The Beginner's Guide to Progressive Overload",
+    intro:
+      'The single most important principle for building strength and muscle — explained simply, with a practical 4-week plan.',
+  },
+  {
+    path: '/blog/calories-you-need',
+    title: 'How Many Calories Do You Actually Need? — FitSmart',
+    description:
+      'BMR, TDEE and calorie targets demystified — plus how to set a deficit or surplus that you can actually stick to.',
+    h1: 'How Many Calories Do You Actually Need?',
+    intro:
+      'BMR, TDEE and calorie targets demystified — plus how to set a deficit or surplus that you can actually stick to.',
+  },
+  {
+    path: '/blog/indian-diet-muscle-gain',
+    title: 'A Balanced Indian Diet Plan for Muscle Gain — FitSmart',
+    description:
+      'High-protein, vegetarian-friendly meals built around everyday Indian ingredients to support lean growth.',
+    h1: 'A Balanced Indian Diet Plan for Muscle Gain',
+    intro:
+      'High-protein, vegetarian-friendly meals built around everyday Indian ingredients to support lean growth.',
+  },
+  {
+    path: '/blog/mobility-desk-posture',
+    title: '5 Mobility Drills to Fix Desk Posture — FitSmart',
+    description:
+      'Sitting all day? These five daily drills open your hips and shoulders and undo the damage of a desk job.',
+    h1: '5 Mobility Drills to Fix Desk Posture',
+    intro:
+      'Sitting all day? These five daily drills open your hips and shoulders and undo the damage of a desk job.',
+  },
+  {
+    path: '/blog/hiit-vs-steady-state',
+    title: 'HIIT vs Steady-State Cardio: Which Burns More Fat? — FitSmart',
+    description: 'The honest, evidence-based answer — and how to combine both for the best fat-loss results.',
+    h1: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
+    intro: 'The honest, evidence-based answer — and how to combine both for the best fat-loss results.',
+  },
+  {
+    path: '/blog/sleep-fitness-tool',
+    title: 'Sleep: The Most Underrated Fitness Tool — FitSmart',
+    description: 'Why quality sleep beats another supplement — and simple habits to recover harder while you rest.',
+    h1: 'Sleep: The Most Underrated Fitness Tool',
+    intro: 'Why quality sleep beats another supplement — and simple habits to recover harder while you rest.',
   },
   {
     path: '/about',

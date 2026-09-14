@@ -12,7 +12,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
   });
   return (
     <Card interactive className="flex flex-col p-0">
-      <Link to={`/blog#${post.slug}`} className="flex flex-1 flex-col">
+      <Link to={`/blog/${post.slug}`} className="flex flex-1 flex-col">
         <div className="h-44 overflow-hidden rounded-t-3xl bg-surface-muted">
           <img
             src={post.image}
