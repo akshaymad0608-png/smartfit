@@ -244,8 +244,8 @@ const NAV =
   '<a href="/cookies">Cookies</a> · ' +
   '<a href="/disclaimer">Disclaimer</a> · ' +
   '<a href="/accessibility">Accessibility</a> · ' +
-  '<a href="/bmi-calculator-for-indians">BMI for Indians</a> · ' +
-  '<a href="/fitness-guidelines-reference">Guidelines Reference</a>' +
+  '<a href="/bmi-calculator-for-indians.html">BMI for Indians</a> · ' +
+  '<a href="/fitness-guidelines-reference.html">Guidelines Reference</a>' +
   '</nav>';
 
 const esc = (s) =>
@@ -319,7 +319,7 @@ console.log(`\nPrerender complete: ${count} routes`);
  * it" problem this file was written to stop. Same reasoning as NAV below:
  * add each one here so it isn't silently orphaned again.
  */
-const EXTRA_STATIC_PAGES = ['/bmi-calculator-for-indians', '/fitness-guidelines-reference'];
+const EXTRA_STATIC_PAGES = ['/bmi-calculator-for-indians.html', '/fitness-guidelines-reference.html'];
 
 const priorityFor = (path) => {
   if (path === '/') return '1.0';
