@@ -17,6 +17,8 @@ interface ContentPageProps {
   path: string;
   updated?: string;
   sections: ContentSection[];
+  /** Extra JSON-LD to add alongside the breadcrumb this page already ships — e.g. FAQPage on Help. */
+  extraSchema?: Record<string, unknown>[];
 }
 
 /**
@@ -30,6 +32,7 @@ export function ContentPage({
   path,
   updated,
   sections,
+  extraSchema,
 }: ContentPageProps) {
   return (
     <PageTransition>
@@ -37,10 +40,13 @@ export function ContentPage({
         title={title}
         description={subtitle ?? `${title} — FitSmart`}
         path={path}
-        schema={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: title, path },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: title, path },
+          ]),
+          ...(extraSchema ?? []),
+        ]}
       />
       <PageHero eyebrow={eyebrow} title={title} subtitle={subtitle} crumbs={[{ label: title }]} />
       <Section spacing="md">

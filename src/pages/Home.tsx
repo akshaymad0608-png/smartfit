@@ -351,7 +351,7 @@ export default function Home() {
                 Start training smarter today
               </h2>
               <p className="mt-4 text-white/90">
-                Join 250,000+ people getting fitter with FitSmart. Free to start, no equipment needed.
+                Free calculators, workouts, programs and an AI coach — no sign-up, no equipment needed.
               </p>
               <div className="mx-auto mt-8 max-w-md">
                 <NewsletterForm />

@@ -126,7 +126,7 @@ export function Hero() {
                     <Star key={i} size={13} className="fill-accent text-accent" />
                   ))}
                 </div>
-                <p className="text-xs text-muted">Loved by 250,000+ members</p>
+                <p className="text-xs text-muted">100% free, no sign-up needed</p>
               </div>
             </motion.div>
 

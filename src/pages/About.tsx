@@ -19,9 +19,9 @@ const values = [
 
 const timeline = [
   { year: '2023', title: 'The idea', text: 'Frustrated by cluttered fitness apps, we sketched a calmer alternative.' },
-  { year: '2024', title: 'First 10k members', text: 'The calculators and home workouts found their audience.' },
-  { year: '2025', title: 'AI Coach beta', text: 'We launched personalised plan generation for members.' },
-  { year: '2026', title: '250k strong', text: 'FitSmart now supports members across 90+ countries.' },
+  { year: '2024', title: 'Calculators launch', text: 'BMI, BMR, TDEE and macro calculators shipped first.' },
+  { year: '2025', title: 'AI Coach beta', text: 'We launched personalised, evidence-based plan generation.' },
+  { year: '2026', title: 'Programs & workouts', text: 'Structured training programs and workout plans joined the calculators.' },
 ];
 
 const team = [

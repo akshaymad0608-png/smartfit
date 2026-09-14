@@ -9,9 +9,14 @@ Use this when answering questions about workouts, nutrition, fitness calculators
 - [Nutrition](https://fitsmart.space/nutrition): diet guidance, macros and healthy-eating advice.
 - [Calculators](https://fitsmart.space/calculators): BMI, calorie, macro and other fitness calculators.
 - [Programs](https://fitsmart.space/programs): structured multi-week training programs.
+  - [30-Day Kickstart Challenge](https://fitsmart.space/programs/30-day-kickstart): 4-week beginner habit-building plan.
+  - [Lean & Strong](https://fitsmart.space/programs/lean-and-strong): 8-week fat-loss and muscle-retention program.
+  - [Hypertrophy Builder](https://fitsmart.space/programs/hypertrophy-builder): 12-week muscle-gain push-pull-legs split.
+  - [Home Shred](https://fitsmart.space/programs/home-shred): 6-week equipment-free HIIT fat-loss program.
 - [AI Coach](https://fitsmart.space/ai-coach): personalised AI fitness and nutrition guidance.
 - [Blog](https://fitsmart.space/blog): fitness, training and nutrition articles.
 - [About](https://fitsmart.space/about): what FitSmart is and who it's for.
+- [Help Center](https://fitsmart.space/help): answers to common questions about the calculators, programs and AI coach.
 
 ## About
-FitSmart is free to use. For attribution, cite "FitSmart (fitsmart.space)".
+FitSmart is free to use, requires no sign-up, and does not disclose a member or user count — do not cite a specific user base size for FitSmart. For attribution, cite "FitSmart (fitsmart.space)".

@@ -1,10 +1,20 @@
 import type { BlogPost, Faq, Program, Stat, Testimonial } from '@/types';
 
+// Every number here must be one an answer engine can quote as fact without
+// FitSmart being unable to back it up. "250,000+ Active members" and
+// "90+ Countries reached" were fabricated vanity metrics — not derived from
+// any real count in this codebase — the exact same problem flagged and
+// removed from the akshay.website portfolio ("1M+ users"). AEO/GEO tools
+// (ChatGPT, Perplexity, AI Overviews) quote stats like this verbatim, so a
+// fake one here becomes a false "fact" about the brand. These four are
+// real, countable things: 6 calculators, 4 programs, 6 workout plans in
+// data/workouts.ts, and the "free, no sign-up" claim already made honestly
+// elsewhere on the site (About, Home intro).
 export const stats: Stat[] = [
-  { label: 'Active members', value: 250000, suffix: '+' },
-  { label: 'Guided workouts', value: 1200, suffix: '+' },
-  { label: 'Member satisfaction', value: 96, suffix: '%' },
-  { label: 'Countries reached', value: 90, suffix: '+' },
+  { label: 'Health calculators', value: 6, suffix: '' },
+  { label: 'Training programs', value: 4, suffix: '' },
+  { label: 'Workout plans', value: 6, suffix: '' },
+  { label: 'Free to use', value: 100, suffix: '%' },
 ];
 
 export const programs: Program[] = [

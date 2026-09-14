@@ -1,4 +1,5 @@
 import { ContentPage } from './ContentPage';
+import { faqSchema } from '@/seo/schema';
 
 const UPDATED = 'July 1, 2026';
 
@@ -159,6 +160,23 @@ export function Accessibility() {
   );
 }
 
+const helpFaqs = [
+  {
+    question: 'How do I get started with FitSmart?',
+    answer:
+      'Start with a program that matches your goal, use the calculators to set your calorie and protein targets, then let the AI Coach fill in the details.',
+  },
+  {
+    question: 'How do the calculators work?',
+    answer:
+      'Enter your details once on the Calculators page to see every metric — BMI, BMR, TDEE, body fat, ideal weight and macros — and download a PDF report to keep.',
+  },
+  {
+    question: 'What if I need more help?',
+    answer: 'Email akshaymad0608@gmail.com any time — we usually reply within one business day.',
+  },
+];
+
 export function Help() {
   return (
     <ContentPage
@@ -166,22 +184,11 @@ export function Help() {
       title="Help Center"
       subtitle="Answers and guidance for getting the most out of FitSmart."
       path="/help"
-      sections={[
-        {
-          heading: 'Getting started',
-          body: [
-            'New to FitSmart? Start with a program that matches your goal, use the calculators to set your calorie and protein targets, then let the AI Coach fill in the details.',
-          ],
-        },
-        {
-          heading: 'Calculators',
-          body: ['Enter your details once on the Calculators page to see every metric, and download a PDF report to keep.'],
-        },
-        {
-          heading: 'Still stuck?',
-          body: ['Reach us any time at akshaymad0608@gmail.com — we usually reply within one business day.'],
-        },
-      ]}
+      // Rendered as an accordion below, and doubles as the source for
+      // FAQPage schema — the actual Q&A shape AI answer engines (ChatGPT,
+      // Perplexity, AI Overviews) look for when citing a help page.
+      extraSchema={[faqSchema(helpFaqs)]}
+      sections={helpFaqs.map((f) => ({ heading: f.question, body: [f.answer] }))}
     />
   );
 }
@@ -221,7 +228,9 @@ export function Press() {
       sections={[
         {
           heading: 'About FitSmart',
-          body: ['FitSmart is a premium, privacy-first fitness platform serving 250,000+ members across 90+ countries.'],
+          body: [
+            'FitSmart is a free, privacy-first fitness platform: health calculators, structured training programs, workout plans, nutrition guides and an AI coach — all usable without an account.',
+          ],
         },
         {
           heading: 'Media enquiries',
