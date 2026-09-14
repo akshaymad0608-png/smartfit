@@ -29,23 +29,26 @@ const videoFor = (category: string) => categoryVideo[category] ?? '/videos/worko
  * Muscle-group demo clips for the Gym Workout filter. The gym category only
  * has one workout (Push-Pull Power) covering four muscle groups at once, so
  * this gives a quick per-muscle form-check clip independent of which single
- * workout is in the spotlight. Free stock footage (Mixkit Stock Video Free
- * License — free for commercial use, no attribution required).
- *
- * Triceps and Calves are deliberately left out — no free clip could be found
- * that actually showed the right exercise (search results for those terms
- * returned unrelated footage), and a mislabelled "demo" is worse than no
- * demo on a site that positions itself as evidence-based.
+ * workout is in the spotlight. Free stock footage — Mixkit Stock Video Free
+ * License for most, Pexels License for triceps/calves (both free for
+ * commercial use, no attribution required). Triceps and calves needed a
+ * second source: Mixkit's library had nothing that actually showed the
+ * right exercise for those two (calf-raise searches returned literal baby
+ * cows), so those two came from Pexels instead, each verified against the
+ * exact video ID's own metadata before downloading — not just a plausible
+ * filename — so the clip showing is the exercise it's labelled as.
  */
 const muscleVideos: Record<string, { label: string; src: string }> = {
   chest: { label: 'Chest', src: '/videos/muscles/chest.mp4' },
   back: { label: 'Back', src: '/videos/muscles/back.mp4' },
   shoulders: { label: 'Shoulders', src: '/videos/muscles/shoulders.mp4' },
   biceps: { label: 'Biceps', src: '/videos/muscles/biceps.mp4' },
+  triceps: { label: 'Triceps', src: '/videos/muscles/triceps.mp4' },
   abs: { label: 'Abs', src: '/videos/muscles/abs.mp4' },
   quads: { label: 'Quads', src: '/videos/muscles/quads.mp4' },
   hamstrings: { label: 'Hamstrings', src: '/videos/muscles/hamstrings.mp4' },
   glutes: { label: 'Glutes', src: '/videos/muscles/glutes.mp4' },
+  calves: { label: 'Calves', src: '/videos/muscles/calves.mp4' },
 };
 
 export default function Workouts() {
