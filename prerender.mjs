@@ -152,6 +152,52 @@ const ROUTES = [
     h1: 'Structured Training Programs',
     intro:
       'Complete multi-week programs that tell you exactly what to do each session, with built-in progression so you keep improving. Choose a beginner foundation, a fat-loss block or a strength cycle, and follow it rather than improvising every time you train.',
+    // Every ProgramCard's "View program" button linked back to this same
+    // page until the fix that added the four routes below — the exact bug
+    // a user reported. Same reasoning as /calculators' links list: give
+    // this listing page a real, crawlable path to each one.
+    links: [
+      { href: '/programs/30-day-kickstart', label: '30-Day Kickstart Challenge' },
+      { href: '/programs/lean-and-strong', label: 'Lean & Strong' },
+      { href: '/programs/hypertrophy-builder', label: 'Hypertrophy Builder' },
+      { href: '/programs/home-shred', label: 'Home Shred' },
+    ],
+  },
+  {
+    path: '/programs/30-day-kickstart',
+    title: '30-Day Kickstart Challenge — 4-Week Beginner Habit Plan',
+    description:
+      'A month-long guided plan that turns fitness into a daily habit with short, achievable 20-30 minute sessions, 5 days a week, no equipment required.',
+    h1: '30-Day Kickstart Challenge',
+    intro:
+      'Four weeks, five short sessions a week, no equipment — built to get the habit in place before anything else. The goal is not intensity; it is still training on day 25, which is where most people who start from nothing actually fall off.',
+  },
+  {
+    path: '/programs/lean-and-strong',
+    title: 'Lean & Strong — 8-Week Fat Loss & Muscle Program',
+    description:
+      'An 8-week body-recomposition program pairing progressive strength training with macro guidance and weekly check-ins to lose fat and keep muscle.',
+    h1: 'Lean & Strong',
+    intro:
+      'Eight weeks, four sessions a week, pairing progressive strength blocks with macro guidance so the scale moving down does not just mean muscle going with it. Weekly check-ins keep the plan honest instead of static.',
+  },
+  {
+    path: '/programs/hypertrophy-builder',
+    title: 'Hypertrophy Builder — 12-Week Muscle Gain Program',
+    description:
+      'A 12-week push-pull-legs split with auto-regulated volume and built-in deload weeks, engineered for maximum lean-mass gains.',
+    h1: 'Hypertrophy Builder',
+    intro:
+      'Twelve weeks of a push-pull-legs split, five days a week, with auto-regulated volume and deload weeks built into the plan rather than left for you to guess when to take one.',
+  },
+  {
+    path: '/programs/home-shred',
+    title: 'Home Shred — 6-Week Fat Loss Program, No Equipment',
+    description:
+      'Six weeks of equipment-free HIIT and conditioning for fat loss, with follow-along timers and low-impact options — do it in a living room, hotel or dorm.',
+    h1: 'Home Shred',
+    intro:
+      'Six weeks of equipment-free HIIT and conditioning, five days a week, with follow-along timers and low-impact options for anyone whose joints do not love standard HIIT. Works in a living room, hotel room or dorm.',
   },
   {
     path: '/ai-coach',

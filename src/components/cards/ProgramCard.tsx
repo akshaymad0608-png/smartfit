@@ -51,7 +51,7 @@ export function ProgramCard({ program }: { program: Program }) {
           ))}
         </ul>
 
-        <Button as="link" to="/programs" variant="outline" className="mt-6 w-full">
+        <Button as="link" to={`/programs/${program.slug}`} variant="outline" className="mt-6 w-full">
           View program
         </Button>
       </div>
