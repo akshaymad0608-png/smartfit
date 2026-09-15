@@ -95,7 +95,7 @@ function StepsTile() {
               <button
                 key={n}
                 onClick={() => add(n)}
-                className="rounded-full border border-line bg-surface-muted px-3 py-1.5 text-xs font-semibold text-body transition-colors hover:border-primary hover:text-primary"
+                className="flex min-h-11 items-center rounded-full border border-line bg-surface-muted px-3.5 text-xs font-semibold text-body transition-colors hover:border-primary hover:text-primary"
               >
                 +{n.toLocaleString()}
               </button>
@@ -103,9 +103,9 @@ function StepsTile() {
             <button
               onClick={() => setSteps(0)}
               aria-label="Reset steps"
-              className="grid h-7 w-7 place-items-center rounded-full border border-line text-muted transition-colors hover:border-primary hover:text-primary"
+              className="grid h-11 w-11 place-items-center rounded-full border border-line text-muted transition-colors hover:border-primary hover:text-primary"
             >
-              <RotateCcw size={13} />
+              <RotateCcw size={14} />
             </button>
           </div>
         </div>
@@ -167,11 +167,11 @@ function HeartRateTile() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && logReading()}
           placeholder="e.g. 72"
-          className="h-10 w-full min-w-0 rounded-full border border-line bg-surface-muted px-4 text-sm text-heading outline-none focus:border-primary"
+          className="h-11 w-full min-w-0 rounded-full border border-line bg-surface-muted px-4 text-sm text-heading outline-none focus:border-primary"
         />
         <button
           onClick={logReading}
-          className="h-10 shrink-0 rounded-full bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+          className="h-11 shrink-0 rounded-full bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
         >
           Log
         </button>
@@ -195,12 +195,12 @@ function WaterTile() {
         <Badge tone={pct >= 1 ? 'secondary' : 'primary'}>{liters} L</Badge>
       </div>
 
-      <div className="mt-4 flex items-center gap-5">
-        <Ring pct={pct} color="#3B82F6" size={88} stroke={8}>
+      <div className="mt-4 flex flex-wrap items-center gap-5">
+        <Ring pct={pct} color="#3B82F6" size={80} stroke={7}>
           <span className="text-base font-extrabold text-heading">{glasses}</span>
           <span className="text-[10px] text-muted">/ {WATER_GOAL} glasses</span>
         </Ring>
-        <div className="flex flex-1 flex-wrap gap-1.5">
+        <div className="flex flex-1 flex-wrap gap-2">
           <AnimatePresence initial={false}>
             {Array.from({ length: WATER_GOAL }).map((_, i) => (
               <motion.button
@@ -211,11 +211,11 @@ function WaterTile() {
                 aria-label={i < glasses ? 'Remove a glass' : 'Add a glass'}
                 className={
                   i < glasses
-                    ? 'grid h-8 w-8 place-items-center rounded-full bg-primary text-white'
-                    : 'grid h-8 w-8 place-items-center rounded-full border border-dashed border-line text-muted transition-colors hover:border-primary hover:text-primary'
+                    ? 'grid h-11 w-11 place-items-center rounded-full bg-primary text-white'
+                    : 'grid h-11 w-11 place-items-center rounded-full border border-dashed border-line text-muted transition-colors hover:border-primary hover:text-primary'
                 }
               >
-                <Droplets size={14} />
+                <Droplets size={16} />
               </motion.button>
             ))}
           </AnimatePresence>
@@ -245,9 +245,9 @@ function SleepTile() {
         <button
           onClick={() => setMinutes((m) => Math.max(0, m - 30))}
           aria-label="Subtract 30 minutes"
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line text-body transition-colors hover:border-primary hover:text-primary"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-line text-body transition-colors hover:border-primary hover:text-primary"
         >
-          <Minus size={15} />
+          <Minus size={16} />
         </button>
         <span className="min-w-24 text-center text-2xl font-extrabold text-heading">
           {Math.floor(hours)}h {minutes % 60}m
@@ -255,9 +255,9 @@ function SleepTile() {
         <button
           onClick={() => setMinutes((m) => Math.min(16 * 60, m + 30))}
           aria-label="Add 30 minutes"
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line text-body transition-colors hover:border-primary hover:text-primary"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-line text-body transition-colors hover:border-primary hover:text-primary"
         >
-          <Plus size={15} />
+          <Plus size={16} />
         </button>
       </div>
       <p className="mt-3 text-center text-xs text-muted">Goal: {SLEEP_GOAL}h a night</p>
