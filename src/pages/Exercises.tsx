@@ -209,7 +209,7 @@ export default function Exercises() {
                 <button
                   key={ex.name}
                   onClick={() => setExerciseIndex(i)}
-                  className={`min-h-9 rounded-full px-3.5 text-xs font-semibold transition-colors ${
+                  className={`flex min-h-11 items-center rounded-full px-3.5 text-xs font-semibold transition-colors ${
                     i === exerciseIndex
                       ? 'bg-primary text-white'
                       : 'bg-white/10 text-white/80 hover:bg-white/20'
