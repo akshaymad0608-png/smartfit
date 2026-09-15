@@ -14,6 +14,7 @@ import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { workoutCategories, workouts } from '@/data/workouts';
 import { muscleGroups } from '@/data/muscles';
+import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
 import { cn } from '@/lib/cn';
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'] as const;
@@ -145,21 +146,20 @@ export default function Workouts() {
                   <button
                     key={m.key}
                     onClick={() => setActiveMuscle(m.key)}
-                    className="group relative block aspect-square w-full overflow-hidden rounded-2xl text-left"
+                    className="group block w-full rounded-xl border border-line bg-card p-2.5 text-center transition-colors hover:border-primary/40"
                   >
-                    <img
-                      src={m.image}
-                      alt={`${m.label} exercise`}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/5 to-transparent" />
-                    <span className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-white/90 text-primary shadow-soft transition-transform group-hover:scale-110">
-                      <Play size={14} className="ml-0.5" />
-                    </span>
-                    <span className="absolute bottom-2 left-2 right-2 text-sm font-bold text-white">
-                      {m.label}
-                    </span>
+                    <div className="relative overflow-hidden rounded-lg bg-surface-muted">
+                      <MuscleDiagram
+                        muscle={m.key}
+                        className="aspect-square w-full transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <span className="absolute inset-0 grid place-items-center bg-slate-950/0 opacity-0 transition-all group-hover:bg-slate-950/10 group-hover:opacity-100">
+                        <span className="grid h-8 w-8 place-items-center rounded-full bg-white/95 text-primary shadow-soft">
+                          <Play size={13} className="ml-0.5" />
+                        </span>
+                      </span>
+                    </div>
+                    <span className="mt-2 block text-sm font-bold text-primary">{m.label}</span>
                   </button>
                 ))}
               </div>

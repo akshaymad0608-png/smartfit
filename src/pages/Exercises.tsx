@@ -2,15 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Dumbbell,
-  ArrowUpFromLine,
-  CircleDot,
-  Zap,
-  Flame,
-  Hexagon,
-  Footprints,
-  Activity,
-  PersonStanding,
-  TrendingUp,
   Play,
   Home,
   Flame as FlameCat,
@@ -20,8 +11,8 @@ import {
   Timer,
   Leaf,
   Waves,
+  ChevronRight,
 } from 'lucide-react';
-import { ChevronRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Counter } from '@/components/ui/Counter';
 import { Section, SectionHeader } from '@/components/ui/Section';
@@ -29,23 +20,11 @@ import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { VideoModal } from '@/components/ui/VideoModal';
 import { WorkoutCard } from '@/components/cards/WorkoutCard';
+import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { muscleGroups } from '@/data/muscles';
 import { workoutCategories, workouts } from '@/data/workouts';
-
-const icons: Record<string, typeof Dumbbell> = {
-  chest: Dumbbell,
-  back: ArrowUpFromLine,
-  shoulders: CircleDot,
-  biceps: Zap,
-  triceps: Flame,
-  abs: Hexagon,
-  quads: Footprints,
-  hamstrings: Activity,
-  glutes: PersonStanding,
-  calves: TrendingUp,
-};
 
 const categoryIcons: Record<string, typeof Dumbbell> = {
   home: Home,
@@ -146,36 +125,33 @@ export default function Exercises() {
       </div>
 
       <Section spacing="md">
-        <SectionHeader eyebrow="Form check" title="Browse by muscle group" />
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {muscleGroups.map((m, i) => {
-            const Icon = icons[m.key] ?? Dumbbell;
-            return (
-              <Reveal key={m.key} delay={i * 0.03}>
-                <button
-                  onClick={() => setActive(m.key)}
-                  className="group relative block aspect-[4/5] w-full overflow-hidden rounded-2xl bg-surface-muted text-left shadow-soft transition-transform hover:-translate-y-1"
-                >
-                  <img
-                    src={m.image}
-                    alt={`${m.label} exercise`}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        <SectionHeader
+          eyebrow="Form check"
+          title="Browse by muscle group"
+          subtitle="Choose the muscle group you want to target — each opens a real exercise demo."
+        />
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {muscleGroups.map((m, i) => (
+            <Reveal key={m.key} delay={i * 0.03}>
+              <button
+                onClick={() => setActive(m.key)}
+                className="group block w-full rounded-2xl border border-line bg-card p-4 text-center shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lift"
+              >
+                <div className="relative overflow-hidden rounded-xl bg-surface-muted">
+                  <MuscleDiagram
+                    muscle={m.key}
+                    className="aspect-square w-full transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
-                  <span className="absolute left-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-primary shadow-soft backdrop-blur">
-                    <Icon size={17} />
+                  <span className="absolute inset-0 grid place-items-center bg-slate-950/0 opacity-0 transition-all group-hover:bg-slate-950/10 group-hover:opacity-100">
+                    <span className="grid h-10 w-10 place-items-center rounded-full bg-white/95 text-primary shadow-soft">
+                      <Play size={16} className="ml-0.5" />
+                    </span>
                   </span>
-                  <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/20 text-white opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
-                    <Play size={15} className="ml-0.5" />
-                  </span>
-                  <span className="absolute bottom-3 left-3 right-3 text-base font-bold text-white">
-                    {m.label}
-                  </span>
-                </button>
-              </Reveal>
-            );
-          })}
+                </div>
+                <span className="mt-3 block text-sm font-bold text-primary">{m.label}</span>
+              </button>
+            </Reveal>
+          ))}
         </div>
       </Section>
 
