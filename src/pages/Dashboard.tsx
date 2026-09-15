@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Activity, Award, Droplets, Flame, Moon, TrendingDown, Target } from 'lucide-react';
+import { Activity, Award, Flame, Moon, TrendingDown, Target } from 'lucide-react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PageHero } from '@/components/layout/PageHero';
@@ -8,6 +8,7 @@ import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
+import { HealthTracker } from '@/components/dashboard/HealthTracker';
 import { useAuth } from '@/contexts/AuthContext';
 import { Seo } from '@/seo/Seo';
 
@@ -73,38 +74,6 @@ function BarChart({ data, labels }: { data: number[]; labels: string[] }) {
   );
 }
 
-function Ring({ value, max, label }: { value: number; max: number; label: string }) {
-  const r = 42;
-  const c = 2 * Math.PI * r;
-  const pct = Math.min(1, value / max);
-  return (
-    <div className="flex flex-col items-center">
-      <svg width="110" height="110" viewBox="0 0 110 110">
-        <circle cx="55" cy="55" r={r} fill="none" stroke="var(--color-line)" strokeWidth="10" />
-        <motion.circle
-          cx="55"
-          cy="55"
-          r={r}
-          fill="none"
-          stroke="#3B82F6"
-          strokeWidth="10"
-          strokeLinecap="round"
-          transform="rotate(-90 55 55)"
-          strokeDasharray={c}
-          initial={{ strokeDashoffset: c }}
-          whileInView={{ strokeDashoffset: c * (1 - pct) }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        />
-        <text x="55" y="60" textAnchor="middle" className="fill-heading text-lg font-bold">
-          {value}
-        </text>
-      </svg>
-      <span className="mt-1 text-sm text-muted">{label}</span>
-    </div>
-  );
-}
-
 const kpis = [
   { icon: TrendingDown, label: 'Weight', value: '74.9 kg', delta: '-7.1 kg', tone: 'secondary' as const },
   { icon: Flame, label: 'Calories today', value: '1,840', delta: 'On target', tone: 'accent' as const },
@@ -159,28 +128,21 @@ export default function Dashboard() {
           ))}
         </div>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          <Reveal className="lg:col-span-2">
-            <Card className="p-6">
-              <div className="flex items-center justify-between">
-                <h2 className="font-bold text-heading">Weight progress</h2>
-                <Badge tone="secondary">12 weeks</Badge>
-              </div>
-              <div className="mt-4">
-                <LineChart data={weightSeries} />
-              </div>
-            </Card>
-          </Reveal>
-          <Reveal>
-            <Card className="flex h-full flex-col items-center justify-center gap-4 p-6">
-              <h2 className="font-bold text-heading">Hydration</h2>
-              <Ring value={6} max={8} label="of 8 glasses" />
-              <p className="inline-flex items-center gap-1.5 text-sm text-muted">
-                <Droplets size={14} className="text-primary" /> 1.5 L to go
-              </p>
-            </Card>
-          </Reveal>
+        <div className="mt-8">
+          <HealthTracker />
         </div>
+
+        <Reveal className="mt-6">
+          <Card className="p-6">
+            <div className="flex items-center justify-between">
+              <h2 className="font-bold text-heading">Weight progress</h2>
+              <Badge tone="secondary">12 weeks</Badge>
+            </div>
+            <div className="mt-4">
+              <LineChart data={weightSeries} />
+            </div>
+          </Card>
+        </Reveal>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-2">
