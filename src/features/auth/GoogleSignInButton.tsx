@@ -1,35 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { GOOGLE_CLIENT_ID as CLIENT_ID, loadGsi } from './googleClient';
 import type { GoogleCredentialResponse } from './gsi';
-
-// A Google OAuth Client ID is public (safe in frontend code); the env var only
-// overrides the built-in default so different environments can point elsewhere.
-const CLIENT_ID =
-  (import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined) ||
-  '9198804182-08bsp6pcdtkpohjda8l74kvm1t08uj7p.apps.googleusercontent.com';
-const GSI_SRC = 'https://accounts.google.com/gsi/client';
-
-let gsiPromise: Promise<void> | null = null;
-function loadGsi(): Promise<void> {
-  if (window.google?.accounts?.id) return Promise.resolve();
-  if (gsiPromise) return gsiPromise;
-  gsiPromise = new Promise((resolve, reject) => {
-    const existing = document.querySelector<HTMLScriptElement>(`script[src="${GSI_SRC}"]`);
-    if (existing) {
-      existing.addEventListener('load', () => resolve());
-      existing.addEventListener('error', () => reject(new Error('gsi failed')));
-      return;
-    }
-    const s = document.createElement('script');
-    s.src = GSI_SRC;
-    s.async = true;
-    s.defer = true;
-    s.onload = () => resolve();
-    s.onerror = () => reject(new Error('gsi failed'));
-    document.head.appendChild(s);
-  });
-  return gsiPromise;
-}
 
 /**
  * Renders the official "Sign in with Google" button when VITE_GOOGLE_CLIENT_ID

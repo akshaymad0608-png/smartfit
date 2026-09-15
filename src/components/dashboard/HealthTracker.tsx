@@ -1,10 +1,23 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Droplets, Flame, Footprints, HeartPulse, Minus, Moon, Plus, RotateCcw } from 'lucide-react';
+import {
+  Droplets,
+  Flame,
+  Footprints,
+  HeartPulse,
+  Link2,
+  Minus,
+  Moon,
+  Plus,
+  RefreshCw,
+  RotateCcw,
+  Unlink,
+} from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Reveal } from '@/components/motion/Reveal';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { useGoogleFitSteps } from '@/hooks/useGoogleFitSteps';
 
 /** Today's date as a stable key, so every tracked number resets on its own each day. */
 function todayKey() {
@@ -54,6 +67,14 @@ function Ring({
   );
 }
 
+function timeAgo(ts: number): string {
+  const mins = Math.round((Date.now() - ts) / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.round(mins / 60);
+  return `${hrs}h ago`;
+}
+
 function heartRateZone(bpm: number): { label: string; tone: 'primary' | 'secondary' | 'accent' } {
   if (bpm <= 0) return { label: 'No reading', tone: 'primary' };
   if (bpm < 60) return { label: 'Below resting', tone: 'secondary' };
@@ -68,10 +89,14 @@ function heartRateZone(bpm: number): { label: string; tone: 'primary' | 'seconda
  * website) via quick-add chips or a custom amount — persisted per day.
  */
 function StepsTile() {
-  const [steps, setSteps] = useLocalStorage<number>(`fs-steps-${todayKey()}`, 0);
+  const [manualSteps, setManualSteps] = useLocalStorage<number>(`fs-steps-${todayKey()}`, 0);
+  const fit = useGoogleFitSteps();
+
+  const steps = fit.connected ? fit.steps : manualSteps;
   const pct = steps / STEP_GOAL;
   const kcal = Math.round(steps * 0.04);
-  const add = (n: number) => setSteps((s) => Math.max(0, s + n));
+  const add = (n: number) => setManualSteps((s) => Math.max(0, s + n));
+  const syncing = fit.status === 'connecting' || fit.status === 'syncing';
 
   return (
     <Card className="p-6">
@@ -86,28 +111,66 @@ function StepsTile() {
           <span className="text-lg font-extrabold text-heading">{steps.toLocaleString()}</span>
           <span className="text-[11px] text-muted">/ {STEP_GOAL.toLocaleString()}</span>
         </Ring>
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           <p className="inline-flex items-center gap-1.5 text-sm text-muted">
             <Flame size={14} className="text-accent" /> ~{kcal} kcal burned
           </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {[500, 1000, 2000].map((n) => (
+
+          {fit.connected ? (
+            <div className="mt-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={() => void fit.refresh()}
+                  disabled={syncing}
+                  className="flex min-h-11 items-center gap-1.5 rounded-full border border-line bg-surface-muted px-3.5 text-xs font-semibold text-body transition-colors hover:border-primary hover:text-primary disabled:opacity-60"
+                >
+                  <RefreshCw size={13} className={syncing ? 'animate-spin' : ''} />
+                  {syncing ? 'Syncing…' : 'Sync now'}
+                </button>
+                <button
+                  onClick={fit.disconnect}
+                  aria-label="Disconnect Google Fit"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-line text-muted transition-colors hover:border-primary hover:text-primary"
+                >
+                  <Unlink size={14} />
+                </button>
+              </div>
+              <p className="mt-2 text-[11px] text-muted">
+                Synced from Google Fit{fit.lastSynced ? ` · ${timeAgo(fit.lastSynced)}` : ''}
+              </p>
+              {fit.error && <p className="mt-1 text-[11px] text-red-500">{fit.error}</p>}
+            </div>
+          ) : (
+            <div className="mt-3">
+              <div className="flex flex-wrap gap-2">
+                {[500, 1000, 2000].map((n) => (
+                  <button
+                    key={n}
+                    onClick={() => add(n)}
+                    className="flex min-h-11 items-center rounded-full border border-line bg-surface-muted px-3.5 text-xs font-semibold text-body transition-colors hover:border-primary hover:text-primary"
+                  >
+                    +{n.toLocaleString()}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setManualSteps(0)}
+                  aria-label="Reset steps"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-line text-muted transition-colors hover:border-primary hover:text-primary"
+                >
+                  <RotateCcw size={14} />
+                </button>
+              </div>
               <button
-                key={n}
-                onClick={() => add(n)}
-                className="flex min-h-11 items-center rounded-full border border-line bg-surface-muted px-3.5 text-xs font-semibold text-body transition-colors hover:border-primary hover:text-primary"
+                onClick={() => void fit.connect()}
+                disabled={syncing}
+                className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline disabled:opacity-60"
               >
-                +{n.toLocaleString()}
+                <Link2 size={12} />
+                {syncing ? 'Connecting…' : 'Auto-count with Google Fit'}
               </button>
-            ))}
-            <button
-              onClick={() => setSteps(0)}
-              aria-label="Reset steps"
-              className="grid h-11 w-11 place-items-center rounded-full border border-line text-muted transition-colors hover:border-primary hover:text-primary"
-            >
-              <RotateCcw size={14} />
-            </button>
-          </div>
+              {fit.error && <p className="mt-1 text-[11px] text-red-500">{fit.error}</p>}
+            </div>
+          )}
         </div>
       </div>
     </Card>

@@ -21,6 +21,27 @@ interface GoogleButtonOptions {
   width?: number;
 }
 
+/** Response from a Google OAuth2 (implicit) token request — used for scoped API access like Google Fit. */
+export interface GoogleTokenResponse {
+  access_token: string;
+  expires_in: number;
+  scope: string;
+  token_type: string;
+  error?: string;
+  error_description?: string;
+}
+
+interface GoogleTokenClientConfig {
+  client_id: string;
+  scope: string;
+  callback: (response: GoogleTokenResponse) => void;
+  error_callback?: (error: { type: string; message?: string }) => void;
+}
+
+export interface GoogleTokenClient {
+  requestAccessToken: (overrides?: { prompt?: '' | 'none' | 'consent' | 'select_account' }) => void;
+}
+
 declare global {
   interface Window {
     google?: {
@@ -30,6 +51,10 @@ declare global {
           renderButton: (parent: HTMLElement, options: GoogleButtonOptions) => void;
           prompt: () => void;
           disableAutoSelect: () => void;
+        };
+        oauth2: {
+          initTokenClient: (config: GoogleTokenClientConfig) => GoogleTokenClient;
+          revoke: (accessToken: string, callback?: () => void) => void;
         };
       };
     };
