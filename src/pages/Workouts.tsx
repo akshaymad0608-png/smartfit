@@ -33,7 +33,13 @@ export default function Workouts() {
   const [difficulty, setDifficulty] = useState<(typeof difficulties)[number]>('All');
   const [videoOpen, setVideoOpen] = useState(false);
   const [activeMuscle, setActiveMuscle] = useState<string | null>(null);
+  const [muscleExerciseIndex, setMuscleExerciseIndex] = useState(0);
   const activeMuscleGroup = muscleGroups.find((m) => m.key === activeMuscle) ?? null;
+  const activeMuscleExercise = activeMuscleGroup?.exercises[muscleExerciseIndex] ?? null;
+  const openMuscle = (key: string) => {
+    setActiveMuscle(key);
+    setMuscleExerciseIndex(0);
+  };
 
   const setCat = (key: string) => {
     const next = new URLSearchParams(params);
@@ -145,7 +151,7 @@ export default function Workouts() {
                 {muscleGroups.map((m) => (
                   <button
                     key={m.key}
-                    onClick={() => setActiveMuscle(m.key)}
+                    onClick={() => openMuscle(m.key)}
                     className="group block w-full rounded-xl border border-line bg-card p-2.5 text-center transition-colors hover:border-primary/40"
                   >
                     <div className="relative overflow-hidden rounded-lg bg-surface-muted">
@@ -265,9 +271,28 @@ export default function Workouts() {
       <VideoModal
         open={activeMuscle !== null}
         onClose={() => setActiveMuscle(null)}
-        src={activeMuscleGroup?.video ?? ''}
+        src={activeMuscleExercise?.video ?? ''}
         poster={activeMuscleGroup?.image}
-        title={activeMuscleGroup ? `${activeMuscleGroup.label} exercise demo` : undefined}
+        title={activeMuscleExercise ? `${activeMuscleExercise.name} — ${activeMuscleGroup?.label}` : undefined}
+        footer={
+          activeMuscleGroup && activeMuscleGroup.exercises.length > 1 ? (
+            <div className="flex flex-wrap gap-2">
+              {activeMuscleGroup.exercises.map((ex, i) => (
+                <button
+                  key={ex.name}
+                  onClick={() => setMuscleExerciseIndex(i)}
+                  className={`min-h-9 rounded-full px-3.5 text-xs font-semibold transition-colors ${
+                    i === muscleExerciseIndex
+                      ? 'bg-primary text-white'
+                      : 'bg-white/10 text-white/80 hover:bg-white/20'
+                  }`}
+                >
+                  {ex.name}
+                </button>
+              ))}
+            </div>
+          ) : undefined
+        }
       />
     </PageTransition>
   );

@@ -1,8 +1,16 @@
+export interface Exercise {
+  name: string;
+  video: string;
+}
+
 export interface MuscleGroup {
   key: string;
   label: string;
+  /** Primary demo clip — used as the picker card's poster/thumbnail video. */
   video: string;
   image: string;
+  /** Every named exercise available for this muscle, primary included. */
+  exercises: Exercise[];
 }
 
 /**
@@ -14,28 +22,115 @@ export interface MuscleGroup {
  * before downloading, so the clip/photo showing is the exercise it's
  * labelled as, not just a plausible filename.
  *
- * Triceps and Calves came from Pexels; Mixkit's library had nothing that
- * actually showed the right exercise for those two.
+ * Exercise counts genuinely vary (1 for hamstrings/calves, up to 4
+ * elsewhere) because that's how many distinct, correctly-labelled real
+ * clips could actually be found and verified — padding hamstrings or
+ * calves out to match the others would mean either reusing the same
+ * deadlift/calf-raise clip under a fake second name, or using footage of
+ * the wrong exercise. Neither is honest, so the list is exactly as long
+ * as what's real.
  */
 export const muscleGroups: MuscleGroup[] = [
-  { key: 'chest', label: 'Chest', video: '/videos/muscles/chest.mp4', image: '/images/muscles/chest.jpg' },
-  { key: 'back', label: 'Back', video: '/videos/muscles/back.mp4', image: '/images/muscles/back.jpg' },
+  {
+    key: 'chest',
+    label: 'Chest',
+    video: '/videos/muscles/chest.mp4',
+    image: '/images/muscles/chest.jpg',
+    exercises: [
+      { name: 'Chest Press Machine', video: '/videos/muscles/chest.mp4' },
+      { name: 'Bench Press', video: '/videos/exercises/chest-bench-press.mp4' },
+      { name: 'Cable Fly', video: '/videos/exercises/chest-cable-fly.mp4' },
+      { name: 'Push-ups', video: '/videos/exercises/chest-pushups.mp4' },
+    ],
+  },
+  {
+    key: 'back',
+    label: 'Back',
+    video: '/videos/muscles/back.mp4',
+    image: '/images/muscles/back.jpg',
+    exercises: [
+      { name: 'Pull-ups', video: '/videos/muscles/back.mp4' },
+      { name: 'Lat Pulldown', video: '/videos/exercises/back-lat-pulldown.mp4' },
+      { name: 'Rowing Machine', video: '/videos/exercises/back-rowing-machine.mp4' },
+    ],
+  },
   {
     key: 'shoulders',
     label: 'Shoulders',
     video: '/videos/muscles/shoulders.mp4',
     image: '/images/muscles/shoulders.jpg',
+    exercises: [
+      { name: 'Shoulder Press Machine', video: '/videos/muscles/shoulders.mp4' },
+      { name: 'Dumbbell Shoulder Press', video: '/videos/exercises/shoulders-dumbbell-press.mp4' },
+    ],
   },
-  { key: 'biceps', label: 'Biceps', video: '/videos/muscles/biceps.mp4', image: '/images/muscles/biceps.jpg' },
-  { key: 'triceps', label: 'Triceps', video: '/videos/muscles/triceps.mp4', image: '/images/muscles/triceps.jpg' },
-  { key: 'abs', label: 'Abs', video: '/videos/muscles/abs.mp4', image: '/images/muscles/abs.jpg' },
-  { key: 'quads', label: 'Quads', video: '/videos/muscles/quads.mp4', image: '/images/muscles/quads.jpg' },
+  {
+    key: 'biceps',
+    label: 'Biceps',
+    video: '/videos/muscles/biceps.mp4',
+    image: '/images/muscles/biceps.jpg',
+    exercises: [
+      { name: 'Bicep Curl', video: '/videos/muscles/biceps.mp4' },
+      { name: 'Cable Bicep Curl', video: '/videos/exercises/biceps-cable-curl.mp4' },
+      { name: 'Dumbbell Bicep Curl', video: '/videos/exercises/biceps-dumbbell-curl.mp4' },
+    ],
+  },
+  {
+    key: 'triceps',
+    label: 'Triceps',
+    video: '/videos/muscles/triceps.mp4',
+    image: '/images/muscles/triceps.jpg',
+    exercises: [
+      { name: 'Cable Tricep Extension', video: '/videos/muscles/triceps.mp4' },
+      { name: 'Tricep Dips', video: '/videos/exercises/triceps-dips.mp4' },
+    ],
+  },
+  {
+    key: 'abs',
+    label: 'Abs',
+    video: '/videos/muscles/abs.mp4',
+    image: '/images/muscles/abs.jpg',
+    exercises: [
+      { name: 'Abs Training', video: '/videos/muscles/abs.mp4' },
+      { name: 'Crunches', video: '/videos/exercises/abs-crunches.mp4' },
+      { name: 'Plank', video: '/videos/exercises/abs-plank.mp4' },
+    ],
+  },
+  {
+    key: 'quads',
+    label: 'Quads',
+    video: '/videos/muscles/quads.mp4',
+    image: '/images/muscles/quads.jpg',
+    exercises: [
+      { name: 'Leg Press', video: '/videos/muscles/quads.mp4' },
+      { name: 'Squats', video: '/videos/exercises/quads-squats.mp4' },
+      { name: 'Squats with Dumbbells', video: '/videos/exercises/quads-squats-dumbbells.mp4' },
+      { name: 'Leg Extension', video: '/videos/exercises/quads-leg-extension.mp4' },
+    ],
+  },
   {
     key: 'hamstrings',
     label: 'Hamstrings',
     video: '/videos/muscles/hamstrings.mp4',
     image: '/images/muscles/hamstrings.jpg',
+    exercises: [{ name: 'Deadlift', video: '/videos/muscles/hamstrings.mp4' }],
   },
-  { key: 'glutes', label: 'Glutes', video: '/videos/muscles/glutes.mp4', image: '/images/muscles/glutes.jpg' },
-  { key: 'calves', label: 'Calves', video: '/videos/muscles/calves.mp4', image: '/images/muscles/calves.jpg' },
+  {
+    key: 'glutes',
+    label: 'Glutes',
+    video: '/videos/muscles/glutes.mp4',
+    image: '/images/muscles/glutes.jpg',
+    exercises: [
+      { name: 'Lunges with Dumbbells', video: '/videos/muscles/glutes.mp4' },
+      { name: 'Lunges', video: '/videos/exercises/glutes-lunges-alt.mp4' },
+      { name: 'Donkey Kicks', video: '/videos/exercises/glutes-donkey-kicks.mp4' },
+    ],
+  },
+  {
+    key: 'calves',
+    label: 'Calves',
+    video: '/videos/muscles/calves.mp4',
+    image: '/images/muscles/calves.jpg',
+    exercises: [{ name: 'Calf Raises', video: '/videos/muscles/calves.mp4' }],
+  },
 ];

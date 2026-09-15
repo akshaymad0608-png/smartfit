@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 
 interface VideoModalProps {
   open: boolean;
@@ -8,10 +8,13 @@ interface VideoModalProps {
   src: string;
   poster?: string;
   title?: string;
+  /** Optional content rendered below the video inside the same card — e.g. a
+   * row of exercise-name pills to switch clips without closing the modal. */
+  footer?: ReactNode;
 }
 
 /** Lightweight video player modal. The video only loads when opened. */
-export function VideoModal({ open, onClose, src, poster, title }: VideoModalProps) {
+export function VideoModal({ open, onClose, src, poster, title, footer }: VideoModalProps) {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
@@ -63,6 +66,7 @@ export function VideoModal({ open, onClose, src, poster, title }: VideoModalProp
               loop
               playsInline
             />
+            {footer && <div className="bg-slate-900 p-3">{footer}</div>}
           </motion.div>
         </div>
       )}

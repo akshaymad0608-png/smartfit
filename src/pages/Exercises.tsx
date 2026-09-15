@@ -47,7 +47,14 @@ const categoryIcons: Record<string, typeof Dumbbell> = {
  */
 export default function Exercises() {
   const [active, setActive] = useState<string | null>(null);
+  const [exerciseIndex, setExerciseIndex] = useState(0);
   const activeGroup = muscleGroups.find((m) => m.key === active) ?? null;
+  const activeExercise = activeGroup?.exercises[exerciseIndex] ?? null;
+
+  const openMuscle = (key: string) => {
+    setActive(key);
+    setExerciseIndex(0);
+  };
 
   return (
     <PageTransition>
@@ -134,7 +141,7 @@ export default function Exercises() {
           {muscleGroups.map((m, i) => (
             <Reveal key={m.key} delay={i * 0.03}>
               <button
-                onClick={() => setActive(m.key)}
+                onClick={() => openMuscle(m.key)}
                 className="group block w-full rounded-2xl border border-line bg-card p-4 text-center shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lift"
               >
                 <div className="relative overflow-hidden rounded-xl bg-surface-muted">
@@ -149,6 +156,9 @@ export default function Exercises() {
                   </span>
                 </div>
                 <span className="mt-3 block text-sm font-bold text-primary">{m.label}</span>
+                <span className="mt-0.5 block text-xs text-muted">
+                  {m.exercises.length} exercise{m.exercises.length !== 1 ? 's' : ''}
+                </span>
               </button>
             </Reveal>
           ))}
@@ -189,9 +199,28 @@ export default function Exercises() {
       <VideoModal
         open={activeGroup !== null}
         onClose={() => setActive(null)}
-        src={activeGroup?.video ?? ''}
+        src={activeExercise?.video ?? ''}
         poster={activeGroup?.image}
-        title={activeGroup ? `${activeGroup.label} exercise demo` : undefined}
+        title={activeExercise ? `${activeExercise.name} — ${activeGroup?.label}` : undefined}
+        footer={
+          activeGroup && activeGroup.exercises.length > 1 ? (
+            <div className="flex flex-wrap gap-2">
+              {activeGroup.exercises.map((ex, i) => (
+                <button
+                  key={ex.name}
+                  onClick={() => setExerciseIndex(i)}
+                  className={`min-h-9 rounded-full px-3.5 text-xs font-semibold transition-colors ${
+                    i === exerciseIndex
+                      ? 'bg-primary text-white'
+                      : 'bg-white/10 text-white/80 hover:bg-white/20'
+                  }`}
+                >
+                  {ex.name}
+                </button>
+              ))}
+            </div>
+          ) : undefined
+        }
       />
     </PageTransition>
   );
