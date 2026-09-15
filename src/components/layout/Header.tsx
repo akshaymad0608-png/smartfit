@@ -155,10 +155,14 @@ export function Header() {
             <Button as="link" to="/programs" size="sm" className="hidden sm:inline-flex">
               Get Started
             </Button>
+            {/* Mobile already has this exact menu one tap away via the bottom
+                tab bar's "More" — showing the same hamburger here too would
+                just be the same icon duplicated on screen. Keep it only for
+                the tablet range where the bottom bar doesn't render yet. */}
             <button
               onClick={() => setDrawerOpen(true)}
               aria-label="Open menu"
-              className="grid h-10 w-10 place-items-center rounded-full border border-line bg-card text-body xl:hidden"
+              className="hidden h-10 w-10 place-items-center rounded-full border border-line bg-card text-body lg:grid xl:hidden"
             >
               <Menu size={18} />
             </button>
