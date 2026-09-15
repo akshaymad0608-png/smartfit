@@ -21,7 +21,9 @@ import {
   Leaf,
   Waves,
 } from 'lucide-react';
-import { PageHero } from '@/components/layout/PageHero';
+import { ChevronRight } from 'lucide-react';
+import { Container } from '@/components/ui/Container';
+import { Counter } from '@/components/ui/Counter';
 import { Section, SectionHeader } from '@/components/ui/Section';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
@@ -80,12 +82,68 @@ export default function Exercises() {
           { name: 'Exercises', path: '/exercises' },
         ])}
       />
-      <PageHero
-        eyebrow="Exercises"
-        title="Exercises by muscle group"
-        subtitle="Pick a muscle group to see a real exercise demo — quick form-check clips, free and no sign-up."
-        crumbs={[{ label: 'Exercises' }]}
-      />
+      {/* Bold photo hero + stats strip, matching the "exercise database" feel
+          of dedicated exercise-library sites — but with FitSmart's own real
+          photo and real counts (10 muscle groups, 9 categories, 6 workouts),
+          not invented numbers. */}
+      <section className="relative overflow-hidden">
+        <img
+          src="/images/muscles/chest.jpg"
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40" />
+        <Container className="relative py-16 md:py-24">
+          <nav aria-label="Breadcrumb" className="mb-5">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/70">
+              <li>
+                <Link to="/" className="hover:text-white">
+                  Home
+                </Link>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <ChevronRight size={14} aria-hidden />
+                <span className="font-medium text-white">Exercises</span>
+              </li>
+            </ol>
+          </nav>
+          <div className="max-w-2xl">
+            <span className="mb-3 inline-block text-sm font-bold uppercase tracking-widest text-primary-300">
+              Exercise library
+            </span>
+            <h1 className="text-hero font-extrabold text-white">Exercises by muscle group</h1>
+            <p className="mt-4 text-body-lg text-white/85">
+              Pick a muscle group to see a real exercise demo — quick form-check clips, free and no
+              sign-up.
+            </p>
+          </div>
+        </Container>
+      </section>
+      <div className="border-b border-line bg-surface-muted">
+        <Container>
+          <div className="grid grid-cols-3 divide-x divide-line py-8 text-center">
+            <div>
+              <p className="text-hero font-extrabold text-gradient">
+                <Counter value={muscleGroups.length} />
+              </p>
+              <p className="mt-1 text-sm font-semibold text-muted">Muscle groups</p>
+            </div>
+            <div>
+              <p className="text-hero font-extrabold text-gradient">
+                <Counter value={workoutCategories.length} />
+              </p>
+              <p className="mt-1 text-sm font-semibold text-muted">Categories</p>
+            </div>
+            <div>
+              <p className="text-hero font-extrabold text-gradient">
+                <Counter value={workouts.length} />
+              </p>
+              <p className="mt-1 text-sm font-semibold text-muted">Full workouts</p>
+            </div>
+          </div>
+        </Container>
+      </div>
 
       <Section spacing="md">
         <SectionHeader eyebrow="Form check" title="Browse by muscle group" />
