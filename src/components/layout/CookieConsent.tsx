@@ -43,7 +43,7 @@ export function CookieConsent() {
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           role="dialog"
           aria-label="Cookie notice"
-          className="fixed inset-x-4 bottom-4 z-[75] mx-auto max-w-2xl rounded-2xl border border-line bg-card p-4 shadow-card sm:flex sm:items-center sm:gap-4 sm:p-5"
+          className="fixed inset-x-4 bottom-20 z-[75] mx-auto max-w-2xl rounded-2xl border border-line bg-card p-4 shadow-card sm:flex sm:items-center sm:gap-4 sm:p-5 lg:bottom-4"
         >
           <span className="mb-3 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary sm:mb-0">
             <Cookie size={20} />

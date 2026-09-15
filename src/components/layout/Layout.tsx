@@ -10,6 +10,7 @@ import { PageLoader } from './PageLoader';
 import { ErrorBoundary } from './ErrorBoundary';
 import { CookieConsent } from './CookieConsent';
 import { InstallPrompt } from './InstallPrompt';
+import { MobileTabBar } from './MobileTabBar';
 
 export function Layout() {
   const location = useLocation();
@@ -18,7 +19,7 @@ export function Layout() {
       <ScrollProgress />
       <ScrollToTop />
       <Header />
-      <main id="main" className="flex-1 pt-16 lg:pt-18">
+      <main id="main" className="flex-1 pt-16 pb-16 lg:pb-0 lg:pt-18">
         <ErrorBoundary key={location.pathname}>
           <Suspense fallback={<PageLoader />}>
             <AnimatePresence mode="wait">
@@ -33,6 +34,7 @@ export function Layout() {
       <BackToTop />
       <CookieConsent />
       <InstallPrompt />
+      <MobileTabBar />
     </div>
   );
 }

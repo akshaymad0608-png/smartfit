@@ -100,7 +100,7 @@ export function InstallPrompt() {
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           role="dialog"
           aria-label="Install FitSmart"
-          className="fixed inset-x-4 bottom-4 z-[74] mx-auto max-w-md rounded-2xl border border-line bg-card p-4 shadow-card sm:hidden"
+          className="fixed inset-x-4 bottom-20 z-[74] mx-auto max-w-md rounded-2xl border border-line bg-card p-4 shadow-card sm:hidden"
         >
           <div className="flex items-start gap-3">
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
