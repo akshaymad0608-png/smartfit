@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Dumbbell,
   ArrowUpFromLine,
@@ -11,15 +12,25 @@ import {
   PersonStanding,
   TrendingUp,
   Play,
+  Home,
+  Flame as FlameCat,
+  Sparkles,
+  Gauge,
+  HeartPulse,
+  Timer,
+  Leaf,
+  Waves,
 } from 'lucide-react';
 import { PageHero } from '@/components/layout/PageHero';
-import { Section } from '@/components/ui/Section';
+import { Section, SectionHeader } from '@/components/ui/Section';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { VideoModal } from '@/components/ui/VideoModal';
+import { WorkoutCard } from '@/components/cards/WorkoutCard';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { muscleGroups } from '@/data/muscles';
+import { workoutCategories, workouts } from '@/data/workouts';
 
 const icons: Record<string, typeof Dumbbell> = {
   chest: Dumbbell,
@@ -32,6 +43,18 @@ const icons: Record<string, typeof Dumbbell> = {
   hamstrings: Activity,
   glutes: PersonStanding,
   calves: TrendingUp,
+};
+
+const categoryIcons: Record<string, typeof Dumbbell> = {
+  home: Home,
+  gym: Dumbbell,
+  'weight-loss': FlameCat,
+  'muscle-gain': Sparkles,
+  strength: Gauge,
+  cardio: HeartPulse,
+  hiit: Timer,
+  yoga: Leaf,
+  stretching: Waves,
 };
 
 /**
@@ -65,7 +88,8 @@ export default function Exercises() {
       />
 
       <Section spacing="md">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <SectionHeader eyebrow="Form check" title="Browse by muscle group" />
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {muscleGroups.map((m, i) => {
             const Icon = icons[m.key] ?? Dumbbell;
             return (
@@ -94,6 +118,37 @@ export default function Exercises() {
               </Reveal>
             );
           })}
+        </div>
+      </Section>
+
+      <Section spacing="md">
+        <SectionHeader eyebrow="By goal" title="Browse by category" />
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          {workoutCategories.map((cat) => {
+            const Icon = categoryIcons[cat.key] ?? Dumbbell;
+            return (
+              <Link
+                key={cat.key}
+                to={`/workouts?cat=${cat.key}`}
+                className="flex flex-col items-center gap-2 rounded-2xl border border-line bg-card p-5 text-center shadow-soft transition-colors hover:border-primary/40"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
+                  <Icon size={20} />
+                </span>
+                <span className="text-sm font-bold text-heading">{cat.label}</span>
+                <span className="text-xs text-muted">{cat.description}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section spacing="md">
+        <SectionHeader eyebrow="Full routines" title="Popular workouts" />
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {workouts.map((w) => (
+            <WorkoutCard key={w.id} workout={w} />
+          ))}
         </div>
       </Section>
 
