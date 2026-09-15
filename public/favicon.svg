@@ -6,8 +6,14 @@
     </linearGradient>
   </defs>
   <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#sf-grad)"/>
-  <!-- Heartbeat pulse forming an implied S -->
-  <path d="M14 34 H22 L26 24 L32 44 L38 30 L41 34 H50"
-        fill="none" stroke="#FFFFFF" stroke-width="4.5"
-        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Weightlifter + barbell mark -->
+  <rect x="6" y="16" width="6" height="22" rx="2" fill="#FFFFFF"/>
+  <rect x="13" y="19" width="4" height="16" rx="2" fill="#FFFFFF"/>
+  <rect x="52" y="16" width="6" height="22" rx="2" fill="#FFFFFF"/>
+  <rect x="47" y="19" width="4" height="16" rx="2" fill="#FFFFFF"/>
+  <rect x="15" y="25.5" width="34" height="3" rx="1.5" fill="#FFFFFF"/>
+  <circle cx="32" cy="18" r="4.2" fill="#FFFFFF"/>
+  <rect x="29" y="24" width="6" height="12" rx="3" fill="#FFFFFF"/>
+  <path d="M30 26 L17 27 M34 26 L47 27 M30 35 L24 50 M34 35 L40 50"
+        stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
 </svg>

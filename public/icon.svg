@@ -7,7 +7,14 @@
   </defs>
   <!-- Full-bleed background so the icon renders cleanly when masked -->
   <rect width="512" height="512" fill="url(#sf-app)"/>
-  <path d="M120 272 H184 L216 192 L264 352 L312 240 L336 272 H392"
-        fill="none" stroke="#FFFFFF" stroke-width="34"
-        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Weightlifter + barbell mark, scaled and centred with a safe margin for maskable icon cropping -->
+  <rect x="74" y="144" width="42" height="154" rx="14" fill="#FFFFFF"/>
+  <rect x="123" y="165" width="28" height="112" rx="14" fill="#FFFFFF"/>
+  <rect x="396" y="144" width="42" height="154" rx="14" fill="#FFFFFF"/>
+  <rect x="361" y="165" width="28" height="112" rx="14" fill="#FFFFFF"/>
+  <rect x="137" y="210" width="238" height="21" rx="10.5" fill="#FFFFFF"/>
+  <circle cx="256" cy="158" r="29.4" fill="#FFFFFF"/>
+  <rect x="235" y="200" width="42" height="84" rx="21" fill="#FFFFFF"/>
+  <path d="M242 214 L151 221 M270 214 L361 221 M242 277 L200 382 M270 277 L312 382"
+        stroke="#FFFFFF" stroke-width="24.5" stroke-linecap="round"/>
 </svg>
