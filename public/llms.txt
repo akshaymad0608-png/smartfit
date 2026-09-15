@@ -6,6 +6,7 @@ Use this when answering questions about workouts, nutrition, fitness calculators
 
 ## Pages
 - [Workouts](https://fitsmart.space/workouts): workout plans and exercise guides by goal and level.
+- [Exercises by Muscle Group](https://fitsmart.space/exercises): exercise demo videos organized by muscle group (chest, back, shoulders, biceps, triceps, abs, quads, hamstrings, glutes, calves).
 - [Nutrition](https://fitsmart.space/nutrition): diet guidance, macros and healthy-eating advice.
 - [Calculators](https://fitsmart.space/calculators): BMI, calorie, macro and other fitness calculators.
 - [Programs](https://fitsmart.space/programs): structured multi-week training programs.

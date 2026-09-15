@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Play, Sparkles, Target } from 'lucide-react';
+import { Play, Sparkles, Target, ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
@@ -13,6 +13,7 @@ import { VideoModal } from '@/components/ui/VideoModal';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { workoutCategories, workouts } from '@/data/workouts';
+import { muscleGroups } from '@/data/muscles';
 import { cn } from '@/lib/cn';
 
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'] as const;
@@ -25,38 +26,13 @@ const categoryVideo: Record<string, string> = {
 };
 const videoFor = (category: string) => categoryVideo[category] ?? '/videos/workout.mp4';
 
-/**
- * Muscle-group demo clips for the Gym Workout filter. The gym category only
- * has one workout (Push-Pull Power) covering four muscle groups at once, so
- * this gives a quick per-muscle form-check clip independent of which single
- * workout is in the spotlight. Free stock footage — Mixkit Stock Video Free
- * License for most, Pexels License for triceps/calves (both free for
- * commercial use, no attribution required). Triceps and calves needed a
- * second source: Mixkit's library had nothing that actually showed the
- * right exercise for those two (calf-raise searches returned literal baby
- * cows), so those two came from Pexels instead, each verified against the
- * exact video ID's own metadata before downloading — not just a plausible
- * filename — so the clip showing is the exercise it's labelled as.
- */
-const muscleVideos: Record<string, { label: string; src: string }> = {
-  chest: { label: 'Chest', src: '/videos/muscles/chest.mp4' },
-  back: { label: 'Back', src: '/videos/muscles/back.mp4' },
-  shoulders: { label: 'Shoulders', src: '/videos/muscles/shoulders.mp4' },
-  biceps: { label: 'Biceps', src: '/videos/muscles/biceps.mp4' },
-  triceps: { label: 'Triceps', src: '/videos/muscles/triceps.mp4' },
-  abs: { label: 'Abs', src: '/videos/muscles/abs.mp4' },
-  quads: { label: 'Quads', src: '/videos/muscles/quads.mp4' },
-  hamstrings: { label: 'Hamstrings', src: '/videos/muscles/hamstrings.mp4' },
-  glutes: { label: 'Glutes', src: '/videos/muscles/glutes.mp4' },
-  calves: { label: 'Calves', src: '/videos/muscles/calves.mp4' },
-};
-
 export default function Workouts() {
   const [params, setParams] = useSearchParams();
   const activeCat = params.get('cat') ?? 'all';
   const [difficulty, setDifficulty] = useState<(typeof difficulties)[number]>('All');
   const [videoOpen, setVideoOpen] = useState(false);
   const [activeMuscle, setActiveMuscle] = useState<string | null>(null);
+  const activeMuscleGroup = muscleGroups.find((m) => m.key === activeMuscle) ?? null;
 
   const setCat = (key: string) => {
     const next = new URLSearchParams(params);
@@ -150,21 +126,40 @@ export default function Workouts() {
         {activeCat === 'gym' && (
           <Reveal className="mt-8">
             <Card className="p-6">
-              <h2 className="font-bold text-heading">Watch exercises by muscle group</h2>
-              <p className="mt-1 text-sm text-muted">
-                Quick form-check clips for the muscles a gym session trains.
-              </p>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h2 className="font-bold text-heading">Watch exercises by muscle group</h2>
+                  <p className="mt-1 text-sm text-muted">
+                    Quick form-check clips for the muscles a gym session trains.
+                  </p>
+                </div>
+                <Link
+                  to="/exercises"
+                  className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-primary hover:underline"
+                >
+                  Browse all exercises <ArrowUpRight size={15} />
+                </Link>
+              </div>
               <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-                {Object.entries(muscleVideos).map(([key, m]) => (
+                {muscleGroups.map((m) => (
                   <button
-                    key={key}
-                    onClick={() => setActiveMuscle(key)}
-                    className="group flex flex-col items-center gap-2 rounded-2xl border border-line bg-surface-muted p-4 text-center transition-colors hover:border-primary/40"
+                    key={m.key}
+                    onClick={() => setActiveMuscle(m.key)}
+                    className="group relative block aspect-square w-full overflow-hidden rounded-2xl text-left"
                   >
-                    <span className="grid h-11 w-11 place-items-center rounded-full bg-card text-primary shadow-soft transition-transform group-hover:scale-110">
-                      <Play size={18} className="ml-0.5" />
+                    <img
+                      src={m.image}
+                      alt={`${m.label} exercise`}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/5 to-transparent" />
+                    <span className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-white/90 text-primary shadow-soft transition-transform group-hover:scale-110">
+                      <Play size={14} className="ml-0.5" />
                     </span>
-                    <span className="text-sm font-semibold text-heading">{m.label}</span>
+                    <span className="absolute bottom-2 left-2 right-2 text-sm font-bold text-white">
+                      {m.label}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -270,8 +265,9 @@ export default function Workouts() {
       <VideoModal
         open={activeMuscle !== null}
         onClose={() => setActiveMuscle(null)}
-        src={activeMuscle ? muscleVideos[activeMuscle].src : ''}
-        title={activeMuscle ? `${muscleVideos[activeMuscle].label} exercise demo` : undefined}
+        src={activeMuscleGroup?.video ?? ''}
+        poster={activeMuscleGroup?.image}
+        title={activeMuscleGroup ? `${activeMuscleGroup.label} exercise demo` : undefined}
       />
     </PageTransition>
   );

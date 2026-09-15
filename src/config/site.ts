@@ -75,6 +75,7 @@ export const primaryNav: NavItem[] = [
       { label: 'Gym Workout', href: '/workouts?cat=gym', description: 'Build strength & size' },
       { label: 'HIIT & Cardio', href: '/workouts?cat=hiit', description: 'Burn fat, fast' },
       { label: 'Yoga & Mobility', href: '/workouts?cat=yoga', description: 'Recover & restore' },
+      { label: 'Exercises by Muscle', href: '/exercises', description: 'Browse by body part' },
     ],
   },
   {

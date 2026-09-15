@@ -134,6 +134,16 @@ const ROUTES = [
     h1: 'Free Workout Plans & Exercise Guides',
     intro:
       'Structured routines for strength, fat loss, muscle gain and general conditioning, whether you train in a gym or at home with no equipment. Each plan sets out the sets, reps and progression, and every exercise comes with form guidance so you train safely.',
+    links: [{ href: '/exercises', label: 'Exercises by Muscle Group' }],
+  },
+  {
+    path: '/exercises',
+    title: 'Exercises by Muscle Group — Free Form-Check Videos | FitSmart',
+    description:
+      'Browse exercise demo videos by muscle group — chest, back, shoulders, biceps, triceps, abs, quads, hamstrings, glutes and calves. Free, no sign-up.',
+    h1: 'Exercises by Muscle Group',
+    intro:
+      'Pick a muscle group to see a real exercise demo — quick form-check clips for chest, back, shoulders, arms, abs and legs. Free, no sign-up.',
   },
   {
     path: '/nutrition',
@@ -359,6 +369,7 @@ const NAV =
   '<a href="/calculators/ideal-weight">Ideal weight</a> · ' +
   '<a href="/calculators/macros">Macros</a> · ' +
   '<a href="/workouts">Workout plans</a> · ' +
+  '<a href="/exercises">Exercises by Muscle</a> · ' +
   '<a href="/programs">Training programs</a> · ' +
   '<a href="/nutrition">Nutrition guides</a> · ' +
   '<a href="/ai-coach">AI coach</a> · ' +

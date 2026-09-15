@@ -16,6 +16,7 @@ import {
 // Code-split heavy pages so each route ships its own chunk.
 const Home = lazy(() => import('@/pages/Home'));
 const Workouts = lazy(() => import('@/pages/Workouts'));
+const Exercises = lazy(() => import('@/pages/Exercises'));
 const Nutrition = lazy(() => import('@/pages/Nutrition'));
 const Calculators = lazy(() => import('@/pages/Calculators'));
 const CalculatorDetail = lazy(() => import('@/pages/CalculatorDetail'));
@@ -36,6 +37,7 @@ export function AppRoutes() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/workouts" element={<Workouts />} />
+        <Route path="/exercises" element={<Exercises />} />
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/calculators" element={<Calculators />} />
         <Route path="/calculators/:slug" element={<CalculatorDetail />} />
