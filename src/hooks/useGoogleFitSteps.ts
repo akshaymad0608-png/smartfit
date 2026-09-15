@@ -27,7 +27,16 @@ async function fetchTodaySteps(accessToken: string): Promise<number> {
       endTimeMillis: Date.now(),
     }),
   });
-  if (!res.ok) throw new Error(`Fit API error ${res.status}`);
+  if (!res.ok) {
+    let detail = '';
+    try {
+      const body = await res.json();
+      detail = body?.error?.message ?? '';
+    } catch {
+      /* body wasn't JSON — ignore */
+    }
+    throw new Error(`Fit API ${res.status}${detail ? `: ${detail}` : ''}`);
+  }
   const data = await res.json();
   let total = 0;
   for (const bucket of data.bucket ?? []) {
@@ -66,9 +75,15 @@ export function useGoogleFitSteps() {
         setLastSynced(Date.now());
         setStatus('idle');
         setError(null);
-      } catch {
+      } catch (err) {
+        console.error('[Google Fit] sync failed:', err);
         setStatus('error');
-        setError("Couldn't reach Google Fit — try syncing again.");
+        const message = err instanceof Error ? err.message : 'Unknown error';
+        setError(
+          message.includes('Failed to fetch')
+            ? "Couldn't reach Google Fit — this usually means the request was blocked (CORS) rather than a bad token."
+            : message,
+        );
       }
     },
     [setSteps, setLastSynced],
