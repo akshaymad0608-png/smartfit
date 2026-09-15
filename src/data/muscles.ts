@@ -22,13 +22,15 @@ export interface MuscleGroup {
  * before downloading, so the clip/photo showing is the exercise it's
  * labelled as, not just a plausible filename.
  *
- * Exercise counts genuinely vary (1 for hamstrings/calves, up to 4
- * elsewhere) because that's how many distinct, correctly-labelled real
- * clips could actually be found and verified — padding hamstrings or
- * calves out to match the others would mean either reusing the same
- * deadlift/calf-raise clip under a fake second name, or using footage of
- * the wrong exercise. Neither is honest, so the list is exactly as long
- * as what's real.
+ * Exercise counts genuinely vary (1 for calves, up to 4 elsewhere) because
+ * that's how many distinct, correctly-labelled real clips could actually
+ * be found and verified. Calves stays at 1 despite an extensive search
+ * (Mixkit, Pexels and Pixabay, under "calf raise", "seated calf raise",
+ * "jump rope" and more) — one promising "jump rope" clip turned out, once
+ * actually inspected frame by frame, to show a man standing by a punching
+ * bag, not jumping rope, so it was rejected rather than used under a
+ * label it doesn't match. Padding the list out with a wrong or duplicate
+ * clip would be worse than an honest shorter one.
  */
 export const muscleGroups: MuscleGroup[] = [
   {
@@ -113,7 +115,10 @@ export const muscleGroups: MuscleGroup[] = [
     label: 'Hamstrings',
     video: '/videos/muscles/hamstrings.mp4',
     image: '/images/muscles/hamstrings.jpg',
-    exercises: [{ name: 'Deadlift', video: '/videos/muscles/hamstrings.mp4' }],
+    exercises: [
+      { name: 'Deadlift', video: '/videos/muscles/hamstrings.mp4' },
+      { name: 'Leg Curl Machine', video: '/videos/exercises/hamstrings-leg-curl.mp4' },
+    ],
   },
   {
     key: 'glutes',
