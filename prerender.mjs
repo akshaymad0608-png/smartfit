@@ -243,7 +243,7 @@ const ROUTES = [
     path: '/blog/progressive-overload-guide',
     title: "The Beginner's Guide to Progressive Overload — FitSmart",
     description:
-      'The single most important principle for building strength and muscle — explained simply, with a practical 4-week plan.',
+      'The single most important principle for building strength and muscle — explained simply, with rep targets, load increments and a practical 4-week starter plan.',
     h1: "The Beginner's Guide to Progressive Overload",
     intro:
       'The single most important principle for building strength and muscle — explained simply, with a practical 4-week plan.',
@@ -252,7 +252,7 @@ const ROUTES = [
     path: '/blog/calories-you-need',
     title: 'How Many Calories Do You Actually Need? — FitSmart',
     description:
-      'BMR, TDEE and calorie targets demystified — plus how to set a deficit or surplus that you can actually stick to.',
+      'BMR, TDEE and calorie targets demystified — how to calculate your maintenance number and set a deficit or surplus that you can actually stick to.',
     h1: 'How Many Calories Do You Actually Need?',
     intro:
       'BMR, TDEE and calorie targets demystified — plus how to set a deficit or surplus that you can actually stick to.',
@@ -261,7 +261,7 @@ const ROUTES = [
     path: '/blog/indian-diet-muscle-gain',
     title: 'A Balanced Indian Diet Plan for Muscle Gain — FitSmart',
     description:
-      'High-protein, vegetarian-friendly meals built around everyday Indian ingredients to support lean growth.',
+      'High-protein, vegetarian-friendly meals built around everyday Indian grocery staples — dal, paneer, curd and eggs — to support steady lean muscle growth.',
     h1: 'A Balanced Indian Diet Plan for Muscle Gain',
     intro:
       'High-protein, vegetarian-friendly meals built around everyday Indian ingredients to support lean growth.',
@@ -270,7 +270,7 @@ const ROUTES = [
     path: '/blog/mobility-desk-posture',
     title: '5 Mobility Drills to Fix Desk Posture — FitSmart',
     description:
-      'Sitting all day? These five daily drills open your hips and shoulders and undo the damage of a desk job.',
+      'Sitting all day? These five daily mobility drills open your hips and shoulders, fix your thoracic spine and undo the damage of a desk job.',
     h1: '5 Mobility Drills to Fix Desk Posture',
     intro:
       'Sitting all day? These five daily drills open your hips and shoulders and undo the damage of a desk job.',
@@ -278,14 +278,14 @@ const ROUTES = [
   {
     path: '/blog/hiit-vs-steady-state',
     title: 'HIIT vs Steady-State Cardio: Which Burns More Fat? — FitSmart',
-    description: 'The honest, evidence-based answer — and how to combine both for the best fat-loss results.',
+    description: 'The honest, evidence-based answer on HIIT vs steady-state cardio — plus a practical strategy to combine both training styles for the best fat-loss results.',
     h1: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
     intro: 'The honest, evidence-based answer — and how to combine both for the best fat-loss results.',
   },
   {
     path: '/blog/sleep-fitness-tool',
     title: 'Sleep: The Most Underrated Fitness Tool — FitSmart',
-    description: 'Why quality sleep beats another supplement — and simple habits to recover harder while you rest.',
+    description: 'Why quality sleep beats most supplements for muscle recovery and growth — plus simple habits to wind down faster and recover harder while you rest.',
     h1: 'Sleep: The Most Underrated Fitness Tool',
     intro: 'Why quality sleep beats another supplement — and simple habits to recover harder while you rest.',
   },
