@@ -79,7 +79,29 @@ const ROUTES = [
       'Free BMI calculator. Enter height and weight to get your body mass index, the category it falls in, and what the number does and does not tell you.',
     h1: 'BMI Calculator',
     intro:
-      'Body mass index compares your weight to your height. It is a screening number, not a diagnosis — useful for spotting a trend across a population, blunt for any single person.',
+      'Body mass index compares your weight to your height. It is a screening number, not a diagnosis — useful for spotting a trend across a population, blunt for any single person. Enter your height and weight below to get your BMI, the category it falls in, and what the number actually means for your health.',
+    sections: [
+      { h2: 'BMI categories', points: [
+        'Underweight: below 18.5',
+        'Normal weight: 18.5 to 24.9',
+        'Overweight: 25.0 to 29.9',
+        'Obese class I: 30.0 to 34.9',
+        'Obese class II: 35.0 to 39.9',
+        'Obese class III: 40.0 and above',
+      ] },
+      { h2: 'Limitations of BMI', points: [
+        'Does not distinguish between fat mass and muscle mass',
+        'Athletes and bodybuilders often register as overweight or obese despite low body fat',
+        'May underestimate body fat in older adults who have lost muscle',
+        'Does not account for where fat is stored on the body (visceral vs subcutaneous)',
+      ] },
+    ],
+    faq: [
+      { question: 'What is a healthy BMI?', answer: 'A healthy BMI is between 18.5 and 24.9. Below 18.5 is considered underweight; 25 to 29.9 is overweight; 30 and above is classified as obese. These thresholds are the same for men and women.' },
+      { question: 'Is BMI accurate for athletes?', answer: 'No. BMI does not account for body composition. Athletes with high muscle mass often register as overweight or obese despite having low body fat. Body fat percentage is a more useful measure for active people.' },
+      { question: 'What is the difference between BMI and body fat percentage?', answer: 'BMI is calculated from height and weight alone and gives no information about body composition. Body fat percentage measures how much of your weight is fat versus muscle, bone and water — a much more actionable number for fitness goals.' },
+      { question: 'How often should I check my BMI?', answer: 'Once a month is enough. BMI changes slowly, and checking more frequently creates noise rather than useful signal. Track the trend over several months rather than reacting to any single reading.' },
+    ],
   },
   {
     path: '/calculators/bmr',
@@ -88,7 +110,27 @@ const ROUTES = [
       'Free BMR calculator using the Mifflin-St Jeor equation. Find the calories your body burns at complete rest, before any activity is added.',
     h1: 'BMR Calculator',
     intro:
-      'Basal metabolic rate is what you burn doing nothing at all — breathing, circulation, keeping warm. It is the floor under every calorie target, and eating below it for long is how people stall.',
+      'Basal metabolic rate is what you burn doing nothing at all — breathing, circulation, keeping warm. It is the floor under every calorie target, and eating below it for long is how people stall. This calculator uses the Mifflin-St Jeor equation, the most accurate formula validated for modern populations.',
+    sections: [
+      { h2: 'How BMR is calculated', points: [
+        'Men: BMR = (10 x weight in kg) + (6.25 x height in cm) - (5 x age) + 5',
+        'Women: BMR = (10 x weight in kg) + (6.25 x height in cm) - (5 x age) - 161',
+        'The Mifflin-St Jeor equation is more accurate than the older Harris-Benedict formula',
+        'BMR accounts for sex, age, height and weight — not activity level',
+      ] },
+      { h2: 'What to do with your BMR', points: [
+        'Multiply by an activity factor to get your TDEE (total daily energy expenditure)',
+        'Your TDEE is the starting point for setting a calorie target',
+        'A 500 calorie daily deficit below TDEE produces roughly 0.5 kg of fat loss per week',
+        'Never eat significantly below your BMR long-term — it triggers muscle loss and metabolic adaptation',
+      ] },
+    ],
+    faq: [
+      { question: 'What is BMR?', answer: 'BMR (basal metabolic rate) is the number of calories your body burns at complete rest — just to maintain basic functions like breathing, circulation and keeping your organs running. It accounts for the largest share of your total daily calorie burn.' },
+      { question: 'What is the difference between BMR and TDEE?', answer: 'BMR is your resting calorie burn only. TDEE (total daily energy expenditure) adds your activity level on top — exercise, walking, work and even fidgeting. TDEE is always higher than BMR and is the number you build your calorie target around.' },
+      { question: 'Which BMR formula is most accurate?', answer: 'The Mifflin-St Jeor equation (1990) is the most accurate for most people and is what this calculator uses. The older Harris-Benedict formula tends to overestimate by around 5%. Neither is perfectly precise — treat the result as a starting estimate and adjust based on real-world results.' },
+      { question: 'Does BMR change as you lose weight?', answer: 'Yes. BMR falls as you lose weight because there is less body mass to maintain. This is why calorie targets should be recalculated every 4 to 6 weeks during a fat-loss phase, and why very aggressive deficits slow down over time.' },
+    ],
   },
   {
     path: '/calculators/tdee',
@@ -97,7 +139,28 @@ const ROUTES = [
       'Free TDEE calculator. Combine your BMR with your activity level to find total daily energy expenditure, then set a target for cutting or bulking.',
     h1: 'TDEE Calculator',
     intro:
-      'Total daily energy expenditure is everything you burn in a day — resting metabolism plus training, walking, fidgeting and digesting. It is the number every calorie target should be built from.',
+      'Total daily energy expenditure is everything you burn in a day — resting metabolism plus training, walking, fidgeting and digesting. It is the number every calorie target should be built from. Eat below your TDEE to lose fat; above it to gain muscle.',
+    sections: [
+      { h2: 'Activity multipliers', points: [
+        'Sedentary (desk job, little exercise): BMR x 1.2',
+        'Lightly active (exercise 1-3 days/week): BMR x 1.375',
+        'Moderately active (exercise 3-5 days/week): BMR x 1.55',
+        'Very active (hard exercise 6-7 days/week): BMR x 1.725',
+        'Extra active (physical job + daily training): BMR x 1.9',
+      ] },
+      { h2: 'How to use your TDEE', points: [
+        'Fat loss: eat 300-500 calories below your TDEE per day',
+        'Muscle gain: eat 200-300 calories above your TDEE per day',
+        'Maintenance: eat at your TDEE',
+        'Recalculate every 4-6 weeks as your weight changes',
+      ] },
+    ],
+    faq: [
+      { question: 'What is TDEE?', answer: 'TDEE (total daily energy expenditure) is the total number of calories you burn each day, combining your basal metabolic rate with all physical activity — exercise, walking, work and everyday movement. It is the most important number for setting a fat-loss or muscle-gain calorie target.' },
+      { question: 'How many calories below TDEE should I eat to lose weight?', answer: 'A deficit of 300 to 500 calories per day below your TDEE produces steady, sustainable fat loss of around 0.3 to 0.5 kg per week. Larger deficits speed up weight loss but increase the risk of muscle loss and hunger that undermines the diet.' },
+      { question: 'How accurate is a TDEE calculator?', answer: 'A TDEE calculator gives a good starting estimate — usually within 10 to 15% of your actual burn. Track your weight over 2 to 3 weeks at the calculated target and adjust by 100 to 200 calories if you are not seeing the expected rate of change.' },
+      { question: 'Does TDEE change when you diet?', answer: 'Yes. TDEE drops as you lose weight because there is less body mass to move and maintain. It also drops through metabolic adaptation — the body becomes more efficient under a prolonged deficit. Recalculating every 4 to 6 weeks keeps your target accurate.' },
+    ],
   },
   {
     path: '/calculators/body-fat',
@@ -106,7 +169,24 @@ const ROUTES = [
       'Free body fat calculator. Estimate your body fat percentage and lean mass from height, weight, age and sex — no callipers or scan needed.',
     h1: 'Body Fat Calculator',
     intro:
-      'Body fat percentage answers what BMI cannot: how much of your weight is fat and how much is everything else. Two people at the same BMI can sit ten points apart here.',
+      'Body fat percentage answers what BMI cannot: how much of your weight is fat and how much is everything else. Two people at the same BMI can sit ten points apart here. This calculator uses the US Navy tape-measurement method — one of the most accessible accurate estimates without specialist equipment.',
+    sections: [
+      { h2: 'Healthy body fat ranges', points: [
+        'Essential fat (men): 2-5%',
+        'Essential fat (women): 10-13%',
+        'Athletes (men): 6-13%',
+        'Athletes (women): 14-20%',
+        'Fitness (men): 14-17%',
+        'Fitness (women): 21-24%',
+        'Average (men): 18-24%',
+        'Average (women): 25-31%',
+      ] },
+    ],
+    faq: [
+      { question: 'What is a healthy body fat percentage?', answer: 'For men, 10 to 20% is generally considered healthy; for women, 18 to 28%. Athletes typically sit lower — 6 to 13% for men and 14 to 20% for women. Going below essential fat levels (2-5% men, 10-13% women) carries serious health risks.' },
+      { question: 'How accurate is the Navy body fat calculator?', answer: 'The US Navy method typically estimates body fat within 3 to 4 percentage points of a DEXA scan for most people. It is less accurate at very low or very high body fat levels. Consistent use of the same method over time tells you whether you are moving in the right direction, even if the absolute number is slightly off.' },
+      { question: 'What is the difference between body fat percentage and BMI?', answer: 'BMI is calculated from height and weight alone and cannot distinguish between fat and muscle. Body fat percentage directly measures how much of your total weight is fat. A muscular athlete can have a high BMI but low body fat — body fat percentage catches this where BMI does not.' },
+    ],
   },
   {
     path: '/calculators/ideal-weight',
@@ -115,7 +195,12 @@ const ROUTES = [
       'Free ideal weight calculator. Find a healthy weight range for your height and frame, and see why it is a range rather than a single number.',
     h1: 'Ideal Weight Calculator',
     intro:
-      'Ideal weight is a range, not a target you must hit. It is a reference point for a healthy weight at your height — where you sit inside it depends on how much muscle you carry.',
+      'Ideal weight is a range, not a single number you must hit. It is a reference point for a healthy weight at your height — where you sit inside it depends on how much muscle you carry. This calculator uses multiple formulas (Devine, Robinson, Miller, Hamwi) and shows you the full range.',
+    faq: [
+      { question: 'How is ideal weight calculated?', answer: 'Several formulas exist — Devine (1974), Robinson (1983), Miller (1983) and Hamwi (1964) are the most widely used. They are based on height and sex and give slightly different results. The average across formulas is a reasonable target range rather than a precise goal.' },
+      { question: 'Should I aim to reach my ideal weight?', answer: 'Ideal weight is a reference range, not a mandatory target. Body composition matters more than the number on a scale — someone carrying more muscle than average may sit above the ideal weight range while being healthier than someone within it.' },
+      { question: 'Is ideal weight the same for men and women?', answer: 'No. Men are expected to carry more muscle mass, so ideal weight formulas give a higher number for men than for women at the same height. The Devine formula, for example, gives men a higher baseline by about 2.3 kg per inch of height above 5 feet.' },
+    ],
   },
   {
     path: '/calculators/macros',
@@ -124,7 +209,21 @@ const ROUTES = [
       'Free macro calculator. Get daily protein, carbohydrate and fat targets for fat loss, maintenance or muscle gain, based on your calories and goal.',
     h1: 'Macro Calculator',
     intro:
-      'Calories decide whether weight moves; macros decide what that weight is. Enough protein in a deficit is the difference between losing fat and losing muscle along with it.',
+      'Calories decide whether weight moves; macros decide what that weight is. Enough protein in a deficit is the difference between losing fat and losing muscle along with it. Enter your goal, calorie target and body weight to get your personalised protein, carb and fat targets.',
+    sections: [
+      { h2: 'Recommended macro splits by goal', points: [
+        'Fat loss: 40% protein, 35% carbs, 25% fat',
+        'Muscle gain: 30% protein, 50% carbs, 20% fat',
+        'Maintenance: 25-30% protein, 40-45% carbs, 25-30% fat',
+        'Minimum protein regardless of goal: 1.6 g per kg of bodyweight',
+      ] },
+    ],
+    faq: [
+      { question: 'What are macros?', answer: 'Macros (macronutrients) are the three main nutrients that provide calories: protein, carbohydrates and fat. Protein and carbs provide 4 calories per gram; fat provides 9 calories per gram. Tracking macros gives you finer control over body composition than tracking calories alone.' },
+      { question: 'How much protein do I need to build muscle?', answer: 'Research consistently shows that 1.6 to 2.2 grams of protein per kilogram of bodyweight per day is enough to maximise muscle protein synthesis. Going higher does not hurt but provides no additional muscle-building benefit. Spreading intake across 3 to 4 meals optimises absorption.' },
+      { question: 'What macro split is best for fat loss?', answer: 'A higher-protein split (around 40% of calories from protein) is most effective for fat loss because protein preserves lean muscle during a calorie deficit and has a higher thermic effect than carbs or fat — you burn more calories digesting it. Carb and fat ratios are less critical than getting protein right.' },
+      { question: 'Do I need to track macros every day?', answer: 'Not necessarily. Consistent tracking for 4 to 8 weeks builds enough awareness of portion sizes and food composition that most people can maintain progress with periodic checks. The goal is to build habits, not to track indefinitely.' },
+    ],
   },
   {
     path: '/workouts',
@@ -134,6 +233,22 @@ const ROUTES = [
     h1: 'Free Workout Plans & Exercise Guides',
     intro:
       'Structured routines for strength, fat loss, muscle gain and general conditioning, whether you train in a gym or at home with no equipment. Each plan sets out the sets, reps and progression, and every exercise comes with form guidance so you train safely.',
+    sections: [
+      { h2: 'Workout plans by goal', points: [
+        'Fat loss — calorie-burning circuits, HIIT and conditioning sessions',
+        'Muscle gain — progressive overload strength training, push-pull-legs splits',
+        'Beginner — foundational movement patterns, shorter sessions, lower intensity',
+        'Home workouts — bodyweight-only plans, no equipment required',
+        'Strength — compound lifts, linear progression for squat, bench, deadlift and overhead press',
+      ] },
+      { h2: 'What each plan includes', points: [
+        'Weekly schedule with rest day placement',
+        'Sets, reps, tempo and rest periods for every session',
+        'Progression guide — when and how to increase the load',
+        'Exercise demo videos for proper form on every movement',
+        'A beginner modification for most exercises',
+      ] },
+    ],
     links: [{ href: '/exercises', label: 'Exercises by Muscle Group' }],
   },
   {
@@ -153,6 +268,22 @@ const ROUTES = [
     h1: 'Evidence-Based Nutrition Guides',
     intro:
       'Nutrition explained without the fads: how to set your macros, build a calorie deficit that you can actually sustain, get enough protein, plan meals around your schedule, and understand which supplements are worth the money and which are not.',
+    sections: [
+      { h2: 'Topics covered', points: [
+        'How to calculate and set a calorie deficit that is sustainable for 12+ weeks',
+        'Protein — how much you actually need, best sources, timing and spreading across meals',
+        'Carbs and fat — why neither is the enemy and how to balance both around your goal',
+        'Meal planning — building a weekly structure that does not require cooking every day',
+        'Supplements — what the evidence actually says about creatine, protein powder, caffeine and fish oil',
+        'Indian diet and vegetarian options — high-protein meal building with common ingredients',
+      ] },
+      { h2: 'Nutrition principles that work', points: [
+        'Calories in vs calories out is the primary driver of weight change',
+        'Protein (1.6-2.2 g per kg bodyweight) preserves muscle during fat loss',
+        'No food is categorically off-limits — frequency and portion matter more than food choice',
+        'Consistency over 80% of the time beats perfection briefly followed by abandonment',
+      ] },
+    ],
   },
   {
     path: '/programs',
@@ -246,7 +377,7 @@ const ROUTES = [
       'The single most important principle for building strength and muscle — explained simply, with rep targets, load increments and a practical 4-week starter plan.',
     h1: "The Beginner's Guide to Progressive Overload",
     intro:
-      'The single most important principle for building strength and muscle — explained simply, with a practical 4-week plan.',
+      'Progressive overload is the single most important principle for building strength and muscle: consistently making your training harder over time, whether by adding weight, reps, sets or reducing rest. Without it, adaptation stops and the body has no reason to keep changing. This guide explains the principle simply, with practical rep targets, load increment guidance and a 4-week starter plan you can begin this week.',
   },
   {
     path: '/blog/calories-you-need',
@@ -255,7 +386,7 @@ const ROUTES = [
       'BMR, TDEE and calorie targets demystified — how to calculate your maintenance number and set a deficit or surplus that you can actually stick to.',
     h1: 'How Many Calories Do You Actually Need?',
     intro:
-      'BMR, TDEE and calorie targets demystified — plus how to set a deficit or surplus that you can actually stick to.',
+      'Most calorie estimates are either too low (crash-diet territory) or too high (maintenance or above). The right number depends on your BMR — the calories your body burns at rest — multiplied by your actual activity level to get your TDEE. This article demystifies both numbers, shows you how to calculate your personal maintenance calorie target, and explains how to set a deficit or surplus that produces results you can actually sustain beyond a few weeks.',
   },
   {
     path: '/blog/indian-diet-muscle-gain',
@@ -264,7 +395,7 @@ const ROUTES = [
       'High-protein, vegetarian-friendly meals built around everyday Indian grocery staples — dal, paneer, curd and eggs — to support steady lean muscle growth.',
     h1: 'A Balanced Indian Diet Plan for Muscle Gain',
     intro:
-      'High-protein, vegetarian-friendly meals built around everyday Indian ingredients to support lean growth.',
+      'Building muscle on an Indian diet is straightforward once you know which everyday ingredients are high in protein. Dal, paneer, curd, eggs, soya, chickpeas and peanuts are all excellent sources — affordable, widely available and easy to combine into high-protein meals without relying on imported supplements. This guide builds a practical daily meal plan around these staples, hitting the 1.6 to 2.2 g of protein per kg bodyweight that research identifies as the range for maximising muscle growth.',
   },
   {
     path: '/blog/mobility-desk-posture',
@@ -273,21 +404,23 @@ const ROUTES = [
       'Sitting all day? These five daily mobility drills open your hips and shoulders, fix your thoracic spine and undo the damage of a desk job.',
     h1: '5 Mobility Drills to Fix Desk Posture',
     intro:
-      'Sitting all day? These five daily drills open your hips and shoulders and undo the damage of a desk job.',
+      'Sitting for 8 or more hours a day compresses the hip flexors, rounds the thoracic spine and pulls the shoulders forward — and those patterns carry directly into training, increasing injury risk on squats, deadlifts and pressing movements. These five daily mobility drills take under 10 minutes and specifically target the areas most damaged by desk work: hip flexors, thoracic rotation, shoulder external rotation and posterior chain length.',
   },
   {
     path: '/blog/hiit-vs-steady-state',
     title: 'HIIT vs Steady-State Cardio: Which Burns More Fat? — FitSmart',
     description: 'The honest, evidence-based answer on HIIT vs steady-state cardio — plus a practical strategy to combine both training styles for the best fat-loss results.',
     h1: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
-    intro: 'The honest, evidence-based answer — and how to combine both for the best fat-loss results.',
+    intro:
+      'HIIT burns more calories per minute and creates a post-exercise oxygen consumption effect that continues burning calories after the session ends. Steady-state cardio is easier to recover from, can be sustained for longer and is gentler on joints. The honest answer is that both work — and that combining them intelligently beats choosing one exclusively. This article gives you the evidence-based breakdown and a practical weekly structure that uses both.',
   },
   {
     path: '/blog/sleep-fitness-tool',
     title: 'Sleep: The Most Underrated Fitness Tool — FitSmart',
     description: 'Why quality sleep beats most supplements for muscle recovery and growth — plus simple habits to wind down faster and recover harder while you rest.',
     h1: 'Sleep: The Most Underrated Fitness Tool',
-    intro: 'Why quality sleep beats another supplement — and simple habits to recover harder while you rest.',
+    intro:
+      'Most of the physiological processes that actually build muscle and burn fat happen during sleep: growth hormone peaks in the first hours, testosterone recovers overnight, and muscle protein synthesis runs at its highest rate while you rest. Cutting sleep short — even by an hour or two — measurably reduces muscle gain, increases fat storage and impairs gym performance the next day. This article explains the mechanisms and gives you specific, practical habits to improve sleep quality starting tonight.',
   },
   {
     path: '/about',
