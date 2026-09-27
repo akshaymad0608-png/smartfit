@@ -432,15 +432,6 @@ const ROUTES = [
     path: '/blog/hiit-vs-steady-state',
     title: 'HIIT vs Steady-State Cardio: Which Burns More Fat? — FitSmart',
     keywords: 'HIIT vs steady state cardio, best cardio for fat loss, HIIT fat loss, cardio for weight loss, HIIT vs running',
-    description: 'The honest, evidence-based answer on HIIT vs steady-state cardio — plus a practical strategy to combine both training styles for the best fat-loss results.',
-    h1: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
-    intro:
-      'HIIT burns more calories per minute and creates a post-exercise oxygen consumption effect that continues burning calories after the session ends. Steady-state cardio is easier to recover from, can be sustained for longer and is gentler on joints. The honest answer is that both work — and that combining them intelligently beats choosing one exclusively. This article gives you the evidence-based breakdown and a practical weekly structure that uses both.',
-  },
-  {
-    path: '/blog/sleep-fitness-tool',
-    title: 'Sleep: The Most Underrated Fitness Tool — FitSmart',
-    keywords: 'sleep and fitness, sleep for muscle recovery, sleep for fat loss, sleep and muscle growth, sleep fitness benefits, sleep and training',
     description: 'Why quality sleep beats most supplements for muscle recovery and growth — plus simple habits to wind down faster and recover harder while you rest.',
     h1: 'Sleep: The Most Underrated Fitness Tool',
     intro:
