@@ -27,6 +27,7 @@ const ROUTES = [
   {
     path: '/',
     title: 'Free Fitness Calculators, Workouts & Nutrition — FitSmart',
+    keywords: 'free fitness calculators, BMI calculator, TDEE calculator, workout plans, macro calculator, nutrition guide, FitSmart, BMR calculator, body fat calculator',
     description:
       'Free health calculators (BMI, BMR, TDEE, macros), structured workout plans and evidence-based nutrition guides — no sign-up, works on any device.',
     h1: 'Free Fitness Calculators, Workout Plans & Nutrition Guides',
@@ -58,6 +59,7 @@ const ROUTES = [
   {
     path: '/calculators',
     title: 'BMI, BMR, TDEE and Macro Calculators — Free | FitSmart',
+    keywords: 'BMI calculator, BMR calculator, TDEE calculator, macro calculator, body fat calculator, ideal weight calculator, free health calculators',
     description:
       'Calculate your BMI, BMR, TDEE, daily calories and macro split for cutting, maintenance or bulking. Free, accurate and instant — no sign-up needed.',
     h1: 'Free Health & Fitness Calculators',
@@ -75,6 +77,7 @@ const ROUTES = [
   {
     path: '/calculators/bmi',
     title: 'BMI Calculator — Body Mass Index for Men & Women — FitSmart',
+    keywords: 'BMI calculator, body mass index calculator, BMI for men, BMI for women, BMI calculator India, healthy BMI range, free BMI calculator',
     description:
       'Free BMI calculator. Enter height and weight to get your body mass index, the category it falls in, and what the number does and does not tell you.',
     h1: 'BMI Calculator',
@@ -106,6 +109,7 @@ const ROUTES = [
   {
     path: '/calculators/bmr',
     title: 'BMR Calculator — Basal Metabolic Rate in Calories — FitSmart',
+    keywords: 'BMR calculator, basal metabolic rate calculator, resting calorie calculator, Mifflin St Jeor calculator, calorie calculator, BMR formula',
     description:
       'Free BMR calculator using the Mifflin-St Jeor equation. Find the calories your body burns at complete rest, before any activity is added.',
     h1: 'BMR Calculator',
@@ -135,6 +139,7 @@ const ROUTES = [
   {
     path: '/calculators/tdee',
     title: 'TDEE Calculator — Daily Calories You Actually Burn',
+    keywords: 'TDEE calculator, total daily energy expenditure calculator, daily calorie calculator, calorie deficit calculator, calorie needs, how many calories to eat',
     description:
       'Free TDEE calculator. Combine your BMR with your activity level to find total daily energy expenditure, then set a target for cutting or bulking.',
     h1: 'TDEE Calculator',
@@ -165,6 +170,7 @@ const ROUTES = [
   {
     path: '/calculators/body-fat',
     title: 'Body Fat Percentage Calculator — No Callipers Needed',
+    keywords: 'body fat percentage calculator, body fat calculator, US Navy body fat calculator, lean mass calculator, body composition calculator',
     description:
       'Free body fat calculator. Estimate your body fat percentage and lean mass from height, weight, age and sex — no callipers or scan needed.',
     h1: 'Body Fat Calculator',
@@ -191,6 +197,7 @@ const ROUTES = [
   {
     path: '/calculators/ideal-weight',
     title: 'Ideal Weight Calculator — Healthy Range for Your Height',
+    keywords: 'ideal weight calculator, healthy weight calculator, ideal weight for height, ideal body weight, weight calculator for height',
     description:
       'Free ideal weight calculator. Find a healthy weight range for your height and frame, and see why it is a range rather than a single number.',
     h1: 'Ideal Weight Calculator',
@@ -205,6 +212,7 @@ const ROUTES = [
   {
     path: '/calculators/macros',
     title: 'Macro Calculator — Protein, Carbs & Fat Targets — FitSmart',
+    keywords: 'macro calculator, protein calculator, carbohydrate calculator, daily macros, calorie macro calculator, macro split, IIFYM calculator',
     description:
       'Free macro calculator. Get daily protein, carbohydrate and fat targets for fat loss, maintenance or muscle gain, based on your calories and goal.',
     h1: 'Macro Calculator',
@@ -228,6 +236,7 @@ const ROUTES = [
   {
     path: '/workouts',
     title: 'Free Workout Plans and Exercise Guides for Every Level',
+    keywords: 'free workout plans, gym workout plans, home workout plans, beginner workout plan, fat loss workout, muscle gain workout, strength training plans',
     description:
       'Structured workout plans for strength, fat loss and general fitness, with proper form guidance for every exercise. Free, no-equipment options included.',
     h1: 'Free Workout Plans & Exercise Guides',
@@ -254,6 +263,7 @@ const ROUTES = [
   {
     path: '/exercises',
     title: 'Exercises by Muscle Group — Free Form-Check Videos | FitSmart',
+    keywords: 'exercises by muscle group, gym exercises list, exercise form guide, workout exercises, strength exercises, free exercise videos',
     description:
       'Browse exercise demo videos by muscle group — chest, back, shoulders, biceps, triceps, abs, quads, hamstrings, glutes and calves. Free, no sign-up.',
     h1: 'Exercises by Muscle Group',
@@ -263,6 +273,7 @@ const ROUTES = [
   {
     path: '/nutrition',
     title: 'Nutrition Guides, Macros and Meal Plans | FitSmart',
+    keywords: 'nutrition guide, macro diet plan, calorie deficit guide, high protein diet, meal plan, diet guide, Indian diet plan, vegetarian nutrition',
     description:
       'Evidence-based nutrition guides: how to set macros, plan meals, hit a calorie deficit for fat loss, and eat enough protein — without fad diets.',
     h1: 'Evidence-Based Nutrition Guides',
@@ -288,6 +299,7 @@ const ROUTES = [
   {
     path: '/programs',
     title: 'Training Programs for Strength & Fat Loss — FitSmart',
+    keywords: 'training programs, fitness programs, structured workout programs, fat loss program, muscle gain program, beginner fitness program',
     description:
       'Complete multi-week training programs for beginners, fat loss and strength. Follow a plan with clear progression instead of guessing each session.',
     h1: 'Structured Training Programs',
@@ -307,6 +319,7 @@ const ROUTES = [
   {
     path: '/programs/30-day-kickstart',
     title: '30-Day Kickstart Challenge — 4-Week Beginner Habit Plan',
+    keywords: '30 day fitness challenge, beginner workout plan, 30 day kickstart, beginner fitness challenge, no equipment workout challenge',
     description:
       'A month-long guided plan that turns fitness into a daily habit with short, achievable 20-30 minute sessions, 5 days a week, no equipment required.',
     h1: '30-Day Kickstart Challenge',
@@ -316,6 +329,7 @@ const ROUTES = [
   {
     path: '/programs/lean-and-strong',
     title: 'Lean & Strong — 8-Week Fat Loss & Muscle Program',
+    keywords: 'lean and strong program, body recomposition program, fat loss muscle gain, 8 week fitness program, lose fat gain muscle',
     description:
       'An 8-week body-recomposition program pairing progressive strength training with macro guidance and weekly check-ins to lose fat and keep muscle.',
     h1: 'Lean & Strong',
@@ -325,6 +339,7 @@ const ROUTES = [
   {
     path: '/programs/hypertrophy-builder',
     title: 'Hypertrophy Builder — 12-Week Muscle Gain Program',
+    keywords: 'hypertrophy program, muscle building program, push pull legs split, 12 week muscle program, PPL workout, muscle gain training',
     description:
       'A 12-week push-pull-legs split with auto-regulated volume and built-in deload weeks, engineered for maximum lean-mass gains.',
     h1: 'Hypertrophy Builder',
@@ -334,6 +349,7 @@ const ROUTES = [
   {
     path: '/programs/home-shred',
     title: 'Home Shred — 6-Week Fat Loss Program, No Equipment',
+    keywords: 'home workout fat loss, HIIT program no equipment, home shred workout, fat loss at home, bodyweight fat loss program, no gym fat loss',
     description:
       'Six weeks of equipment-free HIIT and conditioning for fat loss, with follow-along timers and low-impact options — do it in a living room, hotel or dorm.',
     h1: 'Home Shred',
@@ -343,6 +359,7 @@ const ROUTES = [
   {
     path: '/ai-coach',
     title: 'AI Fitness Coach for Personalised Training — FitSmart',
+    keywords: 'AI fitness coach, AI personal trainer, AI workout coach, AI nutrition coach, personalised fitness coach, free AI coach',
     description:
       'Ask an AI fitness coach about training, form, macros and recovery, and get personalised, evidence-based answers built around your goals — free.',
     h1: 'AI Fitness Coach',
@@ -352,6 +369,7 @@ const ROUTES = [
   {
     path: '/blog',
     title: 'Fitness and Nutrition Articles, Written Plainly | FitSmart',
+    keywords: 'fitness articles, nutrition articles, workout tips, health fitness blog, science-based fitness, FitSmart blog',
     description:
       'Practical articles on training, nutrition and health science — including HIIT versus steady-state cardio, protein intake and recovery.',
     h1: 'Fitness & Nutrition Articles',
@@ -373,6 +391,7 @@ const ROUTES = [
   {
     path: '/blog/progressive-overload-guide',
     title: "The Beginner's Guide to Progressive Overload — FitSmart",
+    keywords: 'progressive overload, progressive overload guide, how to build strength, beginners strength training, progressive overload explained',
     description:
       'The single most important principle for building strength and muscle — explained simply, with rep targets, load increments and a practical 4-week starter plan.',
     h1: "The Beginner's Guide to Progressive Overload",
@@ -382,6 +401,7 @@ const ROUTES = [
   {
     path: '/blog/calories-you-need',
     title: 'How Many Calories Do You Actually Need? — FitSmart',
+    keywords: 'how many calories do I need, calorie needs, daily calorie requirement, TDEE calories, BMR calories, calorie target',
     description:
       'BMR, TDEE and calorie targets demystified — how to calculate your maintenance number and set a deficit or surplus that you can actually stick to.',
     h1: 'How Many Calories Do You Actually Need?',
@@ -391,6 +411,7 @@ const ROUTES = [
   {
     path: '/blog/indian-diet-muscle-gain',
     title: 'A Balanced Indian Diet Plan for Muscle Gain — FitSmart',
+    keywords: 'Indian diet for muscle gain, high protein Indian diet, vegetarian muscle diet India, Indian diet plan muscle building, Indian diet bodybuilding',
     description:
       'High-protein, vegetarian-friendly meals built around everyday Indian grocery staples — dal, paneer, curd and eggs — to support steady lean muscle growth.',
     h1: 'A Balanced Indian Diet Plan for Muscle Gain',
@@ -400,6 +421,7 @@ const ROUTES = [
   {
     path: '/blog/mobility-desk-posture',
     title: '5 Mobility Drills to Fix Desk Posture — FitSmart',
+    keywords: 'desk posture exercises, mobility drills, fix desk posture, office worker exercises, posture correction exercises, hip flexor stretch',
     description:
       'Sitting all day? These five daily mobility drills open your hips and shoulders, fix your thoracic spine and undo the damage of a desk job.',
     h1: '5 Mobility Drills to Fix Desk Posture',
@@ -409,6 +431,7 @@ const ROUTES = [
   {
     path: '/blog/hiit-vs-steady-state',
     title: 'HIIT vs Steady-State Cardio: Which Burns More Fat? — FitSmart',
+    keywords: 'HIIT vs steady state cardio, best cardio for fat loss, HIIT fat loss, cardio for weight loss, HIIT vs running',
     description: 'The honest, evidence-based answer on HIIT vs steady-state cardio — plus a practical strategy to combine both training styles for the best fat-loss results.',
     h1: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
     intro:
@@ -417,6 +440,7 @@ const ROUTES = [
   {
     path: '/blog/sleep-fitness-tool',
     title: 'Sleep: The Most Underrated Fitness Tool — FitSmart',
+    keywords: 'sleep and fitness, sleep for muscle recovery, sleep for fat loss, sleep and muscle growth, sleep fitness benefits, sleep and training',
     description: 'Why quality sleep beats most supplements for muscle recovery and growth — plus simple habits to wind down faster and recover harder while you rest.',
     h1: 'Sleep: The Most Underrated Fitness Tool',
     intro:
@@ -425,6 +449,7 @@ const ROUTES = [
   {
     path: '/about',
     title: 'About FitSmart — Who Builds These Calculators and Why',
+    keywords: 'about FitSmart, FitSmart fitness platform, fitness calculator app, free fitness tools, FitSmart about',
     description:
       'FitSmart builds free, evidence-based fitness calculators, workout plans and nutrition guides. Learn what we build and the principles behind it.',
     h1: 'About FitSmart',
@@ -434,6 +459,7 @@ const ROUTES = [
   {
     path: '/contact',
     title: 'Contact FitSmart — Questions, Corrections and Feedback',
+    keywords: 'contact FitSmart, FitSmart support, fitness calculator help, contact fitness app, FitSmart enquiry',
     description: 'Get in touch with FitSmart about a question, a correction to a calculator or a guide, or a partnership enquiry. We read and reply to everything.',
     h1: 'Contact FitSmart',
     // The name, address and phone are spelled out here, not just rendered by
@@ -447,6 +473,7 @@ const ROUTES = [
   {
     path: '/help',
     title: 'Help Centre — Using the FitSmart Calculators and Plans',
+    keywords: 'FitSmart help, fitness calculator FAQ, how to use FitSmart, fitness app help, FitSmart FAQ',
     description: 'Answers to common questions about the FitSmart calculators, workout plans, accounts and the AI coach — how each works and how to use it.',
     h1: 'Help & Frequently Asked Questions',
     intro: 'Common questions about the calculators, the training plans, accounts and the AI coach, answered in one place.',
@@ -575,6 +602,7 @@ for (const route of ROUTES) {
 
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(route.title)}</title>`);
   html = html.replace(/<meta\s+name="description"[\s\S]*?>/, `<meta name="description" content="${esc(route.description)}" />`);
+  if (route.keywords) html = html.replace(/<meta name="keywords"[^>]*>/, `<meta name="keywords" content="${esc(route.keywords)}" />`);
   html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${url}" />`);
   html = html.replace(/<meta property="og:title"[\s\S]*?>/, `<meta property="og:title" content="${esc(route.title)}" />`);
   html = html.replace(/<meta\s+property="og:description"[\s\S]*?>/, `<meta property="og:description" content="${esc(route.description)}" />`);
