@@ -6,8 +6,9 @@ import { useEffect, useState } from 'react';
 const KEY = 'fitsmart-cookie-consent';
 
 /**
- * Minimal, privacy-first cookie notice. FitSmart only uses essential local
- * storage, so this is informational with a single acknowledge action.
+ * Minimal cookie notice. FitSmart stores preferences in local storage and shows
+ * Google AdSense ads (which may set cookies), so this is informational with a
+ * single acknowledge action — there is no choice here that would change what loads.
  */
 export function CookieConsent() {
   const [show, setShow] = useState(false);
@@ -24,7 +25,7 @@ export function CookieConsent() {
     return () => window.clearTimeout(t);
   }, []);
 
-  const decide = (value: 'accepted' | 'essential') => {
+  const decide = (value: 'accepted') => {
     try {
       localStorage.setItem(KEY, value);
     } catch {
@@ -49,20 +50,14 @@ export function CookieConsent() {
             <Cookie size={20} />
           </span>
           <p className="mb-3 flex-1 text-sm text-body sm:mb-0">
-            We use essential local storage to remember your preferences — no ads or cross-site
-            tracking. See our{' '}
+            We use local storage to remember your preferences, and Google shows ads that may use
+            cookies. See our{' '}
             <Link to="/cookies" className="font-semibold text-primary hover:underline">
               Cookie Policy
             </Link>
             .
           </p>
           <div className="flex shrink-0 gap-2">
-            <button
-              onClick={() => decide('essential')}
-              className="flex min-h-11 items-center justify-center rounded-full border border-line px-4 text-sm font-semibold text-body transition-colors hover:bg-surface-muted"
-            >
-              Essential only
-            </button>
             <button
               onClick={() => decide('accepted')}
               className="flex min-h-11 items-center justify-center rounded-full bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-600"

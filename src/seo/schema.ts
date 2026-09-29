@@ -8,7 +8,7 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: site.name,
     url: site.url,
-    logo: `${site.url}/icon.svg`,
+    logo: `${site.url}/logo.png`,
     description: site.description,
     sameAs: Object.values(site.social),
     contactPoint: {
@@ -78,7 +78,7 @@ export function articleSchema(a: {
     publisher: {
       '@type': 'Organization',
       name: site.name,
-      logo: { '@type': 'ImageObject', url: `${site.url}/icon.svg` },
+      logo: { '@type': 'ImageObject', url: `${site.url}/logo.png` },
     },
     mainEntityOfPage: `${site.url}${a.path}`,
   };

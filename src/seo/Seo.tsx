@@ -44,7 +44,7 @@ export function Seo({
   description = site.description,
   path = '/',
   keywords,
-  image = `${site.url}/icon.svg`,
+  image = `${site.url}/logo.png`,
   type = 'website',
   noindex = false,
   schema,
