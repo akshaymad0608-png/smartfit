@@ -93,7 +93,8 @@ export function Cookies() {
         {
           heading: 'What we use',
           body: [
-            'FitSmart uses essential local storage to remember your theme preference and any inputs you save. We do not use advertising or cross-site tracking cookies.',
+            'FitSmart uses essential local storage to remember your theme preference and any inputs you save.',
+            'Advertising: we show ads through Google AdSense. Google and its partners, as third-party vendors, use cookies (including the DoubleClick cookie) to serve ads based on your visits to this and other websites. You can opt out of personalised advertising in Google Ads Settings (adssettings.google.com) or at aboutads.info. To see how Google uses data from sites that use its services, visit policies.google.com/technologies/partner-sites.',
           ],
         },
         {
