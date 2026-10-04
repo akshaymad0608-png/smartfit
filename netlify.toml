@@ -1,0 +1,12 @@
+# Read only by Netlify; Vercel (the production host for fitsmart.space)
+# ignores this file.
+#
+# This repo is also built by several Netlify sites (*.netlify.app). Every one
+# serves the same pages as fitsmart.space, which search engines would treat as
+# duplicates of the real site. The header keeps all of them out of search
+# results. Build settings are deliberately not set here, so each Netlify
+# site keeps using what is configured in its own dashboard.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
