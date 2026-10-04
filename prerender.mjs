@@ -432,7 +432,18 @@ const ROUTES = [
     path: '/blog/hiit-vs-steady-state',
     title: 'HIIT vs Steady-State Cardio: Which Burns More Fat? — FitSmart',
     keywords: 'HIIT vs steady state cardio, best cardio for fat loss, HIIT fat loss, cardio for weight loss, HIIT vs running',
-    description: 'Why quality sleep beats most supplements for muscle recovery and growth — plus simple habits to wind down faster and recover harder while you rest.',
+    description:
+      'HIIT or steady-state cardio for fat loss? The evidence-based answer, how each burns calories differently, and how to combine both for the best results.',
+    h1: 'HIIT vs Steady-State Cardio: Which Burns More Fat?',
+    intro:
+      'HIIT alternates short bursts of near-maximal effort with brief recovery, like 30 seconds hard and 15 seconds easy, repeated for 15 to 20 minutes. Steady-state cardio holds one moderate, conversational pace for a longer stretch, such as a 30 to 45 minute jog or cycle. They feel completely different and burn calories through different mechanisms, so the honest answer to which burns more fat depends on what you are actually measuring.',
+  },
+  {
+    path: '/blog/sleep-fitness-tool',
+    title: 'Sleep: The Most Underrated Fitness Tool — FitSmart',
+    keywords: 'sleep and muscle recovery, sleep for fitness, how sleep affects muscle growth, sleep habits for recovery, sleep and fat loss',
+    description:
+      'Why quality sleep beats most supplements for muscle recovery and growth — plus simple habits to wind down faster and recover harder while you rest.',
     h1: 'Sleep: The Most Underrated Fitness Tool',
     intro:
       'Most of the physiological processes that actually build muscle and burn fat happen during sleep: growth hormone peaks in the first hours, testosterone recovers overnight, and muscle protein synthesis runs at its highest rate while you rest. Cutting sleep short — even by an hour or two — measurably reduces muscle gain, increases fat storage and impairs gym performance the next day. This article explains the mechanisms and gives you specific, practical habits to improve sleep quality starting tonight.',
