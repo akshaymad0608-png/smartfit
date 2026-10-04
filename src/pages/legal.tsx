@@ -201,17 +201,18 @@ export function Careers() {
       title="Careers"
       subtitle="Help us build the calmest, most credible fitness platform on the web."
       path="/careers"
+      noindex
       sections={[
         {
-          heading: 'Why FitSmart',
+          heading: 'Who runs FitSmart',
           body: [
-            'We are a small, remote-friendly team that values craft, evidence and kindness. We ship thoughtfully and look after each other.',
+            'FitSmart is a one-person project built and written by Akshay Mahajan, so there is no hiring team and no open roles right now.',
           ],
         },
         {
-          heading: 'Open roles',
+          heading: 'Working together',
           body: [
-            'We are always keen to meet talented engineers, designers, coaches and dietitians. Send your story and portfolio to careers@fitsmart.space.',
+            'If you are an engineer, designer, coach or dietitian who would like to contribute, send a short note and your portfolio to careers@fitsmart.space. Nothing is guaranteed, but every message is read.',
           ],
         },
       ]}
@@ -226,6 +227,7 @@ export function Press() {
       title="Press & Media"
       subtitle="Brand assets, facts and contacts for journalists and partners."
       path="/press"
+      noindex
       sections={[
         {
           heading: 'About FitSmart',

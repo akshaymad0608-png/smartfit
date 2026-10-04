@@ -5,7 +5,7 @@ import {
   useTransform,
   type MotionValue,
 } from 'framer-motion';
-import { ArrowRight, Play, Flame, HeartPulse, Trophy, Dumbbell, Apple, Star } from 'lucide-react';
+import { ArrowRight, Play, Flame, HeartPulse, Trophy, Dumbbell, Apple } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
@@ -109,23 +109,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-6 flex items-center gap-3"
             >
-              <div className="flex -space-x-2.5">
-                {['priya', 'marcus', 'amelia', 'david'].map((p) => (
-                  <img
-                    key={p}
-                    src={`/images/people/${p}.jpg`}
-                    alt=""
-                    className="h-9 w-9 rounded-full border-2 border-surface object-cover"
-                    loading="eager"
-                  />
-                ))}
-              </div>
               <div>
-                <div className="flex items-center gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={13} className="fill-accent text-accent" />
-                  ))}
-                </div>
                 <p className="text-xs text-muted">100% free, no sign-up needed</p>
               </div>
             </motion.div>
@@ -181,7 +165,7 @@ export function Hero() {
               {imgOk ? (
                 <img
                   src={HERO_IMAGE}
-                  alt="A FitSmart member training with focus"
+                  alt="A person training with focus"
                   className="h-72 w-full object-cover sm:h-80"
                   onError={() => setImgOk(false)}
                 />
@@ -218,7 +202,7 @@ export function Hero() {
               {imgOk ? (
                 <img
                   src={HERO_IMAGE}
-                  alt="A FitSmart member training with focus"
+                  alt="A person training with focus"
                   className="h-full w-full object-cover"
                   loading="eager"
                   onError={() => setImgOk(false)}

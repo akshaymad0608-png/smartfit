@@ -24,12 +24,7 @@ const timeline = [
   { year: '2026', title: 'Programs & workouts', text: 'Structured training programs and workout plans joined the calculators.' },
 ];
 
-const team = [
-  { name: 'Ava Thompson', role: 'Head Coach', initials: 'AT' },
-  { name: 'Dr. Neha Rao', role: 'Lead Dietitian', initials: 'NR' },
-  { name: 'Ravi Menon', role: 'Strength Coach', initials: 'RM' },
-  { name: 'Sofia Marín', role: 'Product Lead', initials: 'SM' },
-];
+const team = [{ name: 'Akshay Mahajan', role: 'Founder and developer', initials: 'AM' }];
 
 export default function About() {
   return (
@@ -46,7 +41,7 @@ export default function About() {
       <PageHero
         eyebrow="About"
         title="Smarter fitness for everyone"
-        subtitle="We're a small team of coaches, dietitians and designers building the calm, credible fitness platform we always wanted."
+        subtitle="FitSmart is built and written by one person, Akshay Mahajan: a calm, credible fitness site with free calculators, workouts and nutrition guides."
         crumbs={[{ label: 'About' }]}
       />
 
@@ -71,8 +66,8 @@ export default function About() {
               </span>
               <h2 className="mt-4 text-card-title font-bold text-heading">Our vision</h2>
               <p className="mt-3 text-body">
-                A world where a personal coach, a dietitian and a supportive community fit in your
-                pocket — and where healthy living is the easy, obvious choice.
+                A world where clear, honest fitness information is free for everyone — and where
+                healthy living is the easy, obvious choice.
               </p>
             </Card>
           </Reveal>
@@ -126,8 +121,8 @@ export default function About() {
       </Section>
 
       <Section spacing="md">
-        <SectionHeader eyebrow="Team" title="Meet the coaches" />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeader eyebrow="Who is behind this" title="Meet the founder" />
+        <div className="mt-12 mx-auto grid max-w-xs gap-6">
           {team.map((m) => (
             <Reveal key={m.name}>
               <Card className="flex flex-col items-center p-6 text-center">
