@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <title>BMI Calculator for Indians (2026) — Correct Asian Cutoffs</title>
 <meta name="description" content="Indian BMI cutoffs are lower than the global WHO scale — overweight at 23, obese at 25, not 25/30. Free BMI calculator using the correct Indian classification." />
 <link rel="canonical" href="https://fitsmart.space/bmi-calculator-for-indians.html" />
@@ -94,6 +95,14 @@
   .btn{display:inline-block;margin-top:6px;background:var(--brand);color:var(--brand-ink);font-weight:800;padding:13px 24px;border-radius:999px;font-size:15px}
   .btn:hover{text-decoration:none;opacity:.92}
   .faq{border:1px solid var(--line);border-radius:12px;padding:2px 18px;margin:12px 0;background:var(--card)}
+  .calc{background:var(--tint);border:1px solid var(--line);border-radius:18px;padding:24px;margin:20px 0 34px}
+  .calc-row{margin:0 0 14px}
+  .calc label{display:block;font-weight:700;margin:0 0 6px}
+  .calc input,.calc select{width:100%;max-width:320px;box-sizing:border-box;padding:12px 14px;font-size:16px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#111}
+  .calc button.btn{border:0;cursor:pointer;font-family:inherit}
+  .calc-out{margin-top:16px;font-size:17px;line-height:1.6}
+  .calc-out:empty{display:none}
+  .calc-note{font-size:13px;color:var(--mist);margin:12px 0 0}
   .cta{background:var(--tint);border:1px solid var(--line);border-radius:18px;padding:28px;text-align:center;margin:38px 0}
   .cta h2{margin:0 0 8px}
   .related{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 0}
@@ -123,7 +132,7 @@
   <div class="crumbs"><a href="https://fitsmart.space/">Home</a> › <a href="https://fitsmart.space/calculators">Calculators</a> › <span>BMI Calculator for Indians</span></div>
   <h1>BMI Calculator for Indians</h1>
   <p class="lede">Most BMI calculators use the global WHO scale — but that scale understates health risk for Indian and South Asian bodies. Here's the correct Indian classification, why it's different, and a free calculator that uses it.</p>
-  <p class="meta">Updated September 2026 · By <a href="https://fitsmart.space/">FitSmart</a> · Free · No sign-up</p>
+  <p class="meta">Updated October 2026 · By <a href="https://fitsmart.space/">FitSmart</a> · Free · No sign-up</p>
   <div class="toc"><b>Quick answer</b><p style="margin:8px 0 0">For Indians, a <b>healthy BMI is 18.5–22.9</b>, <b>overweight starts at 23</b>, and <b>obesity starts at 25</b> — not 25 and 30 as on the global WHO scale. This is the 2009 Indian Consensus Statement cutoff, now used across Indian clinical practice.</p></div>
 
   <h2>Why the same BMI means something different for Indians</h2>
@@ -143,13 +152,23 @@
   </div>
   <div class="note">A BMI of 24 reads as "normal" on the global scale and "overweight" on the Indian scale — the same number, two different verdicts. If you've calculated your BMI using a global calculator, check it again here.</div>
 
-  <h2>Calculate your BMI (Indian scale)</h2>
-  <p>FitSmart's BMI calculator shows your result against the correct Indian cutoffs, not the global scale — free, instant, and it runs entirely in your browser.</p>
-  <div class="cta">
-    <h2>Check your BMI — free</h2>
-    <p style="color:var(--mist);margin:0 0 14px">Enter your height and weight and get your category on the Indian scale, in seconds.</p>
-    <a class="btn" href="https://fitsmart.space/calculators/bmi">Open the BMI calculator →</a>
-  </div>
+  <h2 id="calculator">Calculate your BMI (Indian scale)</h2>
+  <p>Enter your height and weight. The result uses the Indian cutoffs from the table above, and everything runs in your browser — nothing is sent anywhere.</p>
+  <form class="calc" id="bmi-form" novalidate>
+    <div class="calc-row">
+      <label for="bmi-h">Height (cm)</label>
+      <input id="bmi-h" type="number" inputmode="decimal" min="100" max="250" step="0.1" placeholder="e.g. 165" required>
+    </div>
+    <div class="calc-row">
+      <label for="bmi-w">Weight (kg)</label>
+      <input id="bmi-w" type="number" inputmode="decimal" min="25" max="300" step="0.1" placeholder="e.g. 65" required>
+    </div>
+    <button class="btn" type="submit">Calculate BMI</button>
+    <div class="calc-out" id="bmi-out" role="status" aria-live="polite"></div>
+    <noscript><p class="calc-note">This calculator needs JavaScript. Without it: BMI is weight in kg divided by height in metres squared, then compare with the table above.</p></noscript>
+    <p class="calc-note">For adults aged 18 and over. BMI is a screening number, not a diagnosis, and does not measure body fat directly. See the <a href="https://fitsmart.space/disclaimer">disclaimer</a>.</p>
+  </form>
+  <p>Want your calorie needs and macros too? Open the <a href="https://fitsmart.space/calculators/bmi">full BMI calculator</a>, the <a href="https://fitsmart.space/calculators/tdee">TDEE calculator</a> or the <a href="https://fitsmart.space/calculators/macros">macro calculator</a>.</p>
 
   <h2>Frequently asked questions</h2>
   <div class="faq">
@@ -171,5 +190,6 @@
   </div>
 </main>
 <footer><div class="wrap">© 2026 <a href="https://fitsmart.space/">FitSmart</a> · Free fitness calculators, workouts &amp; nutrition guides · <a href="https://fitsmart.space/calculators">Calculators</a> · <a href="https://fitsmart.space/workouts">Workouts</a> · <a href="https://fitsmart.space/disclaimer">Disclaimer</a></div></footer>
+<script src="/calc-widgets.js" defer></script>
 </body>
 </html>

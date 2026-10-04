@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <title>How Much Protein Do Vegetarians Need in India? (2026 Guide)</title>
 <meta name="description" content="How much protein a vegetarian needs per day, the best Indian sources (dal, paneer, soya, curd) with grams per serving, and a free calculator." />
 <link rel="canonical" href="https://fitsmart.space/protein-for-vegetarians-india.html" />
@@ -94,6 +95,14 @@
   .btn{display:inline-block;margin-top:6px;background:var(--brand);color:var(--brand-ink);font-weight:800;padding:13px 24px;border-radius:999px;font-size:15px}
   .btn:hover{text-decoration:none;opacity:.92}
   .faq{border:1px solid var(--line);border-radius:12px;padding:2px 18px;margin:12px 0;background:var(--card)}
+  .calc{background:var(--tint);border:1px solid var(--line);border-radius:18px;padding:24px;margin:20px 0 34px}
+  .calc-row{margin:0 0 14px}
+  .calc label{display:block;font-weight:700;margin:0 0 6px}
+  .calc input,.calc select{width:100%;max-width:320px;box-sizing:border-box;padding:12px 14px;font-size:16px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#111}
+  .calc button.btn{border:0;cursor:pointer;font-family:inherit}
+  .calc-out{margin-top:16px;font-size:17px;line-height:1.6}
+  .calc-out:empty{display:none}
+  .calc-note{font-size:13px;color:var(--mist);margin:12px 0 0}
   .cta{background:var(--tint);border:1px solid var(--line);border-radius:18px;padding:28px;text-align:center;margin:38px 0}
   .cta h2{margin:0 0 8px}
   .related{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 0}
@@ -123,7 +132,7 @@
   <div class="crumbs"><a href="https://fitsmart.space/">Home</a> › <a href="https://fitsmart.space/nutrition">Nutrition</a> › <span>Protein for Vegetarians in India</span></div>
   <h1>How Much Protein Do Vegetarians Need in India?</h1>
   <p class="lede">"How much protein do I need as a vegetarian?" is one of the most-asked fitness questions in India — home to roughly 500 million vegetarians who rely on different protein sources than Western meal plans assume. Here's the actual target, and which Indian foods get you there.</p>
-  <p class="meta">Updated September 2026 · By <a href="https://fitsmart.space/">FitSmart</a> · Free · No sign-up</p>
+  <p class="meta">Updated October 2026 · By <a href="https://fitsmart.space/">FitSmart</a> · Free · No sign-up</p>
   <div class="toc"><b>Quick answer</b><p style="margin:8px 0 0">Sedentary adults need about <b>0.8g of protein per kg</b> of body weight per day. If you train regularly, that rises to <b>1.2–2.0g per kg</b> (American College of Sports Medicine). Vegetarian or not, the target is the same — dal, paneer, soya and curd get you there just as well as meat or eggs.</p></div>
 
   <h2>Being vegetarian doesn't change your protein target</h2>
@@ -159,13 +168,27 @@
   </ul>
   <p>That's roughly 70-84g from food alone, before counting the protein already in roti, rice and vegetables — enough to cover most sedentary-to-moderately-active targets without any protein powder.</p>
 
-  <h2>Set your exact number</h2>
-  <p>Your real target depends on your weight and training load — FitSmart's macro calculator works it out for you, free and in your browser.</p>
-  <div class="cta">
-    <h2>Get your daily protein target</h2>
-    <p style="color:var(--mist);margin:0 0 14px">Enter your weight, activity level and goal — see your protein, carb and fat targets in seconds.</p>
-    <a class="btn" href="https://fitsmart.space/calculators/macros">Open the Macro Calculator →</a>
-  </div>
+  <h2 id="calculator">Set your exact number</h2>
+  <p>Enter your weight and how active you are. The ranges are the ones above (0.8 g per kg when sedentary, 1.2 to 2.0 g per kg when training), and the calculation runs in your browser.</p>
+  <form class="calc" id="protein-form" novalidate>
+    <div class="calc-row">
+      <label for="protein-w">Body weight (kg)</label>
+      <input id="protein-w" type="number" inputmode="decimal" min="25" max="300" step="0.1" placeholder="e.g. 70" required>
+    </div>
+    <div class="calc-row">
+      <label for="protein-a">Activity</label>
+      <select id="protein-a">
+        <option value="0.8">Mostly sedentary (0.8 g per kg)</option>
+        <option value="1.2-1.6">Regular exercise (1.2 to 1.6 g per kg)</option>
+        <option value="1.6-2.0">Strength training or building muscle (1.6 to 2.0 g per kg)</option>
+      </select>
+    </div>
+    <button class="btn" type="submit">Calculate protein</button>
+    <div class="calc-out" id="protein-out" role="status" aria-live="polite"></div>
+    <noscript><p class="calc-note">This calculator needs JavaScript. Without it: multiply your weight in kg by the grams-per-kg figure for your activity level.</p></noscript>
+    <p class="calc-note">General guidance for healthy adults, not medical advice. People with kidney disease or other conditions should ask their doctor. See the <a href="https://fitsmart.space/disclaimer">disclaimer</a>.</p>
+  </form>
+  <p>For carbs and fat as well, open the <a href="https://fitsmart.space/calculators/macros">macro calculator</a>.</p>
 
   <h2>Frequently asked questions</h2>
   <div class="faq">
@@ -185,5 +208,6 @@
   </div>
 </main>
 <footer><div class="wrap">© 2026 <a href="https://fitsmart.space/">FitSmart</a> · Free fitness calculators, workouts &amp; nutrition guides · <a href="https://fitsmart.space/nutrition">Nutrition</a> · <a href="https://fitsmart.space/calculators">Calculators</a> · <a href="https://fitsmart.space/disclaimer">Disclaimer</a></div></footer>
+<script src="/calc-widgets.js" defer></script>
 </body>
 </html>
