@@ -18,10 +18,10 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2023', title: 'The idea', text: 'Frustrated by cluttered fitness apps, we sketched a calmer alternative.' },
-  { year: '2024', title: 'Calculators launch', text: 'BMI, BMR, TDEE and macro calculators shipped first.' },
-  { year: '2025', title: 'AI Coach beta', text: 'We launched personalised, evidence-based plan generation.' },
-  { year: '2026', title: 'Programs & workouts', text: 'Structured training programs and workout plans joined the calculators.' },
+  { year: 'Feb 2026', title: 'First version', text: 'SmartFit began as a small fitness site: a BMI calculator, a diet plan, an exercise list and a 30-day plan.' },
+  { year: 'Jul 2026', title: 'Rebuilt from scratch', text: 'Calculators, workout plans, training programs, nutrition guides and the AI Coach arrived in the rebuilt site.' },
+  { year: 'Aug 2026', title: 'Renamed FitSmart', text: 'The brand became FitSmart to match the domain, and every calculator got its own page.' },
+  { year: 'Sep 2026', title: 'Articles, guides and videos', text: 'Full-length articles, reference guides and muscle-by-muscle demo videos were added.' },
 ];
 
 const team = [{ name: 'Akshay Mahajan', role: 'Founder and developer', initials: 'AM' }];
