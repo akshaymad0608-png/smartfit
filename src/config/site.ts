@@ -6,7 +6,7 @@ export const site = {
   name: 'FitSmart',
   tagline: 'Smarter Fitness. Better Health.',
   description:
-    'FitSmart is a premium fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience.',
+    'FitSmart is a free fitness platform: guided workouts, science-backed nutrition, precise health calculators and an AI coach — all in one clean, fast experience.',
   url: 'https://fitsmart.space',
   // The audience is largely Indian, and the nutrition guides are built around
   // Indian foods, so the locale should say so rather than default to en_US.

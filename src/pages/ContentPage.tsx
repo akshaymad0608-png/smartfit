@@ -17,6 +17,8 @@ interface ContentPageProps {
   path: string;
   updated?: string;
   sections: ContentSection[];
+  /** Keep thin utility pages (careers, press) out of search results. */
+  noindex?: boolean;
   /** Extra JSON-LD to add alongside the breadcrumb this page already ships — e.g. FAQPage on Help. */
   extraSchema?: Record<string, unknown>[];
 }
@@ -32,6 +34,7 @@ export function ContentPage({
   path,
   updated,
   sections,
+  noindex,
   extraSchema,
 }: ContentPageProps) {
   return (
@@ -40,6 +43,7 @@ export function ContentPage({
         title={title}
         description={subtitle ?? `${title} — FitSmart`}
         path={path}
+        noindex={noindex}
         schema={[
           breadcrumbSchema([
             { name: 'Home', path: '/' },

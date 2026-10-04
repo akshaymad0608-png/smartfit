@@ -47,7 +47,7 @@ export default function Blog() {
       <PageHero
         eyebrow="Blog"
         title="Train your mind, too"
-        subtitle="Practical, evidence-based articles on training, nutrition and recovery — written by our coaches and dietitians."
+        subtitle="Practical, evidence-based articles on training, nutrition and recovery — written by the site's founder."
         crumbs={[{ label: 'Blog' }]}
       />
 

@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Sparkles,
   Timer,
-  TrendingUp,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/Badge';
@@ -22,7 +21,6 @@ import { Accordion } from '@/components/ui/Accordion';
 import { WorkoutCard } from '@/components/cards/WorkoutCard';
 import { ProgramCard } from '@/components/cards/ProgramCard';
 import { BlogCard } from '@/components/cards/BlogCard';
-import { TestimonialCard } from '@/components/cards/TestimonialCard';
 import { Reveal } from '@/components/motion/Reveal';
 import { staggerContainer, staggerItem } from '@/components/motion/variants';
 import { PageTransition } from '@/components/motion/PageTransition';
@@ -31,7 +29,7 @@ import { NewsletterForm } from '@/features/home/NewsletterForm';
 import { Seo } from '@/seo/Seo';
 import { faqSchema, organizationSchema, websiteSchema } from '@/seo/schema';
 import { workoutCategories, workouts } from '@/data/workouts';
-import { blogPosts, faqs, programs, stats, testimonials } from '@/data/content';
+import { blogPosts, faqs, programs, stats } from '@/data/content';
 
 const benefits = [
   { icon: Timer, title: 'Time-efficient', text: 'Effective sessions from 15 minutes — built for real schedules.' },
@@ -133,7 +131,7 @@ export default function Home() {
 
       {/* 5. Featured workouts */}
       <Section>
-        <SectionHeader eyebrow="Popular right now" title="Workouts our members love" />
+        <SectionHeader eyebrow="Popular right now" title="Popular workouts" />
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {featuredWorkouts.map((w) => (
             <Reveal key={w.id}>
@@ -270,53 +268,9 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 10. Testimonials */}
-      <Section>
-        <SectionHeader eyebrow="Results" title="Loved by members worldwide" />
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {testimonials.map((t) => (
-            <Reveal key={t.id}>
-              <TestimonialCard testimonial={t} />
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* 11. Transformation / Before-After */}
-      <Section muted>
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <Reveal>
-            <Badge tone="accent" className="mb-4">
-              <TrendingUp size={13} /> Real progress
-            </Badge>
-            <h2 className="text-section font-extrabold text-heading">
-              Small habits, remarkable change
-            </h2>
-            <p className="mt-4 text-body-lg text-body">
-              Members who train just three times a week and track their nutrition see meaningful
-              change within the first eight weeks. Consistency compounds.
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="p-6 text-center">
-                <p className="text-sm font-semibold text-muted">Week 1</p>
-                <p className="mt-3 text-hero font-extrabold text-muted/70">82kg</p>
-                <p className="mt-1 text-sm text-muted">24% body fat</p>
-              </Card>
-              <Card className="border-secondary/30 bg-secondary/5 p-6 text-center">
-                <p className="text-sm font-semibold text-secondary">Week 12</p>
-                <p className="mt-3 text-hero font-extrabold text-gradient">74kg</p>
-                <p className="mt-1 text-sm text-muted">17% body fat</p>
-              </Card>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
-
       {/* 12. Latest Blogs */}
       <Section>
-        <SectionHeader eyebrow="Blog" title="Learn from the FitSmart team" />
+        <SectionHeader eyebrow="Blog" title="Latest from the blog" />
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {blogPosts.slice(0, 3).map((p) => (
             <Reveal key={p.id}>

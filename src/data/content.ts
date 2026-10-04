@@ -1,4 +1,4 @@
-import type { BlogPost, Faq, Program, Stat, Testimonial } from '@/types';
+import type { BlogPost, Faq, Program, Stat } from '@/types';
 
 // Every number here must be one an answer engine can quote as fact without
 // FitSmart being unable to back it up. "250,000+ Active members" and
@@ -75,54 +75,11 @@ export const programs: Program[] = [
   },
 ];
 
-export const testimonials: Testimonial[] = [
-  {
-    id: 't1',
-    name: 'Priya Sharma',
-    role: 'Lost 12 kg in 5 months',
-    initials: 'PS',
-    photo: '/images/people/priya.jpg',
-    rating: 5,
-    quote:
-      'FitSmart made fitness finally click for me. The plans are realistic and the calculators took the guesswork out of my nutrition.',
-  },
-  {
-    id: 't2',
-    name: 'Marcus Lee',
-    role: 'Gained 6 kg lean muscle',
-    initials: 'ML',
-    photo: '/images/people/marcus.jpg',
-    rating: 5,
-    quote:
-      'The Hypertrophy Builder program is world-class. I finally understand progressive overload and my lifts have never been higher.',
-  },
-  {
-    id: 't3',
-    name: 'Amelia Rossi',
-    role: 'Marathon finisher',
-    initials: 'AR',
-    photo: '/images/people/amelia.jpg',
-    rating: 5,
-    quote:
-      'I love how clean and fast the app feels. The AI coach kept me accountable through my entire marathon build.',
-  },
-  {
-    id: 't4',
-    name: 'David Okafor',
-    role: 'Busy dad of three',
-    initials: 'DO',
-    photo: '/images/people/david.jpg',
-    rating: 5,
-    quote:
-      'The 20-minute home workouts fit my schedule perfectly. Down two belt sizes and full of energy again.',
-  },
-];
-
 export const faqs: Faq[] = [
   {
     question: 'Is FitSmart free to use?',
     answer:
-      'Yes. All workouts, nutrition guides and calculators are free to explore. Premium coaching and programs are available for members who want structured plans and progress tracking.',
+      'Yes. All workouts, nutrition guides and calculators are free to explore. There are no paid tiers and no sign-up is needed. Creating an account only adds a dashboard that saves your progress.',
   },
   {
     question: 'Do I need any equipment to start?',
@@ -160,7 +117,7 @@ export const blogPosts: BlogPost[] = [
       'The single most important principle for building strength and muscle — explained simply, with a practical 4-week plan.',
     date: '2026-07-12',
     readMinutes: 7,
-    author: 'Coach Ava',
+    author: 'Akshay Mahajan',
     category: 'Training',
     tags: ['strength', 'muscle gain', 'beginner'],
     image: '/images/blog/progressive-overload.jpg',
@@ -202,7 +159,7 @@ export const blogPosts: BlogPost[] = [
       'BMR, TDEE and calorie targets demystified — plus how to set a deficit or surplus that you can actually stick to.',
     date: '2026-07-05',
     readMinutes: 6,
-    author: 'Dr. Neha Rao',
+    author: 'Akshay Mahajan',
     category: 'Nutrition',
     tags: ['nutrition', 'weight loss', 'calories'],
     image: '/images/blog/calories-you-need.jpg',
@@ -250,7 +207,7 @@ export const blogPosts: BlogPost[] = [
       'High-protein, vegetarian-friendly meals built around everyday Indian ingredients to support lean growth.',
     date: '2026-06-28',
     readMinutes: 8,
-    author: 'Coach Ravi',
+    author: 'Akshay Mahajan',
     category: 'Nutrition',
     tags: ['Indian diet', 'muscle gain', 'protein'],
     image: '/images/blog/indian-diet-muscle-gain.jpg',
@@ -290,7 +247,7 @@ export const blogPosts: BlogPost[] = [
       'Sitting all day? These five daily drills open your hips and shoulders and undo the damage of a desk job.',
     date: '2026-06-20',
     readMinutes: 5,
-    author: 'Coach Ava',
+    author: 'Akshay Mahajan',
     category: 'Mobility',
     tags: ['mobility', 'recovery', 'posture'],
     image: '/images/blog/mobility-desk-posture.jpg',
@@ -327,7 +284,7 @@ export const blogPosts: BlogPost[] = [
       'The honest, evidence-based answer — and how to combine both for the best fat-loss results.',
     date: '2026-06-14',
     readMinutes: 6,
-    author: 'Dr. Neha Rao',
+    author: 'Akshay Mahajan',
     category: 'Cardio',
     tags: ['cardio', 'hiit', 'fat loss'],
     image: '/images/blog/hiit-vs-steady-state.jpg',
@@ -373,7 +330,7 @@ export const blogPosts: BlogPost[] = [
       'Why quality sleep beats another supplement — and simple habits to recover harder while you rest.',
     date: '2026-06-08',
     readMinutes: 5,
-    author: 'Coach Ravi',
+    author: 'Akshay Mahajan',
     category: 'Recovery',
     tags: ['recovery', 'sleep', 'health'],
     image: '/images/blog/sleep-fitness-tool.jpg',

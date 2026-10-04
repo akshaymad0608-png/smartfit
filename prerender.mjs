@@ -499,8 +499,8 @@ const ROUTES = [
   { path: '/cookies', title: 'Cookie Policy — Which Cookies FitSmart Uses and Why', description: 'Which cookies FitSmart uses, what each one is for, how long they last, and how to control or clear them from your browser at any time.', h1: 'Cookie Policy', intro: 'Which cookies FitSmart uses, what they do, and how you can control them.' },
   { path: '/disclaimer', title: 'Disclaimer — FitSmart Is Not Medical Advice, Read This', description: 'FitSmart provides general fitness and nutrition information, not medical advice. What that means for you, and when to speak to a doctor first.', h1: 'Medical Disclaimer', intro: 'FitSmart provides general fitness and nutrition information. It is not medical advice — speak to a qualified professional before changing your training or diet.' },
   { path: '/accessibility', title: 'Accessibility at FitSmart — What We Do and What Is Next', description: 'How FitSmart works towards an accessible experience for everyone — keyboard navigation, contrast, screen readers, and what we are still fixing.', h1: 'Accessibility Statement', intro: 'How FitSmart works towards an accessible experience, and how to report a barrier you hit.' },
-  { path: '/careers', title: 'Careers at FitSmart — Open Roles and How to Reach Us', description: 'Open roles at FitSmart and how to get in touch about working on the calculators, the training plans or the nutrition guides behind them.', h1: 'Careers at FitSmart', intro: 'Open roles and how to get in touch about working with us.' },
-  { path: '/press', title: 'Press and Media — FitSmart Brand Assets and Enquiries', description: 'Brand assets, logos and press enquiries for FitSmart — what you may use, how to credit it, and who to contact about a story or interview.', h1: 'Press & Media', intro: 'Brand assets, background and press enquiries.' },
+  { path: '/careers', title: 'Careers at FitSmart — Open Roles and How to Reach Us', description: 'Open roles at FitSmart and how to get in touch about working on the calculators, the training plans or the nutrition guides behind them.', h1: 'Careers at FitSmart', intro: 'Open roles and how to get in touch about working with us.', noindex: true },
+  { path: '/press', title: 'Press and Media — FitSmart Brand Assets and Enquiries', description: 'Brand assets, logos and press enquiries for FitSmart — what you may use, how to credit it, and who to contact about a story or interview.', h1: 'Press & Media', intro: 'Brand assets, background and press enquiries.', noindex: true },
   { path: '/sitemap', title: 'Sitemap — Every Page on FitSmart in One Plain List', description: 'Every page on FitSmart in one plain list — calculators, workout plans, nutrition guides, articles and the policy pages, all in one place.', h1: 'Sitemap', intro: 'Every page on FitSmart, in one list.' },
 ];
 
@@ -601,6 +601,9 @@ for (const route of ROUTES) {
   html = html.replace(/<meta name="twitter:title"[\s\S]*?>/, `<meta name="twitter:title" content="${esc(route.title)}" />`);
   html = html.replace(/<meta\s+name="twitter:description"[\s\S]*?>/, `<meta name="twitter:description" content="${esc(route.description)}" />`);
 
+  // Thin utility pages stay reachable but out of search, same as the React <Seo noindex>.
+  if (route.noindex) html = html.replace('</head>', '<meta name="robots" content="noindex, follow" /></head>');
+
   const schemaGraph = pageSchema(route);
   if (schemaGraph.length) {
     const schemaTag = schemaGraph
@@ -682,7 +685,7 @@ const changefreqFor = (path) =>
 const today = new Date().toISOString().slice(0, 10);
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  [...ROUTES.map((r) => r.path), ...EXTRA_STATIC_PAGES]
+  [...ROUTES.filter((r) => !r.noindex).map((r) => r.path), ...EXTRA_STATIC_PAGES]
     .map(
       (path) =>
         `  <url><loc>${SITE}${path === '/' ? '/' : path}</loc><lastmod>${today}</lastmod>` +
@@ -693,4 +696,4 @@ const sitemap =
 
 writeFileSync(join(DIST, 'sitemap.xml'), sitemap);
 writeFileSync(join('public', 'sitemap.xml'), sitemap);
-console.log(`sitemap.xml: ${ROUTES.length + EXTRA_STATIC_PAGES.length} urls`);
+console.log(`sitemap.xml: ${ROUTES.filter((r) => !r.noindex).length + EXTRA_STATIC_PAGES.length} urls`);
