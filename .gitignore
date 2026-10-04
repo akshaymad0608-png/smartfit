@@ -32,3 +32,7 @@ Thumbs.db
 # Vercel
 .vercel
 *.tsbuildinfo
+
+# SEO tooling output (generated / personal exports)
+reports/
+seo-data/

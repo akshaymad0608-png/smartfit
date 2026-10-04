@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\""
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
+    "seo:validate": "node scripts/seo-validate.mjs",
+    "seo:gsc": "node scripts/gsc-analyze.mjs",
+    "seo:report": "node scripts/seo-validate.mjs --json reports/seo-validate.json --md reports/seo-validate.md --no-fail && node scripts/seo-report.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
