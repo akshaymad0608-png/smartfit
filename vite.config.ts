@@ -14,7 +14,7 @@ export default defineConfig({
         name: 'FitSmart — Smarter Fitness. Better Health.',
         short_name: 'FitSmart',
         description:
-          'Premium fitness platform with workouts, nutrition, calculators and an AI coach.',
+          'Free fitness platform with workouts, nutrition, calculators and an AI coach.',
         theme_color: '#3B82F6',
         background_color: '#FAFAF8',
         display: 'standalone',

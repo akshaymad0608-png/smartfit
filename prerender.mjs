@@ -557,6 +557,26 @@ const esc = (s) =>
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8');
 
+// The articles live in src/data/content.ts. Read them from there so the static
+// HTML a crawler gets before any JavaScript runs carries the whole article, not
+// just the one-paragraph intro written by hand in ROUTES above.
+const contentSrc = readFileSync('src/data/content.ts', 'utf-8');
+const blogStart = contentSrc.indexOf('export const blogPosts: BlogPost[] = [') + 'export const blogPosts: BlogPost[] = ['.length - 1;
+const BLOG_POSTS = eval(contentSrc.slice(blogStart, contentSrc.indexOf('\n];', blogStart) + 2));
+if (BLOG_POSTS.length < 6) throw new Error(`prerender: only ${BLOG_POSTS.length} blog posts parsed from content.ts`);
+
+const articleHtml = (route) => {
+  const post = route.path.startsWith('/blog/') && BLOG_POSTS.find((p) => `/blog/${p.slug}` === route.path);
+  if (!post?.body?.length) return '';
+  return post.body
+    .map(
+      (s) =>
+        `<h2 style="font-size:22px;margin:30px 0 10px">${esc(s.heading)}</h2>` +
+        s.paragraphs.map((t) => `<p style="font-size:16px;line-height:1.7;color:#333">${esc(t)}</p>`).join(''),
+    )
+    .join('');
+};
+
 // path -> h1, so a nested route (e.g. /programs/:slug) can name its parent
 // in the breadcrumb without repeating the title text by hand.
 const h1ByPath = Object.fromEntries(ROUTES.map((r) => [r.path, r.h1]));
@@ -645,7 +665,7 @@ for (const route of ROUTES) {
     `<div id="prerender-seo" style="max-width:760px;margin:0 auto;padding:48px 20px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">` +
     `<h1 style="font-size:30px;line-height:1.2;margin:0 0 14px">${esc(route.h1)}</h1>` +
     `<p style="font-size:17px;line-height:1.6;color:#444">${esc(route.intro)}</p>` +
-    `${linksHtml}${sectionsHtml}${NAV}</div>`;
+    `${articleHtml(route)}${linksHtml}${sectionsHtml}${NAV}</div>`;
   html = html.replace(/<div id="prerender-seo"[\s\S]*?<\/nav><\/div>/, seoBlock);
 
   const outPath = route.path === '/' ? join(DIST, 'index.html') : join(DIST, route.path.slice(1), 'index.html');
