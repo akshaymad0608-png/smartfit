@@ -1,0 +1,8 @@
+{
+  "origin": "https://fitsmart.space",
+  "distDir": "dist",
+  "important": ["/", "/about", "/contact", "/privacy", "/terms", "/blog", "/help"],
+  "minSitemapUrls": 25,
+  "adsense": true,
+  "gsc": { "brandTerms": ["fitsmart", "fit smart"], "minImpressions": 5 }
+}
