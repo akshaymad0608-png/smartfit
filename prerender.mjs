@@ -365,6 +365,23 @@ const ROUTES = [
     h1: 'AI Fitness Coach',
     intro:
       'Ask about training, exercise form, macros, recovery or plateaus and get a clear, evidence-based answer built around your own goals and equipment. The coach explains the reasoning rather than just handing you a plan, so you learn how to adjust it yourself.',
+    sections: [
+      { h2: 'What the coach can generate', points: [
+        'A workout built around your goal, experience level and the equipment you actually have',
+        'A meal plan with calorie and macro targets you can hit with everyday ingredients',
+        'A weekly training schedule that fits the days and time you can genuinely commit',
+        'A goal roadmap that breaks a target into checkpoints instead of one distant number',
+      ] },
+      { h2: 'How to get a useful answer', points: [
+        'Name your goal, your training age and your equipment — a plan for a home with two dumbbells is not the plan for a full gym',
+        'Say what has already not worked, so the answer does not repeat it',
+        'Ask follow-ups: the coach explains its reasoning, so you can adjust a plan rather than restart it',
+      ] },
+      { h2: 'What it is not', points: [
+        'Not medical advice — speak to a qualified professional before changing your training or diet if you have a health condition',
+        'Not a replacement for the calculators: use them for your numbers, then bring those numbers here',
+      ] },
+    ],
   },
   {
     path: '/blog',
@@ -456,7 +473,25 @@ const ROUTES = [
       'FitSmart builds free, evidence-based fitness calculators, workout plans and nutrition guides. Learn what we build and the principles behind it.',
     h1: 'About FitSmart',
     intro:
-      'FitSmart builds free fitness tools grounded in evidence rather than trends: calculators that show their working, training plans with real progression, and nutrition guidance that does not depend on buying anything.',
+      'FitSmart builds free fitness tools grounded in evidence rather than trends: calculators that show their working, training plans with real progression, and nutrition guidance that does not depend on buying anything. It is built and written by one person, Akshay Mahajan.',
+    sections: [
+      { h2: 'What we stand for', points: [
+        'Fitness is hard enough. Our product never should be.',
+        'We build on science, not fads or hype.',
+        'Beginner to athlete, every body is welcome here.',
+        'We design for habits that last a lifetime, not a month.',
+      ] },
+      { h2: 'How we got here', points: [
+        'SmartFit began as a small fitness site: a BMI calculator, a diet plan, an exercise list and a 30-day plan.',
+        'Calculators, workout plans, training programs, nutrition guides and the AI Coach arrived in the rebuilt site.',
+        'The brand became FitSmart to match the domain, and every calculator got its own page.',
+        'Full-length articles, reference guides and muscle-by-muscle demo videos were added.',
+      ] },
+      { h2: 'Who builds it', points: [
+        'FitSmart is built and written by Akshay Mahajan, working from Surat, Gujarat, India.',
+        'Every calculator, plan and guide on the site is free to use, with no account required.',
+      ] },
+    ],
   },
   {
     path: '/contact',
@@ -471,6 +506,22 @@ const ROUTES = [
       'Questions, corrections or partnership enquiries are all welcome — send a message and we will get back to you. ' +
       'FitSmart is run by Akshay Mahajan from Surat, Gujarat, India. ' +
       'Email akshaymad0608@gmail.com or call +91 76008 85080, Monday to Saturday, 10:00 AM to 8:00 PM IST.',
+    sections: [
+      { h2: 'How to reach us', points: [
+        'Email: akshaymad0608@gmail.com — the fastest route, and the one we check first.',
+        'Phone: +91 76008 85080, Monday to Saturday, 10:00 AM to 8:00 PM IST.',
+        'Location: Surat, Gujarat, India.',
+      ] },
+      { h2: 'What to write about', points: [
+        'A correction to a calculator, a guide or an article — these get priority, and we name the fix in the changelog.',
+        'A question about which program, calculator or plan fits your goal.',
+        'Partnership, press or contribution enquiries.',
+      ] },
+      { h2: 'What to expect', points: [
+        'A real person reads every message, and we usually reply within one business day.',
+        'We never add your address to a mailing list because you contacted us.',
+      ] },
+    ],
   },
   {
     path: '/help',
@@ -505,14 +556,146 @@ const ROUTES = [
   // Legal and utility routes. These need unique titles mainly so they stop
   // competing with the homepage in search — /disclaimer and /contact were
   // outranking it purely because every route shipped identical HTML.
-  { path: '/privacy', title: 'Privacy Policy — What FitSmart Collects and Never Stores', description: 'How FitSmart collects, uses and protects your data, what stays in your browser, what we never store, and the choices you have over any of it.', h1: 'Privacy Policy', intro: 'How FitSmart collects, uses and protects your personal data.' },
-  { path: '/terms', title: 'Terms and Conditions for Using FitSmart | FitSmart', description: 'The terms that apply when you use FitSmart — what the calculators and plans are, what they are not, and the limits of what we can promise.', h1: 'Terms of Service', intro: 'The terms that apply when you use the FitSmart website and tools.' },
-  { path: '/cookies', title: 'Cookie Policy — Which Cookies FitSmart Uses and Why', description: 'Which cookies FitSmart uses, what each one is for, how long they last, and how to control or clear them from your browser at any time.', h1: 'Cookie Policy', intro: 'Which cookies FitSmart uses, what they do, and how you can control them.' },
-  { path: '/disclaimer', title: 'Disclaimer — FitSmart Is Not Medical Advice, Read This', description: 'FitSmart provides general fitness and nutrition information, not medical advice. What that means for you, and when to speak to a doctor first.', h1: 'Medical Disclaimer', intro: 'FitSmart provides general fitness and nutrition information. It is not medical advice — speak to a qualified professional before changing your training or diet.' },
-  { path: '/accessibility', title: 'Accessibility at FitSmart — What We Do and What Is Next', description: 'How FitSmart works towards an accessible experience for everyone — keyboard navigation, contrast, screen readers, and what we are still fixing.', h1: 'Accessibility Statement', intro: 'How FitSmart works towards an accessible experience, and how to report a barrier you hit.' },
+  {
+    path: '/privacy',
+    title: 'Privacy Policy — What FitSmart Collects and Never Stores',
+    description: 'How FitSmart collects, uses and protects your data, what stays in your browser, what we never store, and the choices you have over any of it.',
+    h1: 'Privacy Policy',
+    intro: 'How FitSmart collects, uses and protects your personal data. Last updated July 1, 2026.',
+    sections: [
+      { h2: 'Overview', points: [
+        'FitSmart is built privacy-first. The calculators and AI Coach run entirely in your browser, and your inputs are stored locally on your device by default — not on our servers.',
+      ] },
+      { h2: 'Information we collect', points: [
+        'If you subscribe to our newsletter or contact us, we collect the details you provide (such as your email address and message).',
+        'We may collect anonymous, aggregated analytics to understand how the product is used and to improve it. This never includes your health metrics.',
+      ] },
+      { h2: 'How we use information', points: [
+        'To respond to your enquiries, send updates you have opted into, and improve FitSmart. We never sell your personal data to third parties.',
+      ] },
+      { h2: 'Your choices', points: [
+        'You can unsubscribe from emails at any time, clear locally-stored data from your browser, and request deletion of any information you have shared with us.',
+      ] },
+      { h2: 'Contact', points: [
+        'Questions about privacy? Email akshaymad0608@gmail.com and we will respond promptly.',
+      ] },
+    ],
+  },
+  {
+    path: '/terms',
+    title: 'Terms and Conditions for Using FitSmart | FitSmart',
+    description: 'The terms that apply when you use FitSmart — what the calculators and plans are, what they are not, and the limits of what we can promise.',
+    h1: 'Terms of Service',
+    intro: 'The terms that apply when you use the FitSmart website and tools. Last updated July 1, 2026.',
+    sections: [
+      { h2: 'Acceptance of terms', points: [
+        'By using FitSmart, you agree to these terms. If you do not agree, please do not use the service.',
+      ] },
+      { h2: 'Use of the service', points: [
+        'FitSmart provides fitness and nutrition information for educational purposes. You agree to use it lawfully and not to misuse or attempt to disrupt the service.',
+      ] },
+      { h2: 'Health disclaimer', points: [
+        'Content on FitSmart is not medical advice. Always consult a qualified professional before beginning any exercise or nutrition program, especially if you have a health condition.',
+      ] },
+      { h2: 'Intellectual property', points: [
+        'All FitSmart branding, content and code are owned by FitSmart and protected by law.',
+      ] },
+      { h2: 'Changes', points: [
+        'We may update these terms from time to time. Continued use constitutes acceptance of the updated terms.',
+      ] },
+    ],
+  },
+  {
+    path: '/cookies',
+    title: 'Cookie Policy — Which Cookies FitSmart Uses and Why',
+    description: 'Which cookies FitSmart uses, what each one is for, how long they last, and how to control or clear them from your browser at any time.',
+    h1: 'Cookie Policy',
+    intro: 'Which cookies FitSmart uses, what they do, and how you can control them. Last updated July 1, 2026.',
+    sections: [
+      { h2: 'What we use', points: [
+        'FitSmart uses essential local storage to remember your theme preference and any inputs you save.',
+        'Advertising: we show ads through Google AdSense. Google and its partners, as third-party vendors, use cookies (including the DoubleClick cookie) to serve ads based on your visits to this and other websites.',
+        'You can opt out of personalised advertising in Google Ads Settings (adssettings.google.com) or at aboutads.info. To see how Google uses data from sites that use its services, visit policies.google.com/technologies/partner-sites.',
+      ] },
+      { h2: 'Managing cookies', points: [
+        'You can clear local storage and cookies at any time from your browser settings.',
+      ] },
+    ],
+  },
+  {
+    path: '/disclaimer',
+    title: 'Disclaimer — FitSmart Is Not Medical Advice, Read This',
+    description: 'FitSmart provides general fitness and nutrition information, not medical advice. What that means for you, and when to speak to a doctor first.',
+    h1: 'Medical Disclaimer',
+    intro: 'FitSmart provides general fitness and nutrition information. It is not medical advice — speak to a qualified professional before changing your training or diet.',
+    sections: [
+      { h2: 'Not medical advice', points: [
+        'All content — including workouts, nutrition guidance and calculator results — is for general informational and educational purposes only and is not a substitute for professional medical advice, diagnosis or treatment.',
+      ] },
+      { h2: 'Assumption of risk', points: [
+        'Physical exercise carries inherent risks. By following any FitSmart content, you do so at your own risk and take full responsibility for your health and safety.',
+      ] },
+      { h2: 'Accuracy', points: [
+        'Calculator results are estimates based on established formulas and may not reflect your individual physiology.',
+      ] },
+    ],
+  },
+  {
+    path: '/accessibility',
+    title: 'Accessibility at FitSmart — What We Do and What Is Next',
+    description: 'How FitSmart works towards an accessible experience for everyone — keyboard navigation, contrast, screen readers, and what we are still fixing.',
+    h1: 'Accessibility Statement',
+    intro: 'How FitSmart works towards an accessible experience, and how to report a barrier you hit.',
+    sections: [
+      { h2: 'Our commitment', points: [
+        'We aim to meet WCAG 2.1 AA standards. FitSmart is built with semantic HTML, keyboard navigation, visible focus states, sufficient colour contrast and screen-reader-friendly labels.',
+      ] },
+      { h2: 'Ongoing work', points: [
+        'Accessibility is never finished. We continuously test and improve.',
+        'If you encounter a barrier, please email akshaymad0608@gmail.com so we can fix it.',
+      ] },
+    ],
+  },
   { path: '/careers', title: 'Careers at FitSmart — Open Roles and How to Reach Us', description: 'Open roles at FitSmart and how to get in touch about working on the calculators, the training plans or the nutrition guides behind them.', h1: 'Careers at FitSmart', intro: 'Open roles and how to get in touch about working with us.', noindex: true },
   { path: '/press', title: 'Press and Media — FitSmart Brand Assets and Enquiries', description: 'Brand assets, logos and press enquiries for FitSmart — what you may use, how to credit it, and who to contact about a story or interview.', h1: 'Press & Media', intro: 'Brand assets, background and press enquiries.', noindex: true },
-  { path: '/sitemap', title: 'Sitemap — Every Page on FitSmart in One Plain List', description: 'Every page on FitSmart in one plain list — calculators, workout plans, nutrition guides, articles and the policy pages, all in one place.', h1: 'Sitemap', intro: 'Every page on FitSmart, in one list.' },
+  {
+    path: '/sitemap',
+    title: 'Sitemap — Every Page on FitSmart in One Plain List',
+    description: 'Every page on FitSmart in one plain list — calculators, workout plans, nutrition guides, articles and the policy pages, all in one place.',
+    h1: 'Sitemap',
+    intro: 'Every page on FitSmart, in one list — the calculators, the training programs, the workout and nutrition guides, the articles and the policy pages.',
+    // A sitemap page whose static HTML was the words "Every page on FitSmart,
+    // in one list." and nothing else. The list is the page; here it is.
+    linksHeading: 'Every page',
+    links: [
+      { href: '/', label: 'Home' },
+      { href: '/calculators', label: 'Health calculators' },
+      { href: '/calculators/bmi', label: 'BMI calculator' },
+      { href: '/calculators/bmr', label: 'BMR calculator' },
+      { href: '/calculators/tdee', label: 'TDEE calculator' },
+      { href: '/calculators/body-fat', label: 'Body fat percentage calculator' },
+      { href: '/calculators/ideal-weight', label: 'Ideal weight calculator' },
+      { href: '/calculators/macros', label: 'Macro calculator' },
+      { href: '/workouts', label: 'Workout plans' },
+      { href: '/exercises', label: 'Exercises by muscle group' },
+      { href: '/programs', label: 'Training programs' },
+      { href: '/programs/30-day-kickstart', label: '30-Day Kickstart Challenge' },
+      { href: '/programs/lean-and-strong', label: 'Lean & Strong' },
+      { href: '/programs/hypertrophy-builder', label: 'Hypertrophy Builder' },
+      { href: '/programs/home-shred', label: 'Home Shred' },
+      { href: '/nutrition', label: 'Nutrition guides' },
+      { href: '/ai-coach', label: 'AI fitness coach' },
+      { href: '/blog', label: 'Articles' },
+      { href: '/about', label: 'About FitSmart' },
+      { href: '/contact', label: 'Contact' },
+      { href: '/help', label: 'Help centre' },
+      { href: '/privacy', label: 'Privacy policy' },
+      { href: '/terms', label: 'Terms of service' },
+      { href: '/cookies', label: 'Cookie policy' },
+      { href: '/disclaimer', label: 'Medical disclaimer' },
+      { href: '/accessibility', label: 'Accessibility statement' },
+    ],
+  },
 ];
 
 // Only these 6 links ever shipped in NAV — every route carried it, but the 6
@@ -564,6 +747,58 @@ const contentSrc = readFileSync('src/data/content.ts', 'utf-8');
 const blogStart = contentSrc.indexOf('export const blogPosts: BlogPost[] = [') + 'export const blogPosts: BlogPost[] = ['.length - 1;
 const BLOG_POSTS = eval(contentSrc.slice(blogStart, contentSrc.indexOf('\n];', blogStart) + 2));
 if (BLOG_POSTS.length < 6) throw new Error(`prerender: only ${BLOG_POSTS.length} blog posts parsed from content.ts`);
+
+/**
+ * Search Console's index report flagged pages in sitemap.xml as Soft 404 on
+ * 2026-10-07. A soft 404 is what a 200 response looks like to a crawler when
+ * the HTML carries no real content, and that is exactly what these routes
+ * shipped: an h1, one intro sentence, and the nav. The four /programs/:slug
+ * pages and /exercises each have a page full of content in the React app,
+ * sourced from the two data files below — so read them from there, the same
+ * way BLOG_POSTS is read above, rather than restating them in ROUTES where
+ * the two copies would drift.
+ */
+const parseArray = (src, decl, file) => {
+  const i = src.indexOf(decl);
+  if (i === -1) throw new Error(`prerender: ${decl} not found in ${file}`);
+  const start = i + decl.length - 1;
+  return eval(src.slice(start, src.indexOf('\n];', start) + 2));
+};
+
+const PROGRAMS = parseArray(contentSrc, 'export const programs: Program[] = [', 'content.ts');
+if (PROGRAMS.length < 4) throw new Error(`prerender: only ${PROGRAMS.length} programs parsed from content.ts`);
+
+const musclesSrc = readFileSync('src/data/muscles.ts', 'utf-8');
+const MUSCLE_GROUPS = parseArray(musclesSrc, 'export const muscleGroups: MuscleGroup[] = [', 'muscles.ts');
+if (MUSCLE_GROUPS.length < 10) throw new Error(`prerender: only ${MUSCLE_GROUPS.length} muscle groups parsed from muscles.ts`);
+
+for (const program of PROGRAMS) {
+  const route = ROUTES.find((r) => r.path === `/programs/${program.slug}`);
+  if (!route) throw new Error(`prerender: no route for /programs/${program.slug}`);
+  route.sections = [
+    { h2: 'At a glance', points: [
+      `Goal: ${program.goal}`,
+      `Level: ${program.level}`,
+      `Length: ${program.weeks} weeks`,
+      `Training days: ${program.daysPerWeek} per week`,
+    ] },
+    { h2: 'What the program is', points: [program.summary] },
+    { h2: 'What is included', points: program.highlights },
+  ];
+  route.linksHeading = 'Plan your numbers first';
+  route.links = [
+    { href: '/calculators/tdee', label: 'Work out your daily calories (TDEE)' },
+    { href: '/calculators/macros', label: 'Set your protein, carbs and fat' },
+    { href: '/programs', label: 'Compare all training programs' },
+  ];
+}
+
+const exercisesRoute = ROUTES.find((r) => r.path === '/exercises');
+if (!exercisesRoute) throw new Error('prerender: no /exercises route');
+exercisesRoute.sections = MUSCLE_GROUPS.map((group) => ({
+  h2: `${group.label} exercises`,
+  points: group.exercises.map((e) => e.name),
+}));
 
 const articleHtml = (route) => {
   const post = route.path.startsWith('/blog/') && BLOG_POSTS.find((p) => `/blog/${p.slug}` === route.path);
