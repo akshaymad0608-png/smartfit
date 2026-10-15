@@ -70,3 +70,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   @apply font-heading;
 }
+
+/* Hide AdSense auto ads everywhere except the blog (see AdGuard in App.tsx). */
+html:not([data-ads="on"]) ins.adsbygoogle,
+html:not([data-ads="on"]) .google-auto-placed,
+html:not([data-ads="on"]) ins[data-anchor-status],
+html:not([data-ads="on"]) ins[data-vignette-loaded],
+html:not([data-ads="on"]) iframe[id^="aswift_"],
+html:not([data-ads="on"]) [id^="google_ads_iframe"] { display: none !important; }
