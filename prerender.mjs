@@ -403,6 +403,12 @@ const ROUTES = [
       { href: '/blog/mobility-desk-posture', label: '5 Mobility Drills to Fix Desk Posture' },
       { href: '/blog/hiit-vs-steady-state', label: 'HIIT vs Steady-State Cardio: Which Burns More Fat?' },
       { href: '/blog/sleep-fitness-tool', label: 'Sleep: The Most Underrated Fitness Tool' },
+      { href: '/blog/indian-veg-diet-plan-muscle-gain', label: "Indian Veg Diet Plan for Muscle Gain (No Eggs, No Meat)" },
+      { href: '/blog/protein-in-indian-foods', label: "Protein in Indian Foods: A Simple Chart per 100g and per Serving" },
+      { href: '/blog/high-protein-indian-breakfast', label: "10 High-Protein Indian Breakfast Ideas (Veg and Egg)" },
+      { href: '/blog/indian-diet-plan-for-weight-loss', label: "Indian Diet Plan for Weight Loss: A Realistic Calorie-Deficit Approach" },
+      { href: '/blog/home-workout-no-equipment-beginners', label: "Home Workout for Beginners: 20 Minutes, No Equipment" },
+      { href: '/blog/full-body-workout-3-days-beginners', label: "3-Day Full-Body Gym Workout Plan for Beginners" },
     ],
   },
   {
@@ -695,6 +701,66 @@ const ROUTES = [
       { href: '/disclaimer', label: 'Medical disclaimer' },
       { href: '/accessibility', label: 'Accessibility statement' },
     ],
+  },
+  {
+    path: "/blog/indian-veg-diet-plan-muscle-gain",
+    title: "Indian Veg Diet Plan for Muscle Gain — FitSmart",
+    keywords: "indian veg diet plan for muscle gain, vegetarian muscle building diet india, veg protein diet plan, indian vegetarian diet for muscle building",
+    description:
+      "A practical Indian vegetarian diet plan for muscle gain: a full day of meals, protein per food, portions and how to rotate dal, paneer, soya and curd through the week.",
+    h1: "Indian Veg Diet Plan for Muscle Gain (No Eggs, No Meat)",
+    intro:
+      "You can build muscle on a fully vegetarian Indian diet. The target is the same as for anyone else, roughly 1.6 to 2.2 g of protein per kg of body weight a day, and the food list is simply different. This plan shows a full day built from dal, paneer, soya chunks, curd, sattu and peanuts, what each one contributes, and how to rotate them through the week so it stays affordable and does not get boring.",
+  },
+  {
+    path: "/blog/protein-in-indian-foods",
+    title: "Protein in Indian Foods per 100g — FitSmart",
+    keywords: "protein in indian foods, protein chart indian food, protein in dal, protein in paneer per 100g, high protein indian foods",
+    description:
+      "Protein in Indian foods per 100g and per serving: dal, paneer, rajma, chana, eggs, chicken, curd, soya chunks, peanuts and sattu, with notes on raw versus cooked.",
+    h1: "Protein in Indian Foods: A Simple Chart per 100g and per Serving",
+    intro:
+      "Most protein charts are built around chicken breast and whey, which is not how most Indian households eat. This guide lists the protein content of everyday Indian foods per 100 g and per typical serving, explains why raw and cooked numbers differ so much, and shows how to estimate a day of protein without logging every bite.",
+  },
+  {
+    path: "/blog/high-protein-indian-breakfast",
+    title: "High-Protein Indian Breakfast Ideas — FitSmart",
+    keywords: "high protein indian breakfast, indian breakfast for muscle gain, protein breakfast ideas india, veg high protein breakfast",
+    description:
+      "Ten high-protein Indian breakfast ideas with rough protein counts: moong chilla, paneer bhurji, egg bhurji, sattu, sprouts, poha with peanuts and curd oats.",
+    h1: "10 High-Protein Indian Breakfast Ideas (Veg and Egg)",
+    intro:
+      "Most Indian breakfasts, such as paratha, poha and upma, are mostly carbohydrate and end up with 6 to 10 g of protein. This list of ten swaps and additions gets a breakfast to 15 to 30 g of protein using ingredients already in an Indian kitchen, with rough protein counts and what to pair each one with.",
+  },
+  {
+    path: "/blog/indian-diet-plan-for-weight-loss",
+    title: "Indian Diet Plan for Weight Loss — FitSmart",
+    keywords: "indian diet plan for weight loss, weight loss diet india, calorie deficit indian food, how to lose weight with indian food",
+    description:
+      "A realistic Indian diet plan for weight loss: how to set a calorie deficit, keep protein high, adjust rice and roti portions, and measure progress without crash dieting.",
+    h1: "Indian Diet Plan for Weight Loss: A Realistic Calorie-Deficit Approach",
+    intro:
+      "You do not need to give up roti, rice or dal to lose fat. Weight loss comes from a modest, steady calorie deficit, enough protein to protect muscle, and portions you can keep up for months. This guide explains how to set the deficit using your own numbers, how to adjust an ordinary Indian plate, and how to tell whether it is working.",
+  },
+  {
+    path: "/blog/home-workout-no-equipment-beginners",
+    title: "Home Workout for Beginners, No Equipment — FitSmart",
+    keywords: "home workout for beginners, no equipment workout, bodyweight workout at home, 20 minute home workout india",
+    description:
+      "A 20-minute no-equipment home workout for beginners: six bodyweight moves with sets, reps, form tips and how to make it harder over four weeks.",
+    h1: "Home Workout for Beginners: 20 Minutes, No Equipment",
+    intro:
+      "You do not need a gym to start. This 20-minute routine uses six bodyweight movements that train the whole body, with sets and reps for a complete beginner, the form points that matter, and a simple way to make it harder each week.",
+  },
+  {
+    path: "/blog/full-body-workout-3-days-beginners",
+    title: "3-Day Full-Body Gym Plan for Beginners — FitSmart",
+    keywords: "3 day full body workout, beginner gym workout plan, full body workout for beginners, gym routine for beginners india",
+    description:
+      "A beginner 3-day full-body gym workout plan: exercises, sets, reps, rest times, how to add weight safely and when to move on to a more advanced split.",
+    h1: "3-Day Full-Body Gym Workout Plan for Beginners",
+    intro:
+      "If you are new to the gym, a full-body routine three days a week is one of the simplest ways to build strength and muscle. This plan lists the exercises, sets, reps and rest times for each day, how to add weight without hurting yourself, and the signs it is time to change.",
   },
 ];
 
