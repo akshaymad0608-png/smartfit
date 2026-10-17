@@ -362,4 +362,305 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    id: 'b7',
+    title: "Indian Veg Diet Plan for Muscle Gain (No Eggs, No Meat)",
+    slug: "indian-veg-diet-plan-muscle-gain",
+    excerpt:
+      "A fully vegetarian day of eating that reaches 100g+ of protein from dal, paneer, soya, curd and sattu, with portions and a simple weekly rhythm.",
+    date: "2026-10-17",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["Indian diet", "vegetarian", "muscle gain"],
+    image: "/images/blog/indian-diet-muscle-gain.jpg",
+    body: [
+      {
+        heading: "Start with a protein number, not a menu",
+        paragraphs: [
+          "Before choosing foods, fix a daily protein target. For muscle gain, 1.6 to 2.2 g per kg of body weight is the range most often used in sports nutrition research. For a 65 kg person that is roughly 105 to 140 g a day. Write the number down. Every meal below is just a way of reaching it.",
+          "If that looks like a lot, remember that the grains and vegetables you already eat contribute 15 to 25 g without you trying. The plan only has to cover the rest."
+        ],
+      },
+      {
+        heading: "Protein in the foods you already buy",
+        paragraphs: [
+          "These are approximate values per 100 g, and they vary by brand and by whether the food is raw or cooked. Paneer is around 18 g. Dry soya chunks are the most concentrated vegetarian source at roughly 50 g, before soaking. Cooked dals, rajma and chana give about 7 to 9 g. Roasted chana, peanuts and sattu flour sit between about 20 and 25 g in dry form. Curd gives 3 to 4 g, and hung curd or Greek-style curd roughly double that. A glass of milk has about 6 to 8 g. Wheat roti gives about 3 g each.",
+          "The point of knowing these numbers is that soya chunks, sattu and peanuts are cheap per gram of protein, while paneer is more expensive but easy to eat in large amounts."
+        ],
+      },
+      {
+        heading: "A sample day (about 105 to 120 g protein)",
+        paragraphs: [
+          "Breakfast: two besan or moong dal chillas with a bowl of curd, and a glass of milk. That is roughly 28 to 32 g. Mid-morning: a handful of roasted chana or peanuts, about 8 to 10 g.",
+          "Lunch: a bowl of dal, 100 g of paneer sabzi, two rotis, rice, and salad, about 35 g. Evening: a glass of sattu drink (two tablespoons of sattu in water with lemon and salt) or a bowl of sprouts, about 10 to 12 g. Dinner: rajma or chana with two rotis and a bowl of curd, about 22 to 25 g.",
+          "Add it up and you are near 105 to 120 g with no supplements. If you train hard and need more, add a soya chunk curry or a third roti at dinner before reaching for powder."
+        ],
+      },
+      {
+        heading: "Rotate through the week",
+        paragraphs: [
+          "Eating the same dal and paneer every day gets tiring and narrows what you take in. Rotate the protein anchor: paneer on two days, soya chunks on two days, rajma or chole on two days, and a lighter day with dal and curd. Use besan, moong and oats for breakfast on different days.",
+          "Combining cereals with pulses, as dal-chawal and rajma-roti already do, also gives a more complete mix of amino acids across the day."
+        ],
+      },
+      {
+        heading: "Calories, timing and what to track",
+        paragraphs: [
+          "To gain muscle you usually need to eat slightly above maintenance, around 200 to 300 kcal a day. Use the TDEE calculator on this site to find your maintenance number and add a small surplus. Weigh yourself weekly and aim for 0.25 to 0.5 kg of gain a month if you are an experienced lifter, a little faster if you are new.",
+          "Spread protein over three or four meals, since that is easier to eat and digest than one large meal. If your weight is not moving after three weeks, add a small amount of food before changing anything else."
+        ],
+      },
+    ],
+  },
+  {
+    id: 'b8',
+    title: "Protein in Indian Foods: A Simple Chart per 100g and per Serving",
+    slug: "protein-in-indian-foods",
+    excerpt:
+      "How much protein is in dal, paneer, rajma, eggs, chicken, curd, soya and more, in per-100g and per-serving terms, so you can count it without an app.",
+    date: "2026-10-17",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["protein", "Indian diet", "nutrition"],
+    image: "/images/blog/calories-you-need.jpg",
+    body: [
+      {
+        heading: "Raw versus cooked is the number one source of confusion",
+        paragraphs: [
+          "Dal, rajma, chana and soya chunks absorb water when cooked, so 100 g of dry dal has far more protein than 100 g of cooked dal. Dry toor, moong or masoor dal is about 22 to 25 g per 100 g. Once cooked into a thin dal, 100 g of the finished dish is closer to 5 to 8 g.",
+          "When you read a chart, check whether it is raw or cooked. The values below are approximate and rounded, taken from standard food composition tables, and they will vary by brand and recipe."
+        ],
+      },
+      {
+        heading: "Vegetarian staples (approximate, per 100 g)",
+        paragraphs: [
+          "Paneer: about 18 g. Dry soya chunks: about 50 g. Dry dal such as moong, masoor or toor: about 22 to 25 g. Cooked rajma or chole: about 8 to 9 g. Besan (gram flour): about 22 g. Sattu flour: about 20 g. Peanuts: about 25 g. Tofu: about 8 g. Oats: about 12 to 13 g.",
+          "Dairy: curd is about 3 to 4 g per 100 g, hung curd is about 8 to 10 g, and milk is about 3.4 g per 100 ml."
+        ],
+      },
+      {
+        heading: "Eggs, chicken and fish (approximate)",
+        paragraphs: [
+          "One whole egg has roughly 6 g of protein. Cooked chicken breast is around 30 g per 100 g, and chicken curry made with pieces on the bone is lower per spoon because of the bones and gravy. Most cooked fish such as rohu or pomfret gives about 18 to 22 g per 100 g.",
+          "These are the densest sources by weight, but a vegetarian diet can reach the same daily total with larger portions."
+        ],
+      },
+      {
+        heading: "Per serving, which is what you actually eat",
+        paragraphs: [
+          "A katori of cooked dal is around 7 to 9 g. A 100 g portion of paneer sabzi is 15 to 18 g. Two rotis give about 6 g. A glass of milk gives 6 to 8 g and a bowl of curd about 5 g. Two chillas made from besan can give 12 to 15 g. A scoop of whey protein powder usually lists 20 to 25 g on the label.",
+          "Use these as building blocks. A normal Indian thali with dal, paneer, roti and curd already provides 30 to 40 g of protein."
+        ],
+      },
+      {
+        heading: "How to estimate your day without an app",
+        paragraphs: [
+          "Pick one protein anchor per meal, such as paneer, eggs, dal, soya or curd, and count only that plus a rough 15 g for everything else in the day. Add the anchors and compare with your target.",
+          "Use the daily protein target in our TDEE and macro calculators to see your own number, then check your estimate for a week. After that you will rarely need to look anything up."
+        ],
+      },
+    ],
+  },
+  {
+    id: 'b9',
+    title: "10 High-Protein Indian Breakfast Ideas (Veg and Egg)",
+    slug: "high-protein-indian-breakfast",
+    excerpt:
+      "Ten quick Indian breakfasts with 15 to 30 g of protein each: chillas, paneer bhurji, sattu, sprouts, egg bhurji and more, with rough protein counts.",
+    date: "2026-10-17",
+    readMinutes: 5,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["breakfast", "protein", "Indian diet"],
+    image: "/images/blog/sleep-fitness-tool.jpg",
+    body: [
+      {
+        heading: "Why breakfast protein is worth fixing",
+        paragraphs: [
+          "A breakfast with 20 g or more of protein keeps you full longer and makes the rest of the day's protein target far easier to hit. If you eat only 8 g at breakfast, you have to find an extra 12 g later.",
+          "None of the ideas below needs special equipment. Protein counts are approximate and depend on portion size."
+        ],
+      },
+      {
+        heading: "Vegetarian ideas",
+        paragraphs: [
+          "1. Moong dal chilla (two) with curd: about 18 to 20 g. 2. Besan chilla (two) with mint chutney: about 12 to 14 g. 3. Paneer bhurji (100 g) with two rotis: about 24 g. 4. Sprouts salad or sprouts chaat, one large bowl with chopped vegetables: about 12 to 15 g. 5. Sattu drink, two tablespoons in water with lemon, plus a banana: about 8 to 10 g.",
+          "6. Poha with a handful of peanuts and a bowl of curd on the side: about 14 g. 7. Overnight oats made with milk, a spoon of peanut butter and chopped fruit: about 15 to 18 g."
+        ],
+      },
+      {
+        heading: "Egg ideas",
+        paragraphs: [
+          "8. Egg bhurji made with three eggs and onion, tomato and chilli, with two rotis: about 26 to 28 g. 9. Boiled eggs (two or three) with toast and fruit: about 15 to 20 g. 10. A masala omelette with two eggs and a glass of milk: about 20 g.",
+          "Eggs are the cheapest complete protein for most people who eat them, and a three-egg bhurji is hard to beat for effort and cost."
+        ],
+      },
+      {
+        heading: "Easy ways to add protein to what you already eat",
+        paragraphs: [
+          "Serve curd or hung curd with any paratha. Stir a scoop of whey or a spoon of sattu into oats. Add grated paneer or tofu to upma or poha. Eat a small handful of roasted chana or peanuts on the side.",
+          "Small additions of 5 to 10 g, repeated at each meal, close most of the gap between a typical Indian diet and a muscle-building target."
+        ],
+      },
+      {
+        heading: "Quick prep for busy mornings",
+        paragraphs: [
+          "Soak moong dal or sprouts the night before, mix chilla batter in advance, and boil a few eggs for the week. Keep roasted chana in a jar for days when you have no time.",
+          "If you only change one thing, make breakfast the meal you are sure to hit 20 g of protein in."
+        ],
+      },
+    ],
+  },
+  {
+    id: 'b10',
+    title: "Indian Diet Plan for Weight Loss: A Realistic Calorie-Deficit Approach",
+    slug: "indian-diet-plan-for-weight-loss",
+    excerpt:
+      "How to lose fat on an ordinary Indian diet: set a small calorie deficit, keep protein high, fix portions of rice and roti, and track progress without crash dieting.",
+    date: "2026-10-17",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["weight loss", "Indian diet", "calories"],
+    image: "/images/blog/calories-you-need.jpg",
+    body: [
+      {
+        heading: "The deficit is small, not dramatic",
+        paragraphs: [
+          "A deficit of roughly 300 to 500 kcal below maintenance is enough for most people and usually produces 0.25 to 0.5 kg of fat loss a week. Crash diets that cut 1,000 kcal or more tend to cost muscle, wreck energy and rebound.",
+          "Start by finding your maintenance calories with the TDEE calculator on this site, then subtract a modest amount. Treat that number as a starting point and adjust after two to three weeks based on your actual weight trend."
+        ],
+      },
+      {
+        heading: "Keep protein high",
+        paragraphs: [
+          "When you eat less, protein is what helps you keep muscle instead of losing it. A common target while losing fat is about 1.6 to 2 g per kg of body weight a day. For many people that means adding one protein anchor to each meal: eggs, paneer, dal, curd, soya or chicken.",
+          "Protein also keeps you fuller on fewer calories, which is the main reason it makes dieting easier."
+        ],
+      },
+      {
+        heading: "Adjust the plate instead of rebuilding it",
+        paragraphs: [
+          "Keep familiar foods but change proportions. Fill half the plate with vegetables and salad, a quarter with dal, paneer, egg or chicken, and a quarter with roti or rice. Replace one roti with a second serving of sabzi, or swap some rice for dal.",
+          "Cooking oil is the hidden calorie source in Indian food, around 120 kcal per tablespoon. Measure it with a spoon for a week and you will probably find a quick saving. Fried snacks, sweets and sugary chai are the next easy cuts."
+        ],
+      },
+      {
+        heading: "A simple day at about 1,600 kcal",
+        paragraphs: [
+          "Breakfast: moong chilla or egg bhurji with a bowl of curd. Lunch: one katori of rice or two rotis, dal, a large serving of sabzi and salad. Evening: roasted chana, fruit or a cup of unsweetened chai. Dinner: one or two rotis, a paneer or chicken dish and vegetables.",
+          "This is only an example. Your own calorie number may be higher or lower depending on size, age and activity, so use your calculator result rather than copying a number."
+        ],
+      },
+      {
+        heading: "Measure progress properly",
+        paragraphs: [
+          "Weigh yourself at the same time a few mornings a week and look at the weekly average, not single days. Add a waist measurement every two weeks. If your average weight has not moved after three weeks, reduce intake by about 100 to 150 kcal or add 2,000 steps a day.",
+          "Lifting weights two or three days a week makes the weight you lose more likely to be fat. If you feel dizzy, constantly tired or have a medical condition, speak to a doctor or dietitian first."
+        ],
+      },
+    ],
+  },
+  {
+    id: 'b11',
+    title: "Home Workout for Beginners: 20 Minutes, No Equipment",
+    slug: "home-workout-no-equipment-beginners",
+    excerpt:
+      "A simple 20-minute bodyweight routine you can do in a small room, with sets, reps, form cues and how to progress it over four weeks.",
+    date: "2026-10-17",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Training",
+    tags: ["home workout", "beginner", "bodyweight"],
+    image: "/images/blog/hiit-vs-steady-state.jpg",
+    body: [
+      {
+        heading: "How the routine works",
+        paragraphs: [
+          "Do the six moves below in order, as a circuit. Complete one round of all six, rest for a minute, then repeat for two or three rounds in total. Three days a week with a rest day between is plenty to begin with.",
+          "If any move hurts a joint rather than working a muscle, stop and use an easier version."
+        ],
+      },
+      {
+        heading: "The six moves",
+        paragraphs: [
+          "1. Bodyweight squat, 10 to 15 reps: feet shoulder-width, sit back and down, knees tracking over the toes, chest up. 2. Incline or knee push-up, 6 to 12 reps: hands on a table or the floor with knees down, body in a straight line. 3. Glute bridge, 12 to 15 reps: lie on your back, feet flat, push hips up and squeeze at the top.",
+          "4. Reverse lunge, 8 per leg: step back, lower the back knee toward the floor, push through the front heel. 5. Plank, 20 to 40 seconds: forearms on the floor, ribs down, do not let the hips sag. 6. Bird-dog, 8 per side: on hands and knees, extend the opposite arm and leg slowly."
+        ],
+      },
+      {
+        heading: "Warm-up and cool-down",
+        paragraphs: [
+          "Spend three minutes warming up before you start: march on the spot, make arm circles, do a few easy squats and hip circles. Afterwards, stretch the hips, calves and chest for a minute each.",
+          "A short warm-up reduces the chance of stiffness and makes the first set feel better."
+        ],
+      },
+      {
+        heading: "How to progress over four weeks",
+        paragraphs: [
+          "Add reps first. When you can complete all rounds at the top of the rep range with good form, move to the next version of the exercise: full push-ups instead of knee push-ups, tempo squats with a three-second lowering phase, or a longer plank.",
+          "A simple plan: week one is two rounds, week two is three rounds, week three adds reps, week four moves to harder variations. This is progressive overload without any equipment."
+        ],
+      },
+      {
+        heading: "Pair it with the basics",
+        paragraphs: [
+          "Training works best with enough sleep, protein in each meal and a daily walk. Use the TDEE and protein calculators on this site to set your targets.",
+          "If you have a heart condition, high blood pressure, are pregnant or have an injury, check with a doctor before starting."
+        ],
+      },
+    ],
+  },
+  {
+    id: 'b12',
+    title: "3-Day Full-Body Gym Workout Plan for Beginners",
+    slug: "full-body-workout-3-days-beginners",
+    excerpt:
+      "A simple three-day full-body gym routine with exercises, sets, reps and rest times, plus how to add weight safely and when to change the plan.",
+    date: "2026-10-17",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Training",
+    tags: ["gym", "beginner", "strength"],
+    image: "/images/blog/progressive-overload.jpg",
+    body: [
+      {
+        heading: "Why full-body three days a week works for beginners",
+        paragraphs: [
+          "Beginners recover quickly and learn movements by repeating them often. Training each major muscle group three times a week gives you plenty of practice and stimulus, and the rest day in between lets you recover. A body-part split, where each muscle is trained once a week, is slower for most new lifters.",
+          "Train Monday, Wednesday and Friday, or any three non-consecutive days."
+        ],
+      },
+      {
+        heading: "Workout A (Monday and, in week two, Wednesday)",
+        paragraphs: [
+          "Squat or leg press, 3 sets of 8 to 10. Bench press or dumbbell press, 3 sets of 8 to 10. Seated cable row or dumbbell row, 3 sets of 8 to 10. Overhead dumbbell press, 2 sets of 10. Plank, 2 sets of 30 seconds.",
+          "Rest 90 to 120 seconds between the big exercises and about 60 seconds between the smaller ones."
+        ],
+      },
+      {
+        heading: "Workout B (Wednesday and Friday, alternating)",
+        paragraphs: [
+          "Romanian deadlift or hip hinge with dumbbells, 3 sets of 8 to 10. Lat pulldown or assisted pull-up, 3 sets of 8 to 10. Incline dumbbell press or push-up, 3 sets of 8 to 12. Goblet squat, 2 sets of 10 to 12. Biceps curl and triceps pushdown, 2 sets of 10 to 12 each.",
+          "Alternate A and B across the week, so one week is A-B-A and the next is B-A-B."
+        ],
+      },
+      {
+        heading: "How to add weight",
+        paragraphs: [
+          "Choose a weight that you can lift for the target reps with two or three reps left in reserve. When you complete every set at the top of the rep range with good form, add the smallest weight increase available, for example 1 to 2.5 kg on the upper body and 2.5 to 5 kg on the lower body.",
+          "If you cannot reach the lower end of the rep range, keep the same weight next time. This approach is called progressive overload, and it is the engine behind all strength gains."
+        ],
+      },
+      {
+        heading: "When to change the plan",
+        paragraphs: [
+          "Most beginners can run a plan like this for two to four months. When you stop adding weight for several weeks even though sleep and food are in order, move to an upper-lower split or a program with more volume.",
+          "Learn the main lifts with light weights or from a qualified coach first. Eat enough protein, sleep 7 to 9 hours and see a doctor before starting if you have a medical condition."
+        ],
+      },
+    ],
+  },
 ];
