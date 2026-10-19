@@ -1,5 +1,7 @@
 # FitSmart — Smarter Fitness. Better Health.
 
+**Live site:** [fitsmart.space](https://fitsmart.space)
+
 A premium, production-ready fitness platform built with React, TypeScript, Vite and Tailwind CSS v4. Guided workouts, science-backed nutrition, precise health calculators and an AI coach — in one clean, fast, accessible experience.
 
 ![Stack](https://img.shields.io/badge/React-18-61dafb) ![TS](https://img.shields.io/badge/TypeScript-5.7-3178c6) ![Vite](https://img.shields.io/badge/Vite-6-646cff) ![Tailwind](https://img.shields.io/badge/Tailwind-4-38bdf8) ![PWA](https://img.shields.io/badge/PWA-ready-5a0fc8)
