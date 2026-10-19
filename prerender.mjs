@@ -73,6 +73,13 @@ const ROUTES = [
       { href: '/calculators/ideal-weight', label: 'Ideal Weight Calculator' },
       { href: '/calculators/macros', label: 'Macro Calculator' },
     ],
+    faq: [
+      { question: 'What is the difference between BMR and TDEE?', answer: 'BMR is the calories your body burns at complete rest. TDEE is BMR multiplied by an activity factor, so it estimates what you burn in a normal day including training. TDEE is the number to build a calorie target on.' },
+      { question: 'Which formula do the FitSmart calculators use?', answer: 'BMR uses the Mifflin-St Jeor equation, body fat uses the U.S. Navy circumference method, and ideal weight uses the Devine formula. They give reliable estimates, not a medical assessment.' },
+      { question: 'How do I use these numbers to lose fat or gain muscle?', answer: 'Calculate your TDEE first. For fat loss, eat a modest amount below it; for muscle gain, a modest amount above it. Then use the macro calculator to split that calorie target into protein, carbs and fats.' },
+      { question: 'Is BMI accurate for people who lift weights?', answer: 'Not always. BMI uses only height and weight, so a muscular person can read as overweight. Body fat percentage is a more useful measure for active people.' },
+      { question: 'Do the calculators store or upload my data?', answer: 'No. All calculations run in your browser and nothing is uploaded.' },
+    ],
   },
   {
     path: '/calculators/bmi',
@@ -298,7 +305,7 @@ const ROUTES = [
   },
   {
     path: '/programs',
-    title: 'Training Programs for Strength & Fat Loss — FitSmart',
+    title: 'Free Workout Programs: Fat Loss, Muscle Gain, Beginner — FitSmart',
     keywords: 'training programs, fitness programs, structured workout programs, fat loss program, muscle gain program, beginner fitness program',
     description:
       'Complete multi-week training programs for beginners, fat loss and strength. Follow a plan with clear progression instead of guessing each session.',
@@ -314,6 +321,13 @@ const ROUTES = [
       { href: '/programs/lean-and-strong', label: 'Lean & Strong' },
       { href: '/programs/hypertrophy-builder', label: 'Hypertrophy Builder' },
       { href: '/programs/home-shred', label: 'Home Shred' },
+    ],
+    faq: [
+      { question: 'Which program should a complete beginner start with?', answer: 'Start with the 30-Day Kickstart Challenge: four weeks, five short 20-30 minute sessions a week, no equipment. It is designed to build the habit first. Once you finish it, Lean & Strong or Home Shred are natural next steps depending on whether you have gym access.' },
+      { question: 'Can I follow these workout programs at home without equipment?', answer: 'Yes. The 30-Day Kickstart Challenge and Home Shred need no equipment at all. Home Shred is a six-week HIIT and conditioning plan with follow-along timers and low-impact options. Lean & Strong and Hypertrophy Builder are strength programs that work best with weights.' },
+      { question: 'Which program is best for fat loss and which for muscle gain?', answer: 'For fat loss, Home Shred (6 weeks, no equipment) or Lean & Strong (8 weeks, strength training plus macro guidance) fit best. For muscle gain, Hypertrophy Builder is a 12-week push-pull-legs split with built-in deload weeks. Results still depend mainly on your food and sleep.' },
+      { question: 'How many days a week do the programs take?', answer: '30-Day Kickstart, Home Shred and Hypertrophy Builder are five days a week; Lean & Strong is four. Rest days are part of every plan, so you recover between harder sessions.' },
+      { question: 'Are the programs free?', answer: 'Yes. Every program on FitSmart is free and needs no sign-up. Creating an account only adds a dashboard that saves your progress.' },
     ],
   },
   {
