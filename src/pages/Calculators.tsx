@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
+import { Accordion } from '@/components/ui/Accordion';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { CalculatorSuite } from '@/features/calculators/CalculatorSuite';
 import { CALCULATOR_PAGES } from '@/features/calculators/pages';
 import { Seo } from '@/seo/Seo';
-import { breadcrumbSchema } from '@/seo/schema';
+import { breadcrumbSchema, faqSchema } from '@/seo/schema';
+import { calculatorsFaqs } from '@/data/content';
 
 const features = [
   { icon: Zap, title: 'Instant results', text: 'Every metric updates live as you type — no submit button.' },
@@ -33,10 +35,13 @@ export default function Calculators() {
           'calorie calculator',
           'ideal weight calculator',
         ]}
-        schema={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Calculators', path: '/calculators' },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Calculators', path: '/calculators' },
+          ]),
+          faqSchema(calculatorsFaqs),
+        ]}
       />
       <PageHero
         eyebrow="Calculators"
@@ -99,6 +104,11 @@ export default function Calculators() {
             Devine ideal weight). They provide reliable estimates but are not a substitute for
             professional medical assessment.
           </p>
+        </div>
+
+        <h2 className="mt-16 text-center text-2xl font-bold text-heading">Calculator questions</h2>
+        <div className="mx-auto mt-8 max-w-3xl">
+          <Accordion items={calculatorsFaqs} />
         </div>
       </Section>
     </PageTransition>

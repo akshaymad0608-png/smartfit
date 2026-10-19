@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
+import { Accordion } from '@/components/ui/Accordion';
 import { ProgramCard } from '@/components/cards/ProgramCard';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { Seo } from '@/seo/Seo';
-import { breadcrumbSchema } from '@/seo/schema';
-import { programs } from '@/data/content';
+import { breadcrumbSchema, faqSchema } from '@/seo/schema';
+import { programs, programsFaqs } from '@/data/content';
 import type { Difficulty } from '@/types';
 import { cn } from '@/lib/cn';
 
@@ -18,14 +19,17 @@ export default function Programs() {
   return (
     <PageTransition>
       <Seo
-        title="Training Programs for Strength & Fat Loss"
+        title="Free Workout Programs: Fat Loss, Muscle Gain, Beginner"
         description="Complete multi-week training programs for beginners, fat loss and strength. Follow a plan with clear progression instead of guessing each session."
         path="/programs"
         keywords={['fitness challenge', '30 day fitness plan', 'weight loss', 'muscle gain', 'workout planner']}
-        schema={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Programs', path: '/programs' },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Programs', path: '/programs' },
+          ]),
+          faqSchema(programsFaqs),
+        ]}
       />
       <PageHero
         eyebrow="Programs"
@@ -56,6 +60,13 @@ export default function Programs() {
           {filtered.map((p) => (
             <ProgramCard key={p.id} program={p} />
           ))}
+        </div>
+      </Section>
+
+      <Section muted>
+        <h2 className="text-center text-2xl font-bold text-heading">Workout program questions</h2>
+        <div className="mx-auto mt-8 max-w-3xl">
+          <Accordion items={programsFaqs} />
         </div>
       </Section>
     </PageTransition>
