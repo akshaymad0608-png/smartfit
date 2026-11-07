@@ -25,6 +25,42 @@ export interface WorkoutCategory {
   accent: 'primary' | 'secondary' | 'accent';
 }
 
+export interface ProgramExercise {
+  name: string;
+  sets: string;
+  reps: string;
+  rest?: string;
+  note?: string;
+}
+
+export interface ProgramDay {
+  day: string;
+  focus: string;
+  exercises: ProgramExercise[];
+}
+
+export interface ProgramPhase {
+  name: string;
+  goal: string;
+  days: ProgramDay[];
+}
+
+/** The full written plan behind a program: who it is for, the sessions, and how to progress. */
+export interface ProgramPlan {
+  overview: string;
+  whoFor: string[];
+  notFor: string[];
+  equipment: string[];
+  warmup: string[];
+  phases: ProgramPhase[];
+  progression: string;
+  tips: string[];
+  safety: string;
+  faqs: Faq[];
+  /** Slugs of blog posts to link from the program page. */
+  related?: string[];
+}
+
 export interface Program {
   id: string;
   title: string;
@@ -37,6 +73,8 @@ export interface Program {
   image: string;
   highlights: string[];
   featured?: boolean;
+  /** Week-by-week sessions, progression rules and FAQs. */
+  plan?: ProgramPlan;
 }
 
 export interface BlogSection {

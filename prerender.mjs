@@ -862,14 +862,45 @@ for (const program of PROGRAMS) {
       `Length: ${program.weeks} weeks`,
       `Training days: ${program.daysPerWeek} per week`,
     ] },
-    { h2: 'What the program is', points: [program.summary] },
+    { h2: 'What the program is', points: [program.plan?.overview || program.summary] },
     { h2: 'What is included', points: program.highlights },
   ];
+  // The written plan (data/content.ts) goes into the static HTML too, so the
+  // page a crawler reads carries the full sessions, not just the summary.
+  const plan = program.plan;
+  if (plan) {
+    route.sections.push(
+      { h2: 'Who this program is for', points: plan.whoFor },
+      { h2: 'Who it is not for', points: plan.notFor },
+      { h2: 'Equipment', points: plan.equipment },
+      { h2: 'Warm-up before every session', points: plan.warmup },
+      ...plan.phases.flatMap((ph) => [
+        { h2: ph.name, points: [ph.goal] },
+        ...ph.days.map((d) => ({
+          h2: `${ph.name} — ${d.day}: ${d.focus}`,
+          points: d.exercises.map((e) =>
+            [e.name, e.sets !== '—' ? `${e.sets} sets` : '', e.reps !== '—' ? e.reps : '', e.rest ? `rest ${e.rest}` : '', e.note || '']
+              .filter(Boolean)
+              .join(' · '),
+          ),
+        })),
+      ]),
+      { h2: 'How to progress', points: [plan.progression] },
+      { h2: 'Coaching tips', points: plan.tips },
+      ...plan.faqs.map((f) => ({ h2: f.question, points: [f.answer] })),
+      { h2: 'Safety', points: [plan.safety] },
+    );
+    route.faq = plan.faqs;
+  }
   route.linksHeading = 'Plan your numbers first';
   route.links = [
     { href: '/calculators/tdee', label: 'Work out your daily calories (TDEE)' },
     { href: '/calculators/macros', label: 'Set your protein, carbs and fat' },
     { href: '/programs', label: 'Compare all training programs' },
+    ...(program.plan?.related || [])
+      .map((r) => BLOG_POSTS.find((b) => b.slug === r))
+      .filter(Boolean)
+      .map((b) => ({ href: `/blog/${b.slug}`, label: b.title })),
   ];
 }
 

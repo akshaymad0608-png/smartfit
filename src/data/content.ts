@@ -30,6 +30,307 @@ export const programs: Program[] = [
     summary:
       'A month-long guided plan that turns fitness into a daily habit with short, achievable sessions.',
     highlights: ['Daily 20–30 min sessions', 'Habit tracking', 'No equipment required'],
+    plan: {
+      "related": ["home-workout-no-equipment-beginners", "full-body-workout-3-days-beginners", "sleep-fitness-tool"],
+      "overview": "This plan is built for people starting from zero, or restarting after a long break. Every session takes 20 to 30 minutes and needs only floor space. Three days are short full-body strength circuits and two days are brisk walks, so you practise the habit five times a week without overloading joints that are not used to training yet. The aim for these four weeks is consistency, not exhaustion: finish every session feeling you could have done a little more.",
+      "whoFor": [
+        "Complete beginners and people returning after months or years off",
+        "Anyone who wants a routine that fits into a busy day",
+        "People training at home with no equipment"
+      ],
+      "notFor": [
+        "Experienced lifters looking to build maximum strength or size",
+        "Anyone told by a doctor to avoid exercise until cleared"
+      ],
+      "equipment": [
+        "A mat or carpet",
+        "A sturdy table, bench or kitchen counter for incline push-ups",
+        "Comfortable shoes for walking"
+      ],
+      "warmup": [
+        "March on the spot for 1 minute",
+        "10 arm circles forwards and 10 backwards",
+        "10 bodyweight good mornings (hands on hips, hinge at the hips)",
+        "8 slow squats to a comfortable depth"
+      ],
+      "phases": [
+        {
+          "name": "Weeks 1–2: Learn the movements",
+          "goal": "Practise each exercise with good form and get used to training five days a week.",
+          "days": [
+            {
+              "day": "Day 1",
+              "focus": "Full body A",
+              "exercises": [
+                {
+                  "name": "Bodyweight squat",
+                  "sets": "2",
+                  "reps": "10",
+                  "rest": "45 sec",
+                  "note": "Sit back as if onto a chair; stop where your form stays good."
+                },
+                {
+                  "name": "Incline push-up (hands on a table)",
+                  "sets": "2",
+                  "reps": "8",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Glute bridge",
+                  "sets": "2",
+                  "reps": "12",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Bird dog",
+                  "sets": "2",
+                  "reps": "8 per side",
+                  "rest": "30 sec"
+                },
+                {
+                  "name": "Front plank",
+                  "sets": "2",
+                  "reps": "20 sec",
+                  "rest": "30 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 2",
+              "focus": "Brisk walk",
+              "exercises": [
+                {
+                  "name": "Brisk walk",
+                  "sets": "1",
+                  "reps": "20 min",
+                  "note": "You should be able to talk but not sing."
+                },
+                {
+                  "name": "Calf and hip-flexor stretch",
+                  "sets": "1",
+                  "reps": "30 sec per side"
+                }
+              ]
+            },
+            {
+              "day": "Day 3",
+              "focus": "Full body B",
+              "exercises": [
+                {
+                  "name": "Reverse lunge (hold a wall if needed)",
+                  "sets": "2",
+                  "reps": "8 per leg",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Knee push-up or wall push-up",
+                  "sets": "2",
+                  "reps": "10",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Superman hold",
+                  "sets": "2",
+                  "reps": "10",
+                  "rest": "30 sec"
+                },
+                {
+                  "name": "Dead bug",
+                  "sets": "2",
+                  "reps": "8 per side",
+                  "rest": "30 sec"
+                },
+                {
+                  "name": "Side plank on knees",
+                  "sets": "2",
+                  "reps": "15 sec per side",
+                  "rest": "30 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 4",
+              "focus": "Brisk walk",
+              "exercises": [
+                {
+                  "name": "Brisk walk",
+                  "sets": "1",
+                  "reps": "25 min"
+                }
+              ]
+            },
+            {
+              "day": "Day 5",
+              "focus": "Full body A",
+              "exercises": [
+                {
+                  "name": "Repeat Day 1",
+                  "sets": "2",
+                  "reps": "Same reps",
+                  "note": "Try to make each rep a little smoother than on Day 1."
+                }
+              ]
+            },
+            {
+              "day": "Days 6–7",
+              "focus": "Rest",
+              "exercises": [
+                {
+                  "name": "Rest or an easy walk",
+                  "sets": "—",
+                  "reps": "As you like"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Weeks 3–4: Build the base",
+          "goal": "Add a third set and a little more walking now that the movements feel familiar.",
+          "days": [
+            {
+              "day": "Day 1",
+              "focus": "Full body A",
+              "exercises": [
+                {
+                  "name": "Bodyweight squat",
+                  "sets": "3",
+                  "reps": "12",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Incline push-up (lower surface if easy)",
+                  "sets": "3",
+                  "reps": "10",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Single-leg glute bridge",
+                  "sets": "3",
+                  "reps": "8 per leg",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Bird dog",
+                  "sets": "3",
+                  "reps": "10 per side",
+                  "rest": "30 sec"
+                },
+                {
+                  "name": "Front plank",
+                  "sets": "3",
+                  "reps": "30 sec",
+                  "rest": "30 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 2",
+              "focus": "Walk with pickups",
+              "exercises": [
+                {
+                  "name": "Brisk walk with intervals",
+                  "sets": "1",
+                  "reps": "30 min",
+                  "note": "Every few minutes walk fast for 1 minute, then 2 minutes at normal brisk pace."
+                }
+              ]
+            },
+            {
+              "day": "Day 3",
+              "focus": "Full body B",
+              "exercises": [
+                {
+                  "name": "Reverse lunge",
+                  "sets": "3",
+                  "reps": "10 per leg",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Knee or full push-up",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Superman hold",
+                  "sets": "3",
+                  "reps": "12",
+                  "rest": "30 sec"
+                },
+                {
+                  "name": "Dead bug",
+                  "sets": "3",
+                  "reps": "10 per side",
+                  "rest": "30 sec"
+                },
+                {
+                  "name": "Side plank",
+                  "sets": "3",
+                  "reps": "20 sec per side",
+                  "rest": "30 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 4",
+              "focus": "Brisk walk",
+              "exercises": [
+                {
+                  "name": "Brisk walk",
+                  "sets": "1",
+                  "reps": "30 min"
+                }
+              ]
+            },
+            {
+              "day": "Day 5",
+              "focus": "Full body A",
+              "exercises": [
+                {
+                  "name": "Repeat Day 1 of this phase",
+                  "sets": "3",
+                  "reps": "Same reps"
+                }
+              ]
+            },
+            {
+              "day": "Days 6–7",
+              "focus": "Rest",
+              "exercises": [
+                {
+                  "name": "Rest or an easy walk",
+                  "sets": "—",
+                  "reps": "As you like"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "progression": "Use one simple rule: when you can finish every set of an exercise at the top of the rep range with good form, make it slightly harder next session. Add two reps, hold a plank five seconds longer, or move to a harder version, for example from wall push-ups to knee push-ups to incline push-ups on a lower surface.",
+      "tips": [
+        "Train at the same time each day so it becomes automatic.",
+        "Tick off each session on a calendar or in the FitSmart dashboard; seeing a streak helps.",
+        "Mild muscle soreness for a day or two is normal in week one. Joint pain is not, so swap or skip that exercise.",
+        "After week 4, move to Home Shred or Lean & Strong depending on your goal."
+      ],
+      "faqs": [
+        {
+          "question": "Can I do the 30-Day Kickstart if I am overweight or very unfit?",
+          "answer": "Yes, it was written for that. Use the easiest version of each exercise, such as wall push-ups and partial squats, and walk at a pace that feels brisk to you. If you have a medical condition, check with a doctor first."
+        },
+        {
+          "question": "Will I lose weight in 30 days?",
+          "answer": "You may, but weight loss depends mostly on your food intake. This plan builds the exercise habit; pair it with a modest calorie deficit if fat loss is your goal. The TDEE calculator can help you set one."
+        },
+        {
+          "question": "What should I do after the 30 days?",
+          "answer": "If you want fat loss at home, move to Home Shred. If you can get to a gym and want to build strength, move to Lean & Strong."
+        }
+      ],
+      "safety": "This is general fitness guidance, not medical advice. If you have a heart, joint, blood-pressure or other health condition, are pregnant, or have not exercised in a long time, check with a doctor before you start. Stop any exercise that causes sharp pain, dizziness or chest discomfort."
+    },
     featured: true,
   },
   {
@@ -44,6 +345,417 @@ export const programs: Program[] = [
     summary:
       'A body-recomposition program pairing strength training with smart nutrition to lose fat and keep muscle.',
     highlights: ['Progressive strength blocks', 'Macro guidance', 'Weekly check-ins'],
+    plan: {
+      "related": ["calories-you-need", "progressive-overload-guide", "protein-in-indian-foods", "indian-diet-plan-for-weight-loss"],
+      "overview": "Lean & Strong is an eight-week body-recomposition plan for people who already train a little and want to lose fat without losing muscle. It uses an upper/lower split four days a week, built around compound lifts with a double-progression rule so the work gets harder in small, trackable steps. Strength training protects muscle while you eat in a modest calorie deficit; walking on the other days adds activity without eating into recovery. Each week you check three numbers, and adjust food or steps based on them rather than guessing.",
+      "whoFor": [
+        "People with at least a few months of training who know the main lifts",
+        "Anyone who wants to lose fat while keeping or building muscle",
+        "Gym-goers with access to barbells, dumbbells and cables"
+      ],
+      "notFor": [
+        "Complete beginners (start with the 30-Day Kickstart)",
+        "People training only at home without weights"
+      ],
+      "equipment": [
+        "Barbell, squat rack and bench",
+        "Dumbbells",
+        "Cable machine or lat pulldown",
+        "Leg press and leg curl machine (or dumbbell alternatives)"
+      ],
+      "warmup": [
+        "5 minutes on a bike or rower at an easy pace",
+        "Dynamic stretches for the joints you are about to train",
+        "2 to 3 lighter warm-up sets of the first lift, building up to your working weight"
+      ],
+      "phases": [
+        {
+          "name": "Weeks 1–4: Foundation block",
+          "goal": "Establish working weights you can lift for every rep with good form and about 2 reps in reserve.",
+          "days": [
+            {
+              "day": "Monday",
+              "focus": "Upper A",
+              "exercises": [
+                {
+                  "name": "Bench press",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2–3 min"
+                },
+                {
+                  "name": "Barbell or cable row",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Standing overhead press",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Lat pulldown",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Dumbbell curl",
+                  "sets": "2",
+                  "reps": "12",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Triceps pushdown",
+                  "sets": "2",
+                  "reps": "12",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Tuesday",
+              "focus": "Lower A",
+              "exercises": [
+                {
+                  "name": "Back squat",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2–3 min"
+                },
+                {
+                  "name": "Romanian deadlift",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Walking lunge",
+                  "sets": "2",
+                  "reps": "10 per leg",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Lying or seated leg curl",
+                  "sets": "2",
+                  "reps": "12",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Standing calf raise",
+                  "sets": "3",
+                  "reps": "12–15",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Front plank",
+                  "sets": "3",
+                  "reps": "30–45 sec",
+                  "rest": "45 sec"
+                }
+              ]
+            },
+            {
+              "day": "Wednesday",
+              "focus": "Walk",
+              "exercises": [
+                {
+                  "name": "Brisk walk or easy cycle",
+                  "sets": "1",
+                  "reps": "30–40 min"
+                }
+              ]
+            },
+            {
+              "day": "Thursday",
+              "focus": "Upper B",
+              "exercises": [
+                {
+                  "name": "Incline dumbbell press",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Pull-up or assisted pull-up",
+                  "sets": "3",
+                  "reps": "6–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Seated dumbbell shoulder press",
+                  "sets": "3",
+                  "reps": "10",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Seated cable row",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Lateral raise",
+                  "sets": "3",
+                  "reps": "12–15",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Face pull",
+                  "sets": "2",
+                  "reps": "15",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Friday",
+              "focus": "Lower B",
+              "exercises": [
+                {
+                  "name": "Conventional or trap-bar deadlift",
+                  "sets": "3",
+                  "reps": "5",
+                  "rest": "3 min"
+                },
+                {
+                  "name": "Leg press",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Bulgarian split squat",
+                  "sets": "2",
+                  "reps": "8–10 per leg",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Hip thrust",
+                  "sets": "3",
+                  "reps": "10",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Hanging knee raise",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Weekend",
+              "focus": "Active rest",
+              "exercises": [
+                {
+                  "name": "Walk",
+                  "sets": "1",
+                  "reps": "30–60 min",
+                  "note": "Aim for roughly 8,000–10,000 steps a day across the week."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Weeks 5–8: Strength block",
+          "goal": "Push the main lifts heavier while keeping the same structure, so you can see clear progress.",
+          "days": [
+            {
+              "day": "Monday",
+              "focus": "Upper A",
+              "exercises": [
+                {
+                  "name": "Bench press",
+                  "sets": "4",
+                  "reps": "5–6",
+                  "rest": "3 min"
+                },
+                {
+                  "name": "Barbell row",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Standing overhead press",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Weighted or assisted pull-up",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Dumbbell curl + triceps pushdown superset",
+                  "sets": "2",
+                  "reps": "12 each",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Tuesday",
+              "focus": "Lower A",
+              "exercises": [
+                {
+                  "name": "Back squat",
+                  "sets": "4",
+                  "reps": "5–6",
+                  "rest": "3 min"
+                },
+                {
+                  "name": "Romanian deadlift",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Walking lunge",
+                  "sets": "2",
+                  "reps": "12 per leg",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Leg curl",
+                  "sets": "2",
+                  "reps": "10–12",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Calf raise",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Wednesday",
+              "focus": "Walk",
+              "exercises": [
+                {
+                  "name": "Brisk walk or easy cycle",
+                  "sets": "1",
+                  "reps": "30–40 min"
+                }
+              ]
+            },
+            {
+              "day": "Thursday",
+              "focus": "Upper B",
+              "exercises": [
+                {
+                  "name": "Incline dumbbell press",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Chest-supported row",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Seated dumbbell shoulder press",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Lat pulldown",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Lateral raise",
+                  "sets": "3",
+                  "reps": "15",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Friday",
+              "focus": "Lower B",
+              "exercises": [
+                {
+                  "name": "Deadlift",
+                  "sets": "3",
+                  "reps": "3–5",
+                  "rest": "3 min"
+                },
+                {
+                  "name": "Leg press",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Bulgarian split squat",
+                  "sets": "3",
+                  "reps": "8 per leg",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Hip thrust",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Ab wheel or plank",
+                  "sets": "3",
+                  "reps": "8–10 / 45 sec",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Weekend",
+              "focus": "Active rest",
+              "exercises": [
+                {
+                  "name": "Walk",
+                  "sets": "1",
+                  "reps": "30–60 min"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "progression": "Use double progression. Each exercise has a rep range, for example 6–8. Start with a weight you can lift for the bottom of the range on every set. Add reps session by session; once you reach the top of the range on all sets, increase the weight by the smallest jump available (2.5 kg on barbell lifts, 1–2 kg per dumbbell) and start again at the bottom. If your lifts stall for two weeks in a row while dieting, that is normal; hold the weight and focus on clean reps.",
+      "tips": [
+        "Nutrition: start around 300–500 kcal per day below your maintenance from the TDEE calculator, and eat roughly 1.6–2.2 g of protein per kg of body weight.",
+        "Weekly check-in: average your morning weight over 3–4 days, measure your waist once a week, and note your best set on each main lift.",
+        "If your average weight has not moved for two weeks, cut about 150–200 kcal a day or add 2,000 daily steps. If you are losing more than about 1% of body weight a week, eat a little more.",
+        "Sleep 7–9 hours where you can; poor sleep makes dieting and recovery harder."
+      ],
+      "faqs": [
+        {
+          "question": "Can I lose fat and build muscle at the same time?",
+          "answer": "Many people can, especially those newer to lifting or returning after a break. A modest deficit, high protein and progressive strength training give you the best chance. Experienced lifters usually see slower muscle gain while dieting."
+        },
+        {
+          "question": "Do I need to do cardio on this program?",
+          "answer": "Daily walking is the main extra activity because it burns calories without hurting recovery. You can add one or two short cardio sessions if you enjoy them, but food intake does most of the work for fat loss."
+        },
+        {
+          "question": "What if I miss a session?",
+          "answer": "Do the missed session next time you train and continue the order. Try to keep at least one rest or walk day between Lower A and Lower B."
+        }
+      ],
+      "safety": "This is general fitness guidance, not medical advice. If you have a heart, joint, blood-pressure or other health condition, are pregnant, or have not exercised in a long time, check with a doctor before you start. Stop any exercise that causes sharp pain, dizziness or chest discomfort."
+    },
     featured: true,
   },
   {
@@ -58,6 +770,351 @@ export const programs: Program[] = [
     summary:
       'A 12-week push-pull-legs split engineered for maximum lean-mass gains with deload weeks built in.',
     highlights: ['Push-pull-legs split', 'Auto-regulated volume', 'Deload weeks included'],
+    plan: {
+      "related": ["progressive-overload-guide", "indian-diet-muscle-gain", "indian-veg-diet-plan-muscle-gain", "high-protein-indian-breakfast"],
+      "overview": "Hypertrophy Builder is a twelve-week muscle-gain plan for experienced lifters. It runs five days a week as push, pull and legs followed by an upper and a lower day, so every muscle is trained about twice a week. The twelve weeks are split into three four-week blocks: three weeks of building effort and volume, then a deload week to recover before the next block. Volume is auto-regulated, which means you add sets only when your performance and recovery say you can handle them.",
+      "whoFor": [
+        "Lifters with at least a year of consistent training",
+        "People whose main goal is muscle size",
+        "Anyone with full gym access who can train five days a week"
+      ],
+      "notFor": [
+        "Beginners (start with the 30-Day Kickstart or Lean & Strong)",
+        "People who can only train two or three days a week"
+      ],
+      "equipment": [
+        "Barbell, squat rack and bench",
+        "Dumbbells",
+        "Cable station",
+        "Leg press, hack squat or similar machines",
+        "Pull-up bar"
+      ],
+      "warmup": [
+        "5 minutes easy cardio",
+        "Ramp-up sets on the first exercise: about 50%, 70% and 85% of the working weight",
+        "Light band work for shoulders before push and upper days"
+      ],
+      "phases": [
+        {
+          "name": "Weekly split (all blocks)",
+          "goal": "Train each muscle group about twice a week with 2–3 working sets per exercise to start.",
+          "days": [
+            {
+              "day": "Day 1",
+              "focus": "Push",
+              "exercises": [
+                {
+                  "name": "Barbell bench press",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2–3 min"
+                },
+                {
+                  "name": "Incline dumbbell press",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Seated dumbbell shoulder press",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Cable fly",
+                  "sets": "2",
+                  "reps": "12–15",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Lateral raise",
+                  "sets": "3",
+                  "reps": "12–20",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Overhead cable triceps extension",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 2",
+              "focus": "Pull",
+              "exercises": [
+                {
+                  "name": "Pull-up or lat pulldown",
+                  "sets": "3",
+                  "reps": "6–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Barbell row",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Chest-supported dumbbell row",
+                  "sets": "2",
+                  "reps": "10–12",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Rear-delt fly",
+                  "sets": "3",
+                  "reps": "15",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Barbell curl",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Hammer curl",
+                  "sets": "2",
+                  "reps": "12",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 3",
+              "focus": "Legs",
+              "exercises": [
+                {
+                  "name": "Back squat",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "3 min"
+                },
+                {
+                  "name": "Romanian deadlift",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Leg press",
+                  "sets": "3",
+                  "reps": "10–15",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Lying leg curl",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Leg extension",
+                  "sets": "2",
+                  "reps": "12–15",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Standing calf raise",
+                  "sets": "4",
+                  "reps": "10–15",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 4",
+              "focus": "Rest",
+              "exercises": [
+                {
+                  "name": "Rest or light walk",
+                  "sets": "—",
+                  "reps": "—"
+                }
+              ]
+            },
+            {
+              "day": "Day 5",
+              "focus": "Upper",
+              "exercises": [
+                {
+                  "name": "Standing overhead press",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2–3 min"
+                },
+                {
+                  "name": "Weighted pull-up or pulldown",
+                  "sets": "3",
+                  "reps": "6–8",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Flat dumbbell press",
+                  "sets": "3",
+                  "reps": "8–12",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Seated cable row",
+                  "sets": "3",
+                  "reps": "10–12",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Lateral raise",
+                  "sets": "2",
+                  "reps": "15–20",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Curl + triceps pushdown superset",
+                  "sets": "2",
+                  "reps": "12 each",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 6",
+              "focus": "Lower",
+              "exercises": [
+                {
+                  "name": "Trap-bar or conventional deadlift",
+                  "sets": "3",
+                  "reps": "5",
+                  "rest": "3 min"
+                },
+                {
+                  "name": "Hack squat or front squat",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "2 min"
+                },
+                {
+                  "name": "Hip thrust",
+                  "sets": "3",
+                  "reps": "8–12",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Walking lunge",
+                  "sets": "2",
+                  "reps": "12 per leg",
+                  "rest": "90 sec"
+                },
+                {
+                  "name": "Seated leg curl",
+                  "sets": "3",
+                  "reps": "12",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Seated calf raise",
+                  "sets": "3",
+                  "reps": "15",
+                  "rest": "60 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 7",
+              "focus": "Rest",
+              "exercises": [
+                {
+                  "name": "Rest",
+                  "sets": "—",
+                  "reps": "—"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Block structure: weeks 1–4, 5–8 and 9–12",
+          "goal": "Build for three weeks, then deload in the fourth.",
+          "days": [
+            {
+              "day": "Week 1 of each block",
+              "focus": "Base",
+              "exercises": [
+                {
+                  "name": "All exercises",
+                  "sets": "2–3",
+                  "reps": "Top of range possible",
+                  "rest": "—",
+                  "note": "Stop about 3 reps before failure (3 RIR)."
+                }
+              ]
+            },
+            {
+              "day": "Week 2",
+              "focus": "Build",
+              "exercises": [
+                {
+                  "name": "All exercises",
+                  "sets": "Same or +1 set",
+                  "reps": "Add reps or weight",
+                  "rest": "—",
+                  "note": "Stop about 2 reps before failure."
+                }
+              ]
+            },
+            {
+              "day": "Week 3",
+              "focus": "Peak",
+              "exercises": [
+                {
+                  "name": "All exercises",
+                  "sets": "Same or +1 set",
+                  "reps": "Add reps or weight",
+                  "rest": "—",
+                  "note": "1 rep in reserve; last set of isolation moves can go to failure."
+                }
+              ]
+            },
+            {
+              "day": "Week 4",
+              "focus": "Deload",
+              "exercises": [
+                {
+                  "name": "All exercises",
+                  "sets": "Half the sets",
+                  "reps": "Same reps",
+                  "rest": "—",
+                  "note": "Use the same or about 10% lighter weights and stop well short of failure."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "progression": "Auto-regulate volume muscle by muscle. After each week, ask two questions for every muscle group: did my performance go up or hold, and had soreness cleared before I trained it again? If both are yes, add one set to one exercise for that muscle next week. If performance dropped or you are still sore, keep sets the same. Within each exercise, use double progression: reach the top of the rep range on all sets, then add a small amount of weight. Start each new block a little heavier than the last one began.",
+      "tips": [
+        "Eat in a small surplus of roughly 200–300 kcal a day above maintenance, with about 1.6–2.2 g of protein per kg of body weight.",
+        "Aim for a gain of about 0.25–0.5% of body weight per week; faster than that is mostly fat.",
+        "Log every set. Auto-regulation only works if you can see last week's numbers.",
+        "Take the deload weeks even if you feel good; they let fatigue drop so the next block starts stronger."
+      ],
+      "faqs": [
+        {
+          "question": "Why does the program include deload weeks?",
+          "answer": "Hard training builds up fatigue faster than fitness shows it. A lighter week every fourth week lets joints and the nervous system recover so you can keep progressing in the next block."
+        },
+        {
+          "question": "What does reps in reserve mean?",
+          "answer": "It is how many more reps you could have done with good form. Two reps in reserve means you stop when you could still do about two more."
+        },
+        {
+          "question": "Can I swap exercises?",
+          "answer": "Yes. Replace an exercise with one that trains the same muscle in a similar way, such as a machine press for a dumbbell press, and keep it for the whole block so you can track progress."
+        }
+      ],
+      "safety": "This is general fitness guidance, not medical advice. If you have a heart, joint, blood-pressure or other health condition, are pregnant, or have not exercised in a long time, check with a doctor before you start. Stop any exercise that causes sharp pain, dizziness or chest discomfort."
+    },
     featured: true,
   },
   {
@@ -72,6 +1129,257 @@ export const programs: Program[] = [
     summary:
       'Six weeks of equipment-free HIIT and conditioning you can do in a living room, hotel or dorm.',
     highlights: ['Zero equipment', 'Follow-along timers', 'Low-impact options'],
+    plan: {
+      "related": ["hiit-vs-steady-state", "indian-diet-plan-for-weight-loss", "home-workout-no-equipment-beginners", "mobility-desk-posture"],
+      "overview": "Home Shred is a six-week, equipment-free plan for people who want to lose fat and get fitter at home. It mixes three interval circuits that raise your heart rate with two bodyweight strength sessions that keep muscle working. Intervals get a little harder every two weeks by changing the work-to-rest ratio. Every jumping move has a low-impact swap, so you can do the plan quietly in a flat or with sensitive knees. Remember that exercise supports fat loss, but your food intake decides most of it.",
+      "whoFor": [
+        "Beginners and early intermediates who train at home",
+        "People short on time who want 25–35 minute sessions",
+        "Anyone travelling or living in a hostel, dorm or hotel"
+      ],
+      "notFor": [
+        "People with joint injuries who have not been cleared for interval training",
+        "Lifters chasing maximum strength or muscle size"
+      ],
+      "equipment": [
+        "A mat or carpet",
+        "A sturdy chair or step",
+        "A timer app or phone stopwatch"
+      ],
+      "warmup": [
+        "2 minutes marching or light jogging on the spot",
+        "10 arm swings and 10 hip circles each way",
+        "10 bodyweight squats and 5 inchworms"
+      ],
+      "phases": [
+        {
+          "name": "Weekly plan",
+          "goal": "Three interval days and two strength days, with rest in between.",
+          "days": [
+            {
+              "day": "Day 1",
+              "focus": "Interval circuit A",
+              "exercises": [
+                {
+                  "name": "Jumping jacks (low impact: step jacks)",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Bodyweight squat",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Incline push-up",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Mountain climber (low impact: slow, alternating)",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Glute bridge",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase",
+                  "note": "Rest 90 seconds between rounds."
+                }
+              ]
+            },
+            {
+              "day": "Day 2",
+              "focus": "Strength circuit",
+              "exercises": [
+                {
+                  "name": "Split squat",
+                  "sets": "3",
+                  "reps": "10–12 per leg",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Push-up (knee or full)",
+                  "sets": "3",
+                  "reps": "8–12",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Chair-supported reverse lunge",
+                  "sets": "3",
+                  "reps": "10 per leg",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Reverse snow angel (lying face down)",
+                  "sets": "3",
+                  "reps": "12",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Side plank",
+                  "sets": "3",
+                  "reps": "20–30 sec per side",
+                  "rest": "45 sec"
+                }
+              ]
+            },
+            {
+              "day": "Day 3",
+              "focus": "Low-impact cardio",
+              "exercises": [
+                {
+                  "name": "Brisk walk, step-ups or cycling",
+                  "sets": "1",
+                  "reps": "25–35 min",
+                  "note": "Steady pace you could hold a conversation at."
+                }
+              ]
+            },
+            {
+              "day": "Day 4",
+              "focus": "Interval circuit B",
+              "exercises": [
+                {
+                  "name": "High knees (low impact: fast march)",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Reverse lunge",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Plank shoulder taps",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Skater step (side to side)",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase"
+                },
+                {
+                  "name": "Squat to calf raise",
+                  "sets": "3–4 rounds",
+                  "reps": "Work/rest by phase",
+                  "note": "Rest 90 seconds between rounds."
+                }
+              ]
+            },
+            {
+              "day": "Day 5",
+              "focus": "Strength + core",
+              "exercises": [
+                {
+                  "name": "Step-up onto a chair or stair",
+                  "sets": "3",
+                  "reps": "10 per leg",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Pike push-up or incline push-up",
+                  "sets": "3",
+                  "reps": "8–10",
+                  "rest": "60 sec"
+                },
+                {
+                  "name": "Single-leg glute bridge",
+                  "sets": "3",
+                  "reps": "10 per leg",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Dead bug",
+                  "sets": "3",
+                  "reps": "10 per side",
+                  "rest": "45 sec"
+                },
+                {
+                  "name": "Hollow hold (knees bent if needed)",
+                  "sets": "3",
+                  "reps": "20–30 sec",
+                  "rest": "45 sec"
+                }
+              ]
+            },
+            {
+              "day": "Days 6–7",
+              "focus": "Rest",
+              "exercises": [
+                {
+                  "name": "Rest or an easy walk",
+                  "sets": "—",
+                  "reps": "—"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Interval progression",
+          "goal": "Make the interval days harder every two weeks.",
+          "days": [
+            {
+              "day": "Weeks 1–2",
+              "focus": "30 sec work / 30 sec rest",
+              "exercises": [
+                {
+                  "name": "Interval circuits A and B",
+                  "sets": "3 rounds",
+                  "reps": "30 / 30"
+                }
+              ]
+            },
+            {
+              "day": "Weeks 3–4",
+              "focus": "40 sec work / 20 sec rest",
+              "exercises": [
+                {
+                  "name": "Interval circuits A and B",
+                  "sets": "3 rounds",
+                  "reps": "40 / 20"
+                }
+              ]
+            },
+            {
+              "day": "Weeks 5–6",
+              "focus": "45 sec work / 15 sec rest",
+              "exercises": [
+                {
+                  "name": "Interval circuits A and B",
+                  "sets": "4 rounds",
+                  "reps": "45 / 15"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "progression": "Interval days progress by the schedule above. On strength days, once you reach the top of the rep range on every set, move to a harder version: knee to full push-ups, split squats to rear-foot-elevated split squats, or slow the lowering phase to three seconds. If a week feels too hard, repeat it rather than moving on.",
+      "tips": [
+        "Fat loss comes mainly from a modest calorie deficit; use the TDEE calculator to find a starting target and keep protein high.",
+        "Walk on rest days if you can. Daily steps add up to more calories than one extra workout.",
+        "Use the low-impact options any time. A lower heart rate with good form beats sloppy jumping.",
+        "Track your waist measurement and how your clothes fit, not just body weight."
+      ],
+      "faqs": [
+        {
+          "question": "Can I really lose fat with home workouts and no equipment?",
+          "answer": "Yes, if you combine them with a calorie deficit. The workouts burn calories and help keep muscle, while your diet creates most of the deficit."
+        },
+        {
+          "question": "Is Home Shred suitable for apartments?",
+          "answer": "Yes. Use the low-impact option for every jumping exercise and the workouts stay quiet enough for upper-floor flats."
+        },
+        {
+          "question": "What if I cannot finish all the rounds?",
+          "answer": "Do as many rounds as you can with good form and add a round when you are ready. Repeating a week is fine."
+        }
+      ],
+      "safety": "This is general fitness guidance, not medical advice. If you have a heart, joint, blood-pressure or other health condition, are pregnant, or have not exercised in a long time, check with a doctor before you start. Stop any exercise that causes sharp pain, dizziness or chest discomfort."
+    },
   },
 ];
 
