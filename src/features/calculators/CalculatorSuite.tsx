@@ -13,6 +13,7 @@ import {
   activityFactors,
   bmi,
   bmiCategory,
+  bmiCategoryAsian,
   bmr,
   bodyFatNavy,
   calorieTarget,
@@ -69,7 +70,10 @@ const goalLabels: Record<Goal, string> = {
   gain: 'Build muscle',
 };
 
-export function CalculatorSuite() {
+export type SuiteTab = 'body' | 'energy' | 'nutrition';
+
+/** `initialTab` lets each calculator page open on the results it is about. */
+export function CalculatorSuite({ initialTab = 'body' }: { initialTab?: SuiteTab }) {
   const [bio, setBio] = useState<Biometrics>(defaults);
   const { toast } = useToast();
 
@@ -88,6 +92,7 @@ export function CalculatorSuite() {
     return {
       bmi: bmiVal,
       bmiCat: bmiCategory(bmiVal),
+      bmiAsian: bmiCategoryAsian(bmiVal),
       bmr: bmrVal,
       tdee: tdeeVal,
       calories,
@@ -104,6 +109,7 @@ export function CalculatorSuite() {
     try {
       await downloadReport([
         { label: 'BMI', value: `${r.bmi} (${r.bmiCat.label})` },
+        { label: 'BMI (Indian / Asian cut-offs)', value: r.bmiAsian.label },
         { label: 'Ideal weight', value: `${r.ideal} kg` },
         { label: 'Body fat (est.)', value: `${r.bodyFat}%` },
         { label: 'Lean body mass', value: `${r.lbm} kg` },
@@ -238,6 +244,7 @@ export function CalculatorSuite() {
       {/* Results */}
       <div>
         <Tabs
+          defaultId={initialTab}
           items={[
             {
               id: 'body',
@@ -258,6 +265,12 @@ export function CalculatorSuite() {
                       {r.bmi}
                     </motion.p>
                     <BmiScale value={r.bmi} />
+                    <p className="mt-4 flex items-center justify-between gap-3 rounded-xl bg-surface-muted px-3 py-2 text-xs text-body">
+                      <span>
+                        Indian / Asian cut-offs <span className="text-muted">(overweight from 23)</span>
+                      </span>
+                      <Badge tone={r.bmiAsian.tone}>{r.bmiAsian.label}</Badge>
+                    </p>
                   </Card>
                   <Card className="p-6">
                     <ResultRow label="Ideal weight (Devine)" value={`${r.ideal} kg`} />

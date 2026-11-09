@@ -25,6 +25,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import { staggerContainer, staggerItem } from '@/components/motion/variants';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { Hero } from '@/features/home/Hero';
+import { QuickCheck } from '@/features/home/QuickCheck';
 import { NewsletterForm } from '@/features/home/NewsletterForm';
 import { Seo } from '@/seo/Seo';
 import { faqSchema, organizationSchema, websiteSchema } from '@/seo/schema';
@@ -33,7 +34,7 @@ import { blogPosts, faqs, programs, stats } from '@/data/content';
 
 const benefits = [
   { icon: Timer, title: 'Time-efficient', text: 'Effective sessions from 15 minutes — built for real schedules.' },
-  { icon: Brain, title: 'AI-personalised', text: 'Plans that adapt to your goals, level and available equipment.' },
+  { icon: Brain, title: 'Personalised plans', text: 'Instant plans built from your goal, level and available equipment.' },
   { icon: ShieldCheck, title: 'Evidence-based', text: 'Every routine and calculator is grounded in exercise science.' },
   { icon: HeartPulse, title: 'Whole-health', text: 'Training, nutrition, recovery and mindset in one place.' },
 ];
@@ -59,6 +60,13 @@ export default function Home() {
 
       {/* 1. Hero */}
       <Hero />
+
+      {/* Quick BMI check: value before any navigation */}
+      <Section spacing="sm">
+        <Reveal>
+          <QuickCheck />
+        </Reveal>
+      </Section>
 
       {/* 2. Statistics */}
       <Section spacing="sm" className="border-y border-line bg-surface-muted">

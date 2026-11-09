@@ -1383,6 +1383,28 @@ export const programs: Program[] = [
   },
 ];
 
+/** Shown on /programs and baked into its static HTML (read by prerender.mjs). */
+export const programsGuide: { heading: string; points: string[] }[] = [
+  {
+    heading: 'How to choose a program',
+    points: [
+      'Complete beginner or returning after a break: start with the 30-Day Kickstart Challenge. It is short, needs no equipment and builds the habit first.',
+      'Want to lose fat without a gym: Home Shred uses bodyweight sessions only, five days a week.',
+      'Want to lose fat and build muscle together: Lean & Strong pairs strength training with a calorie deficit.',
+      'Already training and want size: Hypertrophy Builder is a structured muscle-gain block with built-in progression.',
+    ],
+  },
+  {
+    heading: 'How to get results from any program',
+    points: [
+      'Pick the one that fits the days you can really train, not the one that sounds hardest.',
+      'Set your calories and protein with the calorie and protein calculators so food supports the training.',
+      'Follow the plan for the full length before switching; most gains come from repeating a plan and adding reps or weight.',
+      'Sleep seven to nine hours and see a doctor first if you have a medical condition or an injury.',
+    ],
+  },
+];
+
 export const programsFaqs: Faq[] = [
   {
     question: "Which program should a complete beginner start with?",
@@ -2023,6 +2045,228 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           "Most beginners can run a plan like this for two to four months. When you stop adding weight for several weeks even though sleep and food are in order, move to an upper-lower split or a program with more volume.",
           "Learn the main lifts with light weights or from a qualified coach first. Eat enough protein, sleep 7 to 9 hours and see a doctor before starting if you have a medical condition."
+        ],
+      },
+    ],
+  },
+  {
+    id: "b19",
+    title: "1500 Calorie Indian Diet Plan: A Full Day of Meals (Veg and Non-Veg)",
+    slug: "1500-calorie-indian-diet-plan",
+    excerpt:
+      "A sample 1500-calorie Indian day with roti, dal, curd and paneer or chicken, rough calories and protein per meal, plus who it suits and who should eat more.",
+    date: "2026-11-09",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["nutrition", "weight loss", "indian diet", "calories"],
+    image: "/images/blog/calories-you-need.jpg",
+    body: [
+      {
+        heading: "Is 1500 calories right for you?",
+        paragraphs: [
+          "A 1500-calorie plan is a starting point for some people, not a rule for everyone. Whether it creates a sensible deficit depends on how many calories you burn in a day. For many smaller or less active adults, 1500 kcal is roughly 15 to 20 percent below maintenance. For a tall, active or muscular person it can be a crash diet.",
+          "Work out your own number first with the calorie calculator on FitSmart, which estimates your daily energy use and a fat-loss target. If your target is well above 1500, eat to your target instead. Very low calorie diets should only be followed under medical supervision."
+        ],
+      },
+      {
+        heading: "One full day: about 1500 calories",
+        paragraphs: [
+          "The numbers below are estimates. A roti, a bowl of dal or a teaspoon of oil varies from home to home, so treat the totals as a guide of plus or minus 10 percent.",
+          "Breakfast, about 280 kcal and 17 g protein: two small moong dal chillas, 100 g curd and tea with a splash of milk and no sugar.",
+          "Mid-morning, about 150 kcal: one guava or apple and ten almonds.",
+          "Lunch, about 560 kcal and 20 g protein: two rotis without ghee, one bowl of dal, one bowl of vegetable sabzi cooked in a teaspoon of oil, a large salad and 100 g curd.",
+          "Evening, about 150 kcal and 6 g protein: 30 g roasted chana and tea.",
+          "Dinner, about 330 kcal and 16 g protein: 75 g paneer cooked with vegetables, one roti and a salad.",
+          "The day comes to roughly 1450 to 1500 kcal and about 60 g of protein. If your protein target is higher, see the protein section below."
+        ],
+      },
+      {
+        heading: "Non-veg swaps",
+        paragraphs: [
+          "Swap the paneer at dinner for 100 g of chicken breast curry cooked in a teaspoon of oil, which adds about 25 to 30 g of protein for a similar calorie count, or for two eggs as bhurji, which adds about 12 g.",
+          "Fish curry, egg curry and grilled chicken all fit as long as the oil stays small. Frying and heavy cream gravies are what push calories up quickly."
+        ],
+      },
+      {
+        heading: "How to keep protein high",
+        paragraphs: [
+          "On a deficit, protein protects muscle. A common target is 1.6 to 2.0 g per kg of bodyweight. On 1500 kcal that is often harder than it sounds, so build each meal around a protein source: dal or chilla at breakfast, curd with lunch, paneer, eggs, chicken or soya at dinner.",
+          "If you are still short, add a bowl of sprouts, a glass of milk, roasted chana or soya chunks in place of a lower-protein snack. The protein calculator on FitSmart gives you a number to aim for."
+        ],
+      },
+      {
+        heading: "Portions that matter most",
+        paragraphs: [
+          "You do not need to drop roti or rice. The calories that sneak in are usually oil, ghee, sugar in tea, fried snacks and large rice portions. Measure oil with a teaspoon for a week and you will see where most of the extra calories were hiding.",
+          "Fill half your plate with vegetables and salad, one quarter with protein and one quarter with roti or rice. This keeps meals filling without needing to count every gram."
+        ],
+      },
+      {
+        heading: "How to check if it is working",
+        paragraphs: [
+          "Weigh yourself at the same time each morning and look at the weekly average, not single days. A loss of about 0.25 to 0.75 kg a week is a realistic pace. If the trend is flat for two to three weeks, reduce portions slightly or add a daily walk before cutting more food.",
+          "Stop and speak to a doctor if you feel dizzy, weak or constantly tired, or if you have a medical condition, are pregnant or breastfeeding. This article is general information, not personal medical advice."
+        ],
+      },
+    ],
+  },
+  {
+    id: "b20",
+    title: "High-Protein Diet on a Budget for Hostel Students in India",
+    slug: "high-protein-diet-hostel-budget-india",
+    excerpt:
+      "How to get enough protein on a hostel mess and a student budget: the cheapest protein foods in India, rough protein per 100 g, and a sample day.",
+    date: "2026-11-09",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["nutrition", "indian diet", "muscle gain", "budget"],
+    image: "/images/blog/indian-diet-muscle-gain.jpg",
+    body: [
+      {
+        heading: "The hostel protein problem",
+        paragraphs: [
+          "Most hostel mess menus are built around rice, roti and a thin dal, so protein often lands well below what a student who trains actually needs. The fix is not expensive supplements. It is picking a few cheap, protein-dense foods and adding them to what the mess already serves.",
+          "A useful target for someone who trains is about 1.6 g of protein per kg of bodyweight a day. For a 65 kg student that is roughly 105 g. Use the protein calculator to get your own number."
+        ],
+      },
+      {
+        heading: "The cheapest protein foods",
+        paragraphs: [
+          "Prices change by city and season, so compare protein per rupee in your own market. As a rule these foods give a lot of protein for the money, with approximate values per 100 g: soya chunks (dry) about 50 g, peanuts about 25 g, dry moong or masoor dal about 24 g, roasted chana about 19 to 22 g, sattu about 20 g.",
+          "Eggs give about 6 g of protein each. Milk gives about 3.4 g per 100 ml and curd about 3.5 to 4 g per 100 g. Dry weights are higher than cooked weights, because dal and soya soak up water when cooked."
+        ],
+      },
+      {
+        heading: "How to upgrade mess food",
+        paragraphs: [
+          "Ask for a second serving of dal and eat it first, before the rice. Add an egg or two from outside the mess, boiled or as bhurji, if you eat eggs. Eat the curd or buttermilk the mess serves instead of skipping it.",
+          "Keep shelf-stable protein in your room: roasted chana, peanuts, makhana and sattu. A sattu drink with water, lemon and salt needs nothing more than a glass and a spoon."
+        ],
+      },
+      {
+        heading: "A sample day that works in a hostel",
+        paragraphs: [
+          "Breakfast: mess breakfast plus two boiled eggs or a glass of milk. Mid-morning: a fistful of roasted chana or peanuts.",
+          "Lunch: rice or roti with two servings of dal, a vegetable and curd. Evening: sattu drink or a banana with peanuts. Dinner: roti with dal or egg curry or soya chunks cooked in your own spices if you have a kettle or a small cooker.",
+          "A day like this can reach roughly 80 to 110 g of protein without a single supplement. Adjust portions to your weight and goal."
+        ],
+      },
+      {
+        heading: "When protein powder makes sense",
+        paragraphs: [
+          "Powder is a convenience, not a requirement. If you regularly miss your protein target after using the foods above, a scoop of whey or plant protein can fill the gap. Check that the product is from a reputable brand with batch testing, and do not use it as a replacement for meals."
+        ],
+      },
+      {
+        heading: "Training and sleep still matter",
+        paragraphs: [
+          "Protein only helps muscle grow when you give the muscle a reason to. Follow a simple progressive plan, such as our beginner programs, and aim for seven to nine hours of sleep. If you have a medical condition, check with a doctor before changing your diet."
+        ],
+      },
+    ],
+  },
+  {
+    id: "b21",
+    title: "BMI vs Body Fat for Indians: Why a Normal BMI Can Still Be Unhealthy",
+    slug: "bmi-vs-body-fat-for-indians",
+    excerpt:
+      "Why Indian guidance uses lower BMI cut-offs, what waist size to watch, and how body fat percentage shows what a normal BMI can hide.",
+    date: "2026-11-09",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Health",
+    tags: ["health", "bmi", "body fat", "indian diet"],
+    image: "/images/blog/calories-you-need.jpg",
+    body: [
+      {
+        heading: "Why BMI behaves differently for Indians",
+        paragraphs: [
+          "BMI compares weight to height. It cannot tell muscle from fat or show where fat is stored. South Asians tend to carry more body fat, and more of it around the abdomen, at the same BMI as people of other backgrounds. That is why the risk of type 2 diabetes and heart disease starts rising at a lower BMI.",
+          "For this reason, Indian consensus guidance uses lower cut-offs than the international table: a healthy BMI is about 18.5 to 22.9, overweight is 23 to 24.9 and obese is 25 and above. The BMI calculator on FitSmart shows both sets of cut-offs side by side."
+        ],
+      },
+      {
+        heading: "Waist size can matter more than the scale",
+        paragraphs: [
+          "Fat around the waist is more closely linked to metabolic risk than fat on the hips and thighs. Indian consensus guidance flags abdominal obesity at a waist of 90 cm or more for men and 80 cm or more for women.",
+          "Measure at the level of the navel, standing relaxed, after breathing out. A rising waist with a steady weight is a warning sign that you may be gaining fat and losing muscle."
+        ],
+      },
+      {
+        heading: "What body fat percentage adds",
+        paragraphs: [
+          "Body fat percentage splits weight into fat and everything else. Two people at the same height and weight can have very different body fat, which is why a person can look slim and still carry a lot of fat, and why a muscular person can show an overweight BMI and be perfectly healthy.",
+          "The body fat calculator on FitSmart uses the US Navy tape-measure method, which needs your neck and waist, and hip for women. It is an estimate, good for tracking your own trend over months rather than for comparing yourself with anyone else."
+        ],
+      },
+      {
+        heading: "What to do with these numbers",
+        paragraphs: [
+          "If your BMI is normal but your waist is above the Indian thresholds, focus on strength training twice or three times a week, enough protein and a modest calorie deficit if you want to lose fat. Resistance training builds the muscle that protects your metabolism.",
+          "If your BMI is high because you are muscular and your waist and body fat are within a healthy range, there is no need to cut weight just to match a chart. Track waist, body fat and how you feel, not weight alone."
+        ],
+      },
+      {
+        heading: "When to see a doctor",
+        paragraphs: [
+          "BMI, waist and body fat are screening tools, not diagnoses. If you have a family history of diabetes or heart disease, a high waist measurement or any symptoms, ask your doctor about blood sugar, blood pressure and cholesterol tests. This article is general information and not personal medical advice."
+        ],
+      },
+    ],
+  },
+  {
+    id: "b22",
+    title: "How Much Protein Do You Need a Day? A Guide for Indian Diets",
+    slug: "how-much-protein-per-day-india",
+    excerpt:
+      "How many grams of protein you need a day for health, fat loss and muscle gain, with a simple per-meal plan for vegetarian and non-vegetarian Indian diets.",
+    date: "2026-11-09",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["nutrition", "protein", "indian diet", "muscle gain"],
+    image: "/images/blog/indian-diet-muscle-gain.jpg",
+    body: [
+      {
+        heading: "The short answer",
+        paragraphs: [
+          "The general recommended intake for healthy adults is about 0.8 g of protein per kg of bodyweight a day. That is the amount to avoid deficiency, not an ideal for people who train. If you lift weights or want to lose fat without losing muscle, research supports about 1.6 to 2.2 g per kg.",
+          "For a 70 kg adult that is about 56 g at the general level and about 112 to 154 g if you train hard. The protein calculator on FitSmart turns your weight and goal into a daily target."
+        ],
+      },
+      {
+        heading: "Why Indian diets often fall short",
+        paragraphs: [
+          "Traditional Indian meals are rich in carbohydrate from rice and roti, and the protein often comes from a small bowl of dal. That can leave an average meal at only 8 to 15 g of protein. Without changes, reaching 100 g in a day is difficult, especially for vegetarians.",
+          "The goal is not to cut the staples. It is to add a clear protein source to every meal."
+        ],
+      },
+      {
+        heading: "A simple per-meal plan",
+        paragraphs: [
+          "Divide your daily target by three or four meals. For a 100 g target that is roughly 25 to 30 g per main meal, and 10 to 15 g from snacks.",
+          "Vegetarian options: moong dal chilla with curd, paneer bhurji, rajma or chole with roti, soya chunks curry, sprouts, sattu drink, milk and peanuts. Non-vegetarian options: eggs, chicken curry, fish, and egg curry.",
+          "Our protein-in-Indian-foods chart lists grams per 100 g so you can build meals that add up."
+        ],
+      },
+      {
+        heading: "Do vegetarians need more?",
+        paragraphs: [
+          "Plant proteins are slightly less digestible and some are lower in certain amino acids. In practice, vegetarians can meet their needs by eating a variety of sources through the day, for example dal with roti or rice, and by aiming for the higher end of their protein range."
+        ],
+      },
+      {
+        heading: "Is too much protein dangerous?",
+        paragraphs: [
+          "In healthy adults, intakes within the range above are considered safe. People with kidney disease or other medical conditions should follow their doctor, and anyone planning a large increase can check with a dietitian first."
+        ],
+      },
+      {
+        heading: "Putting it into practice",
+        paragraphs: [
+          "Pick your daily target, divide it across meals, and use one or two convenient sources such as curd, eggs, paneer or roasted chana to fill gaps. Check your intake for a week, adjust, then stop tracking once your meals have become habit."
         ],
       },
     ],

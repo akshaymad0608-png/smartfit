@@ -7,7 +7,7 @@ import { Accordion } from '@/components/ui/Accordion';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { CalculatorSuite } from '@/features/calculators/CalculatorSuite';
-import { CALCULATOR_PAGES } from '@/features/calculators/pages';
+import { CALCULATORS_GUIDE, CALCULATOR_PAGES } from '@/features/calculators/pages';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema, faqSchema } from '@/seo/schema';
 import { calculatorsFaqs } from '@/data/content';
@@ -92,6 +92,24 @@ export default function Calculators() {
                 </span>
                 <h3 className="mt-4 font-bold text-heading">{f.title}</h3>
                 <p className="mt-2 text-sm text-muted">{f.text}</p>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+          {CALCULATORS_GUIDE.map((g) => (
+            <Reveal key={g.heading}>
+              <Card className="h-full p-6">
+                <h2 className="font-bold text-heading">{g.heading}</h2>
+                <ul className="mt-4 space-y-2">
+                  {g.points.map((p) => (
+                    <li key={p} className="flex gap-2.5 text-sm text-muted">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
               </Card>
             </Reveal>
           ))}

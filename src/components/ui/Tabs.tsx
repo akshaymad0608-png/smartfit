@@ -8,8 +8,19 @@ export interface TabItem {
   content: ReactNode;
 }
 
-export function Tabs({ items, className }: { items: TabItem[]; className?: string }) {
-  const [active, setActive] = useState(items[0]?.id);
+export function Tabs({
+  items,
+  className,
+  defaultId,
+}: {
+  items: TabItem[];
+  className?: string;
+  /** Tab to open first; falls back to the first item. */
+  defaultId?: string;
+}) {
+  const [active, setActive] = useState(
+    items.some((t) => t.id === defaultId) ? defaultId : items[0]?.id,
+  );
   const groupId = useId();
 
   return (

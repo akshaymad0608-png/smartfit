@@ -13,7 +13,7 @@ export function organizationSchema() {
     sameAs: Object.values(site.social),
     contactPoint: {
       '@type': 'ContactPoint',
-      email: site.contact.email,
+      url: `${site.url}/contact`,
       contactType: 'customer support',
     },
   };

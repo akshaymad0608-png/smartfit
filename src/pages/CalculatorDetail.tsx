@@ -6,7 +6,12 @@ import { Card } from '@/components/ui/Card';
 import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { CalculatorSuite } from '@/features/calculators/CalculatorSuite';
-import { CALCULATOR_PAGES, findCalculatorPage } from '@/features/calculators/pages';
+import {
+  CALCULATOR_PAGES,
+  CALCULATOR_SOURCES,
+  CALCULATOR_TAB,
+  findCalculatorPage,
+} from '@/features/calculators/pages';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 
@@ -61,7 +66,7 @@ export default function CalculatorDetail() {
 
       <Section spacing="md">
         <Reveal>
-          <CalculatorSuite />
+          <CalculatorSuite initialTab={CALCULATOR_TAB[page.slug] ?? 'body'} />
         </Reveal>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
@@ -112,6 +117,48 @@ export default function CalculatorDetail() {
             ))}
           </div>
         </div>
+
+        {page.extra && (
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            {page.extra.map((e) => (
+              <Reveal key={e.heading}>
+                <Card className="h-full p-6">
+                  <h2 className="font-bold text-heading">{e.heading}</h2>
+                  <ul className="mt-4 space-y-2">
+                    {e.points.map((p) => (
+                      <li key={p} className="flex gap-2.5 text-sm text-muted">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </Reveal>
+            ))}
+          </div>
+        )}
+
+        {CALCULATOR_SOURCES[page.slug] && (
+          <Reveal>
+            <Card className="mt-14 p-6">
+              <h2 className="font-bold text-heading">Sources and method</h2>
+              <p className="mt-2 text-sm text-muted">
+                The numbers on this page come from published methods, not from a black box. Check the
+                working yourself:
+              </p>
+              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-body">
+                {CALCULATOR_SOURCES[page.slug].map((s) => (
+                  <li key={s.label}>{s.label}</li>
+                ))}
+              </ul>
+              <p className="mt-4 text-xs text-muted">
+                Built and maintained by Akshay Mahajan, a software developer — not a medical
+                professional. These tools give estimates for healthy adults and are not medical
+                advice; see a doctor or registered dietitian for personal medical decisions.
+              </p>
+            </Card>
+          </Reveal>
+        )}
 
         <div className="mt-10 flex items-start gap-3 rounded-2xl border border-line bg-surface-muted p-5">
           <Calculator size={18} className="mt-0.5 shrink-0 text-muted" />

@@ -72,6 +72,9 @@ const ROUTES = [
       { href: '/calculators/body-fat', label: 'Body Fat % Calculator' },
       { href: '/calculators/ideal-weight', label: 'Ideal Weight Calculator' },
       { href: '/calculators/macros', label: 'Macro Calculator' },
+      { href: '/calculators/protein', label: 'Protein Calculator' },
+      { href: '/calculators/calorie', label: 'Calorie Calculator' },
+      { href: '/calculators/water-intake', label: 'Water Intake Calculator' },
     ],
     faq: [
       { question: 'What is the difference between BMR and TDEE?', answer: 'BMR is the calories your body burns at complete rest. TDEE is BMR multiplied by an activity factor, so it estimates what you burn in a normal day including training. TDEE is the number to build a calorie target on.' },
@@ -98,6 +101,12 @@ const ROUTES = [
         'Obese class I: 30.0 to 34.9',
         'Obese class II: 35.0 to 39.9',
         'Obese class III: 40.0 and above',
+      ] },
+      { h2: 'Indian and Asian BMI cut-offs', points: [
+        'Healthy weight: 18.5 to 22.9',
+        'Overweight: 23.0 to 24.9',
+        'Obese: 25.0 and above',
+        'South Asians carry more body fat and more metabolic risk at the same BMI, so Indian guidance uses lower thresholds than the international bands',
       ] },
       { h2: 'Limitations of BMI', points: [
         'Does not distinguish between fat mass and muscle mass',
@@ -550,6 +559,14 @@ const ROUTES = [
     description: 'Answers to common questions about the FitSmart calculators, workout plans, accounts and the AI coach — how each works and how to use it.',
     h1: 'Help & Frequently Asked Questions',
     intro: 'Common questions about the calculators, the training plans, accounts and the AI coach, answered in one place.',
+    sections: [
+      { h2: 'Where to find things', points: [
+        'Health numbers (BMI, calories, protein, macros, body fat, water): the Calculators page.',
+        'Training: Programs for multi-week plans, Workouts for single sessions, Exercises for form cues by muscle group.',
+        'Food: Nutrition and the Articles section for Indian diet guides.',
+        'Still stuck? Email akshaymad0608@gmail.com and include the page you were on and what you expected to happen.',
+      ] },
+    ],
     // Mirrors helpFaqs in src/pages/legal.tsx. Kept in sync by hand — React's
     // Seo.tsx already injects the same FAQPage schema client-side, but that
     // useEffect never runs for non-JS AI crawlers (GPTBot, ClaudeBot,
@@ -670,6 +687,17 @@ const ROUTES = [
       { h2: 'Our commitment', points: [
         'We aim to meet WCAG 2.1 AA standards. FitSmart is built with semantic HTML, keyboard navigation, visible focus states, sufficient colour contrast and screen-reader-friendly labels.',
       ] },
+      { h2: 'What is in place today', points: [
+        'A "Skip to content" link on every page, visible when you tab to it, so keyboard users can bypass the navigation.',
+        'Every interactive control can be reached and used with the keyboard, with a visible focus outline.',
+        'Form fields and buttons carry text labels that screen readers announce, and pages use a clear heading structure.',
+        'A light and a dark theme, switchable from the header, and animation that respects the reduce-motion setting on your device.',
+        'Layouts that reflow on small screens and when text is zoomed, so nothing relies on a fixed width.',
+      ] },
+      { h2: 'Known limitations', points: [
+        'The exercise demo clips are short, silent videos without captions. Each exercise page therefore also gives the form cue in text.',
+        'Third-party widgets we embed, such as Google sign-in and advertising, are controlled by their providers and may not meet the same standard.',
+      ] },
       { h2: 'Ongoing work', points: [
         'Accessibility is never finished. We continuously test and improve.',
         'If you encounter a barrier, please email akshaymad0608@gmail.com so we can fix it.',
@@ -696,6 +724,9 @@ const ROUTES = [
       { href: '/calculators/body-fat', label: 'Body fat percentage calculator' },
       { href: '/calculators/ideal-weight', label: 'Ideal weight calculator' },
       { href: '/calculators/macros', label: 'Macro calculator' },
+      { href: '/calculators/protein', label: 'Protein calculator' },
+      { href: '/calculators/calorie', label: 'Calorie calculator' },
+      { href: '/calculators/water-intake', label: 'Water intake calculator' },
       { href: '/workouts', label: 'Workout plans' },
       { href: '/exercises', label: 'Exercises by muscle group' },
       { href: '/programs', label: 'Training programs' },
@@ -721,7 +752,7 @@ const ROUTES = [
     title: "Indian Veg Diet Plan for Muscle Gain — FitSmart",
     keywords: "indian veg diet plan for muscle gain, vegetarian muscle building diet india, veg protein diet plan, indian vegetarian diet for muscle building",
     description:
-      "A practical Indian vegetarian diet plan for muscle gain: a full day of meals, protein per food, portions and how to rotate dal, paneer, soya and curd through the week.",
+      "A practical Indian vegetarian diet plan for muscle gain: a full day of meals, protein per food, portions and how to rotate dal, paneer, soya and curd.",
     h1: "Indian Veg Diet Plan for Muscle Gain (No Eggs, No Meat)",
     intro:
       "You can build muscle on a fully vegetarian Indian diet. The target is the same as for anyone else, roughly 1.6 to 2.2 g of protein per kg of body weight a day, and the food list is simply different. This plan shows a full day built from dal, paneer, soya chunks, curd, sattu and peanuts, what each one contributes, and how to rotate them through the week so it stays affordable and does not get boring.",
@@ -731,7 +762,7 @@ const ROUTES = [
     title: "Protein in Indian Foods per 100g — FitSmart",
     keywords: "protein in indian foods, protein chart indian food, protein in dal, protein in paneer per 100g, high protein indian foods",
     description:
-      "Protein in Indian foods per 100g and per serving: dal, paneer, rajma, chana, eggs, chicken, curd, soya chunks, peanuts and sattu, with notes on raw versus cooked.",
+      "Protein in Indian foods per 100g and per serving: dal, paneer, rajma, chana, eggs, chicken, curd, soya chunks and peanuts, raw versus cooked.",
     h1: "Protein in Indian Foods: A Simple Chart per 100g and per Serving",
     intro:
       "Most protein charts are built around chicken breast and whey, which is not how most Indian households eat. This guide lists the protein content of everyday Indian foods per 100 g and per typical serving, explains why raw and cooked numbers differ so much, and shows how to estimate a day of protein without logging every bite.",
@@ -751,7 +782,7 @@ const ROUTES = [
     title: "Indian Diet Plan for Weight Loss — FitSmart",
     keywords: "indian diet plan for weight loss, weight loss diet india, calorie deficit indian food, how to lose weight with indian food",
     description:
-      "A realistic Indian diet plan for weight loss: how to set a calorie deficit, keep protein high, adjust rice and roti portions, and measure progress without crash dieting.",
+      "A realistic Indian diet plan for weight loss: set a calorie deficit, keep protein high, adjust rice and roti portions and track progress without crash dieting.",
     h1: "Indian Diet Plan for Weight Loss: A Realistic Calorie-Deficit Approach",
     intro:
       "You do not need to give up roti, rice or dal to lose fat. Weight loss comes from a modest, steady calorie deficit, enough protein to protect muscle, and portions you can keep up for months. This guide explains how to set the deficit using your own numbers, how to adjust an ordinary Indian plate, and how to tell whether it is working.",
@@ -793,6 +824,9 @@ const NAV =
   '<a href="/calculators/body-fat">Body fat %</a> · ' +
   '<a href="/calculators/ideal-weight">Ideal weight</a> · ' +
   '<a href="/calculators/macros">Macros</a> · ' +
+  '<a href="/calculators/protein">Protein</a> · ' +
+  '<a href="/calculators/calorie">Calories</a> · ' +
+  '<a href="/calculators/water-intake">Water intake</a> · ' +
   '<a href="/workouts">Workout plans</a> · ' +
   '<a href="/exercises">Exercises by Muscle</a> · ' +
   '<a href="/programs">Training programs</a> · ' +
@@ -844,6 +878,10 @@ const parseArray = (src, decl, file) => {
   const start = i + decl.length - 1;
   return eval(src.slice(start, src.indexOf('\n];', start) + 2));
 };
+
+const PROGRAMS_GUIDE = parseArray(contentSrc, 'export const programsGuide: { heading: string; points: string[] }[] = [', 'content.ts');
+const programsIndex = ROUTES.find((r) => r.path === '/programs');
+programsIndex.sections = [...(programsIndex.sections || []), ...PROGRAMS_GUIDE.map((g) => ({ h2: g.heading, points: g.points }))];
 
 const PROGRAMS = parseArray(contentSrc, 'export const programs: Program[] = [', 'content.ts');
 if (PROGRAMS.length < 4) throw new Error(`prerender: only ${PROGRAMS.length} programs parsed from content.ts`);
@@ -904,12 +942,178 @@ for (const program of PROGRAMS) {
   ];
 }
 
+/**
+ * Calculator pages (src/features/calculators/pages.ts), workout pages
+ * (data/workouts.ts) and muscle-group pages (data/muscleGuides.ts) are read
+ * from the same files React renders from, so the static HTML a crawler gets
+ * never drifts from what visitors see. Hand-written ROUTES entries above win
+ * where they exist; anything missing is generated here.
+ */
+const parseObject = (src, decl, file) => {
+  const i = src.indexOf(decl);
+  if (i === -1) throw new Error(`prerender: ${decl} not found in ${file}`);
+  const start = i + decl.length - 1;
+  return eval('(' + src.slice(start, src.indexOf('\n};', start) + 2) + ')');
+};
+
+const pagesSrc = readFileSync('src/features/calculators/pages.ts', 'utf-8');
+const CALC_PAGES = parseArray(pagesSrc, 'export const CALCULATOR_PAGES: CalculatorPage[] = [', 'pages.ts');
+const CALC_SOURCES = parseObject(pagesSrc, 'export const CALCULATOR_SOURCES: Record<string, CalculatorSource[]> = {', 'pages.ts');
+const CALC_GUIDE = parseArray(pagesSrc, 'export const CALCULATORS_GUIDE: { heading: string; points: string[] }[] = [', 'pages.ts');
+if (CALC_PAGES.length < 9) throw new Error(`prerender: only ${CALC_PAGES.length} calculator pages parsed from pages.ts`);
+
+const calcIndex = ROUTES.find((r) => r.path === '/calculators');
+calcIndex.sections = [...(calcIndex.sections || []), ...CALC_GUIDE.map((g) => ({ h2: g.heading, points: g.points }))];
+
+for (const page of CALC_PAGES) {
+  const path = `/calculators/${page.slug}`;
+  let route = ROUTES.find((r) => r.path === path);
+  if (!route) {
+    route = {
+      path,
+      title: `${page.title} — FitSmart`,
+      keywords: page.keywords.join(', '),
+      description: page.description,
+      h1: page.h1,
+      intro: page.intro,
+      sections: [
+        { h2: 'How it is calculated', points: [page.formula] },
+        { h2: 'Key facts', points: page.facts },
+      ],
+      faq: page.faqs.map((f) => ({ question: f.q, answer: f.a })),
+    };
+    ROUTES.push(route);
+  }
+  route.sections = [...(route.sections || []), ...(page.extra || []).map((e) => ({ h2: e.heading, points: e.points }))];
+  const sources = CALC_SOURCES[page.slug];
+  if (sources?.length) route.sections.push({ h2: 'Sources and method', points: sources.map((s) => s.label) });
+  route.links = [
+    ...(route.links || []),
+    ...CALC_PAGES.filter((c) => c.slug !== page.slug).map((c) => ({ href: `/calculators/${c.slug}`, label: `${c.name} calculator` })),
+  ];
+  route.linksHeading = route.linksHeading || 'Other calculators';
+}
+
+const workoutsSrc = readFileSync('src/data/workouts.ts', 'utf-8');
+const WORKOUTS = parseArray(workoutsSrc, 'export const workouts: Workout[] = [', 'workouts.ts');
+const WORKOUT_CATS = parseArray(workoutsSrc, 'export const workoutCategories: WorkoutCategory[] = [', 'workouts.ts');
+if (WORKOUTS.length < 6) throw new Error(`prerender: only ${WORKOUTS.length} workouts parsed from workouts.ts`);
+
+const workoutDescription = (w) => {
+  const full = `${w.summary} ${w.durationMin} min, ${w.difficulty.toLowerCase()}, ${w.equipment.join(', ').toLowerCase()}.`;
+  if (full.length <= 160) return full;
+  if (w.summary.length <= 160) return w.summary;
+  return w.summary.slice(0, 157).replace(/\s+\S*$/, '') + '...';
+};
+for (const w of WORKOUTS) {
+  const cat = WORKOUT_CATS.find((c) => c.key === w.category);
+  ROUTES.push({
+    path: `/workouts/${w.slug}`,
+    title: `${w.name} — ${w.durationMin}-Minute ${cat?.label || 'Workout'} — FitSmart`,
+    keywords: `${w.name.toLowerCase()}, ${(cat?.label || 'workout').toLowerCase()} plan, free workout`,
+    description: workoutDescription(w),
+    h1: w.name,
+    intro: w.summary,
+    sections: [
+      { h2: 'At a glance', points: [
+        `Category: ${cat?.label || w.category}`,
+        `Level: ${w.difficulty}`,
+        `Duration: ${w.durationMin} minutes`,
+        `Estimated calories: about ${w.calories} kcal`,
+        `Equipment: ${w.equipment.join(', ')}`,
+        `Focus: ${w.focus}`,
+        `Muscles worked: ${w.muscles.join(', ')}`,
+      ] },
+      { h2: 'How to do this workout', points: w.instructions },
+      { h2: 'Coaching tips', points: w.tips },
+      { h2: 'Benefits', points: w.benefits },
+    ],
+    linksHeading: 'Keep going',
+    links: [
+      { href: '/workouts', label: 'All workout plans' },
+      { href: '/programs', label: 'Full training programs' },
+      { href: '/calculators/calorie', label: 'Set your daily calories' },
+      ...WORKOUTS.filter((o) => o.slug !== w.slug).map((o) => ({ href: `/workouts/${o.slug}`, label: o.name })),
+    ],
+  });
+}
+const workoutsRoute = ROUTES.find((r) => r.path === '/workouts');
+workoutsRoute.links = [
+  ...(workoutsRoute.links || []),
+  ...WORKOUTS.map((w) => ({ href: `/workouts/${w.slug}`, label: w.name })),
+];
+workoutsRoute.linksHeading = workoutsRoute.linksHeading || 'Workouts';
+
+const guidesSrc = readFileSync('src/data/muscleGuides.ts', 'utf-8');
+const MUSCLE_CUES = parseObject(guidesSrc, 'export const exerciseCues: Record<string, string> = {', 'muscleGuides.ts');
+const MUSCLE_GUIDES = parseObject(guidesSrc, 'export const muscleGuides: Record<string, MuscleGuide> = {', 'muscleGuides.ts');
+
+for (const group of MUSCLE_GROUPS) {
+  const guide = MUSCLE_GUIDES[group.key];
+  if (!guide) throw new Error(`prerender: no guide for muscle group ${group.key}`);
+  const lc = group.label.toLowerCase();
+  ROUTES.push({
+    path: `/exercises/${group.key}`,
+    title: `${group.label} Exercises — Form Cues, Sets and Reps — FitSmart`,
+    keywords: `${lc} exercises, ${lc} workout, how to train ${lc}, gym exercises`,
+    description: `Best ${lc} exercises with form cues, demo videos, how many sets and reps to do, and the mistakes to avoid. Free, no sign-up.`,
+    h1: `${group.label} exercises`,
+    intro: guide.intro,
+    sections: [
+      { h2: `${group.label} exercises with form cues`, points: group.exercises.map((e) => `${e.name}: ${MUSCLE_CUES[e.name] || 'Move through a full range of motion under control.'}`) },
+      { h2: `How to train ${lc}`, points: guide.howToTrain },
+      { h2: 'Common mistakes', points: guide.mistakes },
+    ],
+    faq: guide.faqs,
+    linksHeading: 'Other muscle groups',
+    links: [
+      ...MUSCLE_GROUPS.filter((m) => m.key !== group.key).map((m) => ({ href: `/exercises/${m.key}`, label: `${m.label} exercises` })),
+      { href: '/programs', label: 'Follow a training program' },
+      { href: '/calculators/protein', label: 'Work out your protein target' },
+    ],
+  });
+}
+
+// Articles added to content.ts get a route (and a link from /blog and /sitemap)
+// automatically; the hand-written entries above keep their custom titles.
+const BLOG_TITLE_OVERRIDES = {
+  '1500-calorie-indian-diet-plan': '1500 Calorie Indian Diet Plan (Veg and Non-Veg) — FitSmart',
+  'high-protein-diet-hostel-budget-india': 'High-Protein Hostel Diet on a Budget in India — FitSmart',
+  'bmi-vs-body-fat-for-indians': 'BMI vs Body Fat for Indians — FitSmart',
+  'how-much-protein-per-day-india': 'How Much Protein Per Day? Indian Diet Guide — FitSmart',
+};
+const blogRoute = ROUTES.find((r) => r.path === '/blog');
+const sitemapRoute = ROUTES.find((r) => r.path === '/sitemap');
+for (const post of BLOG_POSTS) {
+  const path = `/blog/${post.slug}`;
+  if (!ROUTES.find((r) => r.path === path)) {
+    ROUTES.push({
+      path,
+      title: BLOG_TITLE_OVERRIDES[post.slug] || `${post.title} — FitSmart`,
+      keywords: post.tags.join(', '),
+      description: post.excerpt,
+      h1: post.title,
+      intro: post.body?.[0]?.paragraphs?.[0] || post.excerpt,
+    });
+    for (const target of [blogRoute, sitemapRoute]) {
+      if (target?.links && !target.links.some((l) => l.href === path)) target.links.push({ href: path, label: post.title });
+    }
+  }
+}
+
+sitemapRoute.links.push(
+  ...WORKOUTS.map((w) => ({ href: `/workouts/${w.slug}`, label: w.name })),
+  ...MUSCLE_GROUPS.map((m) => ({ href: `/exercises/${m.key}`, label: `${m.label} exercises` })),
+);
+
 const exercisesRoute = ROUTES.find((r) => r.path === '/exercises');
 if (!exercisesRoute) throw new Error('prerender: no /exercises route');
 exercisesRoute.sections = MUSCLE_GROUPS.map((group) => ({
   h2: `${group.label} exercises`,
   points: group.exercises.map((e) => e.name),
 }));
+exercisesRoute.linksHeading = 'Guides by muscle group';
+exercisesRoute.links = MUSCLE_GROUPS.map((group) => ({ href: `/exercises/${group.key}`, label: `${group.label} exercises: form cues, sets and reps` }));
 
 const articleHtml = (route) => {
   const post = route.path.startsWith('/blog/') && BLOG_POSTS.find((p) => `/blog/${p.slug}` === route.path);
