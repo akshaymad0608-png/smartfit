@@ -120,12 +120,12 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/sitemap" className="text-sm text-muted hover:text-primary">
+            <Link to="/sitemap" className="inline-flex min-h-11 items-center text-sm text-muted hover:text-primary">
               Sitemap
             </Link>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-primary"
+              className="inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-muted hover:text-primary"
             >
               Back to top <ArrowUp size={15} />
             </button>
