@@ -30,13 +30,13 @@ function PhaseBlock({ phase }: { phase: ProgramPhase }) {
       <p className="mt-1 text-sm text-muted">{phase.goal}</p>
       <div className="mt-5 grid gap-4 lg:grid-cols-2">
         {phase.days.map((d) => (
-          <Card key={`${phase.name}-${d.day}`} className="p-5">
+          <Card key={`${phase.name}-${d.day}`} className="min-w-0 p-5">
             <div className="flex items-baseline justify-between gap-3">
               <p className="font-bold text-heading">{d.day}</p>
               <Badge tone="neutral">{d.focus}</Badge>
             </div>
             <div className="mt-4 overflow-x-auto">
-              <table className="w-full min-w-[360px] text-left text-sm">
+              <table className="w-full min-w-[320px] text-left text-sm">
                 <thead>
                   <tr className="border-b border-line text-xs uppercase tracking-wide text-muted">
                     <th className="py-2 pr-3 font-semibold">Exercise</th>
