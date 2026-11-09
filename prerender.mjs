@@ -1028,6 +1028,8 @@ for (const w of WORKOUTS) {
       { h2: 'How to do this workout', points: w.instructions },
       { h2: 'Coaching tips', points: w.tips },
       { h2: 'Benefits', points: w.benefits },
+      ...((w.focusMuscles || []).length ? [{ h2: 'Focus muscles', points: w.focusMuscles.map((k) => MUSCLE_GROUPS.find((m) => m.key === k)?.label).filter(Boolean) }] : []),
+      ...(w.videos?.some((v) => v.motion) ? [{ h2: '3D movement guide', points: w.videos.filter((v) => v.motion).map((v) => `${v.title}: working muscles ${(v.muscles || w.focusMuscles || []).join(', ')}`) }] : []),
       ...(w.videos?.length ? [{ h2: 'Watch the moves', points: w.videos.map((v) => `${v.title} (demo clip)`) }] : []),
       ...((w.poses || []).map((id) => YOGA_POSES.find((p) => p.id === id)).filter(Boolean).flatMap((p) => [
         { h2: `${p.name} (${p.sanskrit})`, points: [...p.cues, `Breath: ${p.breath}`, p.caution] },
@@ -1051,6 +1053,7 @@ workoutsRoute.linksHeading = workoutsRoute.linksHeading || 'Workouts';
 
 const guidesSrc = readFileSync('src/data/muscleGuides.ts', 'utf-8');
 const MUSCLE_CUES = parseObject(guidesSrc, 'export const exerciseCues: Record<string, string> = {', 'muscleGuides.ts');
+const EXERCISE_MOTION = parseObject(readFileSync('src/features/motion3d/motions.ts', 'utf-8'), 'export const EXERCISE_MOTION: Record<string, string> = {', 'motions.ts');
 const MUSCLE_GUIDES = parseObject(guidesSrc, 'export const muscleGuides: Record<string, MuscleGuide> = {', 'muscleGuides.ts');
 
 for (const group of MUSCLE_GROUPS) {
@@ -1066,6 +1069,7 @@ for (const group of MUSCLE_GROUPS) {
     intro: guide.intro,
     sections: [
       { h2: `${group.label} exercises with form cues`, points: group.exercises.map((e) => `${e.name}: ${MUSCLE_CUES[e.name] || 'Move through a full range of motion under control.'}`) },
+      { h2: '3D movement guide', points: group.exercises.filter((e) => EXERCISE_MOTION[e.name]).map((e) => `${e.name}: 3D figure, ${lc} glow as they work`) },
       { h2: `How to train ${lc}`, points: guide.howToTrain },
       { h2: 'Common mistakes', points: guide.mistakes },
     ],

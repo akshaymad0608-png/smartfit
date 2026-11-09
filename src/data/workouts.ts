@@ -36,10 +36,11 @@ export const workouts: Workout[] = [
     ],
     tips: ['Keep your core braced', 'Prioritise form over speed', 'Breathe out on exertion'],
     videos: [
-      { title: 'Push-ups', src: '/videos/exercises/chest-pushups.mp4' },
-      { title: 'Plank', src: '/videos/exercises/abs-plank.mp4' },
-      { title: 'Lunges', src: '/videos/exercises/glutes-lunges-alt.mp4' },
+      { title: 'Push-ups', src: '/videos/exercises/chest-pushups.mp4', motion: 'pushup', muscles: ['chest', 'triceps', 'shoulders'] },
+      { title: 'Plank', src: '/videos/exercises/abs-plank.mp4', motion: 'plank', muscles: ['abs', 'shoulders'] },
+      { title: 'Lunges', src: '/videos/exercises/glutes-lunges-alt.mp4', motion: 'lunge', muscles: ['glutes', 'quads'] },
     ],
+    focusMuscles: ['chest', 'triceps', 'abs', 'quads', 'glutes'],
   },
   {
     id: 'w2',
@@ -64,10 +65,11 @@ export const workouts: Workout[] = [
     ],
     tips: ['Control the eccentric', 'Add weight when you hit the top rep range', 'Rest 60–90s'],
     videos: [
-      { title: 'Chest press machine', src: '/videos/muscles/chest.mp4' },
-      { title: 'Lat pulldown', src: '/videos/exercises/back-lat-pulldown.mp4' },
-      { title: 'Seated cable row', src: '/videos/exercises/back-rowing-machine.mp4' },
+      { title: 'Chest press machine', src: '/videos/muscles/chest.mp4', motion: 'benchPress', muscles: ['chest', 'triceps'] },
+      { title: 'Lat pulldown', src: '/videos/exercises/back-lat-pulldown.mp4', motion: 'pulldown', muscles: ['back', 'biceps'] },
+      { title: 'Seated cable row', src: '/videos/exercises/back-rowing-machine.mp4', motion: 'row', muscles: ['back', 'biceps'] },
     ],
+    focusMuscles: ['chest', 'back', 'biceps', 'triceps'],
   },
   {
     id: 'w3',
@@ -92,8 +94,9 @@ export const workouts: Workout[] = [
     ],
     tips: ['Go truly hard in work intervals', 'Land softly on jumps', 'Hydrate well'],
     videos: [
-      { title: 'Bodyweight plank and side-plank flow', src: '/videos/workout.mp4' },
+      { title: 'Bodyweight plank and side-plank flow', src: '/videos/workout.mp4', motion: 'plank', muscles: ['abs', 'shoulders'] },
     ],
+    focusMuscles: ['abs', 'shoulders', 'chest'],
   },
   {
     id: 'w4',
@@ -118,11 +121,12 @@ export const workouts: Workout[] = [
     ],
     tips: ['Keep a neutral spine', 'Drive through mid-foot', 'Never skip the warm-up'],
     videos: [
-      { title: 'Goblet squat', src: '/videos/exercises/quads-squats.mp4' },
-      { title: 'Leg press', src: '/videos/muscles/quads.mp4' },
-      { title: 'Lunges', src: '/videos/exercises/glutes-lunges-alt.mp4' },
-      { title: 'Leg curl', src: '/videos/exercises/hamstrings-leg-curl.mp4' },
+      { title: 'Goblet squat', src: '/videos/exercises/quads-squats.mp4', motion: 'squat', muscles: ['quads', 'glutes'] },
+      { title: 'Leg press', src: '/videos/muscles/quads.mp4', motion: 'squat', muscles: ['quads', 'glutes'] },
+      { title: 'Lunges', src: '/videos/exercises/glutes-lunges-alt.mp4', motion: 'lunge', muscles: ['glutes', 'quads'] },
+      { title: 'Leg curl', src: '/videos/exercises/hamstrings-leg-curl.mp4', motion: 'legCurl', muscles: ['hamstrings'] },
     ],
+    focusMuscles: ['quads', 'glutes', 'hamstrings'],
   },
   {
     id: 'w5',
@@ -150,6 +154,7 @@ export const workouts: Workout[] = [
       { title: 'Seated breathing and meditation', src: '/videos/yoga.mp4' },
     ],
     poses: ['child', 'cat', 'cow', 'downdog', 'mountain', 'fold', 'plank', 'cobra', 'easy'],
+    focusMuscles: ['abs', 'glutes'],
   },
   {
     id: 'w6',
@@ -174,7 +179,8 @@ export const workouts: Workout[] = [
     ],
     tips: ['Keep cadence high', 'Relax your shoulders', 'Fuel and hydrate for longer runs'],
     videos: [
-      { title: 'Steady-state running form', src: '/videos/cardio.mp4' },
+      { title: 'Steady-state running form', src: '/videos/cardio.mp4', motion: 'run', muscles: ['quads', 'hamstrings', 'calves', 'glutes'] },
     ],
+    focusMuscles: ['quads', 'hamstrings', 'calves', 'glutes'],
   },
 ];
