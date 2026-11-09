@@ -2,6 +2,18 @@
 
 All notable changes to FitSmart are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased] — Media and pose fixes
+
+### Fixed
+- **Workout images matched to their workouts.** The run workout showed a laptop, the home workout a gym bench and the yoga flow a bare foot; all six now use frames cut from the clip that plays with them (or, for Push-Pull Power, a push frame beside a pull frame).
+- **Mislabelled exercise clips.** "Squats with Dumbbells" and "Lunges with Dumbbells" both showed a dumbbell shoulder press (one is now Shoulders > Standing Dumbbell Press, the other removed); "Squats" is a Goblet Squat; "Crunches" is Seated Leg Raises; "Rowing Machine" is a Seated Cable Row; "Bicep Curl" is a Barbell Curl; "Abs Training" is a Seated Dumbbell Twist. Glutes now lead with Lunges.
+- **Posters per clip.** Every demo video gets a poster cut from itself (`public/images/posters`), so the still always matches the video; muscle-group images come from the same footage.
+- **Muscle diagram redrawn.** The block mannequin is replaced by front and back body charts with shaped muscle groups, cropped to the region that matters.
+
+### Added
+- **Yoga poses:** nine pose figures (child's, cat, cow, downward dog, mountain, forward fold, plank, cobra, easy pose) with cues, breath and cautions on the Sunrise Vinyasa Flow page (`src/data/yogaPoses.ts`, `YogaPose.tsx`).
+- **Videos where they help:** a "Watch the moves" clip row on every workout page, the matching clip in the spotlight "Watch demo", a "See a session" strip on the home page and the body chart on each muscle page.
+
 ## [Unreleased] — SEO and growth pass
 
 ### Added

@@ -16,6 +16,10 @@ export interface Workout {
   benefits: string[];
   instructions: string[];
   tips: string[];
+  /** Demo clips for this workout (public/videos), each with a poster in public/images/posters. */
+  videos?: { title: string; src: string }[];
+  /** Yoga pose ids (data/yogaPoses.ts) taught in this workout, in order. */
+  poses?: string[];
 }
 
 export interface WorkoutCategory {

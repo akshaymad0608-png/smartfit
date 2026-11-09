@@ -31,12 +31,34 @@ import { Seo } from '@/seo/Seo';
 import { faqSchema, organizationSchema, websiteSchema } from '@/seo/schema';
 import { workoutCategories, workouts } from '@/data/workouts';
 import { blogPosts, faqs, programs, stats } from '@/data/content';
+import { posterFor } from '@/data/muscles';
 
 const benefits = [
   { icon: Timer, title: 'Time-efficient', text: 'Effective sessions from 15 minutes — built for real schedules.' },
   { icon: Brain, title: 'Personalised plans', text: 'Instant plans built from your goal, level and available equipment.' },
   { icon: ShieldCheck, title: 'Evidence-based', text: 'Every routine and calculator is grounded in exercise science.' },
   { icon: HeartPulse, title: 'Whole-health', text: 'Training, nutrition, recovery and mindset in one place.' },
+];
+
+const sessionClips = [
+  {
+    src: '/videos/workout.mp4',
+    title: 'Bodyweight plank flow',
+    text: 'A no-equipment mix of plank and side-plank moves for core and shoulders.',
+    to: '/workouts/20-minute-fat-burner',
+  },
+  {
+    src: '/videos/yoga.mp4',
+    title: 'Seated yoga and breathing',
+    text: 'A calm class that ends the Sunrise Vinyasa Flow with a seated meditation.',
+    to: '/workouts/sunrise-vinyasa-flow',
+  },
+  {
+    src: '/videos/cardio.mp4',
+    title: 'Steady-state run',
+    text: 'A conversational pace you can hold for 30 minutes to build your aerobic base.',
+    to: '/workouts/steady-state-endurance-run',
+  },
 ];
 
 const dietHighlights = [
@@ -144,6 +166,43 @@ export default function Home() {
           {featuredWorkouts.map((w) => (
             <Reveal key={w.id}>
               <WorkoutCard workout={w} />
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* 5b. Watch: short real clips, one per kind of session */}
+      <Section>
+        <SectionHeader
+          eyebrow="Watch"
+          title="See a session before you start"
+          subtitle="Short, silent clips from the workouts — a no-equipment flow, a seated yoga class and an easy run."
+        />
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {sessionClips.map((c) => (
+            <Reveal key={c.src}>
+              <Card className="overflow-hidden p-0">
+                <video
+                  className="aspect-video w-full bg-surface-muted object-cover"
+                  src={c.src}
+                  poster={posterFor(c.src)}
+                  controls
+                  muted
+                  playsInline
+                  preload="none"
+                  aria-label={c.title}
+                />
+                <div className="p-5">
+                  <h3 className="font-bold text-heading">{c.title}</h3>
+                  <p className="mt-1 text-sm text-muted">{c.text}</p>
+                  <Link
+                    to={c.to}
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Open this workout <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </Card>
             </Reveal>
           ))}
         </div>

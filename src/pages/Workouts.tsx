@@ -13,7 +13,8 @@ import { VideoModal } from '@/components/ui/VideoModal';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { workoutCategories, workouts } from '@/data/workouts';
-import { muscleGroups } from '@/data/muscles';
+import { muscleGroups, posterFor } from '@/data/muscles';
+import type { Workout } from '@/types';
 import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
 import { cn } from '@/lib/cn';
 
@@ -25,7 +26,8 @@ const categoryVideo: Record<string, string> = {
   stretching: '/videos/yoga.mp4',
   cardio: '/videos/cardio.mp4',
 };
-const videoFor = (category: string) => categoryVideo[category] ?? '/videos/workout.mp4';
+const videoFor = (w: Workout) =>
+  w.videos?.[0]?.src ?? categoryVideo[w.category] ?? '/videos/workout.mp4';
 
 export default function Workouts() {
   const [params, setParams] = useSearchParams();
@@ -264,15 +266,15 @@ export default function Workouts() {
       <VideoModal
         open={videoOpen}
         onClose={() => setVideoOpen(false)}
-        src={videoFor(spotlight.category)}
-        poster={spotlight.image}
+        src={videoFor(spotlight)}
+        poster={spotlight.videos?.[0] ? posterFor(spotlight.videos[0].src) : spotlight.image}
         title={`${spotlight.name} demo`}
       />
       <VideoModal
         open={activeMuscle !== null}
         onClose={() => setActiveMuscle(null)}
         src={activeMuscleExercise?.video ?? ''}
-        poster={activeMuscleGroup?.image}
+        poster={activeMuscleExercise ? posterFor(activeMuscleExercise.video) : activeMuscleGroup?.image}
         title={activeMuscleExercise ? `${activeMuscleExercise.name} — ${activeMuscleGroup?.label}` : undefined}
         footer={
           activeMuscleGroup && activeMuscleGroup.exercises.length > 1 ? (

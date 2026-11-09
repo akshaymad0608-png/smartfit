@@ -7,8 +7,9 @@ import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema, faqSchema } from '@/seo/schema';
-import { muscleGroups } from '@/data/muscles';
+import { muscleGroups, posterFor } from '@/data/muscles';
 import { exerciseCues, muscleGuides } from '@/data/muscleGuides';
+import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
 
 /**
  * One muscle group, given its own URL: what it does, how to train it, a form
@@ -51,6 +52,13 @@ export default function ExerciseDetail() {
       />
 
       <Section spacing="md">
+        <div className="mb-10 flex items-center gap-6 rounded-3xl border border-line bg-card p-5 sm:max-w-md">
+          <MuscleDiagram muscle={group.key} className="h-40 w-40 shrink-0 rounded-2xl bg-surface-muted" />
+          <p className="text-sm text-muted">
+            <strong className="text-heading">Muscle worked:</strong> {label.toLowerCase()}, highlighted in
+            blue on the body chart.
+          </p>
+        </div>
         <h2 className="text-section font-extrabold text-heading">
           {label} exercises with form cues
         </h2>
@@ -61,7 +69,7 @@ export default function ExerciseDetail() {
                 <video
                   className="aspect-video w-full bg-surface-muted object-cover"
                   src={ex.video}
-                  poster={group.image}
+                  poster={posterFor(ex.video)}
                   controls
                   muted
                   playsInline
