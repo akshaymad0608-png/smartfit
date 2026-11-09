@@ -7,7 +7,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema, faqSchema } from '@/seo/schema';
-import { muscleGroups, posterFor } from '@/data/muscles';
+import { muscleGroups, posterFor, videoFitClass } from '@/data/muscles';
 import { exerciseCues, muscleGuides } from '@/data/muscleGuides';
 import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
 import { MotionGuide } from '@/features/motion3d/MotionGuide';
@@ -86,7 +86,7 @@ export default function ExerciseDetail() {
             <Reveal key={ex.name}>
               <Card className="h-full overflow-hidden p-0">
                 <video
-                  className="aspect-video w-full bg-surface-muted object-cover"
+                  className={`aspect-video w-full ${videoFitClass(ex.video)}`}
                   src={ex.video}
                   poster={posterFor(ex.video)}
                   controls

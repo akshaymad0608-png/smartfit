@@ -49,10 +49,10 @@ export default function AICoach() {
   return (
     <PageTransition>
       <Seo
-        title="AI Fitness Coach for Personalised Training"
-        description="Ask an AI fitness coach about training, form, macros and recovery and get personalised, evidence-based answers built around your goals — free."
+        title="Free Workout and Meal Plan Generator (AI Coach)"
+        description="Generate a free workout, meal day, weekly schedule or 8-week goal plan for fat loss, muscle gain, strength or endurance. Runs in your browser, no sign-up."
         path="/ai-coach"
-        keywords={['AI fitness coach', 'AI workout planner', 'AI meal planner', 'workout generator']}
+        keywords={['workout plan generator', 'meal plan generator', 'weekly workout schedule', 'AI coach', 'free workout generator']}
         schema={breadcrumbSchema([
           { name: 'Home', path: '/' },
           { name: 'AI Coach', path: '/ai-coach' },
@@ -60,7 +60,7 @@ export default function AICoach() {
       />
       <PageHero
         eyebrow="AI Coach"
-        title="Your personal AI coach"
+        title="Workout and meal plan generator"
         subtitle="Describe your goal and get a workout, meal plan, weekly schedule or goal roadmap in seconds. Plans are built on your device from rule-based templates, not a live AI model, so they work instantly and your inputs never leave your browser."
         crumbs={[{ label: 'AI Coach' }]}
       >

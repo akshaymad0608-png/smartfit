@@ -9,6 +9,11 @@ import { ArrowRight, Play, Flame, HeartPulse, Trophy, Dumbbell, Apple } from 'lu
 import { useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { CALCULATOR_PAGES } from '@/features/calculators/pages';
+import { MOTIONS } from '@/features/motion3d/motions';
+import { programs } from '@/data/content';
+import { muscleGroups } from '@/data/muscles';
+import { workouts } from '@/data/workouts';
 
 const spring = { stiffness: 120, damping: 18, mass: 0.6 };
 
@@ -56,6 +61,15 @@ function ParallaxCard({
     </motion.div>
   );
 }
+
+/** Real counts from the site's own data, so the hero never states a number that is not true. */
+const facts = {
+  programs: programs.length,
+  calculators: CALCULATOR_PAGES.length,
+  workouts: workouts.length,
+  muscles: muscleGroups.length,
+  moves: Object.keys(MOTIONS).length,
+};
 
 export function Hero() {
   const mx = useMotionValue(0);
@@ -150,7 +164,7 @@ export function Hero() {
               transition={{ delay: 0.5 }}
               className="mt-6 text-sm text-muted"
             >
-              Free to start · No equipment required · Cancel anytime
+              100% free · No sign-up · Start with no equipment
             </motion.p>
           </div>
 
@@ -172,10 +186,10 @@ export function Hero() {
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/70 to-transparent" />
               <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-card/90 px-3 py-1.5 text-xs font-bold text-heading backdrop-blur">
-                  <Dumbbell size={13} className="text-primary" /> Strength +12%
+                  <Dumbbell size={13} className="text-primary" /> {facts.calculators} calculators
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-card/90 px-3 py-1.5 text-xs font-bold text-heading backdrop-blur">
-                  <Apple size={13} className="text-secondary" /> Protein 148g
+                  <Apple size={13} className="text-secondary" /> {facts.workouts} workouts
                 </span>
               </div>
             </div>
@@ -221,7 +235,7 @@ export function Hero() {
               {/* Bottom gradient + caption for legibility over the photo */}
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/70 to-transparent" />
               <div className="absolute bottom-5 left-5">
-                <p className="text-xs font-medium text-white/80">Today’s focus</p>
+                <p className="text-xs font-medium text-white/80">Train · Eat · Track</p>
                 <p className="text-lg font-bold text-white">Build &amp; Fuel</p>
               </div>
             </motion.div>
@@ -233,8 +247,8 @@ export function Hero() {
                   <Dumbbell size={22} />
                 </span>
                 <div>
-                  <p className="text-xs text-muted">Strength</p>
-                  <p className="font-bold text-heading">+12% this month</p>
+                  <p className="text-xs text-muted">Training programs</p>
+                  <p className="font-bold text-heading">{facts.programs} full plans</p>
                 </div>
               </div>
             </ParallaxCard>
@@ -244,8 +258,8 @@ export function Hero() {
               <div className="flex items-center gap-2.5 rounded-2xl border border-line bg-card px-4 py-3 shadow-card">
                 <Flame size={20} className="text-accent" />
                 <div>
-                  <p className="text-xs text-muted">Calories</p>
-                  <p className="font-bold text-heading">1,840</p>
+                  <p className="text-xs text-muted">Health calculators</p>
+                  <p className="font-bold text-heading">{facts.calculators}</p>
                 </div>
               </div>
             </ParallaxCard>
@@ -256,11 +270,9 @@ export function Hero() {
                 <span className="grid h-10 w-10 place-items-center rounded-2xl bg-secondary/15 text-secondary">
                   <Apple size={20} />
                 </span>
-                <p className="mt-3 text-sm text-muted">Protein today</p>
-                <p className="text-2xl font-extrabold text-heading">148g</p>
-                <div className="mt-2 h-1.5 rounded-full bg-surface-muted">
-                  <div className="h-1.5 w-4/5 rounded-full bg-gradient-to-r from-secondary to-primary" />
-                </div>
+                <p className="mt-3 text-sm text-muted">Protein target</p>
+                <p className="text-2xl font-extrabold text-heading">1.6–2.2 g/kg</p>
+                <p className="mt-1 text-xs text-muted">for people who train</p>
               </div>
             </ParallaxCard>
 
@@ -271,8 +283,8 @@ export function Hero() {
                   <HeartPulse size={20} />
                 </span>
                 <div>
-                  <p className="text-xs text-muted">Heart rate</p>
-                  <p className="font-bold text-heading">62 bpm</p>
+                  <p className="text-xs text-muted">3D movement guide</p>
+                  <p className="font-bold text-heading">{facts.moves} moves</p>
                 </div>
               </div>
             </ParallaxCard>
@@ -284,8 +296,8 @@ export function Hero() {
                   <Trophy size={20} />
                 </span>
                 <div>
-                  <p className="text-xs text-muted">Streak</p>
-                  <p className="font-bold text-heading">14 days</p>
+                  <p className="text-xs text-muted">Muscle guides</p>
+                  <p className="font-bold text-heading">{facts.muscles} groups</p>
                 </div>
               </div>
             </ParallaxCard>

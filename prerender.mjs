@@ -46,7 +46,7 @@ const ROUTES = [
       { h2: 'Training & nutrition', points: [
         'Structured workout plans for beginner through advanced',
         'Evidence-based nutrition guides, not fad-diet advice',
-        'An AI coach that adapts plans to your numbers',
+        'A plan generator that builds a workout, meal day or weekly schedule from your goal',
       ] },
       { h2: 'Training programs', points: [
         '30-Day Kickstart Challenge — build the training habit',
@@ -336,7 +336,7 @@ const ROUTES = [
       { question: 'Can I follow these workout programs at home without equipment?', answer: 'Yes. The 30-Day Kickstart Challenge and Home Shred need no equipment at all. Home Shred is a six-week HIIT and conditioning plan with follow-along timers and low-impact options. Lean & Strong and Hypertrophy Builder are strength programs that work best with weights.' },
       { question: 'Which program is best for fat loss and which for muscle gain?', answer: 'For fat loss, Home Shred (6 weeks, no equipment) or Lean & Strong (8 weeks, strength training plus macro guidance) fit best. For muscle gain, Hypertrophy Builder is a 12-week push-pull-legs split with built-in deload weeks. Results still depend mainly on your food and sleep.' },
       { question: 'How many days a week do the programs take?', answer: '30-Day Kickstart, Home Shred and Hypertrophy Builder are five days a week; Lean & Strong is four. Rest days are part of every plan, so you recover between harder sessions.' },
-      { question: 'Are the programs free?', answer: 'Yes. Every program on FitSmart is free and needs no sign-up. Creating an account only adds a dashboard that saves your progress.' },
+      { question: 'Are the programs free?', answer: 'Yes. Every program on FitSmart is free and needs no sign-up. Creating an account only adds a dashboard with a tracker that saves your readings on your device.' },
     ],
   },
   {
@@ -381,28 +381,30 @@ const ROUTES = [
   },
   {
     path: '/ai-coach',
-    title: 'AI Fitness Coach for Personalised Training — FitSmart',
-    keywords: 'AI fitness coach, AI personal trainer, AI workout coach, AI nutrition coach, personalised fitness coach, free AI coach',
+    title: 'Free Workout and Meal Plan Generator (AI Coach) — FitSmart',
+    keywords: 'workout plan generator, meal plan generator, weekly workout schedule, 8 week fitness plan, AI coach, free workout generator',
     description:
-      'Ask an AI fitness coach about training, form, macros and recovery, and get personalised, evidence-based answers built around your goals — free.',
-    h1: 'AI Fitness Coach',
+      'Generate a free workout, meal day, weekly schedule or 8-week goal plan for fat loss, muscle gain, strength or endurance. Runs in your browser, no sign-up.',
+    h1: 'AI Coach: Workout and Meal Plan Generator',
     intro:
-      'Ask about training, exercise form, macros, recovery or plateaus and get a clear, evidence-based answer built around your own goals and equipment. The coach explains the reasoning rather than just handing you a plan, so you learn how to adjust it yourself.',
+      'Pick a mode, describe your goal in a few words and get a ready-made workout, meal day, weekly schedule or 8-week roadmap. It builds the plan on your device from rule-based templates for fat loss, muscle gain, strength, endurance or general fitness. It is not a live AI model and it does not chat.',
     sections: [
-      { h2: 'What the coach can generate', points: [
-        'A workout built around your goal, experience level and the equipment you actually have',
-        'A meal plan with calorie and macro targets you can hit with everyday ingredients',
-        'A weekly training schedule that fits the days and time you can genuinely commit',
-        'A goal roadmap that breaks a target into checkpoints instead of one distant number',
+      { h2: 'What it can generate', points: [
+        'A workout for fat loss, muscle gain, strength, endurance or general fitness',
+        'A meal day with a vegetarian option, to adjust to your calorie target from the calculators',
+        'A 7-day training schedule with built-in recovery',
+        'An 8-week goal roadmap with a review every two weeks',
+        'A short daily motivation note',
       ] },
-      { h2: 'How to get a useful answer', points: [
-        'Name your goal, your training age and your equipment — a plan for a home with two dumbbells is not the plan for a full gym',
-        'Say what has already not worked, so the answer does not repeat it',
-        'Ask follow-ups: the coach explains its reasoning, so you can adjust a plan rather than restart it',
+      { h2: 'How to get a useful result', points: [
+        'Name your goal in the prompt: words like lose, fat loss, muscle, gain, strength, endurance or cardio pick the template',
+        'Add the word vegetarian to get a vegetarian meal day',
+        'Treat the result as a starting point and adjust the exercises, loads and portions to you',
       ] },
       { h2: 'What it is not', points: [
-        'Not medical advice — speak to a qualified professional before changing your training or diet if you have a health condition',
-        'Not a replacement for the calculators: use them for your numbers, then bring those numbers here',
+        'Not a live AI model: the plans come from fixed templates, so they do not account for your experience, equipment or injuries',
+        'Not medical advice: speak to a qualified professional before changing your training or diet if you have a health condition',
+        'Not a replacement for the calculators: use them for your calorie and protein numbers, then bring the plan here',
       ] },
     ],
   },

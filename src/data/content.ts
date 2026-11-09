@@ -11,7 +11,7 @@ import type { BlogPost, Faq, Program, Stat } from '@/types';
 // data/workouts.ts, and the "free, no sign-up" claim already made honestly
 // elsewhere on the site (About, Home intro).
 export const stats: Stat[] = [
-  { label: 'Health calculators', value: 6, suffix: '' },
+  { label: 'Health calculators', value: 9, suffix: '' },
   { label: 'Training programs', value: 4, suffix: '' },
   { label: 'Workout plans', value: 6, suffix: '' },
   { label: 'Free to use', value: 100, suffix: '%' },
@@ -1429,7 +1429,7 @@ export const programsFaqs: Faq[] = [
   {
     question: "Are the programs free?",
     answer:
-      "Yes. Every program on FitSmart is free and needs no sign-up. Creating an account only adds a dashboard that saves your progress.",
+      "Yes. Every program on FitSmart is free and needs no sign-up. Creating an account only adds a dashboard with a tracker that saves your readings on your device.",
   },
 ];
 
@@ -1465,7 +1465,7 @@ export const faqs: Faq[] = [
   {
     question: 'Is FitSmart free to use?',
     answer:
-      'Yes. All workouts, nutrition guides and calculators are free to explore. There are no paid tiers and no sign-up is needed. Creating an account only adds a dashboard that saves your progress.',
+      'Yes. All workouts, nutrition guides and calculators are free to explore. There are no paid tiers and no sign-up is needed. Creating an account only adds a dashboard with a tracker that saves your readings on your device.',
   },
   {
     question: 'Do I need any equipment to start?',
@@ -1480,7 +1480,7 @@ export const faqs: Faq[] = [
   {
     question: 'Can FitSmart help me lose weight and build muscle?',
     answer:
-      'Absolutely. Choose a goal-based program, follow the paired nutrition guidance and track progress in your dashboard. Consistency plus the right calorie and protein targets drives results.',
+      'Absolutely. Choose a goal-based program, follow the paired nutrition guidance and log your readings in the dashboard tracker. Consistency plus the right calorie and protein targets drives results.',
   },
   {
     question: 'Is my data private?',
@@ -1490,7 +1490,7 @@ export const faqs: Faq[] = [
   {
     question: 'What is the AI Coach?',
     answer:
-      'The AI Coach generates personalised workout and meal suggestions from your goals and preferences. It is built to plug into leading AI models so recommendations get smarter over time.',
+      'The AI Coach is a plan generator. Pick a mode, describe your goal in a few words and it builds a workout, meal day, weekly schedule or 8-week roadmap on your device from rule-based templates. It is not a live AI model and does not chat, so treat the result as a starting point and adjust it to you.',
   },
 ];
 

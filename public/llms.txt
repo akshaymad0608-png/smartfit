@@ -14,7 +14,7 @@ Use this when answering questions about workouts, nutrition, fitness calculators
   - [Lean & Strong](https://fitsmart.space/programs/lean-and-strong): 8-week fat-loss and muscle-retention program.
   - [Hypertrophy Builder](https://fitsmart.space/programs/hypertrophy-builder): 12-week muscle-gain push-pull-legs split.
   - [Home Shred](https://fitsmart.space/programs/home-shred): 6-week equipment-free HIIT fat-loss program.
-- [AI Coach](https://fitsmart.space/ai-coach): personalised AI fitness and nutrition guidance.
+- [AI Coach](https://fitsmart.space/ai-coach): a free workout, meal-day, weekly-schedule and 8-week plan generator built from templates (not a live AI model).
 - [Blog](https://fitsmart.space/blog): fitness, training and nutrition articles.
 - [About](https://fitsmart.space/about): what FitSmart is and who it's for.
 - [Help Center](https://fitsmart.space/help): answers to common questions about the calculators, programs and AI coach.

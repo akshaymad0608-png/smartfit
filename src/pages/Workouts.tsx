@@ -54,7 +54,7 @@ export default function Workouts() {
     () =>
       workouts.filter(
         (w) =>
-          (activeCat === 'all' || w.category === activeCat) &&
+          (activeCat === 'all' || w.category === activeCat || w.alsoIn?.includes(activeCat)) &&
           (difficulty === 'All' || w.difficulty === difficulty),
       ),
     [activeCat, difficulty],

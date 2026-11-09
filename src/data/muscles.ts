@@ -42,6 +42,19 @@ export interface MuscleGroup {
 export const posterFor = (video: string) =>
   video.replace('/videos/', '/images/posters/').replace(/\.mp4$/, '.jpg');
 
+/**
+ * Clips filmed in portrait. In a 16:9 card they must be letterboxed
+ * (object-contain), not cropped, or the lifter's head and feet are cut off.
+ */
+const PORTRAIT_CLIPS = new Set([
+  '/videos/exercises/triceps-dips.mp4',
+  '/videos/exercises/hamstrings-leg-curl.mp4',
+  '/videos/muscles/triceps.mp4',
+  '/videos/muscles/calves.mp4',
+]);
+export const videoFitClass = (video: string) =>
+  PORTRAIT_CLIPS.has(video) ? 'bg-black object-contain' : 'bg-surface-muted object-cover';
+
 export const muscleGroups: MuscleGroup[] = [
   {
     key: 'chest',
