@@ -11,7 +11,10 @@ import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { site } from '@/config/site';
 import { workoutCategories, workouts } from '@/data/workouts';
-import { posterFor } from '@/data/muscles';
+import { muscleGroups, posterFor } from '@/data/muscles';
+import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
+import { MotionGuide, type GuideMove } from '@/features/motion3d/MotionGuide';
+import { APPROXIMATE_MOTION } from '@/features/motion3d/motions';
 import { yogaPoses } from '@/data/yogaPoses';
 import { YogaPose } from '@/components/illustrations/YogaPose';
 import type { Workout } from '@/types';
@@ -38,6 +41,17 @@ export default function WorkoutDetail() {
 
   const category = workoutCategories.find((c) => c.key === workout.category);
   const related = workouts.filter((w) => w.slug !== workout.slug).slice(0, 3);
+  const focus = (workout.focusMuscles ?? [])
+    .map((k) => muscleGroups.find((m) => m.key === k))
+    .filter((m): m is (typeof muscleGroups)[number] => Boolean(m));
+  const guideMoves: GuideMove[] = (workout.videos ?? [])
+    .filter((v) => v.motion)
+    .map((v) => ({
+      title: v.title,
+      motion: v.motion as string,
+      muscles: v.muscles ?? workout.focusMuscles ?? [],
+      approximate: APPROXIMATE_MOTION.has(v.title) || /machine|press$|curl$|pulldown$/i.test(v.title),
+    }));
 
   const howTo = {
     '@context': 'https://schema.org',
@@ -136,6 +150,38 @@ export default function WorkoutDetail() {
             </Card>
           </Reveal>
         </div>
+
+        {focus.length > 0 && (
+          <div className="mt-14">
+            <h2 className="text-section font-extrabold text-heading">Focus muscles</h2>
+            <p className="mt-2 text-sm text-muted">
+              The muscle groups this workout trains most, highlighted on the body chart.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              {focus.map((m) => (
+                <Link
+                  key={m.key}
+                  to={`/exercises/${m.key}`}
+                  className="group rounded-2xl border border-line bg-card p-3 text-center shadow-soft transition-colors hover:border-primary/50"
+                >
+                  <MuscleDiagram muscle={m.key} className="aspect-square w-full rounded-xl bg-surface-muted" />
+                  <span className="mt-2 block text-sm font-bold text-primary">{m.label}</span>
+                  <span className="block text-xs text-muted">See exercises</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {guideMoves.length > 0 && (
+          <div className="mt-14">
+            <h2 className="text-section font-extrabold text-heading">3D movement guide</h2>
+            <p className="mt-2 text-sm text-muted">
+              Watch the figure do each move in this workout. The working muscles glow blue.
+            </p>
+            <MotionGuide moves={guideMoves} className="mt-6" />
+          </div>
+        )}
 
         {workout.videos && workout.videos.length > 0 && (
           <div className="mt-14">

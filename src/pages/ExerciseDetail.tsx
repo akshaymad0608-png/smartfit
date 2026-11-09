@@ -10,6 +10,8 @@ import { breadcrumbSchema, faqSchema } from '@/seo/schema';
 import { muscleGroups, posterFor } from '@/data/muscles';
 import { exerciseCues, muscleGuides } from '@/data/muscleGuides';
 import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
+import { MotionGuide } from '@/features/motion3d/MotionGuide';
+import { APPROXIMATE_MOTION, EXERCISE_MOTION } from '@/features/motion3d/motions';
 
 /**
  * One muscle group, given its own URL: what it does, how to train it, a form
@@ -26,6 +28,14 @@ export default function ExerciseDetail() {
 
   const label = group.label;
   const others = muscleGroups.filter((m) => m.key !== group.key);
+  const moves = group.exercises
+    .filter((e) => EXERCISE_MOTION[e.name])
+    .map((e) => ({
+      title: e.name,
+      motion: EXERCISE_MOTION[e.name],
+      muscles: [group.key],
+      approximate: APPROXIMATE_MOTION.has(e.name),
+    }));
 
   return (
     <PageTransition>
@@ -59,6 +69,15 @@ export default function ExerciseDetail() {
             blue on the body chart.
           </p>
         </div>
+        {moves.length > 0 && (
+          <div className="mb-12">
+            <h2 className="text-section font-extrabold text-heading">3D movement guide</h2>
+            <p className="mt-2 text-sm text-muted">
+              Pick an exercise and watch the figure do it. The {label.toLowerCase()} glow blue as they work.
+            </p>
+            <MotionGuide moves={moves} className="mt-6" />
+          </div>
+        )}
         <h2 className="text-section font-extrabold text-heading">
           {label} exercises with form cues
         </h2>

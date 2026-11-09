@@ -17,7 +17,9 @@ export interface Workout {
   instructions: string[];
   tips: string[];
   /** Demo clips for this workout (public/videos), each with a poster in public/images/posters. */
-  videos?: { title: string; src: string }[];
+  videos?: { title: string; src: string; motion?: string; muscles?: string[] }[];
+  /** Muscle-group keys (data/muscles.ts) this workout mainly trains. */
+  focusMuscles?: string[];
   /** Yoga pose ids (data/yogaPoses.ts) taught in this workout, in order. */
   poses?: string[];
 }

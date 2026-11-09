@@ -2,6 +2,17 @@
 
 All notable changes to FitSmart are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased] — 3D movement guide and focus muscles
+
+### Added
+- **3D movement guide** on every workout page and every muscle page: a stylised 3D figure (three.js, built from primitives, no model file) that does the move on a loop with the working muscles glowing blue. Twenty-one movements, drag to turn, pauses when off screen, still pose for reduced-motion, flat-chart fallback without WebGL. three.js loads only on these pages (a separate 126 kB gzip chunk).
+- **Focus muscles** on every workout page: body charts for the muscle groups the workout trains, linking to the exercise pages (`focusMuscles` in `src/data/workouts.ts`).
+- Movement data lives in `src/features/motion3d/motions.ts` (two poses per rep in joint angles), so a move can be corrected by editing numbers.
+
+### Notes
+- Where the real exercise uses a machine (leg press, lat pulldown, leg curl, chest press machine, donkey kicks) the figure shows the closest free movement and says so on the page.
+- Muscles on the back of the body are viewed from behind so they are not hidden.
+
 ## [Unreleased] — Media and pose fixes
 
 ### Fixed
