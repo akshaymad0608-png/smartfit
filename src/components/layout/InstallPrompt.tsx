@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Download, X } from 'lucide-react';
+import { Download, Share, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const DISMISS_KEY = 'fitsmart-install-dismissed';
@@ -25,21 +25,47 @@ interface BeforeInstallPromptEvent extends Event {
  * missed manifest update, a re-visit after clearing data), so a permanent
  * "never ask again" isn't the right default for a free tool.
  */
+const isStandalone = () =>
+  window.matchMedia('(display-mode: standalone)').matches ||
+  (navigator as Navigator & { standalone?: boolean }).standalone === true;
+
+// iOS Safari never fires `beforeinstallprompt`; installing is a manual
+// Share → "Add to Home Screen" step, so we show instructions instead.
+const isIosSafari = () => {
+  const ua = navigator.userAgent;
+  const ios = /iPhone|iPad|iPod/.test(ua) || (ua.includes('Mac') && navigator.maxTouchPoints > 1);
+  const webkitOnly = /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS|GSA/.test(ua);
+  return ios && webkitOnly;
+};
+
 export function InstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [ios, setIos] = useState(false);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    if (isStandalone()) return; // already installed — never nag
+    setIos(isIosSafari());
     const onBeforeInstall = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
+    const onInstalled = () => {
+      setDeferredPrompt(null);
+      setShow(false);
+    };
     window.addEventListener('beforeinstallprompt', onBeforeInstall);
-    return () => window.removeEventListener('beforeinstallprompt', onBeforeInstall);
+    window.addEventListener('appinstalled', onInstalled);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', onBeforeInstall);
+      window.removeEventListener('appinstalled', onInstalled);
+    };
   }, []);
 
+  const canPrompt = !!deferredPrompt || ios;
+
   useEffect(() => {
-    if (!deferredPrompt) return;
+    if (!canPrompt) return;
 
     let dismissedUntil = 0;
     try {
@@ -71,7 +97,7 @@ export function InstallPrompt() {
       window.clearInterval(poll);
       window.clearTimeout(fallback);
     };
-  }, [deferredPrompt]);
+  }, [canPrompt]);
 
   const install = async () => {
     if (!deferredPrompt) return;
@@ -92,7 +118,7 @@ export function InstallPrompt() {
 
   return (
     <AnimatePresence>
-      {show && deferredPrompt && (
+      {show && canPrompt && (
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -109,7 +135,14 @@ export function InstallPrompt() {
             <div className="min-w-0 flex-1">
               <p className="text-sm font-bold text-heading">Add FitSmart to your home screen</p>
               <p className="mt-0.5 text-xs text-muted">
-                Faster access to calculators and workouts — works offline too.
+                {ios ? (
+                  <>
+                    Tap <Share size={12} className="mx-0.5 inline -translate-y-px" aria-label="Share" />{' '}
+                    in Safari, then <strong>Add to Home Screen</strong>.
+                  </>
+                ) : (
+                  'Faster access to calculators and workouts — works offline too.'
+                )}
               </p>
             </div>
             <button
@@ -125,14 +158,16 @@ export function InstallPrompt() {
               onClick={dismiss}
               className="flex min-h-11 flex-1 items-center justify-center rounded-full border border-line text-sm font-semibold text-body transition-colors hover:bg-surface-muted"
             >
-              Not now
+              {ios ? 'Got it' : 'Not now'}
             </button>
-            <button
-              onClick={install}
-              className="flex min-h-11 flex-1 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white transition-colors hover:bg-primary-600"
-            >
-              Install
-            </button>
+            {!ios && (
+              <button
+                onClick={install}
+                className="flex min-h-11 flex-1 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+              >
+                Install
+              </button>
+            )}
           </div>
         </motion.div>
       )}

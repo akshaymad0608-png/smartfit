@@ -197,7 +197,7 @@ export default function Home() {
                   <p className="mt-1 text-sm text-muted">{c.text}</p>
                   <Link
                     to={c.to}
-                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                    className="-mb-2 mt-1 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                   >
                     Open this workout <ArrowRight size={14} />
                   </Link>
