@@ -1,4 +1,5 @@
 import { Apple, Beef, Droplets, Leaf, Salad, Wheat } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section, SectionHeader } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
@@ -45,7 +46,7 @@ export default function Nutrition() {
       <PageHero
         eyebrow="Nutrition"
         title="Eat well, without the guesswork"
-        subtitle="Balanced meal plans for every goal and preference, a whole-food database and practical macro guidance you can actually follow."
+        subtitle="Balanced meal plans for every goal and preference, a guide to whole-food groups and practical macro guidance you can actually follow."
         crumbs={[{ label: 'Nutrition' }]}
       />
 
@@ -74,10 +75,22 @@ export default function Nutrition() {
             </Reveal>
           ))}
         </div>
+        <p className="mt-6 text-sm text-muted">
+          Calorie ranges are typical examples for an average adult, not a prescription. Work out your own
+          target with the{' '}
+          <Link to="/calculators/calorie" className="font-semibold text-primary hover:underline">
+            calorie calculator
+          </Link>{' '}
+          and your protein with the{' '}
+          <Link to="/calculators/protein" className="font-semibold text-primary hover:underline">
+            protein calculator
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section muted spacing="md">
-        <SectionHeader align="left" eyebrow="Food database" title="Build meals from whole foods" />
+        <SectionHeader align="left" eyebrow="Food groups" title="Build meals from whole foods" />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {foodGroups.map((g) => (
             <Reveal key={g.title}>

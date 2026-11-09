@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Activity, Award, Flame, Moon, TrendingDown, Target } from 'lucide-react';
+import { Activity, Award, Flame, Info, Moon, TrendingDown, Target } from 'lucide-react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PageHero } from '@/components/layout/PageHero';
@@ -75,10 +75,10 @@ function BarChart({ data, labels }: { data: number[]; labels: string[] }) {
 }
 
 const kpis = [
-  { icon: TrendingDown, label: 'Weight', value: '74.9 kg', delta: '-7.1 kg', tone: 'secondary' as const },
-  { icon: Flame, label: 'Calories today', value: '1,840', delta: 'On target', tone: 'accent' as const },
-  { icon: Activity, label: 'Workouts', value: '18', delta: 'this month', tone: 'primary' as const },
-  { icon: Moon, label: 'Avg. sleep', value: '7h 20m', delta: '+15 min', tone: 'primary' as const },
+  { icon: TrendingDown, label: 'Weight (sample)', value: '74.9 kg', delta: '-7.1 kg', tone: 'secondary' as const },
+  { icon: Flame, label: 'Calories today (sample)', value: '1,840', delta: 'On target', tone: 'accent' as const },
+  { icon: Activity, label: 'Workouts (sample)', value: '18', delta: 'this month', tone: 'primary' as const },
+  { icon: Moon, label: 'Avg. sleep (sample)', value: '7h 20m', delta: '+15 min', tone: 'primary' as const },
 ];
 
 const goals = [
@@ -106,12 +106,23 @@ export default function Dashboard() {
       <PageHero
         eyebrow="Dashboard"
         title={`Welcome back, ${firstName}`}
-        subtitle="Here's your progress at a glance. Keep the streak alive — consistency is everything."
+        subtitle="Log your readings in the tracker below; it saves on this device. The charts under it use example numbers to show how progress can look."
         crumbs={[{ label: 'Dashboard' }]}
       />
 
       <Section spacing="md">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <HealthTracker />
+
+        <div className="mt-10 flex items-start gap-3 rounded-2xl border border-amber-300/60 bg-amber-50 p-4 text-sm text-amber-900 dark:bg-accent/10 dark:text-amber-200">
+          <Info size={18} className="mt-0.5 shrink-0" />
+          <p>
+            <strong>Example view.</strong> The cards and charts below use sample numbers to show how a
+            progress dashboard can look. They are not your data; your own readings are in the tracker
+            above.
+          </p>
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {kpis.map((k) => (
             <Reveal key={k.label}>
               <Card className="p-5">
@@ -128,14 +139,10 @@ export default function Dashboard() {
           ))}
         </div>
 
-        <div className="mt-8">
-          <HealthTracker />
-        </div>
-
         <Reveal className="mt-6">
           <Card className="p-6">
             <div className="flex items-center justify-between">
-              <h2 className="font-bold text-heading">Weight progress</h2>
+              <h2 className="font-bold text-heading">Weight progress (sample)</h2>
               <Badge tone="secondary">12 weeks</Badge>
             </div>
             <div className="mt-4">
@@ -147,7 +154,7 @@ export default function Dashboard() {
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-2">
             <Card className="p-6">
-              <h2 className="font-bold text-heading">Calories this week</h2>
+              <h2 className="font-bold text-heading">Calories this week (sample)</h2>
               <div className="mt-4">
                 <BarChart data={calorieWeek} labels={days} />
               </div>
@@ -156,7 +163,7 @@ export default function Dashboard() {
           <Reveal>
             <Card className="h-full p-6">
               <h2 className="flex items-center gap-2 font-bold text-heading">
-                <Target size={18} className="text-primary" /> Goals
+                <Target size={18} className="text-primary" /> Goals (sample)
               </h2>
               <div className="mt-5 space-y-5">
                 {goals.map((g) => (
@@ -184,7 +191,7 @@ export default function Dashboard() {
         <Reveal className="mt-6">
           <Card className="p-6">
             <h2 className="flex items-center gap-2 font-bold text-heading">
-              <Award size={18} className="text-accent" /> Achievements
+              <Award size={18} className="text-accent" /> Achievements (sample)
             </h2>
             <div className="mt-4 flex flex-wrap gap-3">
               {achievements.map((a) => (

@@ -18,6 +18,8 @@ export interface Workout {
   tips: string[];
   /** Demo clips for this workout (public/videos), each with a poster in public/images/posters. */
   videos?: { title: string; src: string; motion?: string; muscles?: string[] }[];
+  /** Other category filters this workout also belongs to, so no filter on /workouts is empty. */
+  alsoIn?: string[];
   /** Muscle-group keys (data/muscles.ts) this workout mainly trains. */
   focusMuscles?: string[];
   /** Yoga pose ids (data/yogaPoses.ts) taught in this workout, in order. */

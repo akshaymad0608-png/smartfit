@@ -11,7 +11,7 @@ import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { site } from '@/config/site';
 import { workoutCategories, workouts } from '@/data/workouts';
-import { muscleGroups, posterFor } from '@/data/muscles';
+import { muscleGroups, posterFor, videoFitClass } from '@/data/muscles';
 import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
 import { MotionGuide, type GuideMove } from '@/features/motion3d/MotionGuide';
 import { APPROXIMATE_MOTION } from '@/features/motion3d/motions';
@@ -194,7 +194,7 @@ export default function WorkoutDetail() {
                 <Reveal key={v.src}>
                   <Card className="overflow-hidden p-0">
                     <video
-                      className="aspect-video w-full bg-surface-muted object-cover"
+                      className={`aspect-video w-full ${videoFitClass(v.src)}`}
                       src={v.src}
                       poster={posterFor(v.src)}
                       controls

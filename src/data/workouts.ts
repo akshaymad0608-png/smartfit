@@ -41,6 +41,7 @@ export const workouts: Workout[] = [
       { title: 'Lunges', src: '/videos/exercises/glutes-lunges-alt.mp4', motion: 'lunge', muscles: ['glutes', 'quads'] },
     ],
     focusMuscles: ['chest', 'triceps', 'abs', 'quads', 'glutes'],
+    alsoIn: ['weight-loss'],
   },
   {
     id: 'w2',
@@ -70,6 +71,7 @@ export const workouts: Workout[] = [
       { title: 'Seated cable row', src: '/videos/exercises/back-rowing-machine.mp4', motion: 'row', muscles: ['back', 'biceps'] },
     ],
     focusMuscles: ['chest', 'back', 'biceps', 'triceps'],
+    alsoIn: ['muscle-gain'],
   },
   {
     id: 'w3',
@@ -97,6 +99,7 @@ export const workouts: Workout[] = [
       { title: 'Bodyweight plank and side-plank flow', src: '/videos/workout.mp4', motion: 'plank', muscles: ['abs', 'shoulders'] },
     ],
     focusMuscles: ['abs', 'shoulders', 'chest'],
+    alsoIn: ['weight-loss'],
   },
   {
     id: 'w4',
@@ -127,6 +130,7 @@ export const workouts: Workout[] = [
       { title: 'Leg curl', src: '/videos/exercises/hamstrings-leg-curl.mp4', motion: 'legCurl', muscles: ['hamstrings'] },
     ],
     focusMuscles: ['quads', 'glutes', 'hamstrings'],
+    alsoIn: ['muscle-gain'],
   },
   {
     id: 'w5',
@@ -155,6 +159,7 @@ export const workouts: Workout[] = [
     ],
     poses: ['child', 'cat', 'cow', 'downdog', 'mountain', 'fold', 'plank', 'cobra', 'easy'],
     focusMuscles: ['abs', 'glutes'],
+    alsoIn: ['stretching'],
   },
   {
     id: 'w6',
@@ -182,5 +187,6 @@ export const workouts: Workout[] = [
       { title: 'Steady-state running form', src: '/videos/cardio.mp4', motion: 'run', muscles: ['quads', 'hamstrings', 'calves', 'glutes'] },
     ],
     focusMuscles: ['quads', 'hamstrings', 'calves', 'glutes'],
+    alsoIn: ['weight-loss'],
   },
 ];

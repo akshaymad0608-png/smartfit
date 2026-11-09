@@ -239,11 +239,11 @@ export default function Home() {
                   <Sparkles size={13} /> AI Coach
                 </Badge>
                 <h3 className="text-section font-extrabold text-white">
-                  Your personal AI coach
+                  Plans in seconds
                 </h3>
                 <p className="mt-3 text-white/90">
-                  Generate a workout, plan your meals or get daily motivation tailored to your goals.
-                  Built to grow smarter over time.
+                  Generate a workout, a meal day, a weekly schedule or an 8-week roadmap for your goal.
+                  Built from rule-based templates on your device, not a live AI model.
                 </p>
               </div>
               <div>
@@ -268,7 +268,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 text-body-lg text-body">
               Nutrition is half the battle. FitSmart gives you balanced, goal-based meal plans and a
-              food database so you always know what to eat next.
+              guide to whole-food groups so you always know what to eat next.
             </p>
             <div className="mt-8 space-y-4">
               {dietHighlights.map((d) => (

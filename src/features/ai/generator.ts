@@ -157,8 +157,7 @@ const builders: Record<CoachMode, (p: string) => CoachResponse> = {
   goal: goalPlan,
 };
 
-/** Async by design — swap this body for a real model call later. */
+/** Async so a real model can be swapped in later. There is no artificial delay: the answer is instant. */
 export async function generate(req: CoachRequest): Promise<CoachResponse> {
-  await new Promise((r) => setTimeout(r, 650));
   return builders[req.mode](req.prompt || 'general fitness');
 }
