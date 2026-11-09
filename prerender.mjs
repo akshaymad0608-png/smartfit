@@ -998,6 +998,7 @@ const workoutsSrc = readFileSync('src/data/workouts.ts', 'utf-8');
 const WORKOUTS = parseArray(workoutsSrc, 'export const workouts: Workout[] = [', 'workouts.ts');
 const WORKOUT_CATS = parseArray(workoutsSrc, 'export const workoutCategories: WorkoutCategory[] = [', 'workouts.ts');
 if (WORKOUTS.length < 6) throw new Error(`prerender: only ${WORKOUTS.length} workouts parsed from workouts.ts`);
+const YOGA_POSES = parseArray(readFileSync('src/data/yogaPoses.ts', 'utf-8'), 'export const yogaPoses: YogaPose[] = [', 'yogaPoses.ts');
 
 const workoutDescription = (w) => {
   const full = `${w.summary} ${w.durationMin} min, ${w.difficulty.toLowerCase()}, ${w.equipment.join(', ').toLowerCase()}.`;
@@ -1027,6 +1028,10 @@ for (const w of WORKOUTS) {
       { h2: 'How to do this workout', points: w.instructions },
       { h2: 'Coaching tips', points: w.tips },
       { h2: 'Benefits', points: w.benefits },
+      ...(w.videos?.length ? [{ h2: 'Watch the moves', points: w.videos.map((v) => `${v.title} (demo clip)`) }] : []),
+      ...((w.poses || []).map((id) => YOGA_POSES.find((p) => p.id === id)).filter(Boolean).flatMap((p) => [
+        { h2: `${p.name} (${p.sanskrit})`, points: [...p.cues, `Breath: ${p.breath}`, p.caution] },
+      ])),
     ],
     linksHeading: 'Keep going',
     links: [

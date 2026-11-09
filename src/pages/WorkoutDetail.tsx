@@ -11,6 +11,9 @@ import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
 import { site } from '@/config/site';
 import { workoutCategories, workouts } from '@/data/workouts';
+import { posterFor } from '@/data/muscles';
+import { yogaPoses } from '@/data/yogaPoses';
+import { YogaPose } from '@/components/illustrations/YogaPose';
 import type { Workout } from '@/types';
 
 /**
@@ -133,6 +136,74 @@ export default function WorkoutDetail() {
             </Card>
           </Reveal>
         </div>
+
+        {workout.videos && workout.videos.length > 0 && (
+          <div className="mt-14">
+            <h2 className="text-section font-extrabold text-heading">Watch the moves</h2>
+            <p className="mt-2 text-sm text-muted">
+              Short demo clips of the exercises in this workout. Tap play; they stay silent.
+            </p>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {workout.videos.map((v) => (
+                <Reveal key={v.src}>
+                  <Card className="overflow-hidden p-0">
+                    <video
+                      className="aspect-video w-full bg-surface-muted object-cover"
+                      src={v.src}
+                      poster={posterFor(v.src)}
+                      controls
+                      muted
+                      playsInline
+                      preload="none"
+                      aria-label={`${v.title} demo`}
+                    />
+                    <p className="p-4 text-sm font-semibold text-heading">{v.title}</p>
+                  </Card>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {workout.poses && workout.poses.length > 0 && (
+          <div className="mt-14">
+            <h2 className="text-section font-extrabold text-heading">Poses in this flow</h2>
+            <p className="mt-2 text-sm text-muted">
+              Move through them in this order, matching each movement to your breath. Never push
+              into pain; use a blanket or block to make any pose easier.
+            </p>
+            <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {workout.poses
+                .map((id) => yogaPoses.find((p) => p.id === id))
+                .filter((p): p is (typeof yogaPoses)[number] => Boolean(p))
+                .map((pose, i) => (
+                  <Reveal key={pose.id}>
+                    <Card className="h-full p-5">
+                      <div className="overflow-hidden rounded-2xl bg-surface-muted">
+                        <YogaPose pose={pose.id} className="aspect-[8/5] w-full" />
+                      </div>
+                      <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">
+                        Pose {i + 1} · {pose.sanskrit}
+                      </p>
+                      <h3 className="mt-1 text-lg font-bold text-heading">{pose.name}</h3>
+                      <ul className="mt-3 space-y-2">
+                        {pose.cues.map((c) => (
+                          <li key={c} className="flex gap-2 text-sm text-body">
+                            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                            {c}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="mt-3 text-sm text-muted">
+                        <strong className="text-heading">Breath:</strong> {pose.breath}
+                      </p>
+                      <p className="mt-1 text-xs text-muted">{pose.caution}</p>
+                    </Card>
+                  </Reveal>
+                ))}
+            </div>
+          </div>
+        )}
 
         <div className="mt-12 flex flex-wrap gap-3">
           <Link

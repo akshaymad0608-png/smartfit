@@ -23,7 +23,7 @@ import { WorkoutCard } from '@/components/cards/WorkoutCard';
 import { MuscleDiagram } from '@/components/illustrations/MuscleDiagram';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema } from '@/seo/schema';
-import { muscleGroups } from '@/data/muscles';
+import { muscleGroups, posterFor } from '@/data/muscles';
 import { workoutCategories, workouts } from '@/data/workouts';
 
 const categoryIcons: Record<string, typeof Dumbbell> = {
@@ -200,7 +200,7 @@ export default function Exercises() {
         open={activeGroup !== null}
         onClose={() => setActive(null)}
         src={activeExercise?.video ?? ''}
-        poster={activeGroup?.image}
+        poster={activeExercise ? posterFor(activeExercise.video) : activeGroup?.image}
         title={activeExercise ? `${activeExercise.name} — ${activeGroup?.label}` : undefined}
         footer={
           activeGroup && activeGroup.exercises.length > 1 ? (

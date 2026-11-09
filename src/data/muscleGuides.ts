@@ -32,13 +32,15 @@ export const exerciseCues: Record<string, string> = {
     'Start from a full hang, pull your elbows down towards your ribs until your chin clears the bar and lower slowly instead of dropping.',
   'Lat Pulldown':
     'Lean back slightly, pull the bar to your upper chest by driving the elbows down and keep your torso still rather than swinging.',
-  'Rowing Machine':
-    'Drive with the legs first, then lean back and pull the handle to your lower ribs, squeezing your shoulder blades together before returning in the same order.',
+  'Seated Cable Row':
+    'Sit tall with a slight bend in the knees, pull the handle to your lower ribs by driving the elbows back, squeeze your shoulder blades and let the weight return slowly.',
   'Shoulder Press Machine':
     'Adjust the seat so the handles start at shoulder height, press without arching your lower back and stop just short of locking out.',
+  'Standing Dumbbell Press':
+    'Start with the dumbbells at shoulder height, brace your core and glutes, press overhead until your arms are straight and lower under control without arching your back.',
   'Dumbbell Shoulder Press':
     'Brace your core, press the dumbbells up in a slight arc until your arms are straight above your shoulders and lower under control to ear level.',
-  'Bicep Curl':
+  'Barbell Curl':
     'Keep your elbows pinned beside your ribs, curl until your forearms are vertical and lower for a slow count of two to three.',
   'Cable Bicep Curl':
     'Stand tall with the elbows fixed at your sides, curl against the constant cable tension and avoid leaning back to finish the rep.',
@@ -48,26 +50,22 @@ export const exerciseCues: Record<string, string> = {
     'Keep your elbows tucked and still, push the handle down until your arms are straight and let it rise only as far as a 90-degree elbow bend.',
   'Tricep Dips':
     'Keep your chest up and elbows pointing back, lower until your upper arms are about parallel to the floor and stop if you feel pinching in the front of the shoulder.',
-  'Abs Training':
-    'Exhale as you curl your ribs towards your hips, keep your lower back controlled and prefer slow reps to fast ones.',
-  Crunches:
-    'Curl your ribs towards your pelvis rather than pulling on your neck, pause at the top and lower slowly.',
+  'Seated Dumbbell Twist':
+    'Lean back slightly with your chest tall, hold the dumbbell at your chest and rotate your ribs from side to side, moving from the torso rather than swinging your arms.',
+  'Seated Leg Raises':
+    'Sit tall with your hands behind you for support, draw your knees towards your chest as your torso leans back slightly, and lower with control instead of dropping your feet.',
   Plank:
     'Stack elbows under shoulders, squeeze your glutes and abs so your body forms a straight line and stop the set when your hips start to sag.',
   'Leg Press':
     'Place your feet shoulder-width on the platform, lower until your knees reach about 90 degrees without your lower back peeling off the pad and press through the whole foot.',
-  Squats:
-    'Brace your core, sit down and back until your thighs are at least parallel if mobility allows, keep your knees tracking over your toes and drive up through mid-foot.',
-  'Squats with Dumbbells':
-    'Hold the dumbbells at your chest or sides, keep your chest tall and sit between your hips as you would with a barbell.',
+  'Goblet Squat':
+    'Hold the weight at your chest, sit down between your hips with your chest tall and elbows inside your knees, and stand by pushing the floor away.',
   'Leg Extension':
     'Align the machine pivot with your knee, extend until the legs are nearly straight and lower slowly instead of letting the weight drop.',
   Deadlift:
     'Bar over mid-foot, hinge at the hips with a flat back, push the floor away and stand tall without leaning back at the top.',
   'Leg Curl Machine':
     'Keep your hips pressed into the pad, curl through the full range and take at least two seconds to lower the weight.',
-  'Lunges with Dumbbells':
-    'Take a long enough step that your front shin stays near vertical, lower your back knee towards the floor and push through the front heel.',
   Lunges:
     'Step forward or back, keep your torso upright, lower until both knees are about 90 degrees and drive up through the front foot.',
   'Donkey Kicks':

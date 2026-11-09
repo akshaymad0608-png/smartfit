@@ -35,6 +35,11 @@ export const workouts: Workout[] = [
       'Finish with 3 minutes of cool-down stretching.',
     ],
     tips: ['Keep your core braced', 'Prioritise form over speed', 'Breathe out on exertion'],
+    videos: [
+      { title: 'Push-ups', src: '/videos/exercises/chest-pushups.mp4' },
+      { title: 'Plank', src: '/videos/exercises/abs-plank.mp4' },
+      { title: 'Lunges', src: '/videos/exercises/glutes-lunges-alt.mp4' },
+    ],
   },
   {
     id: 'w2',
@@ -58,6 +63,11 @@ export const workouts: Workout[] = [
       'Use 3–4 sets of 8–12 reps per exercise.',
     ],
     tips: ['Control the eccentric', 'Add weight when you hit the top rep range', 'Rest 60–90s'],
+    videos: [
+      { title: 'Chest press machine', src: '/videos/muscles/chest.mp4' },
+      { title: 'Lat pulldown', src: '/videos/exercises/back-lat-pulldown.mp4' },
+      { title: 'Seated cable row', src: '/videos/exercises/back-rowing-machine.mp4' },
+    ],
   },
   {
     id: 'w3',
@@ -81,6 +91,9 @@ export const workouts: Workout[] = [
       'Repeat for 4 rounds, then cool down.',
     ],
     tips: ['Go truly hard in work intervals', 'Land softly on jumps', 'Hydrate well'],
+    videos: [
+      { title: 'Bodyweight plank and side-plank flow', src: '/videos/workout.mp4' },
+    ],
   },
   {
     id: 'w4',
@@ -104,6 +117,12 @@ export const workouts: Workout[] = [
       'Walking lunges & hip thrusts to finish.',
     ],
     tips: ['Keep a neutral spine', 'Drive through mid-foot', 'Never skip the warm-up'],
+    videos: [
+      { title: 'Goblet squat', src: '/videos/exercises/quads-squats.mp4' },
+      { title: 'Leg press', src: '/videos/muscles/quads.mp4' },
+      { title: 'Lunges', src: '/videos/exercises/glutes-lunges-alt.mp4' },
+      { title: 'Leg curl', src: '/videos/exercises/hamstrings-leg-curl.mp4' },
+    ],
   },
   {
     id: 'w5',
@@ -127,6 +146,10 @@ export const workouts: Workout[] = [
       'Close with a 3-minute seated meditation.',
     ],
     tips: ['Match movement to breath', 'Never force a stretch', 'Stay present'],
+    videos: [
+      { title: 'Seated breathing and meditation', src: '/videos/yoga.mp4' },
+    ],
+    poses: ['child', 'cat', 'cow', 'downdog', 'mountain', 'fold', 'plank', 'cobra', 'easy'],
   },
   {
     id: 'w6',
@@ -150,5 +173,8 @@ export const workouts: Workout[] = [
       'Cool down and stretch calves and hips.',
     ],
     tips: ['Keep cadence high', 'Relax your shoulders', 'Fuel and hydrate for longer runs'],
+    videos: [
+      { title: 'Steady-state running form', src: '/videos/cardio.mp4' },
+    ],
   },
 ];

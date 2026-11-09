@@ -24,7 +24,10 @@ export interface MuscleGroup {
  *
  * Exercise counts genuinely vary (1 for calves, up to 4 elsewhere) because
  * that's how many distinct, correctly-labelled real clips could actually
- * be found and verified. Calves stays at 1 despite an extensive search
+ * be found and verified. Clip names were re-checked against the footage itself:
+ * the old "Squats with Dumbbells" and "Lunges with Dumbbells" clips both showed a
+ * dumbbell shoulder press, so one is now filed under Shoulders as such and the
+ * other was dropped; "Squats" is a goblet squat; "Crunches" is a seated leg raise. Calves stays at 1 despite an extensive search
  * (Mixkit, Pexels and Pixabay, under "calf raise", "seated calf raise",
  * "jump rope" and more) — one promising "jump rope" clip turned out, once
  * actually inspected frame by frame, to show a man standing by a punching
@@ -32,6 +35,13 @@ export interface MuscleGroup {
  * label it doesn't match. Padding the list out with a wrong or duplicate
  * clip would be worse than an honest shorter one.
  */
+/**
+ * Poster frame for a demo clip: public/images/posters/<same path>.jpg, cut from
+ * the clip itself so the still always matches the video that plays.
+ */
+export const posterFor = (video: string) =>
+  video.replace('/videos/', '/images/posters/').replace(/\.mp4$/, '.jpg');
+
 export const muscleGroups: MuscleGroup[] = [
   {
     key: 'chest',
@@ -53,7 +63,7 @@ export const muscleGroups: MuscleGroup[] = [
     exercises: [
       { name: 'Pull-ups', video: '/videos/muscles/back.mp4' },
       { name: 'Lat Pulldown', video: '/videos/exercises/back-lat-pulldown.mp4' },
-      { name: 'Rowing Machine', video: '/videos/exercises/back-rowing-machine.mp4' },
+      { name: 'Seated Cable Row', video: '/videos/exercises/back-rowing-machine.mp4' },
     ],
   },
   {
@@ -64,6 +74,7 @@ export const muscleGroups: MuscleGroup[] = [
     exercises: [
       { name: 'Shoulder Press Machine', video: '/videos/muscles/shoulders.mp4' },
       { name: 'Dumbbell Shoulder Press', video: '/videos/exercises/shoulders-dumbbell-press.mp4' },
+      { name: 'Standing Dumbbell Press', video: '/videos/exercises/shoulders-standing-dumbbell-press.mp4' },
     ],
   },
   {
@@ -72,7 +83,7 @@ export const muscleGroups: MuscleGroup[] = [
     video: '/videos/muscles/biceps.mp4',
     image: '/images/muscles/biceps.jpg',
     exercises: [
-      { name: 'Bicep Curl', video: '/videos/muscles/biceps.mp4' },
+      { name: 'Barbell Curl', video: '/videos/muscles/biceps.mp4' },
       { name: 'Cable Bicep Curl', video: '/videos/exercises/biceps-cable-curl.mp4' },
       { name: 'Dumbbell Bicep Curl', video: '/videos/exercises/biceps-dumbbell-curl.mp4' },
     ],
@@ -93,8 +104,8 @@ export const muscleGroups: MuscleGroup[] = [
     video: '/videos/muscles/abs.mp4',
     image: '/images/muscles/abs.jpg',
     exercises: [
-      { name: 'Abs Training', video: '/videos/muscles/abs.mp4' },
-      { name: 'Crunches', video: '/videos/exercises/abs-crunches.mp4' },
+      { name: 'Seated Dumbbell Twist', video: '/videos/muscles/abs.mp4' },
+      { name: 'Seated Leg Raises', video: '/videos/exercises/abs-crunches.mp4' },
       { name: 'Plank', video: '/videos/exercises/abs-plank.mp4' },
     ],
   },
@@ -105,8 +116,7 @@ export const muscleGroups: MuscleGroup[] = [
     image: '/images/muscles/quads.jpg',
     exercises: [
       { name: 'Leg Press', video: '/videos/muscles/quads.mp4' },
-      { name: 'Squats', video: '/videos/exercises/quads-squats.mp4' },
-      { name: 'Squats with Dumbbells', video: '/videos/exercises/quads-squats-dumbbells.mp4' },
+      { name: 'Goblet Squat', video: '/videos/exercises/quads-squats.mp4' },
       { name: 'Leg Extension', video: '/videos/exercises/quads-leg-extension.mp4' },
     ],
   },
@@ -123,10 +133,9 @@ export const muscleGroups: MuscleGroup[] = [
   {
     key: 'glutes',
     label: 'Glutes',
-    video: '/videos/muscles/glutes.mp4',
+    video: '/videos/exercises/glutes-lunges-alt.mp4',
     image: '/images/muscles/glutes.jpg',
     exercises: [
-      { name: 'Lunges with Dumbbells', video: '/videos/muscles/glutes.mp4' },
       { name: 'Lunges', video: '/videos/exercises/glutes-lunges-alt.mp4' },
       { name: 'Donkey Kicks', video: '/videos/exercises/glutes-donkey-kicks.mp4' },
     ],
