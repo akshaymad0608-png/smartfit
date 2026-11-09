@@ -151,6 +151,23 @@ export function Accessibility() {
           ],
         },
         {
+          heading: 'What is in place today',
+          body: [
+            'A "Skip to content" link on every page, visible when you tab to it, so keyboard users can bypass the navigation.',
+            'Every interactive control can be reached and used with the keyboard, with a visible focus outline.',
+            'Form fields and buttons carry text labels that screen readers announce, and pages use a clear heading structure.',
+            'A light and a dark theme, switchable from the header, and animation that respects the "reduce motion" setting on your device.',
+            'Layouts that reflow on small screens and when text is zoomed, so nothing relies on a fixed width.',
+          ],
+        },
+        {
+          heading: 'Known limitations',
+          body: [
+            'The exercise demo clips are short, silent videos without captions. Each exercise page therefore also gives the form cue in text so the information does not depend on watching the clip.',
+            'Third-party widgets we embed, such as Google sign-in and advertising, are controlled by their providers and may not meet the same standard.',
+          ],
+        },
+        {
           heading: 'Ongoing work',
           body: [
             'Accessibility is never finished. We continuously test and improve. If you encounter a barrier, please email akshaymad0608@gmail.com so we can fix it.',
@@ -189,7 +206,16 @@ export function Help() {
       // FAQPage schema — the actual Q&A shape AI answer engines (ChatGPT,
       // Perplexity, AI Overviews) look for when citing a help page.
       extraSchema={[faqSchema(helpFaqs)]}
-      sections={helpFaqs.map((f) => ({ heading: f.question, body: [f.answer] }))}
+      sections={[
+        ...helpFaqs.map((f) => ({ heading: f.question, body: [f.answer] })),
+        {
+          heading: 'Where to find things',
+          body: [
+            'Health numbers (BMI, calories, protein, macros, body fat, water): the Calculators page. Training: Programs for multi-week plans, Workouts for single sessions, Exercises for form cues by muscle group. Food: Nutrition and the Articles section for Indian diet guides.',
+            'Still stuck? Email akshaymad0608@gmail.com and include the page you were on and what you expected to happen.',
+          ],
+        },
+      ]}
     />
   );
 }
@@ -244,19 +270,3 @@ export function Press() {
   );
 }
 
-export function Sitemap() {
-  return (
-    <ContentPage
-      eyebrow="Navigation"
-      title="Sitemap"
-      subtitle="Every corner of FitSmart, in one place."
-      path="/sitemap"
-      sections={[
-        { heading: 'Main', body: ['Home, Workouts, Nutrition, Calculators, Programs, AI Coach, Blog, About, Contact.'] },
-        { heading: 'Account', body: ['Dashboard, Profile, Settings, Progress, Achievements.'] },
-        { heading: 'Legal', body: ['Privacy Policy, Terms & Conditions, Cookie Policy, Disclaimer, Accessibility.'] },
-        { heading: 'Company', body: ['Careers, Press, Help Center.'] },
-      ]}
-    />
-  );
-}

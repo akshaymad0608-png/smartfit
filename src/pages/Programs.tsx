@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { PageHero } from '@/components/layout/PageHero';
 import { Section } from '@/components/ui/Section';
 import { Accordion } from '@/components/ui/Accordion';
+import { Card } from '@/components/ui/Card';
 import { ProgramCard } from '@/components/cards/ProgramCard';
 import { PageTransition } from '@/components/motion/PageTransition';
 import { Seo } from '@/seo/Seo';
 import { breadcrumbSchema, faqSchema } from '@/seo/schema';
-import { programs, programsFaqs } from '@/data/content';
+import { programs, programsFaqs, programsGuide } from '@/data/content';
 import type { Difficulty } from '@/types';
 import { cn } from '@/lib/cn';
 
@@ -59,6 +60,24 @@ export default function Programs() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((p) => (
             <ProgramCard key={p.id} program={p} />
+          ))}
+        </div>
+      </Section>
+
+      <Section spacing="md">
+        <div className="grid gap-6 lg:grid-cols-2">
+          {programsGuide.map((g) => (
+            <Card key={g.heading} className="h-full p-6">
+              <h2 className="font-bold text-heading">{g.heading}</h2>
+              <ul className="mt-4 space-y-2">
+                {g.points.map((p) => (
+                  <li key={p} className="flex gap-2.5 text-sm text-muted">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </Card>
           ))}
         </div>
       </Section>

@@ -61,11 +61,11 @@ export default function AICoach() {
       <PageHero
         eyebrow="AI Coach"
         title="Your personal AI coach"
-        subtitle="Describe your goal and let FitSmart generate a workout, meal plan, weekly schedule or goal roadmap in seconds."
+        subtitle="Describe your goal and get a workout, meal plan, weekly schedule or goal roadmap in seconds. Plans are built on your device from rule-based templates, not a live AI model, so they work instantly and your inputs never leave your browser."
         crumbs={[{ label: 'AI Coach' }]}
       >
         <Badge tone="secondary">
-          <Sparkles size={13} /> Free · Private · API-ready
+          <Sparkles size={13} /> Free · Private · Runs in your browser
         </Badge>
       </PageHero>
 

@@ -2,6 +2,29 @@
 
 All notable changes to FitSmart are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased] — SEO and growth pass
+
+### Added
+
+- **Indian / Asian BMI cut-offs** next to the international category on the BMI calculator, and a Quick BMI check on the home page.
+- **Three calculator pages** — protein, calorie and water intake — each opening on its own results tab, with a "Sources and method" block on every calculator page.
+- **Workout pages** (`/workouts/:slug`, six) with step-by-step instructions, `HowTo` schema and related workouts.
+- **Muscle-group pages** (`/exercises/:key`, ten) with form cues per exercise, sets-and-reps guidance, common mistakes and FAQs (`src/data/muscleGuides.ts`).
+- **Four articles** — 1500-calorie Indian diet plan, hostel-budget high-protein diet, BMI vs body fat for Indians, protein per day for Indian diets.
+- **Real sitemap page** with a link to every page.
+- `prerender.mjs` now generates routes for calculator, workout, muscle-group and blog pages from the same source files React renders from.
+
+### Changed
+
+- Hero no longer loads the decorative `hero-bg.jpg` (it was the LCP element in the October audit); `og:image` is a proper 1200x630 branded card (`/images/og-card.jpg`).
+- Organization JSON-LD no longer publishes a personal phone number or email; it points to `/contact`.
+- AI Coach copy says plainly that plans come from on-device templates, not a live model.
+- Thin pages (`/calculators`, `/calculators/ideal-weight`, `/programs`, `/help`, `/accessibility`) carry real content; three blog descriptions shortened.
+
+### Removed
+
+- Root `robots.txt`, which named another domain's sitemap. `public/robots.txt` is the file that ships.
+
 ## [2.0.0] — 2026-07-28 — Complete redesign & rebuild
 
 A full, ground-up rebuild from the original dark-theme starter into a premium, production-ready platform.

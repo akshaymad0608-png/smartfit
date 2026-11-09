@@ -81,13 +81,8 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden" onMouseMove={handleMove} onMouseLeave={reset}>
-      {/* Subtle background photo — very low opacity, faded into the surface for readability */}
+      {/* Gradient wash only. The old 5%-opacity hero-bg.jpg was the page's LCP element (6.1 s in the audit) for no visible gain. */}
       <div className="absolute inset-0 -z-10" aria-hidden>
-        <img
-          src="/images/hero-bg.jpg"
-          alt=""
-          className="h-full w-full object-cover opacity-[0.05] dark:opacity-[0.12]"
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-surface/70 to-surface" />
       </div>
       <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />

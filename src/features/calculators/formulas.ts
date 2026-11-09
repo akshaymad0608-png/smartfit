@@ -28,6 +28,22 @@ export function bmiCategory(value: number): { label: string; tone: 'primary' | '
   return { label: 'Obese', tone: 'accent' };
 }
 
+/**
+ * BMI category using the Asian / Indian cut-offs (overweight from 23, obese
+ * from 25). South Asians carry more body fat and more metabolic risk at the
+ * same BMI than the international bands assume, so the lower thresholds are
+ * the ones Indian guidance uses. Screening only, like BMI itself.
+ */
+export function bmiCategoryAsian(value: number): {
+  label: string;
+  tone: 'primary' | 'secondary' | 'accent';
+} {
+  if (value < 18.5) return { label: 'Underweight', tone: 'accent' };
+  if (value < 23) return { label: 'Healthy weight', tone: 'secondary' };
+  if (value < 25) return { label: 'Overweight', tone: 'accent' };
+  return { label: 'Obese', tone: 'accent' };
+}
+
 /** Basal Metabolic Rate — Mifflin-St Jeor equation. */
 export function bmr(sex: Sex, weightKg: number, heightCm: number, age: number): number {
   const base = 10 * weightKg + 6.25 * heightCm - 5 * age;

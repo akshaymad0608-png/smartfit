@@ -9,14 +9,16 @@ import {
   Help,
   Press,
   Privacy,
-  Sitemap,
   Terms,
 } from '@/pages/legal';
+import { Sitemap } from '@/pages/SitemapPage';
 
 // Code-split heavy pages so each route ships its own chunk.
 const Home = lazy(() => import('@/pages/Home'));
 const Workouts = lazy(() => import('@/pages/Workouts'));
 const Exercises = lazy(() => import('@/pages/Exercises'));
+const ExerciseDetail = lazy(() => import('@/pages/ExerciseDetail'));
+const WorkoutDetail = lazy(() => import('@/pages/WorkoutDetail'));
 const Nutrition = lazy(() => import('@/pages/Nutrition'));
 const Calculators = lazy(() => import('@/pages/Calculators'));
 const CalculatorDetail = lazy(() => import('@/pages/CalculatorDetail'));
@@ -37,7 +39,9 @@ export function AppRoutes() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/workouts" element={<Workouts />} />
+        <Route path="/workouts/:slug" element={<WorkoutDetail />} />
         <Route path="/exercises" element={<Exercises />} />
+        <Route path="/exercises/:key" element={<ExerciseDetail />} />
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/calculators" element={<Calculators />} />
         <Route path="/calculators/:slug" element={<CalculatorDetail />} />
