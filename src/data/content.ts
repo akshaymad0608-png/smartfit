@@ -2271,4 +2271,517 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    id: "b17",
+    title: "Protein Powder in India: Do You Need It?",
+    slug: "protein-powder-india-do-you-need-it-how-to-choose",
+    excerpt:
+      "Whether protein powder is worth buying, how to read the label, what to check for in India, and when real food is the better choice.",
+    date: "2026-11-12",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["protein powder", "supplements", "nutrition", "india"],
+    image: "/images/blog/indian-diet-muscle-gain.jpg",
+    body: [
+      {
+        heading: "The honest answer first",
+        paragraphs: [
+          "Protein powder is a convenient food, not a magic product. It is simply protein that has been separated from milk, eggs, peas or other sources and dried into a powder. If you can reach your daily protein target from dal, curd, paneer, eggs, chicken, fish, soya and sprouts, you do not need powder at all.",
+          "It becomes useful when your target is high and your meals fall short, for example if you train hard, eat mostly vegetarian food, or have a busy day where a shake is the only practical option. Think of it as a way to fill a gap, not as the foundation of your diet.",
+        ],
+      },
+      {
+        heading: "Work out your gap before you buy",
+        paragraphs: [
+          "Start with your daily target. A common range for people who train regularly is about 1.4 to 2.0 grams per kilogram of bodyweight, and the general adult recommendation is about 0.8 grams per kilogram. Our protein calculator turns your weight and goal into a number.",
+          "Then write down what you actually eat in a normal day and add up the protein. If you are within 10 to 15 grams of your target, an extra egg, a bowl of curd or a handful of roasted chana may close the gap for far less money than a tub of powder. If you are 30 grams or more short most days, powder starts to make sense.",
+        ],
+      },
+      {
+        heading: "The main types",
+        paragraphs: [
+          "Whey is made from milk and is the most popular type. Whey concentrate usually has a little more fat and lactose, whey isolate is filtered further and has less, and hydrolysed whey is partly broken down. All three provide complete protein.",
+          "Casein is also from milk and digests more slowly. Plant powders, such as pea, rice or soya blends, suit people who avoid dairy or eat vegan, and a blend of sources usually gives a better amino acid profile than a single one. Egg protein is another option. If milk upsets your stomach, try an isolate or a plant powder before you give up on powders altogether.",
+        ],
+      },
+      {
+        heading: "How to read the label",
+        paragraphs: [
+          "Look at protein per serving and the serving size. A typical scoop gives roughly 20 to 25 grams, but the label should say so clearly. Divide the price by the grams of protein, not by the weight of the tub, to compare brands fairly.",
+          "Check the ingredient list. A short list is a good sign. Be careful with products that hide behind a proprietary blend without stating the amounts, and with ones that add large amounts of sugar, flavouring or fillers. Check the nutrition panel for the carbohydrate and fat per serving as well, because it should match the type of powder it claims to be.",
+        ],
+      },
+      {
+        heading: "Safety and authenticity in India",
+        paragraphs: [
+          "In India, food and supplement products fall under the food safety regulator, so look for a valid FSSAI licence number, a manufacturing date, a batch number and an expiry date on the pack. If any of these are missing or unclear, do not buy it.",
+          "Counterfeit tubs are sold online and in some shops, so buy from the brand's own store or from authorised sellers, check the seal, and be suspicious of prices that are far below everyone else's. Some brands publish independent lab test reports for each batch, which is a useful sign. Never use a product that smells or looks odd.",
+        ],
+      },
+      {
+        heading: "Who should be careful",
+        paragraphs: [
+          "Healthy adults can usually use protein powder within normal intakes without problems. If you have kidney disease, liver disease, an allergy to milk, soya or eggs, are pregnant or breastfeeding, or take regular medicines, speak to your doctor first. Children and teenagers should get their protein from food unless a doctor or dietitian advises otherwise.",
+          "Powders do not replace meals. If you drink shakes instead of eating, you may miss fibre, vitamins and minerals that whole foods provide.",
+        ],
+      },
+      {
+        heading: "A simple way to use it",
+        paragraphs: [
+          "One scoop, once a day, after training or as part of a breakfast, is enough for most people. Mix it with milk, water or curd, and add a banana or oats if you want a fuller meal. Check your total protein across the day, and adjust if you are already hitting your target.",
+          "Remember that the biggest results come from regular training, enough total calories, good sleep and consistency. A supplement adds only a small piece. This article is general information and not medical advice.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "b18",
+    title: "Creatine for Beginners: Dose, Safety, Who Should Skip",
+    slug: "creatine-for-beginners-india-what-it-does-who-should-skip",
+    excerpt:
+      "A plain guide to creatine monohydrate: what the research supports, a simple daily dose, common side effects, and when to speak to a doctor first.",
+    date: "2026-11-12",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["creatine", "supplements", "strength", "muscle gain"],
+    image: "/images/blog/progressive-overload.jpg",
+    body: [
+      {
+        heading: "What creatine is",
+        paragraphs: [
+          "Creatine is a compound your body makes and also gets from food, mainly meat and fish. About 95 percent of it is stored in your muscles, where it helps recycle the energy your muscles use for short, hard efforts such as lifting a heavy set or sprinting.",
+          "As a supplement, creatine monohydrate is one of the most studied sports supplements. That does not make it necessary or right for everyone, but it does mean we know more about it than about most products sold in gym shops.",
+        ],
+      },
+      {
+        heading: "What the research supports",
+        paragraphs: [
+          "Studies generally find that creatine can improve performance in short, high-intensity efforts and help people add a little more strength and lean mass over weeks of resistance training. The effect is modest, not dramatic, and it works only alongside training and enough food.",
+          "Some people respond more than others. Vegetarians and vegans often have lower creatine stores to begin with, so they may notice more of an effect, although this varies between people. Creatine does not burn fat on its own and does not replace hard training.",
+        ],
+      },
+      {
+        heading: "How to take it, simply",
+        paragraphs: [
+          "The simplest approach is 3 to 5 grams of creatine monohydrate a day, taken at any time, with or without food. Consistency matters more than timing. Mix it into water, juice or a shake and drink it.",
+          "You may see advice to do a loading phase of about 20 grams a day split into four doses for five to seven days. It saturates the muscles faster, but it is not required. The lower daily dose reaches the same level in a few weeks and is gentler on the stomach.",
+          "Stay with plain creatine monohydrate. More expensive versions with fancy names have not been shown to work better. Choose a product with a clear ingredient list that contains only creatine, and check the FSSAI licence number, batch number and expiry date.",
+        ],
+      },
+      {
+        heading: "Common side effects",
+        paragraphs: [
+          "The most common effect is a small rise in body weight, often one to two kilograms, caused by extra water held inside the muscles. That is not fat. Some people have stomach discomfort or bloating, especially with big loading doses or if the powder is taken without enough fluid.",
+          "Drink enough water through the day. If you get cramps or an upset stomach, lower the dose or split it into two servings with meals. You may read claims about hair loss. The evidence for that is limited, so do not treat it as established, but if you are worried, speak to a doctor.",
+        ],
+      },
+      {
+        heading: "Who should skip it or ask a doctor first",
+        paragraphs: [
+          "Do not start creatine without medical advice if you have kidney disease or a history of kidney problems, if you take medicines that affect the kidneys, or if you are pregnant or breastfeeding. People with other long-term conditions should check with their doctor too.",
+          "Creatine is generally not recommended for children and teenagers unless a doctor advises it. If you are under 18, focus on training, food and sleep.",
+        ],
+      },
+      {
+        heading: "Do you actually need it?",
+        paragraphs: [
+          "If you are new to lifting, you will gain strength quickly from simply training regularly and eating enough protein and calories, even without any supplement. Fix your basics first: a plan that you follow for several months, protein across the day, seven to nine hours of sleep and progressive overload.",
+          "Creatine is something to consider after those are in place, if you want a small extra edge and your doctor has no concerns. It is not a shortcut, and skipping it will not stop you from making good progress.",
+        ],
+      },
+      {
+        heading: "A quick checklist",
+        paragraphs: [
+          "Pick plain creatine monohydrate from a reliable seller. Take 3 to 5 grams daily. Drink water regularly. Expect a small weight gain from water in the first weeks. Stop and see a doctor if you feel unwell. Keep training hard and consistently, because that is where the results come from. This article is general information and not medical advice.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "b19",
+    title: "Start Running: A 6-Week Walk-Run Plan for Beginners",
+    slug: "beginner-running-plan-6-week-walk-run-india",
+    excerpt:
+      "A gentle 6-week walk-run plan for beginners, with a warm-up, simple pacing rules, and tips for Indian weather, shoes and safety.",
+    date: "2026-11-12",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Cardio",
+    tags: ["running", "cardio", "beginner", "fat loss"],
+    image: "/images/blog/hiit-vs-steady-state.jpg",
+    body: [
+      {
+        heading: "Why walk-run works",
+        paragraphs: [
+          "Most beginners quit running because they start too fast, get out of breath within two minutes, and decide they are not runners. The fix is to mix short runs with walking breaks. Your heart, lungs and legs adapt over weeks, and the tendons and bones take longer than the muscles, so a slow build helps you avoid injury.",
+          "This plan takes six weeks, three sessions a week, with a rest day in between. If you are not used to exercise, start with two weeks of brisk walking first.",
+        ],
+      },
+      {
+        heading: "Before you start",
+        paragraphs: [
+          "Wear proper running shoes with a cushioned sole and some room for your toes. Old worn shoes or flat fashion sneakers are a common cause of sore shins and knees. Wear light, breathable clothes.",
+          "If you have a heart or lung condition, joint problems, are pregnant, or are significantly overweight or have not exercised for many years, talk to your doctor first. Stop at once and get help if you feel chest pain, dizziness or unusual breathlessness.",
+        ],
+      },
+      {
+        heading: "Every session: the structure",
+        paragraphs: [
+          "Warm up with five minutes of brisk walking and a few leg swings and bodyweight squats. Do the walk-run intervals. Finish with five minutes of easy walking and some gentle stretching.",
+          "Use the talk test: you should be able to say a short sentence while running. If you cannot, slow down or walk. Running slowly is the point. Nobody is timing you.",
+        ],
+      },
+      {
+        heading: "The plan",
+        paragraphs: [
+          "Week 1: run 1 minute, walk 2 minutes, repeat 7 times. Week 2: run 2 minutes, walk 2 minutes, repeat 5 times. Week 3: run 3 minutes, walk 2 minutes, repeat 4 times.",
+          "Week 4: run 5 minutes, walk 2 minutes, repeat 3 times. Week 5: run 8 minutes, walk 2 minutes, repeat 2 times, then run 5 more minutes if you feel good. Week 6: run 20 minutes slowly without stopping, or two 12-minute runs with a 2-minute walk in between.",
+          "If a week feels too hard, repeat it before moving on. There is no rush, and repeating a week is a smart choice, not a failure.",
+        ],
+      },
+      {
+        heading: "Running in Indian conditions",
+        paragraphs: [
+          "Heat and humidity make running harder, so run early in the morning or after sunset. Drink water before and after, and carry some if you will be out for long. Wear a cap in strong sun.",
+          "Check the air quality index before you go out. On days with very poor air, walk or exercise indoors instead of running outside. Choose safe, well-lit routes, a park or a track if possible, and avoid running on busy roads with heavy traffic. Watch for uneven surfaces and stray dogs.",
+        ],
+      },
+      {
+        heading: "Avoiding injury",
+        paragraphs: [
+          "Do not increase more than one step in this plan at a time. Add strength work twice a week for your legs and core, such as squats, lunges, glute bridges and planks, because strong muscles protect your joints. Sleep well, because that is when your body repairs itself.",
+          "Mild muscle soreness is normal. Sharp pain, pain that gets worse as you run, or swelling is not. Rest, and see a doctor or physiotherapist if it does not settle in a few days.",
+        ],
+      },
+      {
+        heading: "Running and fat loss",
+        paragraphs: [
+          "Running burns calories, but weight loss still depends on your overall food intake and consistency. Do not use running to cancel out a large meal. Combine it with a balanced diet, enough protein and some strength training, which helps you keep muscle while you lose fat.",
+          "Track progress by how you feel and what you can do, such as running for 20 minutes without stopping, not only by the weighing scale. This article is general information and not medical advice.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "b20",
+    title: "Push Pull Legs vs Full Body vs Upper/Lower Split",
+    slug: "push-pull-legs-vs-full-body-vs-upper-lower-which-split",
+    excerpt:
+      "How the three most popular workout splits compare, who each suits, and how to choose one based on your schedule and experience.",
+    date: "2026-11-12",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Training",
+    tags: ["workout split", "strength", "gym", "beginner"],
+    image: "/images/blog/progressive-overload.jpg",
+    body: [
+      {
+        heading: "What a split is",
+        paragraphs: [
+          "A workout split is how you divide your training across the week. Do you train your whole body each time, or only some muscles on some days? There is no single best answer. The right split is the one that fits your schedule, that you enjoy, and that lets you train each muscle often enough with enough total work.",
+          "Research on muscle growth suggests that total weekly volume, which is the number of hard sets per muscle, and training each muscle at least about twice a week both matter. The name of the split matters far less than whether you show up and add challenge over time.",
+        ],
+      },
+      {
+        heading: "Full body: 2 to 3 days a week",
+        paragraphs: [
+          "You train all major muscle groups in every session, usually with compound lifts such as a squat, a hinge, a push, a pull and some core work. Because you train each muscle several times a week, practice comes quickly, and missing one session does not wreck your plan.",
+          "It suits beginners, people with limited time, and anyone who can only train two or three days a week. The downside is that sessions can feel long and tiring if you try to include too much, so keep the exercise list short.",
+        ],
+      },
+      {
+        heading: "Upper/lower: 4 days a week",
+        paragraphs: [
+          "You alternate between an upper-body day and a lower-body day, for example Monday upper, Tuesday lower, Thursday upper, Friday lower. Each muscle group is trained twice a week, and each session is shorter and more focused than a full-body day.",
+          "It suits people with a little training experience who can reach the gym four days a week. It gives a good balance of volume, frequency and recovery, and it is simple to schedule around work.",
+        ],
+      },
+      {
+        heading: "Push/pull/legs: 3 or 6 days a week",
+        paragraphs: [
+          "Push days train chest, shoulders and triceps, pull days train back and biceps, and leg days train the lower body. Run it once through for a three-day week, or twice for six days, which trains each muscle twice.",
+          "It suits people who enjoy the gym, want more exercises per muscle and can train five or six days. The risk is overdoing it. Six days a week needs good sleep, enough food and a plan to skip a day when you are tired. If you can only train three days, a single push, pull and legs cycle works, but each muscle then gets trained only once a week.",
+        ],
+      },
+      {
+        heading: "How to choose",
+        paragraphs: [
+          "Count the days you can train honestly, not the days you hope to train. Two or three days: full body. Four days: upper/lower. Five or six days with plenty of recovery: push, pull and legs. If you are brand new, start with full body for at least a few months before changing.",
+          "Next, consider your experience. Beginners progress well on almost any sensible program, so simplicity is the priority. Intermediate lifters may need more volume per muscle, and that is where upper/lower or push, pull and legs become useful.",
+        ],
+      },
+      {
+        heading: "What matters more than the split",
+        paragraphs: [
+          "Progressive overload, which means gradually doing a little more over time, whether it is more weight, more reps or better control. Enough protein and total calories. Sleep. A plan you can repeat for months. Good form, with a weight you can control.",
+          "Change your split only if it stops working or you stop enjoying it, not because a different one looks better on social media.",
+        ],
+      },
+      {
+        heading: "A sample week for each",
+        paragraphs: [
+          "Full body: Monday, Wednesday and Friday, each with squat, hinge, push, pull and core. Upper/lower: Monday upper, Tuesday lower, Thursday upper, Friday lower. Push, pull, legs: Monday push, Tuesday pull, Wednesday legs, then repeat on Friday to Sunday if you want six days.",
+          "Whichever you choose, write down your weights and reps. If you cannot tell whether you are doing more than last month, you cannot be sure you are progressing. This article is general information, so check with a doctor if you have an injury or medical condition.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "b21",
+    title: "Intermittent Fasting: Evidence and Who Should Avoid It",
+    slug: "intermittent-fasting-india-what-evidence-says-who-should-avoid",
+    excerpt:
+      "What intermittent fasting is, what research shows about weight loss, the common patterns, and who should not try it without medical advice.",
+    date: "2026-11-12",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["intermittent fasting", "weight loss", "nutrition", "diet"],
+    image: "/images/blog/calories-you-need.jpg",
+    body: [
+      {
+        heading: "What intermittent fasting is",
+        paragraphs: [
+          "Intermittent fasting means eating only within certain hours or on certain days, and not eating, apart from water, tea or black coffee, during the rest. It is a pattern of when you eat, not a rule about what to eat.",
+          "Popular versions include the 16:8 pattern, where you eat during an eight-hour window and fast for sixteen hours, and the 5:2 pattern, where you eat normally five days and eat much less on two non-consecutive days.",
+        ],
+      },
+      {
+        heading: "What research suggests",
+        paragraphs: [
+          "Studies comparing intermittent fasting with ordinary calorie reduction generally find similar weight loss when the total calories are matched. In other words, it seems to work mainly because many people eat less in a shorter window, not because fasting has a special fat-burning power.",
+          "That makes it a tool, not a miracle. Some people find it easy to follow because there are fewer meals to plan. Others find it makes them hungry, irritable or likely to overeat later. If a pattern makes you miserable, a normal eating schedule with a modest calorie deficit works just as well.",
+        ],
+      },
+      {
+        heading: "How to try it sensibly",
+        paragraphs: [
+          "Start gently. Move your last meal a little earlier, delay breakfast by an hour or two, and build up to a 12-hour overnight break first. If that feels fine, you can try 14 hours and then 16.",
+          "Within your eating window, eat proper meals with protein, fibre, vegetables and healthy fats, so that you meet your needs. Skipping meals and then eating chips and sweets defeats the purpose. Drink water through the day. Keep exercising, and train in the part of the day that makes you feel best.",
+        ],
+      },
+      {
+        heading: "Muscle gain and training",
+        paragraphs: [
+          "If you lift weights and want to gain muscle, you still need enough total protein and calories. That is harder in a short window. Spread protein over at least two or three meals in your window and consider eating something before or after training.",
+          "If your performance drops, you feel weak or dizzy or you cannot recover, widen your eating window or drop the fasting. Hard training and strict fasting do not suit everyone.",
+        ],
+      },
+      {
+        heading: "Who should avoid it, or ask a doctor first",
+        paragraphs: [
+          "Do not try intermittent fasting without medical advice if you have diabetes or take medicines for blood sugar or blood pressure, have a history of an eating disorder, are pregnant or breastfeeding, are underweight, or have a medical condition that needs regular meals or medicines taken with food.",
+          "It is also not suitable for children and teenagers. Older people and anyone with long-term illness should check with their doctor. Stop if you feel faint, shaky or unwell.",
+        ],
+      },
+      {
+        heading: "Common mistakes",
+        paragraphs: [
+          "Eating far more in the window than you would have eaten all day. Not drinking enough water. Not eating enough protein. Pushing fasts that are too long, too soon. Using sugary drinks or large amounts of coffee to suppress hunger. Treating the fast as a punishment for a big meal, which can create an unhealthy relationship with food.",
+          "If you observe religious or traditional fasts, that is a personal choice. The same rules apply: drink fluids, break the fast sensibly and see a doctor if you have a health condition.",
+        ],
+      },
+      {
+        heading: "The bottom line",
+        paragraphs: [
+          "Intermittent fasting is one of several ways to manage how much you eat. It can work for people who like it and are healthy. It is not necessary for fat loss, and it is not for everyone. What matters most is a calorie intake you can keep up, enough protein, regular movement and sleep.",
+          "Try it for a few weeks and judge it by how you feel and what you can sustain. This article is general information and not medical advice.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "b22",
+    title: "Weight-Loss Plateau: Why It Happens and How to Fix It",
+    slug: "weight-loss-plateau-why-scale-stops-moving-what-to-do",
+    excerpt:
+      "Why weight loss stalls, how to tell a real plateau from normal fluctuations, and a step-by-step checklist to get moving again.",
+    date: "2026-11-12",
+    readMinutes: 7,
+    author: 'Akshay Mahajan',
+    category: "Nutrition",
+    tags: ["weight loss", "plateau", "fat loss", "calories"],
+    image: "/images/blog/calories-you-need.jpg",
+    body: [
+      {
+        heading: "First, is it really a plateau?",
+        paragraphs: [
+          "Body weight can move up or down by one to two kilograms in a day because of water, salt, the food still in your gut, hormones and how much carbohydrate you ate. So one or two flat weeks does not mean your fat loss has stopped.",
+          "A better test is the trend. Weigh yourself at the same time each morning, ideally three or four times a week, and look at the average across two to three weeks. Also track your waist measurement and how your clothes fit. If all of these have not changed for three or four weeks, you are likely on a real plateau.",
+        ],
+      },
+      {
+        heading: "Why plateaus happen",
+        paragraphs: [
+          "As you lose weight, you weigh less, so your body needs fewer calories than it did before. The calorie level that gave steady loss at 85 kg may only maintain your weight at 78 kg. You also tend to move a little less without noticing, because your body saves energy when you eat less.",
+          "Meanwhile, portions creep up, weekend meals and snacks add up, and tracking becomes less accurate over time. Oil, ghee, sweets, drinks and tastings while cooking are easy to forget and can quietly add a couple of hundred calories a day.",
+        ],
+      },
+      {
+        heading: "Step 1: tighten your tracking",
+        paragraphs: [
+          "For two weeks, weigh or measure your food and write down everything, including cooking oil, sauces, chai with sugar, fruit juice and snacks. Include weekends. Many people find that the gap between what they think they eat and what they actually eat is the whole story.",
+          "Use the FitSmart calorie calculator to recheck your estimated maintenance calories at your current weight, then compare it with what you really eat.",
+        ],
+      },
+      {
+        heading: "Step 2: adjust calories modestly",
+        paragraphs: [
+          "If your tracking is accurate and you are still stuck, lower your intake by about 100 to 200 calories a day or add a little movement. Do not slash calories drastically. Eating too little leads to hunger, low energy, muscle loss and a rebound.",
+          "A moderate deficit that you can sustain beats an aggressive one that you drop after a fortnight. For most people, aiming to lose around 0.25 to 0.75 kg a week is a reasonable pace.",
+        ],
+      },
+      {
+        heading: "Step 3: move more, and lift",
+        paragraphs: [
+          "Raise your daily steps by 1,000 to 2,000 and see what happens over two weeks. Everyday movement, such as walking, taking the stairs and doing chores, adds up more than most people expect.",
+          "Strength training twice or three times a week helps you keep muscle while you lose fat, and muscle is what keeps your metabolism from dropping too far. If you only do cardio, add some resistance work.",
+        ],
+      },
+      {
+        heading: "Step 4: protein, sleep and stress",
+        paragraphs: [
+          "Eat enough protein, around 1.2 to 1.6 grams per kilogram of bodyweight for many people trying to lose fat, spread over your meals. It helps you feel full and protects muscle. Aim for seven to nine hours of sleep, because poor sleep increases hunger and cravings.",
+          "Long periods of stress can also affect appetite and eating patterns. Walks, time outdoors, and breaks from screens help more than people think.",
+        ],
+      },
+      {
+        heading: "Step 5: consider a short diet break",
+        paragraphs: [
+          "If you have been dieting for a long time and feel worn out, a one- to two-week break at maintenance calories can help you recover mentally and physically, and then you can resume the deficit. Some studies suggest planned breaks may help people stick to a diet, although the research is not conclusive.",
+          "If you have changed nothing for months and your weight has not moved despite careful tracking, or you have other symptoms such as extreme tiredness, hair loss or irregular periods, see a doctor to rule out medical causes. This article is general information and not medical advice.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "b23",
+    title: "Muscle Soreness (DOMS): Causes and What Helps",
+    slug: "muscle-soreness-doms-why-it-happens-what-helps",
+    excerpt:
+      "Why you feel sore a day or two after training, what helps and what does not, and the warning signs that mean you should see a doctor.",
+    date: "2026-11-12",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Recovery",
+    tags: ["recovery", "muscle soreness", "DOMS", "stretching"],
+    image: "/images/blog/sleep-fitness-tool.jpg",
+    body: [
+      {
+        heading: "What DOMS is",
+        paragraphs: [
+          "DOMS stands for delayed onset muscle soreness. It is the stiff, tender feeling that shows up a day after a hard workout, often peaks around 24 to 72 hours later, and then fades over several days.",
+          "It is most common when you try a new exercise, increase the volume or intensity suddenly, or return after a break. The lowering part of a lift, such as walking downhill, lowering a weight slowly or doing a deep squat, is especially likely to cause it.",
+        ],
+      },
+      {
+        heading: "Why it happens",
+        paragraphs: [
+          "Scientists do not fully agree on the exact cause. It seems to involve the stress of unfamiliar loading on muscle fibres and the surrounding tissue, which triggers an inflammatory repair response. Your muscles then adapt, which is why the same workout feels less sore the next time.",
+          "This is why soreness is not a good measure of a good workout. You can train effectively and make progress with little soreness, and you can feel very sore after a poor, badly planned session.",
+        ],
+      },
+      {
+        heading: "What helps",
+        paragraphs: [
+          "Light movement. A walk, an easy cycle or gentle mobility work increases blood flow and often makes you feel better than lying still. Sleep, because your body does much of its repair while you rest, and our article on sleep explains why it matters.",
+          "Enough protein and calories across the day. Hydration. A warm shower or a gentle massage may make muscles feel better in the short term, even if they do not speed up recovery much. Easing into new training gradually is the best prevention.",
+        ],
+      },
+      {
+        heading: "What does not help as much as people think",
+        paragraphs: [
+          "Stretching before or after a workout has not been shown to prevent soreness in a meaningful way, although stretching can feel pleasant and may help your flexibility over time. Pain-killer tablets can hide the soreness, but regular use is not a great idea and they can have side effects, so ask a doctor or pharmacist before you use them.",
+          "Ice baths and cold water immersion can reduce the feeling of soreness for some people, but some research suggests that using them regularly after strength training might blunt muscle growth. Special supplements and pills do not make up for good basics.",
+        ],
+      },
+      {
+        heading: "Should you train when sore?",
+        paragraphs: [
+          "Mild soreness is fine. You can warm up thoroughly, do lighter work or train a different muscle group. If the soreness is severe, hurts when you move normally or limits your range of motion, take an easier day or a rest day.",
+          "Do not push through sharp pain, joint pain or pain that gets worse as you warm up. Those are signs of something other than ordinary DOMS.",
+        ],
+      },
+      {
+        heading: "When to see a doctor",
+        paragraphs: [
+          "Seek medical help if you have extreme pain and swelling, very dark or cola-coloured urine, weakness that does not match the workout, or soreness that lasts more than about a week. These can be signs of a serious condition called rhabdomyolysis, which is rare but needs urgent treatment.",
+          "Also get checked if you have pain after an injury, numbness or tingling, or pain that is in a joint, not in the muscle belly.",
+        ],
+      },
+      {
+        heading: "How to reduce soreness next time",
+        paragraphs: [
+          "Increase your workload gradually, for example by adding weight or sets in small steps. Start new exercises lighter. Warm up properly. Keep your weekly routine consistent, because muscles adapt to regular training. Eat and sleep well.",
+          "Soreness fades as your body adapts. If you are always in pain, you are probably doing too much, too fast. This article is general information and not medical advice.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "b24",
+    title: "Home Gym in India: What to Buy First",
+    slug: "home-gym-india-what-to-buy-first-budget",
+    excerpt:
+      "A priority list for building a home gym on a budget in India, what to buy first, what to skip, and how to stay safe at home.",
+    date: "2026-11-12",
+    readMinutes: 6,
+    author: 'Akshay Mahajan',
+    category: "Training",
+    tags: ["home gym", "equipment", "home workout", "budget"],
+    image: "/images/blog/progressive-overload.jpg",
+    body: [
+      {
+        heading: "Start with the question, not the shopping",
+        paragraphs: [
+          "Before you buy anything, decide what you want to do. Strength, fat loss and general fitness all need different things, but one list works for most beginners: something to lift, something to pull, a floor to work on and enough space to move safely.",
+          "Start small and add equipment only when you know you will use it. Many people buy a large machine, use it a few times and end up hanging clothes on it. Bodyweight workouts on a mat cost almost nothing, so try those for a few weeks first.",
+        ],
+      },
+      {
+        heading: "Priority 1: a mat and a space",
+        paragraphs: [
+          "A good exercise mat protects your knees, spine and floor and makes floor work more comfortable. Make sure you have enough clear space to lie down with your arms and legs stretched out, and a ceiling that is high enough to press weights overhead.",
+          "Check that the floor is not slippery, and keep water and a towel nearby.",
+        ],
+      },
+      {
+        heading: "Priority 2: dumbbells",
+        paragraphs: [
+          "Dumbbells are the most useful single item, because you can do squats, lunges, rows, presses, curls and deadlifts with them. Fixed-weight pairs are simple and sturdy. Adjustable dumbbells save space and let you progress, but check how the plates lock and that they do not slip.",
+          "Buy from a reliable seller and avoid very cheap sets with loose or poorly finished parts. Plan to buy a heavier pair after a couple of months, because you will get stronger.",
+        ],
+      },
+      {
+        heading: "Priority 3: resistance bands",
+        paragraphs: [
+          "Resistance bands are cheap, light and flexible. They are good for warm-ups, shoulder and back exercises, assisted pull-ups and adding challenge to bodyweight moves. Check them for cracks before each use, and replace worn ones, because a snapping band can cause injury.",
+          "Loop bands, long bands with handles and mini bands each have uses. If you buy only one, choose a set with several resistance levels.",
+        ],
+      },
+      {
+        heading: "Priority 4: a pull-up bar",
+        paragraphs: [
+          "Pull-ups and rows are the pulling half of your training, and many home routines lack them. Doorway bars are inexpensive, but they must fit your door frame and be rated for your weight. Install them exactly as the manufacturer says and test them gradually before you hang your full weight.",
+          "If you cannot do a pull-up yet, use bands for assistance or do rows with dumbbells or a sturdy table.",
+        ],
+      },
+      {
+        heading: "Later: a bench, a rope, a bar",
+        paragraphs: [
+          "A flat or adjustable bench makes presses and supported rows possible, but it is not essential at the start. A skipping rope is a cheap cardio tool. A barbell and plates take space and need safety equipment, such as a rack or safety bars, so skip them until you have the room and the experience.",
+          "Be sceptical of gadgets promising quick fat loss, such as vibration belts or electric muscle stimulators. They are unlikely to replace proper training and diet.",
+        ],
+      },
+      {
+        heading: "Safety and buying tips",
+        paragraphs: [
+          "Learn good form before you add weight, and use a weight you can control. Do not lift heavy overhead or near your limit without a spotter or safety equipment. Keep pets and children away from your workout area. Check equipment regularly for loose screws and wear.",
+          "Compare prices across sellers, read recent reviews with photos and check the return policy. Second-hand dumbbells and benches from reputable sellers can be good value, but inspect them in person. Keep your plan simple, and use what you own consistently. This article is general information, so see a doctor before starting if you have a medical condition.",
+        ],
+      },
+    ],
+  },
 ];
