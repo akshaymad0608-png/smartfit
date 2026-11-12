@@ -116,9 +116,21 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 sm:flex-row">
-          <p className="text-sm text-muted">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
+          <div className="text-sm text-muted">
+            <p>
+              © {new Date().getFullYear()} {site.name}. All rights reserved.
+            </p>
+            <p className="mt-1">
+              Built by{' '}
+              <a
+                href="https://akshay.website"
+                className="font-medium text-heading underline underline-offset-4 hover:text-primary"
+              >
+                Akshay Mahajan
+              </a>
+              , a full-stack and AI web developer in Surat, India.
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <Link to="/sitemap" className="inline-flex min-h-11 items-center text-sm text-muted hover:text-primary">
               Sitemap
