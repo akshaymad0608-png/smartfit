@@ -1153,6 +1153,7 @@ const h1ByPath = Object.fromEntries(ROUTES.map((r) => [r.path, r.h1]));
  */
 function pageSchema(route) {
   const graph = [];
+  const url = `${SITE}${route.path}`;
   if (route.path !== '/') {
     const segments = route.path.split('/').filter(Boolean);
     const crumbs = [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }];
@@ -1163,6 +1164,27 @@ function pageSchema(route) {
       crumbs.push({ '@type': 'ListItem', position: i + 2, name, item: SITE + acc });
     });
     graph.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs });
+  }
+  // Article schema for blog posts. BlogDetail.tsx emits the same through <Seo schema>,
+  // but only client-side; Ahrefs' site audit and non-JS crawlers read this static
+  // HTML, where every post was reported as an article page without Article markup.
+  const post = route.path.startsWith('/blog/') && BLOG_POSTS.find((p) => `/blog/${p.slug}` === route.path);
+  if (post) {
+    graph.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      author: { '@type': 'Person', name: post.author },
+      publisher: {
+        '@type': 'Organization',
+        name: 'FitSmart',
+        logo: { '@type': 'ImageObject', url: `${SITE}/logo.png` },
+      },
+      mainEntityOfPage: url,
+      ...(post.image ? { image: `${SITE}${post.image}` } : {}),
+    });
   }
   if (route.faq?.length) {
     graph.push({
